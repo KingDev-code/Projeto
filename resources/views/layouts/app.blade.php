@@ -27,22 +27,22 @@
       <div class="icone-container">
         <div class="button-container">
         <i href="#default" id="iconeCoração" class="icone fa-regular fa-heart" ></i>
-        <a href="{{ route('profile.edit') }}">
-        
+
+        <a href="{{ route('profile.edit') }}" style="padding: 0px;">
         <i href="#default" id="iconeUsuário" class="icone fa-solid fa-user" ></i> 
         </a>
-    <div name="content">
 
-        <div>{{ Auth::user()->name }}</div>
-        
+    <div name="content">
         <!-- Authentication -->
-        <form method="POST" action="{{ route('logout') }}" style="margin: 0px;">
+        <form method="POST" action="{{ route('logout') }}" style="margin: 0px; position: absolute; left: 100px; top: -10px; ">
         @csrf
+        <!--<div>{{ Auth::user()->name }}</div>-->
         <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" style="margin: 0px;">
             {{ __('Sair') }}
         </a>
         </form>
     </div>
+
     </div>
     </div>  
       <div id="navbar-bottom">
@@ -64,16 +64,9 @@
   </div>
   </div>
 
-            <div>
-                {{ $slot }}
-            </div>
-        </div>
-
         <div>
             <!-- Page Content -->
-            <main>
                 {{ $slot }}
-            </main>
         </div>
 
         <!-- Footer -->
