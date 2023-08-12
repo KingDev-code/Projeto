@@ -55,13 +55,12 @@
 </div>
 </div>
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!-- Slideshow -->
 <div class="slideshow-container">
   <div class="slide">
     <img src="/img/banner1.png" style="width:100%">
   </div>
-
   <div class="slide">
     <img src="/img/banner2.png" style="width:100%">
   </div>
