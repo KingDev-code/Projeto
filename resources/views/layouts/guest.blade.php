@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="/css/login.css">
 
         <!-- Referência a pasta em que está o Java Script -->
-        <script src="/js/register.js"></script>
+        <script src="/js/login.js"></script>
 
 </head>
 <body class="font-sans text-gray-900 antialiased">

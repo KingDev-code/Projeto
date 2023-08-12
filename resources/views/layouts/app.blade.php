@@ -8,29 +8,105 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!-- Css -->
+        <link rel="stylesheet" href="/css/login.css">
+
+        <!-- Referência a pasta em que está o Java Script -->
+        <script src="/js/login.js"></script>
+
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+    <body>
+    <div id="navbar" class="center">
+    <a href="/">
+    <img class="logo_principal" id="logo" src="/img/img_logo.png" alt="img_logo">
+    </a>
+      <div class="icone-container">
+        <div class="button-container">
+        <i href="#default" id="iconeCoração" class="icone fa-regular fa-heart" ></i>
+        <a href="{{ route('profile.edit') }}">
+        
+        <i href="#default" id="iconeUsuário" class="icone fa-solid fa-user" ></i> 
+        </a>
+    <div name="content">
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+        <div>{{ Auth::user()->name }}</div>
+        
+        <!-- Authentication -->
+        <form method="POST" action="{{ route('logout') }}" style="margin: 0px;">
+        @csrf
+        <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" style="margin: 0px;">
+            {{ __('Sair') }}
+        </a>
+        </form>
+    </div>
+    </div>
+    </div>  
+      <div id="navbar-bottom">
+    <div class="linha"></div>
+    <a href="#produtos">TODOS OS PRODUTOS</a>
+    <a href="#executivos">EXECUTIVOS</a>
+    <a href="#esportivos">ESPORTIVOS</a>
+    <a href="#comemoracoes">COMEMORAÇÕES</a>
+    <a href="#diaadia">DIA A DIA</a>
+    <a href="#modapraia">MODA PRAIA</a>
+    <div class="topnav">
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Procurar" name="search">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
 
+            <div>
+                {{ $slot }}
+            </div>
+        </div>
+
+        <div>
             <!-- Page Content -->
             <main>
                 {{ $slot }}
             </main>
         </div>
+
+        <!-- Footer -->
+<footer>
+  <div class="linha-footer"></div>
+  <div class="container-footer">
+    <div>
+      <h2 class="desc-footer1" href="Menu - versão 1.html#titulo-sn">Conheça nossa história</h2>
+    </div>
+
+    <div>
+      <h2 class="desc-footer2">Todos os direitos reservados</h2>
+    </div>
+
+    <div>
+      <img class="logo_branca" id="logo_branca" src="/img/logo_branca.png" alt="logo_branca" href="Menu - versão 1.html">
+    </div>
+
+    <div>
+      <h2 class="desc-footer3">CONTATOS: <a class="link" href="mailto:veste_me@hotmail.com">veste_me@hotmail.com</a></h2>
+    </div>
+
+    <div>
+      <h2 class="desc-footer4"><a class="link" href="https://www.instagram.com/">@veste-me</a></h2>
+    </div>
+
+  </div>
+  <div class="linha-footer"></div>
+</footer>
+
+<p class="titulo-footer">Veste-me | São Paulo - SP</p>
+<p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
+
+</div>
     </body>
 </html>

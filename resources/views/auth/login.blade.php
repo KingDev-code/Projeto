@@ -37,6 +37,8 @@
                 </a>
             @endif
 
+            <input class="entrar" type="submit" value="{{ __('Entrar') }}" style="width: 80px;">
+            <br><br><br>
             <div class="flex items-center justify-end mt-4">
             @if (Route::has('register'))
                 <a class="login" href="{{ route('register') }}" style="margin-top: -40px;">
@@ -45,11 +47,6 @@
                     </h4>
                 </a>
             @endif
-
-            <button class="entrar" style="width: 80px;">
-            <input class="entrar" type="submit" value="Entrar" style="width: 80px;">
-                {{ __('Entrar') }}
-            </button>
         </div>
     </form>
   </div>
