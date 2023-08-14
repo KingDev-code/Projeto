@@ -6,5 +6,11 @@
     @foreach($peca as $pecas)
         <p>{{ $pecas->nome }} -- {{ $pecas->valor }}</p>
     @endforeach
+    <br><br><br>
+
+    @foreach($combinacao as $combinacaos)
+        <p>{{ $combinacaos->nome }} -- {{ $combinacaos->img }} -- {{ $combinacaos->link }} -- {{ $combinacaos->ocasiao_esp }}</p>
+    @endforeach
+
 </div>
 </x-app-layout>

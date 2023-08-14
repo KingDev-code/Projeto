@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Combinacao;
+use App\Models\Combinacoe;
 
 class CombinacoesController extends Controller
 {
     public function index() {
 
-        $combinacoes = Combinacao::all();
+        $combinacao = Combinacoe::all();
 
-        return view('combinacoes.combinacoes', ['combinacoes' => $combinacoes]);
+        return view('dashboard', ['combinacao' => $combinacao]);
     }
 
     public function create() {
@@ -22,11 +22,15 @@ class CombinacoesController extends Controller
 
     public function store(request $request) {
 
-        $combinacoes = new Combinacao;
+        $combinacao = new Combinacoe;
 
-        $combinacoes->nome = $request->nome;
-        $combinacoes->img = $request->img;
-        $combinacoes->link = $request->link;
-        $combinacoes->ocasiao_esp = $request->ocasiao_esp;
+        $combinacao->nome = $request->nome;
+        $combinacao->img = $request->img;
+        $combinacao->link = $request->link;
+        $combinacao->ocasiao_esp = $request->ocasiao_esp;
+
+        $combinacao->save();
+
+        return redirect('/');
     }
 }

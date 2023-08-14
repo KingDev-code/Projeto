@@ -26,7 +26,7 @@ Route::get('/select', function () {
     return view('select');
 });
 
-Route::get('dashboard', [PecasController::class, 'index']);
+Route::get('dashboard', [PecasController::class, 'index', CombinacoesController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 /*Combinações*/
 Route::get('combinacoes', [CombinacoesController::class, 'create']);
