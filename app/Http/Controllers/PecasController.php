@@ -12,7 +12,7 @@ class PecasController extends Controller
 
         $peca = Peca::all();
 
-        return view('combinacoes.peca', ['peca' => $peca]);
+        return view('dashboard', ['peca' => $peca]);
     }
 
     public function create() {
@@ -25,8 +25,10 @@ class PecasController extends Controller
         $peca = new Peca;
 
         $peca->nome = $request->nome;
-        $peca->img = $request->img;
-        $peca->link = $request->link;
-        $peca->ocasiao_esp = $request->ocasiao_esp;
+        $peca->valor = $request->valor;
+
+        $peca->save();
+
+        return redirect('/');
     }
 }

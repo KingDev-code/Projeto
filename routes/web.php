@@ -26,42 +26,32 @@ Route::get('/select', function () {
     return view('select');
 });
 
-// Rota para criar uma nova combinação. Chama o método 'create' do controller 'CombinacoesController'.
+Route::get('dashboard', [PecasController::class, 'index']);
+
+/*Combinações*/
 Route::get('combinacoes', [CombinacoesController::class, 'create']);
-
-// Rota para armazenar uma nova combinação. Chama o método 'store' do controller 'CombinacoesController'.
 Route::post('combinacoes', [CombinacoesController::class, 'store']);
-
-// Rota para a página "/combinacoes". Retorna a view 'combinacoes'. É aplicado o middleware de autenticação ('auth') e verificação de email ('verified').
 Route::get('/combinacoes', function () {
     return view('combinacoes.combinacoes');
 })->middleware(['auth', 'verified'])->name('combinacoes');
 
-// Rota para criar uma nova peça. Chama o método 'create' do controller 'PecasController'.
+
+/*Peças*/
 Route::get('peca', [PecasController::class, 'create']);
-
-// Rota para armazenar uma nova peça. Chama o método 'store' do controller 'PecasController'.
 Route::post('peca', [PecasController::class, 'store']);
-
-// Rota para a página "/peca". Retorna a view 'peca'. É aplicado o middleware de autenticação ('auth') e verificação de email ('verified').
 Route::get('/peca', function () {
     return view('combinacoes.peca');
 })->middleware(['auth', 'verified'])->name('peca');
 
 // Rota para a página "/dashboard". Retorna a view 'dashboard'. É aplicado o middleware de autenticação ('auth') e verificação de email ('verified').
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 // Grupo de rotas protegidas pelo middleware de autenticação ('auth').
 Route::middleware('auth')->group(function () {
-    // Rota para editar o perfil do usuário. Chama o método 'edit' do controller 'ProfileController'.
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    
-    // Rota para atualizar o perfil do usuário. Chama o método 'update' do controller 'ProfileController'.
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    
-    // Rota para excluir o perfil do usuário. Chama o método 'destroy' do controller 'ProfileController'.
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
