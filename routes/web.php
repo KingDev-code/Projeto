@@ -23,6 +23,11 @@ Route::get('/select', function () {
 });
 
 
+
+Route::get('/peca', function () {
+    return view('peca');
+})->middleware(['auth', 'verified'])->name('peca');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
