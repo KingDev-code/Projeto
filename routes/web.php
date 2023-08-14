@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CombinacoesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,11 @@ Route::get('/combinacoes', function () {
     return view('combinacoes.combinacoes');
 });
 
-/*route::get('/combinacoes', [CombinacoesController::class 'create']);*/
+route::get('/combinacoes', [CombinacoesController::class, 'index']);
 
-/*route::post('/combinacoes', [CombinacoesController::class 'store']);*/
+route::get('/combinacoes', [CombinacoesController::class, 'create']);
+
+route::post('/combinacoes', [CombinacoesController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

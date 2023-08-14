@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Combinacao;
+
 class CombinacoesController extends Controller
 {
     public function index() {
