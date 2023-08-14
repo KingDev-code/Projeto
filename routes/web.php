@@ -22,6 +22,13 @@ Route::get('/select', function () {
     return view('select');
 });
 
+Route::get('/combinacoes', function () {
+    return view('combinacoes.combinacoes');
+});
+
+/*route::get('/combinacoes', [CombinacoesController::class 'create']);*/
+
+/*route::post('/combinacoes', [CombinacoesController::class 'store']);*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
