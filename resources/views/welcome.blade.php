@@ -56,7 +56,6 @@
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!-- Slideshow -->
 <div class="slideshow-container">
   <div class="slide">

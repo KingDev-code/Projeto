@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CombinacoesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +22,11 @@ Route::get('/select', function () {
     return view('select');
 });
 
-Route::get('/combinacoes', function () {
-    return view('combinacoes.combinacoes');
-});
 
-route::get('/combinacoes', [CombinacoesController::class, 'index']);
 
-route::get('/combinacoes', [CombinacoesController::class, 'create']);
-
-route::post('/combinacoes', [CombinacoesController::class, 'store']);
+Route::get('/peca', function () {
+    return view('peca');
+})->middleware(['auth', 'verified'])->name('peca');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

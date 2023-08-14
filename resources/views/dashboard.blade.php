@@ -1,6 +1,5 @@
 <x-app-layout>
-
 <div class="container">
-    <a href="/combinacoes">Combinacoes</a>
+    <h1><a href="/peca">davi</a></h1>
 </div>
 </x-app-layout>

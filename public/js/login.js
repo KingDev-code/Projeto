@@ -48,9 +48,9 @@
       function scrollFunction() {
       if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
 
-        img.src = "associate/img/img_logo1.png";
+        img.src = "/img/img_logo1.png";
       } else {
-        img.src = "associate/img/img_logo.png";
+        img.src = "/img/img_logo.png";
       }
     };
 

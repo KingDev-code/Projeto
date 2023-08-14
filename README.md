@@ -37,13 +37,8 @@ git clone e link do repositorio
 COMO CRIAR E UPAR EM OUTRO BRANCH NO GITHUB
 
 git init
-
 git add *
-
 git status (para verificar se foi alterado normalmente, caso foi, vai estar verde)
-
 git commit -m "nome do commit"
-
 git branch -M v2 (ou o nome que você quiser por)
-
 git push origin v2
