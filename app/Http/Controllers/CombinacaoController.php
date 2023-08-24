@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Combinacoe;
-
-class CombinacoesController extends Controller
+use App\Models\Combinacao;
+class CombinacaoController extends Controller
 {
     public function index() {
 
-        $combinacao = Combinacoe::all();
+        $combinacao = Combinacao::all();
 
         return view('dashboard', ['combinacao' => $combinacao]);
     }
@@ -22,12 +21,12 @@ class CombinacoesController extends Controller
 
     public function store(request $request) {
 
-        $combinacao = new Combinacoe;
+        $combinacao = new Combinacao;
 
         $combinacao->nome = $request->nome;
         $combinacao->img = $request->img;
         $combinacao->link = $request->link;
-        $combinacao->ocasiao_esp = $request->ocasiao_esp;
+        $combinacao->oca_esp = $request->oca_esp;
 
         $combinacao->save();
 

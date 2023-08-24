@@ -11,5 +11,7 @@
             <br><br>
             <input type="submit" value="Salvar" >
         </form>
+
+        <a href="dashboard">Voltar</a>
     </div>
 </x-app-layout>

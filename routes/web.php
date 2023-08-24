@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CombinacoesController;
+use App\Http\Controllers\CombinacaoController;
 use App\Http\Controllers\PecasController;
 
 /*
@@ -26,11 +26,11 @@ Route::get('/select', function () {
     return view('select');
 });
 
-Route::get('dashboard', [PecasController::class, 'index', CombinacoesController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard', [CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 /*Combinações*/
-Route::get('combinacoes', [CombinacoesController::class, 'create']);
-Route::post('combinacoes', [CombinacoesController::class, 'store']);
+Route::get('combinacoes', [CombinacaoController::class, 'create']);
+Route::post('combinacoes', [CombinacaoController::class, 'store']);
 Route::get('/combinacoes', function () {
     return view('combinacoes.combinacoes');
 })->middleware(['auth', 'verified'])->name('combinacoes');
