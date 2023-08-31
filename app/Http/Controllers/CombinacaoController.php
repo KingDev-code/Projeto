@@ -19,17 +19,24 @@ class CombinacaoController extends Controller
         return view('combinacoes.combinacoes');
     }
 
-    public function store(request $request) {
+    public function store(Request $request)
+{
+    $combinacao = new Combinacao;
 
-        $combinacao = new Combinacao;
+    $combinacao->nome = $request->nome;
+    $combinacao->link = $request->link;
+    $combinacao->oca_esp = $request->oca_esp;
 
-        $combinacao->nome = $request->nome;
-        $combinacao->img = $request->img;
-        $combinacao->link = $request->link;
-        $combinacao->oca_esp = $request->oca_esp;
-
-        $combinacao->save();
-
-        return redirect('/');
+    // Verifica se foi enviada uma imagem
+    if ($request->hasFile('imagem')) {
+        $imagem = $request->file('imagem');
+        $caminho = $imagem->store('imagem', 'public'); // Salva a imagem no sistema de arquivos
+        $combinacao->img = $caminho; // Armazena o caminho da imagem no modelo
     }
+
+    $combinacao->save();
+
+    return redirect('/');
+}
+
 }

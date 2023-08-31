@@ -21,12 +21,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 // Rota para a página "/select". Retorna a view 'select'.
 Route::get('/select', function () {
     return view('select');
 });
 
+
 Route::get('dashboard', [CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
 
 /*Combinações*/
 Route::get('combinacoes', [CombinacaoController::class, 'create']);
@@ -43,10 +46,12 @@ Route::get('/peca', function () {
     return view('combinacoes.peca');
 })->middleware(['auth', 'verified'])->name('peca');
 
+
 // Rota para a página "/dashboard". Retorna a view 'dashboard'. É aplicado o middleware de autenticação ('auth') e verificação de email ('verified').
 /*Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');*/
+
 
 // Grupo de rotas protegidas pelo middleware de autenticação ('auth').
 Route::middleware('auth')->group(function () {
@@ -54,6 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 // Inclui rotas de autenticação a partir do arquivo 'auth.php'.
 require __DIR__.'/auth.php';

@@ -1,18 +1,28 @@
 <x-app-layout>
     <div class="container">
-    <form action="combinacoes" method="post">
-        @csrf
-        <h1>Combinacões</h1>
-        <br>
-        <label for="nome">Nome:<input type="text" name="nome" id="nome" placeholder="Nome da Combinaçãp"></label>
-        <br><br>
-        <label for="img">Imagem:<input type="text" name="img" id="img_campo" placeholder="Nome da Combinaçãp"></label>
-        <br><br>
-        <label for="link">Link:<input type="text" name="link" id="link" placeholder="Nome da Combinaçãp"></label>
-        <br><br>
-        <label for="oca_esp">Ocasião Especifica:<input type="text" name="oca_esp" id="oca" placeholder="Nome da Combinaçãp"></label>
-        <br><br>
-        <input type="submit" value="Salvar">
-    </form>
+    <form method="POST" action="combinacoes" enctype="multipart/form-data">
+    @csrf
+
+    <h1>Combinações</h1>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <br>
+
+    <label for="link">Link:</label>
+    <input type="text" id="link" name="link" required>
+    <br>
+
+    <label for="oca_esp">Oca Esp:</label>
+    <input type="text" id="oca_esp" name="oca_esp" required>
+    <br>
+
+    <label for="imagem">Imagem:</label>
+    <input type="file" id="imagem" name="imagem">
+    <br>
+
+    <button type="submit">Enviar</button>
+</form>
+
     </div>
 </x-app-layout>

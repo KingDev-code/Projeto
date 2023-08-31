@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('combinacaos', function (Blueprint $table) {
+        Schema::create('pecas', function (Blueprint $table) {
             $table->id();
-            $table->string('cod_estilo');
-            $table->string('cod_tipocorporal');
-            $table->string('cod_ocasiao');
-            $table->string('cod_genero');
-            $table->string('img');
-            $table->string('oca_esp');
+            $table->string("cod_comb");
+            $table->string('desc_peca');
+            $table->string('preco_peca');
+            $table->string('img_peca');
+            $table->string("link_peca");
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('combinacaos');
+        Schema::dropIfExists('pecas');
     }
 };
