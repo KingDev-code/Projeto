@@ -3,9 +3,19 @@
     <h1><a href="/peca">davi</a></h1>
     <h1><a href="/combinacoes">Comb</a></h1>
 
-    @foreach($combinacao as $combinacaos)
-        <p>{{ $combinacaos->nome }} -- {{ $combinacaos->img }} -- {{ $combinacaos->link }} -- {{ $combinacaos->oca_esp }}</p>
-    @endforeach
+    @foreach ($combinacao as $combinacao)
+    <div>
+        <p>Nome: {{ $combinacao->nome }}</p>
+        <p>Link: {{ $combinacao->link }}</p>
+        <p>Oca Esp: {{ $combinacao->oca_esp }}</p>
+
+        @if ($combinacao->img)
+            <img src="{{ asset('storage/' . $combinacao->img) }}" alt="Imagem da Combinacao">
+        @else
+            <p>Nenhuma imagem disponível.</p>
+        @endif
+    </div>
+@endforeach
 
 </div>
 </x-app-layout>

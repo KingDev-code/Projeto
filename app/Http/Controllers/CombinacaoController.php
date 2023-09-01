@@ -19,7 +19,8 @@ class CombinacaoController extends Controller
         return view('combinacoes.combinacoes');
     }
 
-    public function store(Request $request)
+    
+public function store(Request $request)
 {
     $combinacao = new Combinacao;
 
@@ -30,7 +31,11 @@ class CombinacaoController extends Controller
     // Verifica se foi enviada uma imagem
     if ($request->hasFile('imagem')) {
         $imagem = $request->file('imagem');
-        $caminho = $imagem->store('imagem', 'public'); // Salva a imagem no sistema de arquivos
+        
+        // Gere um nome único para a imagem usando o método Str::uuid()
+        $nomeImagem = Str::uuid() . '.' . $imagem->getClientOriginalExtension();
+        
+        $caminho = $imagem->storeAs('imagem', $nomeImagem, 'public'); // Salva a imagem com nome único
         $combinacao->img = $caminho; // Armazena o caminho da imagem no modelo
     }
 

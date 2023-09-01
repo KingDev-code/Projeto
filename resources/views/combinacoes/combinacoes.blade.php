@@ -13,7 +13,7 @@
     <input type="text" id="link" name="link" required>
     <br>
 
-    <label for="oca_esp">Oca Esp:</label>
+    <label for="oca_esp">Ocasião Especifica:</label>
     <input type="text" id="oca_esp" name="oca_esp" required>
     <br>
 
