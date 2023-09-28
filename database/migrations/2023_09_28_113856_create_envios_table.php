@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('combinacaos', function (Blueprint $table) {
+        Schema::create('envios', function (Blueprint $table) {
             $table->id();
-            $table->integer('cod_estilo');
-            $table->integer('cod_tipocorporal');
-            $table->integer('cod_ocasiao');
-            $table->string('img_comb');
-            $table->string('link_comb');
-            $table->string('oca_esp');
+            $table->integer('cod_empresa');
+            $table->integer('cod_combinacao');
+            $table->integer('cod_estado');
+            $table->datetime('dt_envio');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('combinacaos');
+        Schema::dropIfExists('envios');
     }
 };

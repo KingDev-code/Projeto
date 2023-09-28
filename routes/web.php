@@ -39,7 +39,10 @@ Route::get('/combinacoes', function () {
 })->middleware(['auth', 'verified'])->name('combinacoes');
 
 
-/*Peças*/
+Route::get('/pecas/create', [PecasController::class, 'create'])->name('pecas.create');
+Route::post('/pecas', [PecasController::class, 'store'])->name('pecas.store');
+
+/*Peças
 Route::get('peca', [PecasController::class, 'create']);
 Route::post('peca', [PecasController::class, 'store']);
 Route::get('/peca', function () {

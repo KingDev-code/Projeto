@@ -1,28 +1,37 @@
 <x-app-layout>
     <div class="container">
-    <form method="POST" action="combinacoes" enctype="multipart/form-data">
-    @csrf
+    <h1>Adicionar Peça</h1>
+    <form method="POST" action="{{ route('pecas.store') }}" enctype="multipart/form-data">
+        @csrf
 
-    <h1>Combinações</h1>
+        <div>
+            <label for="cod_comb">Selecione uma Combinação:</label>
+            <select name="cod_comb" id="cod_comb">
+                @foreach ($combinacoes as $combinacao)
+                    <option value="{{ $combinacao->id }}">{{ $combinacao->id }} - {{ $combinacao->oca_esp }}</option>
+                @endforeach
+            </select>
+        </div>
 
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required>
-    <br>
+        <div>
+            <label for="desc_peca">Descrição da Peça:</label>
+            <input type="text" name="desc_peca" id="desc_peca">
+        </div>
 
-    <label for="link">Link:</label>
-    <input type="text" id="link" name="link" required>
-    <br>
+        <div>
+            <label for="preco_peca">Preço da Peça:</label>
+            <input type="text" name="preco_peca" id="preco_peca">
+        </div>
 
-    <label for="oca_esp">Ocasião Especifica:</label>
-    <input type="text" id="oca_esp" name="oca_esp" required>
-    <br>
+        <div>
+            <label for="img_peca">Imagem da Peça:</label>
+            <input type="file" name="img_peca" id="img_peca">
+        </div>
 
-    <label for="imagem">Imagem:</label>
-    <input type="file" id="imagem" name="imagem">
-    <br>
-
-    <button type="submit">Enviar</button>
-</form>
+        <div>
+            <button type="submit">Adicionar Peça</button>
+        </div>
+    </form>
 
     </div>
 </x-app-layout>

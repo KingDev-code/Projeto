@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('pecas', function (Blueprint $table) {
             $table->id();
-            $table->string("cod_comb");
-            $table->string('desc_peca');
-            $table->string('preco_peca');
+            $table->unsignedBigInteger("cod_comb");
+            $table->string('desc_peca', 100);
+            $table->string('preco_peca', 10);
             $table->string('img_peca');
             $table->string("link_peca");
             $table->timestamps();
+
+            $table->foreign('cod_comb')
+            ->references('id')
+            ->on('combinacaos');
         });
     }
 

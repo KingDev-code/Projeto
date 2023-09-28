@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('avaliacaos', function (Blueprint $table) {
+        Schema::create('tiposcorporal', function (Blueprint $table) {
             $table->id();
-            $table->integer('cod_login');
-            $table->integer('num_estrelas');
-            $table->text('desc_avaliacao');
-            $table->datetime('dta_publicacao');
-            $table->timestamp('dta_edicao');
+            $table->string('tipocorporal', 80);
+            $table->string('icone');
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('avaliacaos');
+        Schema::dropIfExists('tiposcorporal');
     }
 };
