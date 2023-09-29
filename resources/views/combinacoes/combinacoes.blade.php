@@ -1,37 +1,42 @@
 <x-app-layout>
     <div class="container">
-    <h1>Adicionar Peça</h1>
-    <form method="POST" action="{{ route('pecas.store') }}" enctype="multipart/form-data">
-        @csrf
+    <h1>Adicionar Combinação</h1>
+        <form method="POST" action="{{ route('combinacoes.store') }}" enctype="multipart/form-data">
+            @csrf
 
-        <div>
-            <label for="cod_comb">Selecione uma Combinação:</label>
-            <select name="cod_comb" id="cod_comb">
-                @foreach ($combinacoes as $combinacao)
-                    <option value="{{ $combinacao->id }}">{{ $combinacao->id }} - {{ $combinacao->oca_esp }}</option>
-                @endforeach
-            </select>
-        </div>
+            <div>
+                <label for="cod_estilo">Código de Estilo:</label>
+                <input type="text" name="cod_estilo" id="cod_estilo">
+            </div>
 
-        <div>
-            <label for="desc_peca">Descrição da Peça:</label>
-            <input type="text" name="desc_peca" id="desc_peca">
-        </div>
+            <div>
+                <label for="cod_tipocorporal">Código de Tipo Corporal:</label>
+                <input type="text" name="cod_tipocorporal" id="cod_tipocorporal">
+            </div>
 
-        <div>
-            <label for="preco_peca">Preço da Peça:</label>
-            <input type="text" name="preco_peca" id="preco_peca">
-        </div>
+            <div>
+                <label for="cod_ocasiao">Código de Ocasião:</label>
+                <input type="text" name="cod_ocasiao" id="cod_ocasiao">
+            </div>
 
-        <div>
-            <label for="img_peca">Imagem da Peça:</label>
-            <input type="file" name="img_peca" id="img_peca">
-        </div>
+            <div>
+                <label for="img_comb">Imagem da Combinação:</label>
+                <input type="file" name="img_comb" id="img_comb">
+            </div>
 
-        <div>
-            <button type="submit">Adicionar Peça</button>
-        </div>
-    </form>
+            <div>
+                <label for="link_comb">Link da Combinação:</label>
+                <input type="text" name="link_comb" id="link_comb">
+            </div>
 
+            <div>
+                <label for="oca_esp">Ocasião Específica:</label>
+                <input type="text" name="oca_esp" id="oca_esp">
+            </div>
+
+            <div>
+                <button type="submit">Adicionar Combinação</button>
+            </div>
+        </form>
     </div>
 </x-app-layout>

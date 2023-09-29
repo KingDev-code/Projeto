@@ -1,7 +1,10 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Peca;
+use App\Models\Combinacao;
 
 class PecasController extends Controller
 {
@@ -14,7 +17,7 @@ class PecasController extends Controller
     public function create()
     {
         $combinacoes = Combinacao::all();
-        return view('pecas.create', compact('combinacoes'));
+        return view('combinacoes.peca', compact('combinacoes'));
     }
 
     public function store(Request $request)

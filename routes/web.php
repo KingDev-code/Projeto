@@ -31,17 +31,31 @@ Route::get('/select', function () {
 Route::get('dashboard', [CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
-/*Combinações*/
+/*Combinações
 Route::get('combinacoes', [CombinacaoController::class, 'create']);
 Route::post('combinacoes', [CombinacaoController::class, 'store']);
 Route::get('/combinacoes', function () {
     return view('combinacoes.combinacoes');
 })->middleware(['auth', 'verified'])->name('combinacoes');
+*/
 
+// Rotas para Combinações
+Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
+Route::get('/combinacoes/create', [CombinacaoController::class, 'create'])->name('combinacoes.create');
+Route::post('/combinacoes', [CombinacaoController::class, 'store'])->name('combinacoes.store');
+Route::get('/combinacoes/{combinacao}', [CombinacaoController::class, 'show'])->name('combinacoes.show');
+Route::get('/combinacoes/{combinacao}/edit', [CombinacaoController::class, 'edit'])->name('combinacoes.edit');
+Route::put('/combinacoes/{combinacao}', [CombinacaoController::class, 'update'])->name('combinacoes.update');
+Route::delete('/combinacoes/{combinacao}', [CombinacaoController::class, 'destroy'])->name('combinacoes.destroy');
 
-Route::get('/pecas/create', [PecasController::class, 'create'])->name('pecas.create');
-Route::post('/pecas', [PecasController::class, 'store'])->name('pecas.store');
-
+// Rotas para Peças
+Route::get('/pecas', [PecaController::class, 'index'])->name('pecas.index');
+Route::get('/pecas/create', [PecaController::class, 'create'])->name('pecas.create');
+Route::post('/pecas', [PecaController::class, 'store'])->name('pecas.store');
+Route::get('/pecas/{peca}', [PecaController::class, 'show'])->name('pecas.show');
+Route::get('/pecas/{peca}/edit', [PecaController::class, 'edit'])->name('pecas.edit');
+Route::put('/pecas/{peca}', [PecaController::class, 'update'])->name('pecas.update');
+Route::delete('/pecas/{peca}', [PecaController::class, 'destroy'])->name('pecas.destroy');
 /*Peças
 Route::get('peca', [PecasController::class, 'create']);
 Route::post('peca', [PecasController::class, 'store']);
