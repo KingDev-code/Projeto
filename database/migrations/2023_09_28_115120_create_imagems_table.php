@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('cod_avaliacao');
             $table->string('img');
+            $table->timestamps();
         });
     }
 

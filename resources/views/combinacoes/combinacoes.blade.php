@@ -11,12 +11,16 @@
 
             <div>
                 <label for="cod_tipocorporal">Código de Tipo Corporal:</label>
-                <input type="number" name="cod_tipocorporal" id="cod_tipocorporal" required>
+                <select name="cod_tipocorporal" id="cod_tipocorporal" required>
+                    @foreach ($tiposcorporal as $tipocorporal)
+                        <option value="{{ $tipocorporal->id }}">{{ $tipocorporal->tipocorporal }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div>
-                <label for="ocasiao_id">Selecione uma Ocasião:</label>
-                <select name="ocasiao_id" id="ocasiao_id" required>
+                <label for="cod_ocasiao">Selecione uma Ocasião:</label>
+                <select name="cod_ocasiao" id="cod_ocasiao" required>
                     @foreach ($ocasioes as $ocasiao)
                         <option value="{{ $ocasiao->id }}">{{ $ocasiao->ocasiao }}</option>
                     @endforeach

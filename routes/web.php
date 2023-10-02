@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CombinacaoController;
 use App\Http\Controllers\OcasiaoController;
+use App\Http\Controllers\TipoCorporalController;
 use App\Http\Controllers\PecasController;
 
 /*
@@ -29,7 +30,8 @@ Route::get('/select', function () {
 });
 
 
-Route::get('dashboard', [PecasController::class, 'index', CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard', [PecasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard', [CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 /*Combinações
 Route::get('combinacoes', [CombinacaoController::class, 'create']);
@@ -43,8 +45,12 @@ Route::get('/combinacoes', function () {
 Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
 Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
 
+// Rotas para Tipos Corporal
+Route::get('/tiposcorporal/create', [TipoCorporalController::class, 'create'])->name('tiposcorporal.create');
+Route::post('/tiposcorporal', [TipoCorporalController::class, 'store'])->name('tiposcorporal.store');
+
 // Rotas para Combinações
-Route::get('/combinacoes', [CombinacaoController::class, 'index', OcasiaoController::class, 'index'])->name('combinacoes.index');
+Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
 Route::get('/combinacoes/create', [CombinacaoController::class, 'create'])->name('combinacoes.create');
 Route::post('/combinacoes', [CombinacaoController::class, 'store'])->name('combinacoes.store');
 Route::get('/combinacoes/{combinacao}', [CombinacaoController::class, 'show'])->name('combinacoes.show');

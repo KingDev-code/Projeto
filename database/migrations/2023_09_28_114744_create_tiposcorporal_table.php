@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('tipocorporal', 80);
             $table->string('icone');
+            $table->timestamps();
         });
     }
 

@@ -9,6 +9,10 @@ class Ocasiao extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'ocasiao'
+    ];
+
     protected $table = 'ocasioes'; // Defina o nome da tabela se não seguir a convenção do Laravel
 
     // Se você deseja definir relacionamentos, pode fazê-lo aqui

@@ -20,4 +20,9 @@ class Combinacao extends Model
     {
         return $this->belongsTo(Ocasiao::class, 'cod_ocasiao');
     }
+
+    public function tipocorporal()
+    {
+        return $this->belongsTo(TipoCorporal::class, 'cod_tipocorporal');
+    }
 }
