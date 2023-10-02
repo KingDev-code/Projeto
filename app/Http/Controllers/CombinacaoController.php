@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Combinacao; // Certifique-se de que está usando o namespace correto para o modelo
-use App\Models\Peca;
+use App\Models\Ocasiao;
 use Illuminate\Support\Str;
 
 class CombinacaoController extends Controller
@@ -17,7 +17,7 @@ class CombinacaoController extends Controller
 
     public function create()
     {
-        return view('combinacoes.create');
+        return view('combinacoes.combinacoes');
     }
 
     public function store(Request $request)
@@ -48,6 +48,6 @@ class CombinacaoController extends Controller
 
         $combinacao->save();
 
-        return redirect('/combinacoes')->with('success', 'Combinação adicionada com sucesso!');
+        return redirect('/')->with('success', 'Combinação adicionada com sucesso!');
     }
 }

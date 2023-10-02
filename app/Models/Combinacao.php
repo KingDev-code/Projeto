@@ -15,4 +15,9 @@ class Combinacao extends Model
     {
         return $this->hasMany(Peca::class, 'cod_comb');
     }
+
+    public function ocasiao()
+    {
+        return $this->belongsTo(Ocasiao::class, 'cod_ocasiao');
+    }
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CombinacaoController;
+use App\Http\Controllers\OcasiaoController;
 use App\Http\Controllers\PecasController;
 
 /*
@@ -28,8 +29,7 @@ Route::get('/select', function () {
 });
 
 
-Route::get('dashboard', [CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('dashboard', [PecasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 /*Combinações
 Route::get('combinacoes', [CombinacaoController::class, 'create']);
@@ -38,6 +38,11 @@ Route::get('/combinacoes', function () {
     return view('combinacoes.combinacoes');
 })->middleware(['auth', 'verified'])->name('combinacoes');
 */
+
+// Rotas para Ocasião
+Route::get('/ocasioes', [OcasiaoController::class, 'index'])->name('ocasioes.index');
+Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
+Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
 
 // Rotas para Combinações
 Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
@@ -49,13 +54,13 @@ Route::put('/combinacoes/{combinacao}', [CombinacaoController::class, 'update'])
 Route::delete('/combinacoes/{combinacao}', [CombinacaoController::class, 'destroy'])->name('combinacoes.destroy');
 
 // Rotas para Peças
-Route::get('/pecas', [PecaController::class, 'index'])->name('pecas.index');
-Route::get('/pecas/create', [PecaController::class, 'create'])->name('pecas.create');
-Route::post('/pecas', [PecaController::class, 'store'])->name('pecas.store');
-Route::get('/pecas/{peca}', [PecaController::class, 'show'])->name('pecas.show');
-Route::get('/pecas/{peca}/edit', [PecaController::class, 'edit'])->name('pecas.edit');
-Route::put('/pecas/{peca}', [PecaController::class, 'update'])->name('pecas.update');
-Route::delete('/pecas/{peca}', [PecaController::class, 'destroy'])->name('pecas.destroy');
+Route::get('/pecas', [PecasController::class, 'index'])->name('pecas.index');
+Route::get('/pecas/create', [PecasController::class, 'create'])->name('pecas.create');
+Route::post('/pecas', [PecasController::class, 'store'])->name('pecas.store');
+Route::get('/pecas/{peca}', [PecasController::class, 'show'])->name('pecas.show');
+Route::get('/pecas/{peca}/edit', [PecasController::class, 'edit'])->name('pecas.edit');
+Route::put('/pecas/{peca}', [PecasController::class, 'update'])->name('pecas.update');
+Route::delete('/pecas/{peca}', [PecasController::class, 'destroy'])->name('pecas.destroy');
 /*Peças
 Route::get('peca', [PecasController::class, 'create']);
 Route::post('peca', [PecasController::class, 'store']);

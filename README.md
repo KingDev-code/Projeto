@@ -42,3 +42,8 @@ git status (para verificar se foi alterado normalmente, caso foi, vai estar verd
 git commit -m "nome do commit"
 git branch -M v2 (ou o nome que você quiser por)
 git push origin v2
+
+
+
+
+php artisan storage:link

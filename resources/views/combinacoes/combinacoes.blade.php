@@ -1,37 +1,37 @@
 <x-app-layout>
     <div class="container">
-    <h1>Adicionar Combinação</h1>
+        <h1>Adicionar Combinação</h1>
         <form method="POST" action="{{ route('combinacoes.store') }}" enctype="multipart/form-data">
             @csrf
 
             <div>
                 <label for="cod_estilo">Código de Estilo:</label>
-                <input type="text" name="cod_estilo" id="cod_estilo">
+                <input type="number" name="cod_estilo" id="cod_estilo" required>
             </div>
 
             <div>
                 <label for="cod_tipocorporal">Código de Tipo Corporal:</label>
-                <input type="text" name="cod_tipocorporal" id="cod_tipocorporal">
+                <input type="number" name="cod_tipocorporal" id="cod_tipocorporal" required>
             </div>
 
             <div>
                 <label for="cod_ocasiao">Código de Ocasião:</label>
-                <input type="text" name="cod_ocasiao" id="cod_ocasiao">
+                <input type="number" name="cod_ocasiao" id="cod_ocasiao" required>
             </div>
 
             <div>
                 <label for="img_comb">Imagem da Combinação:</label>
-                <input type="file" name="img_comb" id="img_comb">
+                <input type="file" name="img_comb" id="img_comb" required>
             </div>
 
             <div>
                 <label for="link_comb">Link da Combinação:</label>
-                <input type="text" name="link_comb" id="link_comb">
+                <input type="text" name="link_comb" id="link_comb" required>
             </div>
 
             <div>
                 <label for="oca_esp">Ocasião Específica:</label>
-                <input type="text" name="oca_esp" id="oca_esp">
+                <input type="text" name="oca_esp" id="oca_esp" required>
             </div>
 
             <div>
