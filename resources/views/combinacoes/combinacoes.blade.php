@@ -15,8 +15,12 @@
             </div>
 
             <div>
-                <label for="cod_ocasiao">Código de Ocasião:</label>
-                <input type="number" name="cod_ocasiao" id="cod_ocasiao" required>
+                <label for="ocasiao_id">Selecione uma Ocasião:</label>
+                <select name="ocasiao_id" id="ocasiao_id" required>
+                    @foreach ($ocasioes as $ocasiao)
+                        <option value="{{ $ocasiao->id }}">{{ $ocasiao->ocasiao }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div>

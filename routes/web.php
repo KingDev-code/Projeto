@@ -29,7 +29,7 @@ Route::get('/select', function () {
 });
 
 
-Route::get('dashboard', [PecasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard', [PecasController::class, 'index', CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 /*Combinações
 Route::get('combinacoes', [CombinacaoController::class, 'create']);
@@ -40,12 +40,11 @@ Route::get('/combinacoes', function () {
 */
 
 // Rotas para Ocasião
-Route::get('/ocasioes', [OcasiaoController::class, 'index'])->name('ocasioes.index');
 Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
 Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
 
 // Rotas para Combinações
-Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
+Route::get('/combinacoes', [CombinacaoController::class, 'index', OcasiaoController::class, 'index'])->name('combinacoes.index');
 Route::get('/combinacoes/create', [CombinacaoController::class, 'create'])->name('combinacoes.create');
 Route::post('/combinacoes', [CombinacaoController::class, 'store'])->name('combinacoes.store');
 Route::get('/combinacoes/{combinacao}', [CombinacaoController::class, 'show'])->name('combinacoes.show');

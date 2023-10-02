@@ -12,12 +12,14 @@ class CombinacaoController extends Controller
     public function index()
     {
         $combinacoes = Combinacao::all();
-        return view('dashboard', compact('combinacoes'));
+        $ocasioes = Ocasiao::all(); // Ou qualquer outra lógica para buscar as ocasiões
+        return view('dashboard', compact('ocasioes', 'combinacoes'));
     }
 
     public function create()
     {
-        return view('combinacoes.combinacoes');
+        $ocasioes = Ocasiao::all();
+        return view('combinacoes.combinacoes', compact('ocasioes'));
     }
 
     public function store(Request $request)
@@ -25,7 +27,7 @@ class CombinacaoController extends Controller
         $request->validate([
             'cod_estilo' => 'required',
             'cod_tipocorporal' => 'required',
-            'cod_ocasiao' => 'required',
+            'ocasiao_id' => 'required', // Agora estamos usando "ocasiao_id" em vez de "cod_ocasiao"
             'img_comb' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'link_comb' => 'required',
             'oca_esp' => 'required',
@@ -33,11 +35,11 @@ class CombinacaoController extends Controller
 
         $combinacao = new Combinacao;
 
-        $combinacao->cod_estilo = $request->cod_estilo;
-        $combinacao->cod_tipocorporal = $request->cod_tipocorporal;
-        $combinacao->cod_ocasiao = $request->cod_ocasiao;
-        $combinacao->link_comb = $request->link_comb;
-        $combinacao->oca_esp = $request->oca_esp;
+        $combinacao->cod_estilo = $request->input('cod_estilo');
+        $combinacao->cod_tipocorporal = $request->input('cod_tipocorporal');
+        $combinacao->ocasiao_id = $request->input('ocasiao_id'); // Agora estamos usando "ocasiao_id"
+        $combinacao->link_comb = $request->input('link_comb');
+        $combinacao->oca_esp = $request->input('oca_esp');
 
         if ($request->hasFile('img_comb')) {
             $imagem = $request->file('img_comb');
