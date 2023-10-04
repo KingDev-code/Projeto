@@ -6,6 +6,7 @@ use App\Http\Controllers\CombinacaoController;
 use App\Http\Controllers\OcasiaoController;
 use App\Http\Controllers\TipoCorporalController;
 use App\Http\Controllers\PecasController;
+use App\Http\Controllers\EstiloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,9 +42,20 @@ Route::get('/combinacoes', function () {
 })->middleware(['auth', 'verified'])->name('combinacoes');
 */
 
+// Rotar para Estilos 
+Route::get('/estilos', [EstiloController::class, 'index'])->name('estilos.index');
+Route::get('/estilos/create', [EstiloController::class, 'create'])->name('estilos.create');
+Route::post('/estilos', [EstiloController::class, 'store'])->name('estilos.store');
+
 // Rotas para Ocasião
+Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
 Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
 Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
+Route::get('/ocasiao/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
+Route::get('/ocasiao/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
+Route::get('/ocasiao/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
+Route::get('/ocasiao/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
+Route::get('/ocasiao/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
 
 // Rotas para Tipos Corporal
 Route::get('/tiposcorporal/create', [TipoCorporalController::class, 'create'])->name('tiposcorporal.create');

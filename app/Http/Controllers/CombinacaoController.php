@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Combinacao; // Certifique-se de que está usando o namespace correto para o modelo
 use App\Models\Ocasiao;
+use App\Models\Estilo;
 use App\Models\TipoCorporal;
 use Illuminate\Support\Str;
 
@@ -12,17 +13,19 @@ class CombinacaoController extends Controller
 {
     public function index()
     {
+        $estilos = Estilo::all();
         $tiposcorporal = TipoCorporal::all();
         $combinacoes = Combinacao::all();
         $ocasioes = Ocasiao::all(); // Ou qualquer outra lógica para buscar as ocasiões
-        return view('dashboard', compact('ocasioes', 'combinacoes', 'tiposcorporal'));
+        return view('dashboard', compact('ocasioes', 'combinacoes', 'tiposcorporal', 'estilos'));
     }
 
     public function create()
     {
+        $estilos = Estilo::all();
         $ocasioes = Ocasiao::all();
         $tiposcorporal = TipoCorporal::all();
-        return view('combinacoes.combinacoes', compact('ocasioes', 'tiposcorporal'));
+        return view('combinacoes.combinacoes', compact('ocasioes', 'tiposcorporal', 'estilos'));
     }
 
     public function store(Request $request)

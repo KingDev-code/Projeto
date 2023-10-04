@@ -12,6 +12,7 @@ npm run dev
 
 php artisan serve
 
+php artisan storage:link
 
 Mmandar pro GitHub
 
@@ -45,5 +46,3 @@ git push origin v2
 
 
 
-
-php artisan storage:link

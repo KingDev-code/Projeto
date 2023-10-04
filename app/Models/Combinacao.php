@@ -25,4 +25,9 @@ class Combinacao extends Model
     {
         return $this->belongsTo(TipoCorporal::class, 'cod_tipocorporal');
     }
+
+    public function estilo()
+    {
+        return $this->belongsTo(Estilo::class, 'cod_estilo');
+    }
 }

@@ -4,6 +4,7 @@
         <h1><a href="{{ route('combinacoes.create') }}">Adicionar Combinação</a></h1>
         <h1><a href="{{ route('ocasioes.create') }}">Adicionar Ocasião</a></h1>
         <h1><a href="{{ route('tiposcorporal.create') }}">Adicionar Tipo Corporal</a></h1>
+        <h1><a href="{{ route('estilos.create') }}">Adicionar Estilo</a></h1>
 
         <!-- Lista de Ocasiões -->
         <h2>Ocasiões</h2>
@@ -38,8 +39,8 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $combinacao->id }}</td>
-                                    <td>{{ $combinacao->cod_estilo }}</td>
-                                    <td>{{ $combinacao->tipoCorporal->tipocorporal }}</td> <!-- Mostrar o tipo corporal -->
+                                    <td>{{ $combinacao->estilo->estilo }}</td>
+                                    <td>{{ $combinacao->tipocorporal->tipocorporal }}</td> <!-- Mostrar o tipo corporal -->
                                     <td>{{ $combinacao->oca_esp }}</td>
                                     <td><img src="{{ asset('storage/' . $combinacao->img_comb) }}" alt="Imagem da combinação" width="300" height="300"></td>
                                 </tr>

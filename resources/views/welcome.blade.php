@@ -39,9 +39,9 @@
     <div id="navbar-bottom">
   <div class="linha"></div>
   <a class="active" href="#produtos">TODOS OS PRODUTOS</a>
-  <a href="#executivos">EXECUTIVOS</a>
+  <a href="">EXECUTIVOS</a>
   <a href="#esportivos">ESPORTIVOS</a>
-  <a href="#comemoracoes">COMEMORAÇÕES</a>
+  <a href="{{ route('comemoracoes') }}">COMEMORAÇÕES</a>
   <a href="#diaadia">DIA A DIA</a>
   <a href="#modapraia">MODA PRAIA</a>
   <div class="topnav">

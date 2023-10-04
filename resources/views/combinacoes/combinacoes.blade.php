@@ -6,7 +6,11 @@
 
             <div>
                 <label for="cod_estilo">Código de Estilo:</label>
-                <input type="number" name="cod_estilo" id="cod_estilo" required>
+                <select name="cod_estilo" id="cod_estilo" required>
+                    @foreach ($estilos as $estilo)
+                        <option value="{{ $estilo->id }}">{{ $estilo->estilo }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div>
