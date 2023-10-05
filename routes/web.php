@@ -7,6 +7,7 @@ use App\Http\Controllers\OcasiaoController;
 use App\Http\Controllers\TipoCorporalController;
 use App\Http\Controllers\PecasController;
 use App\Http\Controllers\EstiloController;
+use App\Http\Controllers\FavoritoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,11 @@ Route::get('/combinacoes', function () {
 })->middleware(['auth', 'verified'])->name('combinacoes');
 */
 
-// Rotar para Estilos 
+// Rotar para Favoritos 
+Route::post('/favoritar/{combinacao}', [FavoritoController::class, 'favoritar'])->name('combinacoes.favoritar');
+Route::post('/desfavoritar/{combinacao}', [FavoritoController::class, 'desfavoritar'])->name('combinacoes.desfavoritar');
+
+// Rotas para Estilos 
 Route::get('/estilos', [EstiloController::class, 'index'])->name('estilos.index');
 Route::get('/estilos/create', [EstiloController::class, 'create'])->name('estilos.create');
 Route::post('/estilos', [EstiloController::class, 'store'])->name('estilos.store');

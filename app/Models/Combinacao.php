@@ -11,6 +11,11 @@ class Combinacao extends Model
         'cod_estilo', 'cod_tipocorporal', 'cod_ocasiao', 'img_comb', 'link_comb', 'oca_esp',
     ];
 
+    public function favoritadoPor()
+    {
+        return $this->belongsToMany(User::class, 'favoritos', 'combinacao_id', 'user_id');
+    }
+
     public function pecas()
     {
         return $this->hasMany(Peca::class, 'cod_comb');

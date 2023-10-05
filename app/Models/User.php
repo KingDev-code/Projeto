@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function favoritos()
+    {
+        return $this->belongsToMany(Combinacao::class, 'favoritos', 'user_id', 'combinacao_id');
+    }
 }
