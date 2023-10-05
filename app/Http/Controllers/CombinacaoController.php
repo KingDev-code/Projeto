@@ -56,6 +56,6 @@ class CombinacaoController extends Controller
 
         $combinacao->save();
 
-        return redirect('/')->with('success', 'Combinação adicionada com sucesso!');
+        return redirect('dashboard')->with('success', 'Combinação adicionada com sucesso!');
     }
 }

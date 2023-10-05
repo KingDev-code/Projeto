@@ -29,6 +29,6 @@ class EstiloController extends Controller
         
         $estilo->save();
         
-        return redirect('/')->with('success', 'Estilo adicionado com sucesso!');
+        return redirect('dashboard')->with('success', 'Estilo adicionado com sucesso!');
     }
 }

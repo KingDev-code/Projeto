@@ -1,5 +1,5 @@
 <x-app-layout>
-<div class="container">
+    <div class="container">
         <h1>Ocasião: {{ $ocasiao->ocasiao }}</h1>
         
         <h2>Combinações</h2>

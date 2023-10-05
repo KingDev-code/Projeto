@@ -30,6 +30,6 @@ class TipoCorporalController extends Controller
             'icone' => $request->input('icone'),
         ]);
 
-        return redirect('/')->with('success', 'Tipo Corporal adicionado com sucesso!');
+        return redirect('dashboard')->with('success', 'Tipo Corporal adicionado com sucesso!');
     }
 }

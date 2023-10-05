@@ -29,7 +29,7 @@ class OcasiaoController extends Controller
         
         $ocasiao->save();
         
-        return redirect('/')->with('success', 'Ocasião adicionada com sucesso!');
+        return redirect('dashboard')->with('success', 'Ocasião adicionada com sucesso!');
     }
 
     public function executivos()

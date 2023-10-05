@@ -48,6 +48,6 @@ class PecasController extends Controller
 
         $peca->save();
         
-        return redirect('/')->with('success', 'Combinação adicionada com sucesso!');
+        return redirect('dashboard')->with('success', 'Combinação adicionada com sucesso!');
     }
 }
