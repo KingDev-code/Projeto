@@ -19,8 +19,8 @@ return new class extends Migration
 
             $table->unique(['user_id', 'combinacao_id']);
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('combinacao_id')->references('id')->on('combinacoes')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('combinacao_id')->references('id')->on('combinacaos');
         });
     }
 

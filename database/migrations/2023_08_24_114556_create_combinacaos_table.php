@@ -13,13 +13,18 @@ return new class extends Migration
     {
         Schema::create('combinacaos', function (Blueprint $table) {
             $table->id();
-            $table->integer('cod_estilo');
-            $table->integer('cod_tipocorporal');
-            $table->integer('cod_ocasiao');
+            $table->unsignedBigInteger('cod_estilo');
+            $table->unsignedBigInteger('cod_tipocorporal');
+            $table->unsignedBigInteger('cod_ocasiao');
             $table->string('img_comb');
             $table->string('link_comb');
             $table->string('oca_esp');
             $table->timestamps();
+
+            // Chaves estrangeiras
+            $table->foreign('cod_estilo')->references('id')->on('estilos');
+            $table->foreign('cod_tipocorporal')->references('id')->on('tiposcorporal');
+            $table->foreign('cod_ocasiao')->references('id')->on('ocasioes');
         });
     }
 
