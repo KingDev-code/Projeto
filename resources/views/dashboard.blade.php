@@ -1,11 +1,11 @@
 <x-app-layout>
     <div class="container">
-        <h1><a href="{{ route('pecas.create') }}">Adicionar Peça</a></h1>
-        <h1><a href="{{ route('combinacoes.create') }}">Adicionar Combinação</a></h1>
         <h1><a href="{{ route('ocasioes.create') }}">Adicionar Ocasião</a></h1>
-        <h1><a href="{{ route('tiposcorporal.create') }}">Adicionar Tipo Corporal</a></h1>
         <h1><a href="{{ route('estilos.create') }}">Adicionar Estilo</a></h1>
-
+        <h1><a href="{{ route('tiposcorporal.create') }}">Adicionar Tipo Corporal</a></h1>
+        <h1><a href="{{ route('combinacoes.create') }}">Adicionar Combinação</a></h1>
+        <h1><a href="{{ route('pecas.create') }}">Adicionar Peça</a></h1>
+        
         <!-- Lista de Ocasiões -->
         <h2>Ocasiões</h2>
         <table>
