@@ -1,0 +1,131 @@
+@media (max-width: 871px) {
+/* FILTRO - filtragem das combinações listadas */
+/*FILTRO*/
+.filtro {
+    grid-area: filtro;
+    border-right: none;
+    text-align: left;
+    justify-content: left;
+}
+
+.align-circle {
+    padding-top: 10px;
+}
+
+.circle {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: auto;
+  }
+
+  .circle span {
+    font-size: 2em; /* Tamanho desejado*/
+    cursor: pointer;
+  }
+  
+      /*USUÁRIO do Menu Lateral*/
+      .usu{
+        text-decoration: none;
+        font-size: 0.800em; /* Tamanho desejado*/
+        text-transform: uppercase;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .usu p{
+        text-decoration: none;
+        font-size: 0.800em; /* Tamanho desejado*/
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+        padding: 0px;
+      }
+
+      .menu {
+        justify-content: center;
+        padding-left: 0px;
+      }
+  
+      .menu a{
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1em; /* Tamanho desejado*/
+        padding: 0px;
+        white-space: break-word; /* ou qualquer outro valor adequado */
+     }
+  
+     .top-line {
+        display: none;
+     }
+
+    /*CONTENT*/
+    .content {
+    grid-area: content;
+    padding: 10px;
+    justify-content: center;
+    }
+    
+    .content .section-title {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin: 0 auto;
+    text-transform: uppercase;
+    padding: 20px 0px;
+    }
+    
+    .combinacoes-looks {
+        padding: 10px;
+    }
+    
+    .forms {
+      text-transform: uppercase;
+      padding: 5px;
+      border-radius: 10px;
+    }
+    
+    .forms label {
+        font-size: 1em;
+        display: block; /* Faz com que os labels ocupem toda a largura do container */
+        margin-bottom: 25px; /* Adiciona espaço entre os labels */
+        font-weight: 600;
+    }
+    
+    .forms input[type="text"] {
+      width: 225px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: normal;
+    }
+    
+    .forms input[type="text"]::placeholder{
+      color: black;
+      font-size: 1em;
+    }
+    
+    .forms label .fone {
+        width: 190px;
+    }
+    
+    .forms button {
+      width: 50%;
+      margin: 0 auto;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.6em; /* Tamanho desejado*/
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+
+}

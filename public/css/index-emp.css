@@ -1,0 +1,890 @@
+body, p, h1, ul, li, blockquote, span {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif, Georgia, serif;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    outline: none; /* Remove a marcação de foco (a marcação azul) */
+    color: black;
+  }
+
+  span {
+    border: none;
+    background: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* GRID GERAL */
+  .estrutura {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-areas:
+    "pre-header"
+    "header"
+    "slideshow"
+    "combinacoes"
+    "tiposcorporais"
+    "estilos"
+    "sobrenos"
+    "criadores"
+    "footer"
+    "pos-footer"
+    ;
+  }
+
+  #menu {
+    overflow: hidden;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+/*PRE-HEADER*/
+.pre-header {
+grid-area: pre-header;
+background-color: rgba(0, 0, 0);
+padding: 5px;
+padding-right: 134.8px;
+color: rgba(255, 255, 255);
+text-align: center;
+font-size:1.000em;
+}
+
+/*HEADER*/
+.header {
+  grid-area: header;
+  background:rgba(255, 255, 255);
+  padding: 20px 130px;
+  transition: 0.4s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+   /* HEADER - Parte de cima*/
+.menu-norte{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  justify-items: center;
+}
+
+   /* HEADER - Parte debaixo*/
+.menu-sul{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+    /* HEADER - Logo */
+.logo {
+  max-width: 250px;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+
+    /* HEADER - Botões / Ícones Laterais */
+.header i + i  {
+  padding: 5px;
+}
+
+.button-icone {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.button-icone:hover {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+    /* HEADER - Linha */
+.linha-menu {
+  border-bottom: 2px solid rgba(230, 230, 230, 100);
+}
+
+    /* HEADER - Itens */
+.menu-itens ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-itens a {
+  display: block;
+  padding: 10px;
+  color: rgba(0, 0, 0);
+  font-size: 1.125em;
+  transition: 0.1s;
+
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.menu-itens a:hover {
+  color: rgba(0, 0, 0);
+  font-weight: 600;
+  border-top-style: solid;
+}
+
+.menu-itens .active {
+  color: rgba(0, 0, 0);
+  font-weight: 600;
+  border-top-style: solid;
+}
+
+.header li {
+  margin-right: 30px;
+}
+
+    /* HEADER - Barra de Pesquisa */
+.search-input {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0);
+  font-weight: normal;
+  font-size: 1.125em;
+}
+
+.search-button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.search-button:hover {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+  /*SLIDESHOW */
+  .slideshow {
+    grid-area: slideshow;
+    position: relative;
+    margin: 0 auto;
+    z-index: 0;
+   padding-top: 16%;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    font-size: 2.550em; /* Tamanho desejado dos ícones */
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    color: rgba(255, 255, 255);
+  }
+  .prev {
+    left: 2%;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 2%;
+  } 
+  
+  /* On hover, add a grey background color */
+  .prev:hover, .next:hover {
+    color: rgba(255, 255, 255);
+  }
+  
+  .square {
+    display: inline-block;
+    cursor: pointer;
+    width: 0.700em; /* Tamanho desejado dos ícones */
+    height: 0.700em; /* Tamanho desejado dos ícones */
+    background-color: rgba(255, 255, 255);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .square.active {
+    background-color: rgba(0, 0, 0);
+  }
+  
+  .slide-pagination {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+  }
+
+  /*COMBINAÇÕES*/
+  .combinacoes {
+    grid-area: combinacoes;
+    background:rgba(255, 255, 255);
+    max-width: 1350px;
+    margin: 60px auto;
+  }
+
+  .combinacoes .logo-comb {
+    max-width: 180px;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  .combinacoes .title-comb {
+    color: rgba(0, 0, 0);
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0 auto;
+    justify-content: flex-start;
+    text-transform: uppercase;
+  }
+
+  .combinacoes-looks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #icone_ {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.550em; /* Tamanho desejado dos ícones */
+  }
+
+  .look1 {
+    max-width: 680px;
+    cursor: pointer;
+  }
+
+  .look2 {
+    max-width:680px;
+    cursor: pointer;
+  }
+
+  #peca1 {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  #peca2 {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  #peca3 {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  #peca4 {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  #peca1-look2 {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  #peca2-look2 {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  #peca3-look2 {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  .secao-look1-p2 {
+    align-self: center;
+    display: flex;
+  }
+
+  .dot-container {
+    /*align-self: center;*/
+    padding-top: 75px;
+  }
+
+  #desc_1-look1 {
+    font-size: 0.900em; /* Tamanho desejado dos ícones */
+    padding: 10px;
+    max-width: 150px;
+    margin-left: 15px;
+  }
+  
+  #desc_2-look1 {
+    font-size: 0.900em; /* Tamanho desejado dos ícones */
+    padding: 10px;
+    max-width: 150px;
+    margin-left: 15px;
+  }
+  
+  #desc_3-look1 {
+    font-size: 0.900em; /* Tamanho desejado dos ícones */
+    padding: 10px;
+    max-width: 150px;
+    margin-left: 15px;
+  }
+
+  #desc_4-look1 {
+    font-size: 0.900em; /* Tamanho desejado dos ícones */
+    padding: 10px;
+    max-width: 150px;
+    margin-left: 15px;
+  }
+  
+  .secao-look2 {
+    align-self: center;
+    display: flex;
+    padding: 20px;
+  }
+
+  .dotm-container {
+    padding-top: 75px;
+  }
+
+  #desc_1-look2 {
+    font-size: 0.900em; /* Tamanho desejado dos ícones */
+    padding: 10px;
+    max-width: 150px;
+    margin-left: 15px;
+  }
+
+  #desc_2-look2 {
+    font-size: 0.900em; /* Tamanho desejado dos ícones */
+    padding: 10px;
+    max-width: 150px;
+    margin-left: 15px;
+  }
+
+  #desc_3-look2 {
+    font-size: 0.900em; /* Tamanho desejado dos ícones */
+    padding: 10px;
+    max-width: 150px;
+    margin-left: 15px;
+  } 
+
+  .icon-overlay1 {
+    display: relative;
+    position: absolute;
+    transform: translate(20%, -2240%);
+    background-color: rgba(255, 87, 26, 1); 
+    border-radius: 5px;
+  }
+
+  .ocasiao1-card {
+    display: relative;
+    position: absolute;
+    font-weight: 600;
+    padding: 5px;
+    transform: translate(-28%, -2470%) rotate(-90deg);
+    background-color: rgba(123, 123, 123, 1); 
+    border-radius: 5px;  
+  }
+
+  .estilo1-card {
+    display: relative;
+    position: absolute;
+    font-weight: 600;
+    padding: 5px;
+    transform: translate(5%, -235%);
+    background-color: rgba(62, 126, 164, 1);
+    border-radius: 5px;
+  }
+
+  .icon-overlay2 {
+    display: relative;
+    position: absolute;
+    transform: translate(1140%, -2120%);
+    background-color: rgba(242, 15, 15, 1); 
+    border-radius: 5px;
+  }
+
+  .ocasiao2-card {
+    display: relative;
+    position: absolute;
+    font-weight: 600;
+    padding: 5px;
+    transform: translate(305%, -2470%) rotate(-90deg);
+    background-color: rgba(123, 123, 123, 1); 
+    border-radius: 5px; 
+  }
+
+  .estilo2-card { 
+    display: relative;
+    position: absolute;
+    font-weight: 600;
+    padding: 5px;
+    transform: translate(340%, -235%);
+    background-color:  rgba(255, 187, 72, 1); 
+    border-radius: 5px;
+  }
+
+/* Seção 2 - Combinação e suas peças */
+/* Slideshow Combinação e peças = look1*/
+/* slideshow */
+/* pontos de navegação - geral */
+.dot {
+font-size: 1.550em; /* Tamanho desejado dos ícones */
+margin: 5px 0;
+display: flex;
+transition: 0.6s ease;
+cursor: pointer;
+}
+
+/* quadrados de navegação lateral */
+#dot_quad {
+border: 2px solid black;
+width: 18px;
+height: 18px;
+}
+
+#dot_quad i {
+transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#dot_quad.active {
+background-color: rgba(0, 0, 0);
+}
+
+#dot_quad.hover i,
+#dot_quad.clicked i {
+transform: scale(1.2);
+color: white;
+}
+
+/* setas de navegação */
+.prevc,
+.nextc {
+cursor: pointer;
+color: rgba(0, 0, 0);
+font-size: 1.250em; /* Tamanho desejado dos ícones */
+transition: 0.6s ease;
+background-color: transparent;
+text-decoration: none;
+border: none;
+}
+
+.prevc:active,
+.nextc:active {
+    background-color: transparent; /* Define o fundo como transparente ou outra cor desejada */
+    text-decoration: none;
+    color: rgba(0, 0, 0);
+    /* Outros estilos que você deseja aplicar aos ícones no estado :active */
+}
+
+.prevc:hover,
+.nextc:hover {
+    background-color: transparent; /* Define o fundo como transparente ou outra cor desejada */
+    text-decoration: none;
+    color: rgba(0, 0, 0);
+    /* Outros estilos que você deseja aplicar aos ícones no estado :active */
+}
+
+.prevc:checked,
+.nextc:checked {
+    background-color: transparent; /* Define o fundo como transparente ou outra cor desejada */
+    text-decoration: none;
+    color: rgba(0, 0, 0);
+    /* Outros estilos que você deseja aplicar aos ícones no estado :active */
+}
+
+
+/* ícones de navegação das peças */
+.dot-container{
+margin: 0 auto;
+}
+
+/* Slideshow Combinação e peças = look2*/
+/* slideshow */
+/* pontos de navegação - geral */
+.dotm {
+font-size: 1.550em; /* Tamanho desejado dos ícones */
+margin: 5px 0;
+display: flex;
+transition: 0.6s ease;
+cursor: pointer;
+}
+
+/* quadrados de navegação lateral */
+#dotm_quad {
+border: 2px solid rgba(0, 0, 0);
+width: 18px;
+height: 18px;
+}
+
+#dotm_quad i {
+transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#dotm_quad.active {
+background-color: rgba(0, 0, 0);
+}
+
+#dotm_quad.hover i,
+#dotm_quad.clicked i {
+transform: scale(1.2);
+color: white;
+}
+
+/* setas de navegação */
+.prevcm,
+.nextcm {
+cursor: pointer;
+color: #000000;
+font-size: 1.250em; /* Tamanho desejado dos ícones */
+transition: 0.6s ease;
+}
+
+.prevcm:active,
+.nextcm:active {
+    background-color: transparent; /* Define o fundo como transparente ou outra cor desejada */
+    text-decoration: none;
+    color: rgba(0, 0, 0);
+    /* Outros estilos que você deseja aplicar aos ícones no estado :active */
+}
+
+.prevcm:hover,
+.nextcm:hover {
+    background-color: transparent; /* Define o fundo como transparente ou outra cor desejada */
+    text-decoration: none;
+    color: rgba(0, 0, 0);
+    /* Outros estilos que você deseja aplicar aos ícones no estado :active */
+}
+
+.prevcm:checked,
+.nextcm:checked {
+    background-color: transparent; /* Define o fundo como transparente ou outra cor desejada */
+    text-decoration: none;
+    color: rgba(0, 0, 0);
+    /* Outros estilos que você deseja aplicar aos ícones no estado :active */
+}
+
+/* ícones de navegação das peças */
+.dotm-container{
+margin: 0 auto;
+}
+
+  /*TIPOS CORPORAIS*/
+  .tiposcorporais {
+      grid-area: tiposcorporais;
+      background:rgba(255, 255, 255);
+
+      max-width: 1350px;
+      margin: 60px auto;
+  }
+
+  .tiposcorporais h2 {
+    color: rgba(0, 0, 0);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .title-tc1 {
+    font-size: 3em;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .title-tc2 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .titulo-tc {
+    font-size: 1em;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .corpos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tipo {
+    max-width: 235px;
+    transition: opacity 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    flex: 1;
+    flex-basis: auto;
+  }
+
+  #tipo-tc2, 
+  #tipo-tc4 {
+    margin-top: 100px;
+  }
+
+  .button-tc {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0);
+    border: none;
+    text-decoration: none;
+    color: white;
+    font-size: 0.500em;
+    padding: 15px 25px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .img_tc {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .img_tc:hover {
+    transform: scale(1.1);
+  }
+
+  /*ESTILOS*/
+  .estilos {
+    grid-area: estilos;
+    background:rgba(255, 255, 255);
+
+    max-width: 1350px;
+    margin: 60px auto;
+  }
+
+  .estilos h2 {
+    color: rgba(0, 0, 0);
+    text-transform: uppercase;
+  }
+
+  .title-est {
+    font-size: 3em;
+    text-align: center;
+    font-weight: 900;
+  }
+
+  .titulo-e {
+    font-size: 1.500em;
+    font-weight: 700;
+  }
+
+  .estilosuniv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .estilo {
+    max-width: 160px;
+    transition: opacity 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    flex: 1;
+    flex-basis: auto;
+  }
+
+  #estilo-2, 
+  #estilo-4,
+  #estilo-6 {
+    margin-top: 100px;
+  }
+
+  .img_e {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .img_e:hover {
+    transform: scale(1.1);
+  }
+
+  /*SOBRE NÓS*/
+.sobrenos {
+  grid-area: sobrenos;
+  padding: 10px 50px;
+}
+
+.row {
+    display: flex; /* Usar flexbox para manter a mesma altura */
+    flex-wrap: wrap; /* Permitir que os quadros quebrem em uma nova linha quando o espaço for insuficiente */
+}
+
+.center {
+    text-align: center;
+    padding: 32px 0;
+}
+
+.col {
+    width: 25%;
+    padding: 16px;
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+    display: flex; /* Usar flexbox para alinhar o conteúdo verticalmente */
+    flex-direction: column; /* Alinhar o conteúdo verticalmente */
+}
+
+.light-grey {
+    background-color: #f2f2f2;
+    color: rgba(0, 0, 0);
+}
+
+.grey {
+    background-color: #ddd;
+    color: rgba(0, 0, 0);
+}
+
+.dark-grey {
+    background-color: #666;
+    color: #fff;
+}
+
+.black {
+    background-color: rgba(0, 0, 0);
+    color: #fff;
+}
+
+.logo-slogan {
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+
+.sobrenos h3 {
+    font-size: 2em;
+}
+
+.desc-sn {
+    font-size: 1.200em;
+    line-height: 1.4;
+}
+  
+  /*CRIADORES*/
+  .criadores {
+    grid-area: criadores;
+    padding: 100px;
+  }
+
+  .criad {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+.criador {
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px;
+    background-color: #f2f2f2;
+}
+
+.criadores img {
+    max-width: 100%;
+}
+
+.criadores button {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 20px 120px;
+    margin-top: 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.desc {
+    max-width: 100%;
+    font-size: 1em;
+    text-align: left;
+}
+
+.criadores h3 {
+    text-align: left;
+}
+
+.title-c {
+    color: rgba(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 800;
+}
+
+  /*FOOTER*/
+  .footer {
+    grid-area: footer;
+    padding: 45px;
+    background: rgba(30, 30, 30);
+  }
+
+  .container-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer h2{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none; /* Remover o sublinhado */
+    font-size: 1em;
+    font-weight: 500;
+    padding: 30px;
+  }
+
+  .footer a {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none; /* Remove sublinhado padrão de links */
+    outline: none; /* Remove a marcação de foco (a marcação azul) */
+  }
+
+  .linha-footer {
+    padding: 20px;
+    border-bottom: 2px solid rgba(230, 230, 230, 100);
+  }
+  
+  .footer img {
+    max-width: 250px;
+    justify-items: center;
+    padding: 20px;
+  }
+
+  /*POS-FOOTER*/
+  .pos-footer {
+    grid-area: pos-footer;
+    display: grid;
+    grid-row: 2fr;
+    padding: 10px;
+    text-align: center;
+    color: black;
+  }
+  
+  .pos-footer .row1{
+    text-align: center;
+    text-justify: center;
+  }
+
+  .pos-footer .row2{
+    text-align: center;
+    text-justify: center;
+  }
+
+.row1,
+.row2 {
+    padding: 10px;
+}

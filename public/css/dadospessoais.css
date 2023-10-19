@@ -1,0 +1,430 @@
+body, p, h1, ul, li, blockquote, span {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif, Georgia, serif;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    outline: none; /* Remove a marcação de foco (a marcação azul) */
+    color: black;
+  }
+
+  span {
+    border: none;
+    background: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* GRID GERAL */
+  .estrutura {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-areas:
+    "pre-header"
+    "header"
+    "content"
+    "footer"
+    "pos-footer"
+    ;
+  }
+
+  #menu {
+    overflow: hidden;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+/*PRE-HEADER*/
+.pre-header {
+grid-area: pre-header;
+background-color: rgba(0, 0, 0);
+padding: 5px;
+padding-right: 134.8px;
+color: rgba(255, 255, 255);
+text-align: center;
+font-size:1.000em;
+}
+
+/*HEADER*/
+.header {
+  grid-area: header;
+  background:rgba(255, 255, 255);
+  padding: 20px 130px;
+  transition: 0.4s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+   /* HEADER - Parte de cima*/
+.menu-norte{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  justify-items: center;
+}
+
+   /* HEADER - Parte debaixo*/
+.menu-sul{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+    /* HEADER - Logo */
+.logo {
+  max-width: 250px;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+
+    /* HEADER - Botões / Ícones Laterais */
+.header i + i  {
+  padding: 5px;
+}
+
+.button-icone {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.button-icone:hover {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+    /* HEADER - Linha */
+.linha-menu {
+  border-bottom: 2px solid rgba(230, 230, 230, 100);
+}
+
+    /* HEADER - Itens */
+.menu-itens ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-itens a {
+  display: block;
+  padding: 10px;
+  color: rgba(0, 0, 0);
+  font-size: 1.125em;
+  transition: 0.1s;
+
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.menu-itens a:hover {
+  color: rgba(0, 0, 0);
+  font-weight: 600;
+  border-top-style: solid;
+}
+
+.header li {
+  margin-right: 30px;
+}
+
+    /* HEADER - Barra de Pesquisa */
+.search-input {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0);
+  font-weight: normal;
+  font-size: 1.125em;
+}
+
+.search-button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.search-button:hover {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+/* Indicador */
+#indicator {
+text-align: left;
+font-size: 1em;
+text-transform: uppercase;
+padding: 10px;
+}
+
+#indicator ul {
+list-style-type: none;
+align-items: center;
+display: flex;
+flex-wrap: wrap;
+}
+
+#indicator a {
+text-decoration: none;
+padding: 5px;
+text-transform: uppercase;
+font-family: 'Inter', sans-serif;
+}
+
+#arrow {
+border-top: 4px solid transparent;
+border-bottom: 4px solid transparent;
+border-left: 4px solid #333;
+}
+
+/* FILTRO - filtragem das combinações listadas */
+/*FILTRO*/
+.filtro {
+    grid-area: filtro;
+    background-color: #ffffff;
+    border-right: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+.align-circle {
+    padding-top: 60px;
+}
+
+.circle {
+    width: 10em;
+    height: 10em;
+    background-color: rgba(223, 215, 204, 0.20);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: auto;
+  }
+
+  .circle span {
+    font-size: 3em; /* Tamanho desejado*/
+    cursor: pointer;
+  }
+  
+      /*USUÁRIO do Menu Lateral*/
+      .usu{
+        color: black;
+        text-decoration: none;
+        font-size: 0.900em; /* Tamanho desejado*/
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .usu h2{
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 2em; /* Tamanho desejado*/
+        padding: 20px;
+      }
+
+      .usu p{
+        color: black;
+        text-decoration: none;
+        font-size: 0.900em; /* Tamanho desejado*/
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px;
+      }
+  
+      .menu a{
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1em; /* Tamanho desejado*/
+        padding: 20px;
+        white-space: break-word; /* ou qualquer outro valor adequado */
+     }
+  
+     .top-line {
+      padding: 10px;
+      border-bottom:2px solid rgba(128, 128, 128, 0.5);
+     }
+ 
+
+
+/*CONTENT*/
+.content {
+grid-area: content;
+padding: 20px;
+display: flex;
+flex-wrap: wrap;
+padding-top: 16%;
+}
+
+.content .section-title {
+color: rgba(0, 0, 0);
+font-size: 3.600em;
+font-weight: 400;
+margin: 0 auto;
+text-transform: uppercase;
+padding: 30px 0px;
+}
+
+.combinacoes-looks {
+    padding: 40px;
+}
+
+.forms {
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.forms label {
+    font-size: 1.500em;
+    display: block; /* Faz com que os labels ocupem toda a largura do container */
+    margin-bottom: 30px; /* Adiciona espaço entre os labels */
+    font-weight: 600;
+}
+
+.forms input[type="text"] {
+  width: 380px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(223, 215, 204, 0.20);
+  font-size: 1em;
+  color: black;
+  font-weight: normal;
+}
+
+.forms input[type="text"]::placeholder{
+  color: black;
+  font-size: 1em;
+}
+
+.forms label .fone {
+    width: 335px;
+}
+
+.forms button {
+  width: 50%;
+  margin: 0 auto;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-size: 1em; /* Tamanho desejado*/
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.forms button:hover {
+  background-color: rgb(44, 44, 44);
+}
+
+  /*FOOTER*/
+  .footer {
+    grid-area: footer;
+    padding: 45px;
+    background: rgba(30, 30, 30);
+  }
+
+  .container-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer h2{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none; /* Remover o sublinhado */
+    font-size: 1em;
+    font-weight: 500;
+    padding: 30px;
+  }
+
+  .footer a {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none; /* Remove sublinhado padrão de links */
+    outline: none; /* Remove a marcação de foco (a marcação azul) */
+  }
+
+  .linha-footer {
+    padding: 20px;
+    border-bottom: 2px solid rgba(230, 230, 230, 100);
+  }
+  
+  .footer img {
+    max-width: 250px;
+    justify-items: center;
+    padding: 20px;
+  }
+
+  /*POS-FOOTER*/
+  .pos-footer {
+    grid-area: pos-footer;
+    display: grid;
+    grid-row: 2fr;
+    padding: 10px;
+    text-align: center;
+    color: black;
+  }
+  
+  .pos-footer .row1{
+    text-align: center;
+    text-justify: center;
+  }
+
+  .pos-footer .row2{
+    text-align: center;
+    text-justify: center;
+  }
+
+.row1,
+.row2 {
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+/*CONTENT*/
+.content {
+  padding: 0px;
+}
+
+#favoritos_icon {
+   margin-top: 20px;
+}
+
+.content .section-title {
+font-size: 2em;
+}
+
+}

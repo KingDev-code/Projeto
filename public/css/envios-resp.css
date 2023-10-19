@@ -1,0 +1,17 @@
+@media (max-width: 871px) {
+    /*CONTENT*/
+    .content {
+    grid-area: content;
+    padding: 10px;
+    justify-content: center;
+    }
+    
+    .content .section-title {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin: 0 auto;
+    text-transform: uppercase;
+    padding: 20px 0px;
+    }
+  
+}

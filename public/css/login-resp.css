@@ -1,0 +1,58 @@
+@media (max-width: 768px) {
+    .content {
+    padding: 60px 5px;
+    justify-self: center;
+    }
+    
+    .content .section-title {
+        font-size: 2.5em;
+        padding: 15px 0px;
+    }
+    
+    .content .logo-comb {
+        max-width: 130px;
+    }
+    
+    .logar {
+        padding: 15px;
+    }
+    
+    .form {
+      text-transform: uppercase;
+      border-radius: 10px;
+    }
+    
+    .form label {
+        font-size: 1.2em;
+        margin-bottom: 0px; /* Adiciona espaço entre os labels */
+    }
+    
+    .form input {
+        padding: 6px 6px;
+        font-size: 0.8em;
+    }
+    
+    .form input::placeholder{
+        font-size: 0.8em;
+    }
+    
+    .form button[type="submit"] {
+        font-size: 1em; /* Tamanho desejado*/
+    }
+
+    .button {
+        padding: 0px;
+    }
+    
+    .form li {
+        padding: 0px;
+    }
+    
+    .form .senha {
+        font-size: 0.6em;
+    }
+    
+    .form .cad {
+        font-size: 0.6em;
+    }
+}

@@ -1,0 +1,272 @@
+/* media queries */
+
+@media (max-width: 768px) {
+        .estrutura {
+          grid-template-columns: 100%;
+          grid-template-areas:
+          "pre-header"
+          "header"
+          "slideshow"
+          "combinacoes"
+          "tiposcorporais"
+          "estilos"
+          "sobrenos"
+          "criadores"
+          "footer"
+          "pos-footer"
+          ;
+        }
+
+      /* Seção 2 - Combinação e suas peças */
+      .combinacoes {
+        margin: 30px;
+      }
+          .combinacoes .logo-comb {
+            max-width: 90px;
+          }
+          
+          .combinacoes .title-comb {
+            font-size: 2.5em;
+          }
+      
+          .look1 {
+            max-width: 250px;
+          }
+      
+          .look2 {
+            max-width: 250px;
+          }
+
+          #peca1 {
+            max-width: 150px;
+            padding: 10px;
+          }
+      
+          #peca2 {
+            max-width: 150px;
+            padding: 10px;
+          }
+      
+          #peca3 {
+            max-width: 150px;
+            padding: 10px;
+          }
+
+          #peca4 {
+            max-width: 150px;
+            padding: 10px;
+          }
+
+          .dot-container {
+            padding-top: 40px;
+          }
+      
+          #peca1-look2 {
+            max-width: 150px;
+            padding: 10px;
+          }
+      
+          #peca2-look2 {
+            max-width: 150px;
+            padding: 10px;
+          }
+      
+          #peca3-look2 {
+            max-width: 150px;
+            padding: 10px;
+          }
+
+          #desc_1-look1 {
+            font-size: 0.650em; /* Tamanho desejado */
+            padding: 10px;
+            max-width: 125px;
+            margin-left: 15px;
+          }
+          
+          #desc_2-look1 {
+            font-size: 0.650em; /* Tamanho desejado */
+            padding: 10px;
+            max-width: 125px;
+            margin-left: 15px;
+          }
+          
+          #desc_3-look1 {
+            font-size: 0.650em; /* Tamanho desejado */
+            padding: 10px;
+            max-width: 125px;
+            margin-left: 15px;
+          }
+
+          #desc_4-look1 {
+            font-size: 0.650em; /* Tamanho desejado */
+            padding: 10px;
+            max-width: 125px;
+            margin-left: 15px;
+          }
+
+          .dot-container {
+            padding-top: 40px;
+          }
+      
+          #desc_1-look2 {
+            font-size: 0.650em; /* Tamanho desejado */
+            padding: 10px;
+            max-width: 125px;
+            margin-left: 15px;
+          }
+      
+          #desc_2-look2 {
+            font-size: 0.650em; /* Tamanho desejado */
+            padding: 10px;
+            max-width: 125px;
+            margin-left: 15px;
+          }
+      
+          #desc_3-look2 {
+            font-size: 0.650em; /* Tamanho desejado */
+            padding: 10px;
+            max-width: 125px;
+            margin-left: 15px;
+          } 
+
+          .dotm-container {
+            padding-top: 40px;
+          }
+
+          .icon-overlay1 {
+            transform: translate(20%, -1380%);
+          }
+        
+          .ocasiao1-card {
+            transform: translate(-28%, -1620%) rotate(-90deg);
+          }
+        
+          .estilo1-card {
+            transform: translate(5%, -230%);
+          }
+        
+          .icon-overlay2 {
+            transform: translate(705%, -1270%);
+          }
+        
+          .ocasiao2-card {
+            transform: translate(175%, -1615%) rotate(-90deg);
+          }
+        
+          .estilo2-card { 
+            transform: translate(190%, -235%);
+          }
+
+
+    /*TIPOS CORPORAIS*/
+          #tipo-tc2, 
+          #tipo-tc4 {
+            margin-top: 0px;
+          }
+
+          .title-tc1 {
+            font-size: 2em;
+          }
+      
+          .title-tc2 {
+            font-size: 1em;
+          }
+
+          .button-tc {
+            font-size: 0.600em;
+            padding: 7px 16px;
+            border-radius: 5px;
+            margin-top: 10px;
+          }
+
+    /*ESTILOS*/
+    .estilos {
+        margin: 20px auto;
+      }
+
+    
+    #estilo-2, 
+    #estilo-4,
+    #estilo-6 {
+      margin-top: 0px;
+    }
+
+    /*SOBRE NÓS*/
+    .sobrenos {
+        grid-area: sobrenos;
+      }
+    
+      .row {
+          display: flex; /* Usar flexbox para manter a mesma altura */
+          flex-wrap: wrap; /* Permitir que os quadros quebrem em uma nova linha quando o espaço for insuficiente */
+      }
+    
+      .center {
+          text-align: center;
+          padding: 32px 0;
+      }
+
+      .logo-slogan {
+          max-width: 200px;
+          align-items: center;
+      }
+    
+      .sobrenos h3 {
+          font-size: 1.8em;
+      }
+    
+      .desc-sn {
+          font-size: 0.8em;
+          line-height: 1.4;
+      }
+      
+       .col {
+        width: 100%; /* Define a largura para 100% para quebrar em colunas */
+    }
+
+    /*CRIADORES*/
+    .criadores {
+        padding: 100px 10px;
+      }
+
+      .criador {
+        max-width: 200px;
+    }
+
+    .criadores button {
+        padding: 10px 50px;
+    }
+  
+    .title-c {
+        font-size: 2em;
+    }
+
+    .desc {
+        font-size: 0.8em;
+    }
+    
+    .criadores h3 {
+        font-size: 1.4em;
+    }
+    }
+
+@media (min-width: 769px) and (max-width: 995px) {
+    /*COMBINAÇÕES*/
+    .combinacoes {
+    padding: 70px 200px;
+    }
+}
+
+@media (min-width: 996px) and (max-width: 1198px) {
+    /*COMBINAÇÕES*/
+    .combinacoes {
+        padding: 70px 175px;
+    }
+    }
+
+@media (min-width: 1199px) and (max-width: 1377px) {
+   /*COMBINAÇÕES*/
+  .combinacoes {
+    padding: 70px 280px;
+  }
+  }

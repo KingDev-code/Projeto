@@ -1,25 +1,81 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+      <title>Veste-me</title>
+      <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.svg">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      <!-- CSS -->
+      <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/index-resp.css">
+      <link rel="stylesheet" href="css/footer-resp.css">
+      <link rel="stylesheet" href="css/menu-resp.css">
+      <link rel="stylesheet" href="css/menu-respquiz.css">
 
-        <!-- Css -->
-        <link rel="stylesheet" href="/css/login.css">
+      <!-- Fonte -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        <!-- Referência a pasta em que está o Java Script -->
-        <script src="/js/login.js"></script>
+      <!-- icons -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
 
-    </head>
-    <body>
+      <!-- Quiz -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<section id="menu">
+    <!-- Pre Header -->
+    <div class="pre-header" id="pre-header">
+            <span>Encontre seu look ideal!</span>
+    </div>
+
+      <!-- Menu Superior -->
+      <header class="header">
+
+        <div class="menu-norte">
+        <a href="index.html#pre-header" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.svg" alt="Veste-me"></a>
+        <nav>
+            <button type="button" class="button-icone">
+              <i href="#default" id="icone"class="material-icons-outlined" onclick="AvalAlerta()">star_border</i>
+              <i href="#default" id="icon" class="material-icons-outlined"  aria-hidden="true" onclick="toggleIcon()">face_6</i>
+              <a href="favoritos.html"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
+              <a href="#default"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
+            </button>
+      </div>
+  
+      <div class="linha-menu"></div>
+  
+      <div class="menu-sul">
+  
+        <div class="menu-itens">
+          <ul>
+          <li><a href="index.html"  class="active">Início</a></li>
+          <li><a href="executivos.html">Executivas</a></li>
+          <li><a href="esportivos.html">Esportivas</a></li>
+          <li><a href="comemoracoes.html">Comemorações</a></li>
+          <li><a href="diaadia.html">Dia a dia</a></li>
+          <li><a href="modapraia.html">Moda praia</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+         <div class="pesquisar">
+          <form action="/action_page.php">
+            <input class="search-input"  type="text" placeholder="Procurar" name="search"></input>
+            <button class="search-button" type="submit">
+              <span class="material-icons-outlined">search</span>
+            </button>
+          </form>
+        </div>
+    </div>
+        
+      </header>
+    </section>
+    <!-- 
     <div id="navbar" class="center">
     <a href="/">
     <img class="logo_principal" id="logo" src="/img/img_logo.png" alt="img_logo">
@@ -33,10 +89,10 @@
         </a>
 
     <div name="content">
-        <!-- Authentication -->
+        Authentication 
         <form method="POST" action="{{ route('logout') }}" style="margin: 0px; position: absolute; left: 100px; top: -10px; ">
         @csrf
-        <!--<div>{{ Auth::user()->name }}</div>-->
+        <div>{{ Auth::user()->name }}</div>
         <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" style="margin: 0px;">
             {{ __('Sair') }}
         </a>
@@ -65,11 +121,11 @@
   </div>
 
         <div>
-            <!-- Page Content -->
+            Page Content 
                 {{ $slot }}
         </div>
 
-        <!-- Footer -->
+         Footer 
 <footer>
   <div class="linha-footer"></div>
   <div class="container-footer">
@@ -98,8 +154,7 @@
 </footer>
 
 <p class="titulo-footer">Veste-me | São Paulo - SP</p>
-<p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
-
+<p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>-->
 </div>
-    </body>
+</body>
 </html>

@@ -1,11 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="{{ route('login') }}">Empresa</a>
-</body>
-</html>
+@extends('layouts.usuario')
+
+@section('conteudo')
+    <!-- Seção 2 - Combinação e suas peças -->
+    <!-- Seção 2 - Look1 -->
+    <div class="content">
+
+        <div id="indicator">
+            <ul>
+              <li><a href="index.html">Veste-me</a></li>
+                <div id="arrow"></div>
+                <li><a href="categoria.html">Categoria</a></li>
+              </ul>
+          </div>
+
+<div class="cat">
+
+    <div class="title-section">
+        <h2 class="section-title"><b>Cadastrar-se</b></h2>
+        <li><a class="cad">Indique em que tipo de usuário você se encaixa</a></li>
+      </div>
+
+      
+        <div class="buttons">
+            <a href="register" class="botao-link">
+                <span id="icone_" class="material-icons-sharp">
+                    supervised_user_circle
+                    </span> <!-- Ícone (substitua pelo seu ícone) -->
+                <br>
+                Usuário 
+                <br>
+                Comum <!-- Texto do botão -->
+            </a><br>
+            <a href="register" class="botao-link">
+                <span id="icone_" class="material-icons-sharp">
+                    store
+                    </span> <!-- Ícone (substitua pelo seu ícone) -->
+                <br>
+                Empresa<!-- Texto do botão -->
+            </a><br>
+        </div>
+    
+    </div>
+
+    </div>
+@endsection
