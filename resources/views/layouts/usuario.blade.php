@@ -5,12 +5,12 @@
     <title>Veste-me</title>
     <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.svg">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/categoria.css">
-    <link rel="stylesheet" href="css/categoria-resp.css">
+
     <link rel="stylesheet" href="css/menu-resp.css">
     <link rel="stylesheet" href="css/footer-resp.css">
     
@@ -38,7 +38,7 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="index.html#pre-header" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.svg" alt="Veste-me"></a>
+    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.svg" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
             <a href="favoritos.html"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>

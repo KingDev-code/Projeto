@@ -19,6 +19,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'sobrenome',  // Adicione o campo 'sobrenome'
+        'datanasc',   // Adicione o campo 'datanasc'
         'email',
         'password',
     ];
@@ -45,6 +47,6 @@ class User extends Authenticatable
 
     public function favoritos()
     {
-        return $this->belongsToMany(Combinacao::class, 'favoritos', 'user_id', 'combinacao_id');
+        return $this->hasMany(Favorito::class);
     }
 }

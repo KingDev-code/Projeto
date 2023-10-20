@@ -1,6 +1,29 @@
-<x-app-layout>
-    <div class="container">
-        <h1><a href="{{ route('ocasioes.create') }}">Adicionar Ocasião</a></h1>
+@extends('layouts.usuario')
+
+@section('conteudo')
+
+<!-- Settings Dropdown -->
+
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <a href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Sair') }}
+                            </a>
+                        </form>
+
+<link rel="stylesheet" href="css/menu-resp.css">
+<link rel="stylesheet" href="css/footer-resp.css">
+
+    <!-- Seção 2 - Combinação e suas peças -->
+    <!-- Seção 2 - Look1 -->
+    <div class="content">
+
+    <h1><a href="{{ route('ocasioes.create') }}">Adicionar Ocasião</a></h1>
         <h1><a href="{{ route('estilos.create') }}">Adicionar Estilo</a></h1>
         <h1><a href="{{ route('tiposcorporal.create') }}">Adicionar Tipo Corporal</a></h1>
         <h1><a href="{{ route('combinacoes.create') }}">Adicionar Combinação</a></h1>
@@ -79,4 +102,4 @@
             @endforeach
         </table>
     </div>
-</x-app-layout>
+@endsection

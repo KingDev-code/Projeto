@@ -32,6 +32,13 @@ Route::get('/select', function () {
 });
 
 
+// Rota para favoritar uma combinação
+Route::post('/favorito/adicionar/{combinacao}', 'FavoritoController@adicionar')->name('favorito.adicionar');
+
+// Rota para desfavoritar uma combinação
+Route::delete('/favorito/remover/{combinacao}', 'FavoritoController@remover')->name('favorito.remover');
+
+
 Route::get('dashboard', [PecasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('dashboard', [CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -103,7 +110,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 
 // Inclui rotas de autenticação a partir do arquivo 'auth.php'.
 require __DIR__.'/auth.php';

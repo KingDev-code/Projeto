@@ -39,7 +39,7 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="index.html#pre-header" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.svg" alt="Veste-me"></a>
+    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.svg" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
           <i href="#default" id="icone"class="material-icons-outlined" onclick="AvalAlerta()">star_border</i>

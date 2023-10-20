@@ -13,7 +13,7 @@ class Combinacao extends Model
 
     public function favoritadoPor()
     {
-        return $this->belongsToMany(User::class, 'favoritos', 'combinacao_id', 'user_id');
+        return $this->hasMany(Favorito::class);
     }
 
     public function pecas()

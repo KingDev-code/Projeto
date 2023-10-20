@@ -17,7 +17,7 @@ class CombinacaoController extends Controller
         $tiposcorporal = TipoCorporal::all();
         $combinacoes = Combinacao::all();
         $ocasioes = Ocasiao::all(); // Ou qualquer outra lógica para buscar as ocasiões
-        return view('dashboard', compact('ocasioes', 'combinacoes', 'tiposcorporal', 'estilos'));
+        return view('welcome', compact('ocasioes', 'combinacoes', 'tiposcorporal', 'estilos'));
     }
 
     public function create()

@@ -9,5 +9,15 @@ class Favorito extends Model
 {
     use HasFactory;
 
-    
+    protected $fillable = ['user_id', 'combinacao_id'];
+
+    public function combinacao()
+    {
+        return $this->belongsTo(Combinacao::class, 'combinacao_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

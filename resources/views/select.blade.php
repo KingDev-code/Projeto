@@ -1,6 +1,12 @@
 @extends('layouts.usuario')
 
 @section('conteudo')
+
+
+
+<link rel="stylesheet" href="css/categoria.css">
+<link rel="stylesheet" href="css/categoria-resp.css">
+
     <!-- Seção 2 - Combinação e suas peças -->
     <!-- Seção 2 - Look1 -->
     <div class="content">
@@ -31,7 +37,7 @@
                 <br>
                 Comum <!-- Texto do botão -->
             </a><br>
-            <a href="register" class="botao-link">
+            <a href="/cadastro-empresa" class="botao-link">
                 <span id="icone_" class="material-icons-sharp">
                     store
                     </span> <!-- Ícone (substitua pelo seu ícone) -->
