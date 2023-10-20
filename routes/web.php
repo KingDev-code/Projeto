@@ -22,7 +22,13 @@ use App\Http\Controllers\Auth\FavoritoController;
 
 
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.
-Route::get('/', [FavoritoController::class, 'show']);
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/empresa', function () {
+    return view('empresa');
+});
 
 
 // Rota para a página "/select". Retorna a view 'select'.

@@ -47,7 +47,7 @@
           <a href="favoritos.html"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
             @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/dashboard') }}"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
+                    <a href="{{ url('dashboard') }}"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
                 @else
                     <a href="{{ url('/select') }}"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
                 @endauth

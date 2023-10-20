@@ -23,7 +23,7 @@
             @csrf
 
             <!-- Nome da Empresa -->
-            <label for="nome">Empresa: <input type="text" id="nome" name="nome" autocomplete="nome" required></label>
+            <label for="nome">Empresa: <input type="text" id="nome" name="nome" autofocus autocomplete="nome" required></label>
             <x-input-error :messages="$errors->get('nome')" class="mt-2" />
             <br>
 
@@ -53,7 +53,7 @@
             <br>
 
             <!-- Senha da Empresa -->
-            <label for="senha">Senha: <input type="password" id="senha" name="senha" autocomplete="new-password" required></label>
+            <label for="senha">Senha: <input type="password" id="senha" name="password" autocomplete="new-password" required></label>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
             <br>
 

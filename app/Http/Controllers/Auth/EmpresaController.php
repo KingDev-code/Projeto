@@ -24,6 +24,8 @@ class EmpresaController extends Controller
     // Método para processar o registro da empresa
     public function store(Request $request): RedirectResponse
     {
+
+        
         // Validação dos dados recebidos no formulário
         $request->validate([
             'nome' => ['required', 'string', 'max:255'],
@@ -32,10 +34,11 @@ class EmpresaController extends Controller
             'telefone' => ['required', 'string', 'max:20'],
             'data_fundacao' => ['required', 'date'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:' . Empresa::class],
-            'senha' => ['required', 'confirmed', Rules\Password::defaults()],
+            // 'senha' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         // Cria uma nova instância da empresa e a salva no banco de dados
+        
         $empresa = Empresa::create([
             'nome' => $request->nome,
             'resp' => $request->resp,
@@ -53,6 +56,6 @@ class EmpresaController extends Controller
         Auth::login($empresa);
 
         // Redireciona para a página inicial (ou outro destino desejado)
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/empresa');
     }
 }

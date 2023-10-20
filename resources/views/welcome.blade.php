@@ -159,25 +159,6 @@
         <i id="icone_" class="material-icons-sharp">favorite_border
 
         </i>
-
-        @if (Auth::check()) <!-- Verifica se o usuário está autenticado -->
-            @if (Auth::user()->favoritos->contains('combinacao_id', $combinacao->id))
-                    <!-- Botão para desfavoritar -->
-                    <form action="{{ route('favorito.remover', $combinacao) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Desfavoritar</button>
-                    </form>
-                @else
-                    <!-- Botão para favoritar -->
-                    <form action="{{ route('favorito.adicionar', $combinacao) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-primary">Favoritar</button>
-                    </form>
-                @endif
-            @else
-                <p>Para favoritar esta combinação, faça login primeiro.</p>
-        @endif
         <i id="icone_"  class="material-icons-sharp">share</i>
     </div>
 

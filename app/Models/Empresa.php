@@ -15,7 +15,7 @@ class Empresa extends Authenticatable
     protected $table = 'empresas';
 
     protected $fillable = [
-        'nome', 'resp', 'password',
+        'nome', 'resp', 'cnpj', 'telefone', 'data_fundacao', 'email', 'password',
     ];
 
     protected $hidden = [

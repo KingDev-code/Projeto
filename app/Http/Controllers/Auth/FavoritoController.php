@@ -19,8 +19,20 @@ class FavoritoController extends Controller
 {
     public function show(Combinacao $combinacao)
     {
-        $combinacao = Combinacao::all();
-        return view('welcome', compact('combinacao'));
+        /*
+        $user = Auth::user();
+
+        $favoritos = $user->favoritos;
+
+        if (sizeof($favoritos) == 0){
+            $botao = false;
+        }
+        else {
+            $botao = true;
+        }
+        */
+        return view('welcome');
+        
     }
 
     public function adicionar(Combinacao $combinacao)
