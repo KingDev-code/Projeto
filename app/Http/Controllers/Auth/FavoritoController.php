@@ -19,6 +19,7 @@ class FavoritoController extends Controller
 {
     public function show(Combinacao $combinacao)
     {
+        $combinacao = Combinacao::all();
         return view('welcome', compact('combinacao'));
     }
 

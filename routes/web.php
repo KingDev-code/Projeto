@@ -7,7 +7,7 @@ use App\Http\Controllers\OcasiaoController;
 use App\Http\Controllers\TipoCorporalController;
 use App\Http\Controllers\PecasController;
 use App\Http\Controllers\EstiloController;
-use App\Http\Controllers\FavoritoController;
+use App\Http\Controllers\Auth\FavoritoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +20,9 @@ use App\Http\Controllers\FavoritoController;
 |
 */
 
+
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FavoritoController::class, 'show']);
 
 
 // Rota para a página "/select". Retorna a view 'select'.

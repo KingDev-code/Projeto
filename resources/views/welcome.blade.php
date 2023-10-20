@@ -39,7 +39,7 @@
 <div class="combinacoes">
 
   <!-- Seção 2 - Combinação e suas peças -->
-  <img class="logo-comb" src="img/Logo Veste-me - Preta.svg" alt="Veste-me">
+  <img class="logo-comb" src="img/LogoVeste-mePreta.svg" alt="Veste-me">
   <h2 class="title-comb"><b>Ocasião Executiva</b></h2>
 
 <div class="combinacoes-looks">
