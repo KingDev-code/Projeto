@@ -39,7 +39,7 @@
 <div class="combinacoes">
  
       <!-- Seção 2 - Combinação e suas peças -->
-      <img class="logo-comb" src="img/Logo Veste-me - Preta.svg" alt="Veste-me">
+      <img class="logo-comb" src="img/Logo Veste-me - Preta.png" alt="Veste-me">
       <h2 class="title-comb"><b>Ocasião Executiva</b></h2>
 
 <div class="combinacoes-looks">
@@ -150,7 +150,7 @@
       <div class="secao-look2-p3">
 
         <a id="link-look2" href="https://br.pinterest.com/pin/Ac7Cs94y6vBbHOc2jnbHDHEx3OGhWRz5hBGENy38jGl7jfZy97Zt_og/" target="_blank">
-          <img id="look2" class="look2" src="associate/img/look2.png" alt="Imagem Look 2" >
+          <img id="look2" class="look2" src="img/look2.png" alt="Imagem Look 2" >
         </a>
   
     <div id="iconoverlay2" class="icon-overlay2"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/rounded-square.png" alt="rounded-square"/> </div>
@@ -262,7 +262,7 @@
 <!-- Sobre Nós -->
 <div class="sobrenos" id="sobrenos">
       <div class="center">
-          <img class="logo-slogan" src="img/Logo Veste-me - Preta com slogan.svg" alt="Logo">
+          <img class="logo-slogan" src="img/Logo Veste-me - Preta com slogan.png" alt="Logo">
       </div>
     <div class="row">
       <div class="col light-grey">
@@ -315,6 +315,7 @@
       </div>
   </div>
 </div>
+
 
 <!-- Java Script -->
 <script src="js/menu.js"></script>
@@ -651,7 +652,7 @@
     Swal.fire({
           showCloseButton: true,
           title: 'AVALIAÇÕES E COMENTÁRIOS',
-          html: '<fieldset><legend>Isabela Souza</legend><span id="star1" class="material-symbols-sharp star" onmouseover="fillStars(1)" onmouseout="clearStars()">star</span><span id="star2" class="material-symbols-sharp star" onmouseover="fillStars(2)" onmouseout="clearStars()">star</span><span id="star3" class="material-symbols-sharp star" onmouseover="fillStars(3)" onmouseout="clearStars()">star</span><span id="star4" class="material-symbols-sharp star" onmouseover="fillStars(4)" onmouseout="clearStars()">star</span><span id="star5" class="material-symbols-sharp star" onmouseover="fillStars(5)" onmouseout="clearStars()">star</span><input type="file" id="uploadFile" accept="image/*, video/*" style="display: none;"><label for="uploadFile" class="upload-btn"><span class="material-icons-sharp upload-icon">cloud_upload</span>Upload</label><textarea></textarea></fieldset>',           
+          html: '<fieldset><legend>Nome Sobrenome</legend><span id="star1" class="material-symbols-sharp star" onmouseover="fillStars(1)" onmouseout="clearStars()">star</span><span id="star2" class="material-symbols-sharp star" onmouseover="fillStars(2)" onmouseout="clearStars()">star</span><span id="star3" class="material-symbols-sharp star" onmouseover="fillStars(3)" onmouseout="clearStars()">star</span><span id="star4" class="material-symbols-sharp star" onmouseover="fillStars(4)" onmouseout="clearStars()">star</span><span id="star5" class="material-symbols-sharp star" onmouseover="fillStars(5)" onmouseout="clearStars()">star</span><input type="file" id="uploadFile" accept="image/*, video/*" style="display: none;"><label for="uploadFile" class="upload-btn"><span class="material-icons-sharp upload-icon">cloud_upload</span>Upload</label><textarea></textarea></fieldset>',           
           showCancelButton: true,
           width: '600px',
           confirmButtonColor: 'black',
@@ -669,14 +670,13 @@
             }
 
           }).then((result) => {
-            if (result.dismiss === Swal.DismissReason.cancel) {
+            if (result.isConfirmed) {
+              AvalAlerta();
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
               AvalAlerta();
             }
           })
-
-          
-          
-          lightGallery(document.getElementsByClassName('lightgallery')[0]);
+        };
 
         function fillStars(starNumber) {
           for (let i = 1; i <= starNumber; i++) {
@@ -691,8 +691,6 @@
             stars[i].classList.remove('filled');
           }
         }
-      }
+
     </script>
-
-
 @endsection

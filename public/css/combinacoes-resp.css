@@ -1,0 +1,388 @@
+@media (max-width: 557px) {
+
+    /* Indicador */
+    #indicator {
+    font-size: 0.2em;
+    padding: 5px;
+    }
+    
+    .filtro table {
+    padding: 2px;
+    }
+    
+    .filtro table th {
+    font-size: 0.6em;
+    padding: 2px;
+    }
+
+    .filtro label {
+        font-size: 0.5em;
+    }
+
+    .filtro .icone {
+        width: 15px;
+        height: 15px;
+    }
+    
+    /*CONTENT*/
+    .content {
+    padding: 5px;
+    }
+    
+    .content .section-title {
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 0px;
+    }
+    
+    .combinacoes-looks {
+        padding: 20px;
+    }
+
+    .comb {
+        min-width: 70%;
+        padding-bottom: 50px;
+    }
+    
+    .comb_ {
+      min-width: 70%;
+      padding-left: 150px ;
+      padding-bottom: 50px;
+    }
+    
+    .icone_ {
+    padding: 5px;
+    font-size: 1.550em; /* Tamanho desejado dos ícones */
+    }
+    
+    .look {
+    max-width: 180px;
+    }
+    
+    #peca {
+    max-width: 50px;
+    padding: 0px;
+    }
+
+    #peca1 {
+        max-width: 50px;
+        padding-top: 10px;
+    }
+
+    #peca2 {
+        max-width: 50px;
+        padding: 0px;
+    }
+
+    #peca3 {
+        max-width: 50px;
+        padding-top: 20px;
+    }
+    
+    #desc {
+    font-size: 0.500em; /* Tamanho desejado dos ícones */
+    padding: 5px;
+    max-width: 50px;
+    }
+    
+    .secao-pecas {
+    padding: 5px;
+    }
+    
+    .secao-pecas .slidec .card {
+    width: 60px; 
+    height: 80px;  
+    }
+    
+    .card img {
+    width: 110px;
+    }
+
+    .icon-overlay img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .icon-overlay {
+        width: 20px;
+        height: 20px;
+        display: relative;
+        position: absolute;
+        transform: translate(20%, -1420%);
+        background-color: #45a049; 
+        border-radius: 2px;
+    }
+        
+    .ocasiao-card {
+        display: relative;
+        position: absolute;
+        font-size: 0.6em;
+        font-weight: 600;
+        padding: 5px;
+        transform: translate(-28%, -1730%) rotate(-90deg);
+        background-color: #FF4E50;
+        border-radius: 5px;  
+    }
+        
+    .estilo-card {
+        display: relative;
+        position: absolute;
+        font-size: 0.6em;
+        font-weight: 600;
+        padding: 5px;
+        transform: translate(5%, -280%);
+        background-color: #3498DB;
+        border-radius: 5px;
+    }
+        
+    
+}
+
+@media (min-width: 558px) and (max-width: 883px) {
+
+    /* Indicador */
+    #indicator {
+    font-size: 0.6em;
+    padding: 5px;
+    }
+    
+    .filtro table {
+    padding: 5px;
+    }
+    
+    .filtro table th {
+    font-size: 0.8em;
+    padding: 5px;
+    }
+
+    .filtro label {
+        font-size: 0.8em;
+    }
+    
+    /*CONTENT*/
+    .content {
+    padding: 5px;
+    }
+    
+    .content .section-title {
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 0px;
+    }
+    
+    .combinacoes-looks {
+        padding: 20px;
+    }
+
+    .comb {
+        min-width: 70%;
+        padding-bottom: 50px;
+    }
+    
+    .comb_ {
+      min-width: 70%;
+      padding-left: 205px ;
+      padding-bottom: 50px;
+    }
+    
+    .icone_ {
+    padding: 5px;
+    font-size: 1.550em; /* Tamanho desejado dos ícones */
+    }
+    
+    .look {
+    max-width: 180px;
+    }
+    
+    
+    #peca {
+        max-width: 50px;
+        padding: 0px;
+        }
+    
+    #peca1 {
+        max-width: 50px;
+        padding-top: 10px;
+    }
+    
+    #peca2 {
+        max-width: 50px;
+        padding: 0px;
+    }
+    
+    #peca3 {
+        max-width: 50px;
+        padding-top: 20px;
+    }
+        
+    
+    #desc {
+    font-size: 0.500em; /* Tamanho desejado dos ícones */
+    padding: 5px;
+    max-width: 50px;
+    }
+    
+    .secao-pecas {
+    padding: 5px;
+    }
+    
+    .secao-pecas .slidec .card {
+    width: 60px; 
+    height: 80px;  
+    }
+    
+    .card img {
+    width: 110px;
+    }
+
+    .icon-overlay img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .icon-overlay {
+        width: 20px;
+        height: 20px;
+        display: relative;
+        position: absolute;
+        transform: translate(20%, -1420%);
+        background-color: #45a049; 
+        border-radius: 2px;
+    }
+        
+    .ocasiao-card {
+        display: relative;
+        position: absolute;
+        font-size: 0.6em;
+        font-weight: 600;
+        padding: 5px;
+        transform: translate(-28%, -1730%) rotate(-90deg);
+        background-color: #FF4E50;
+        border-radius: 5px;  
+    }
+        
+    .estilo-card {
+        display: relative;
+        position: absolute;
+        font-size: 0.6em;
+        font-weight: 600;
+        padding: 5px;
+        transform: translate(5%, -280%);
+        background-color: #3498DB;
+        border-radius: 5px;
+    }
+}
+
+
+@media (min-width: 884px) and (max-width: 1300px) {
+        
+        .filtro table {
+        padding: 10px;
+        }
+        
+        .filtro table th {
+        font-size: 1em;
+        padding: 10px;
+        }
+        
+        /*CONTENT*/
+        .content .section-title {
+        font-size: 2.5em;
+        font-weight: 400;
+        padding: 30px 0px;
+        }
+        
+        .combinacoes-looks {
+            padding: 30px;
+        }
+        
+        .comb_ {
+            min-width: 70%;
+            padding-left: 258px ;
+            padding-bottom: 50px;
+          }
+          
+        .icone_ {
+        padding: 5px;
+        font-size: 1.550em; /* Tamanho desejado dos ícones */
+        }
+        
+        .look {
+        max-width: 280px;
+        }
+        
+        #peca {
+        cursor: pointer;
+        margin: 0 auto;
+        padding-top: 10px;
+        max-width: 80px;
+        }
+
+        #peca1 {
+            cursor: pointer;
+            margin: 0 auto;
+            padding-top: 10px;
+            max-width: 70px;
+          }
+          
+          #peca2 {
+            cursor: pointer;
+            margin: 0 auto;
+            max-width: 70px;
+          }
+          
+          #peca3 {
+            cursor: pointer;
+            margin: 0 auto;
+            padding-top: 40px;
+            max-width: 70px;
+          }
+        
+        #desc {
+        font-size: 0.600em; /* Tamanho desejado dos ícones */
+        padding: 5px;
+        max-width: 80px;
+        }
+        
+        .secao-pecas {
+        padding: 15px;
+        }
+        
+        .secao-pecas .slidec .card {
+        width: 100px; 
+        height: 120px;  
+        }
+          
+        .card img {
+        width: 110px;
+        }
+
+    .icon-overlay {
+        display: relative;
+        position: absolute;
+        transform: translate(20%, -1480%);
+        background-color: #45a049; 
+        border-radius: 5px;
+    }
+        
+    .ocasiao-card {
+        display: relative;
+        position: absolute;
+        font-weight: 600;
+        padding: 5px;
+        transform: translate(-28%, -1825%) rotate(-90deg);
+        background-color: #FF4E50;
+        border-radius: 5px;  
+    }
+        
+    .estilo-card {
+        display: relative;
+        position: absolute;
+        font-weight: 600;
+        padding: 5px;
+        transform: translate(5%, -240%);
+        background-color: #3498DB;
+        border-radius: 5px;
+    }
+    }
+

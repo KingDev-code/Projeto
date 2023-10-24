@@ -13,9 +13,9 @@
 
         <div id="indicator">
             <ul>
-              <li><a href="index.html">Veste-me</a></li>
+              <li><a href="/">Veste-me</a></li>
                 <div id="arrow"></div>
-                <li><a href="categoria.html">Categoria</a></li>
+                <li><a href="/select">Categoria</a></li>
               </ul>
           </div>
 

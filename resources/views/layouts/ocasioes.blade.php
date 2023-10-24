@@ -28,52 +28,7 @@
 <body>
 <div class="estrutura">
 
-<section id="menu">
-    <!-- Pre Header -->
-    <div class="pre-header" id="pre-header">
-            <span>Encontre seu look ideal!</span>
-    </div>
 
-  <!-- Menu Superior -->
-  <header class="header">
-
-    <div class="menu-norte">
-    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
-    <nav>
-        <button type="button" class="button-icone">
-            <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
-            <a href="dadospessoais"><i id="iconeUsuario" class="material-icons-sharp">person</i></a>
-        </button>
-    </div>
-
-  <div class="linha-menu"></div>
-
-  <div class="menu-sul">
-
-    <div class="menu-itens">
-      <ul>
-      <li><a href="/">Início</a></li>
-      <li><a href="{{ route('executivos') }}">Executivos</a></li>
-      <li><a href="{{ route('esportivos') }}">Esportivas</a></li>
-      <li><a href="{{ route('comemoracoes') }}">Comemorações</a></li>
-      <li><a href="{{ route('diaadia') }}">Dia a dia</a></li>
-      <li><a href="{{ route('modapraia') }}">Moda praia</a></li>
-      </ul>
-    </nav>
-  </div>
-  
-     <div class="pesquisar">
-      <form action="/action_page.php">
-        <input class="search-input"  type="text" placeholder="Procurar" name="search"></input>
-        <button class="search-button" type="submit">
-          <span class="material-icons-outlined">search</span>
-        </button>
-      </form>
-    </div>
-</div>
-    
-  </header>
-</section>
     @yield('conteudo')
 <!-- Footer -->
 <footer class="footer">

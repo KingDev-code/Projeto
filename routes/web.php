@@ -21,10 +21,53 @@ use App\Http\Controllers\Auth\FavoritoController;
 */
 
 
+Route::middleware(['auth.empresa'])->group(function () {
+    // Rotas dentro deste grupo terão o middleware aplicado
+    Route::get('/restrito', function () {
+        // Rota restrita
+    });
+
+    Route::get('/restrito', function () {
+        // Rota restrita
+    });
+});
+
+
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/favoritos', function () {
+    return view('favoritos');
+})->name('favoritos');
+
+Route::get('/comemoracoes', function () {
+    return view('ocasioes.comemoracoes');
+})->name('comemoracoes');
+
+Route::get('/diaadia', function () {
+    return view('ocasioes.diaadia');
+})->name('diaadia');
+
+Route::get('/esportivos', function () {
+    return view('ocasioes.esportivos');
+})->name('esportivos');
+
+Route::get('/executivos', function () {
+    return view('ocasioes.executivos');
+})->name('executivos');
+
+Route::get('/modapraia', function () {
+    return view('ocasioes.modapraia');
+})->name('modapraia');
+
+
+
+
+Route::get('/dadospessoais', function () {
+    return view('dadospessoais');
+})->name('dadospessoais');
 
 Route::get('/empresa', function () {
     return view('empresa');
@@ -65,14 +108,14 @@ Route::get('/estilos/create', [EstiloController::class, 'create'])->name('estilo
 Route::post('/estilos', [EstiloController::class, 'store'])->name('estilos.store');
 
 // Rotas para Ocasião
-Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
-Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
-Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
-Route::get('/ocasiao/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
-Route::get('/ocasiao/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
-Route::get('/ocasiao/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
-Route::get('/ocasiao/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
-Route::get('/ocasiao/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
+//Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
+//Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
+//Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
+//Route::get('/ocasiao/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
+//Route::get('/ocasiao/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
+// Route::get('/ocasiao/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
+//Route::get('/ocasiao/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
+//Route::get('/ocasiao/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
 
 // Rotas para Tipos Corporal
 Route::get('/tiposcorporal/create', [TipoCorporalController::class, 'create'])->name('tiposcorporal.create');

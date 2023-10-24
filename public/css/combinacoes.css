@@ -39,7 +39,6 @@ body, p, h1, ul, li, blockquote, span {
     "pos-footer"
     ;
   }
-
   #menu {
     overflow: hidden;
     transition: 0.4s;
@@ -137,6 +136,12 @@ font-size:1.000em;
   border-top-style: solid;
 }
 
+.menu-itens .active {
+  color: rgba(0, 0, 0);
+  font-weight: 600;
+  border-top-style: solid;
+}
+
 .header li {
   margin-right: 30px;
 }
@@ -169,7 +174,7 @@ font-size:1.000em;
 /* Indicador */
 #indicator {
 text-align: left;
-font-size: 1em;
+font-size: 0.8em;
 text-transform: uppercase;
 padding: 10px;
 }
@@ -193,89 +198,232 @@ border-top: 4px solid transparent;
 border-bottom: 4px solid transparent;
 border-left: 4px solid #333;
 }
-  
+
+
+/* FILTRO - filtragem das combinações listadas */
+/*FILTRO*/
+.filtro {
+grid-area: filtro;
+}
+
+.filtro table {
+padding: 10px;
+}
+
+.filtro table th {
+text-align: left;
+font-size: 1em;
+text-transform: uppercase;
+padding: 10px;
+}
+
+#icone-fem {
+  background-color: rgba(255, 26, 122, 1); 
+  border-radius: 5px;
+}
+
+#icone-masc {
+  background-color: rgba(26, 117, 255, 1); 
+  border-radius: 5px;
+}
+
+.icone-t {
+  background-color: rgba(255, 87, 26, 1); 
+  border-radius: 5px;
+}
+
+.icone-ti {
+  background-color: rgba(242, 218, 5, 1); 
+  border-radius: 5px;
+}
+
+.icone-r {
+  background-color: rgba(242, 15, 15, 1); 
+  border-radius: 5px;
+}
+
+.icone-a {
+  background-color: rgba(66, 211, 0, 1); 
+  border-radius: 5px;
+}
+
+.icone-o {
+  background-color: rgba(5, 151, 242, 1); 
+  border-radius: 5px;
+}
+
+.icone-ep {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(62, 126, 164, 1);
+  border-radius: 5px;
+}
+
+.icone-rm {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(238, 161, 166, 1); 
+  border-radius: 5px;
+}
+
+.icone-eg {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(97, 97, 97, 1); 
+  border-radius: 5px;
+}
+
+.icone-cs {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(225, 226, 214, 1); 
+  border-radius: 5px;
+}
+
+.icone-ct {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 187, 72, 1); 
+  border-radius: 5px;
+}
+
+.icone-du {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(163, 171, 135, 1); 
+  border-radius: 5px;
+}
+
+.icone-s {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(198, 0, 0, 1); 
+  border-radius: 5px;
+}
 
 /*CONTENT*/
 .content {
 grid-area: content;
-padding: 70px;
-justify-self: center;
+display: flex;
+flex-wrap: wrap;
 padding-top: 16%;
 }
 
 .content .section-title {
 color: rgba(0, 0, 0);
-font-size: 3.600em;
+font-size: 4em;
 font-weight: 400;
 margin: 0 auto;
+justify-content: flex-start;
 text-transform: uppercase;
 padding: 30px 0px;
 }
 
-.cadastrar {
-  max-width: 800px;
-    padding: 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.combinacoes-looks {
+    padding: 8px;
 }
 
-.form {
-  text-transform: uppercase;
-  border-radius: 10px;
+.comb {
+    min-width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
 }
 
-.form label {
-    font-size: 1.500em;
-    display: block; /* Faz com que os labels ocupem toda a largura do container */
-    margin-bottom: 30px; /* Adiciona espaço entre os labels */
-    font-weight: 600;
+.comb_ {
+  min-width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 235px ;
+  padding-bottom: 50px;
 }
 
-.form input {
-  padding: 8px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(158, 156, 154, 0.5);
-  font-size: 1em;
-  color: black;
-  font-weight: normal;
+.pecas {
+display: flex;
+flex-wrap: nowrap;
 }
 
-.form input::placeholder{
-  color: black;
-  font-size: 1em;
+.icone_ {
+cursor: pointer;
+padding: 5px;
+font-size: 1.550em; /* Tamanho desejado dos ícones */
 }
 
-.form button[type="submit"] {
-  padding: 0.1em 0.9em;
-  border: none;
+.look {
+max-width: 680px;
+cursor: pointer;
+}
+
+#peca {
   cursor: pointer;
-  text-decoration: none;
-  border-radius: 5px;
-  color:rgba(255, 255, 255);
-  background-color: rgba(0, 0, 0);
-  font-size: 2em; /* Tamanho desejado*/
-  font-weight: 300;
-  text-transform: uppercase;
+  margin: 0 auto;
+  padding-top: 10px;
+  max-width: 80px;
 }
 
-.form button[type="submit"]:hover {
-  background-color: rgb(44, 44, 44);
+#peca1 {
+  cursor: pointer;
+  margin: 0 auto;
+  padding-top: 10px;
+  max-width: 80px;
 }
 
-.button {
-    text-align: center;
-    padding: 5px;
+#peca2 {
+  cursor: pointer;
+  margin: 0 auto;
+  max-width: 80px;
 }
 
-.form li {
-   padding: 10px;
+#peca3 {
+  cursor: pointer;
+  margin: 0 auto;
+  padding-top: 40px;
+  max-width: 80px;
 }
 
-.form .login {
-    text-decoration: underline;
-    font-weight: normal;
-    text-transform: none;
-    font-weight: 600;
+#desc {
+font-size: 0.900em; /* Tamanho desejado dos ícones */
+padding: 10px;
+max-width: 150px;
+}
+
+.secao-pecas {
+padding: 50px;
+}
+
+.secao-pecas .slidec .card {
+cursor: pointer;
+width: 140px; 
+height: 160px;  
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon-overlay {
+display: relative;
+position: absolute;
+transform: translate(20%, -2130%);
+background-color: #45a049; 
+border-radius: 5px;
+}
+
+.ocasiao-card {
+display: relative;
+position: absolute;
+font-weight: 600;
+padding: 5px;
+transform: translate(-28%, -2470%) rotate(-90deg);
+background-color: #FF4E50;
+border-radius: 5px;  
+}
+
+.estilo-card {
+display: relative;
+position: absolute;
+font-weight: 600;
+padding: 5px;
+transform: translate(5%, -230%);
+background-color: #3498DB;
+border-radius: 5px;
 }
 
   /*FOOTER*/

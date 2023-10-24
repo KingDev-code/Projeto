@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('telefone');
             $table->date('data_fundacao');
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('senha');
             $table->timestamps();
         });
     }

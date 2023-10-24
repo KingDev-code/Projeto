@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <title>Veste-me</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.svg">
+    <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.png">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,6 +18,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,1,0" />
 
     <!-- icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
@@ -39,7 +45,7 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.svg" alt="Veste-me"></a>
+    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
           <i href="#default" id="icone"class="material-icons-outlined" onclick="AvalAlerta()">star_border</i>
@@ -85,6 +91,7 @@
 </section>
     @yield('conteudo')
     <!-- Footer -->
+<!-- Footer -->
 <footer class="footer">
   <div class="linha-footer"></div>
 
@@ -99,7 +106,7 @@
 
     <div>
       <a href="index.html">
-      <img src="img/Logo Veste-me - Branca.svg" alt="Veste-me - Branca">
+      <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>
 
@@ -115,15 +122,13 @@
   <div class="linha-footer"></div>
 </footer>
 
-    <div class="pos-footer">
-        <div class="row1">
-            <p class="titulo-footer">Veste-me | São Paulo - SP</p>
-        </div>
-        <div class="row2">
-            <p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
-        </div>
-    </div>
-
+  <div class="pos-footer">
+  <div class="row1">
+  <p class="titulo-footer">Veste-me | São Paulo - SP</p>
+  </div>
+  <div class="row2">
+  <p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
+  </div>
 </div>
 </div>
 </body>

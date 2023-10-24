@@ -39,7 +39,7 @@
   .html2 .circle1 {
     width: 75px;
     height: 75px;
-    background-color: rgba(223, 215, 204, 0.233);
+    background-color: rgba(158, 156, 154, 0.5);
     color: black;
     border-radius: 50%;
     display: inline-flex;
@@ -54,7 +54,7 @@
   .html3 .circle1 {
     width: 75px;
     height: 75px;
-    background-color: rgba(223, 215, 204, 0.233);
+    background-color: rgba(158, 156, 154, 0.5);
     color: black;
     border-radius: 50%;
     display: inline-flex;
@@ -69,7 +69,7 @@
   .html1 .circle2 {
     width: 75px;
     height: 75px;
-    background-color: rgba(223, 215, 204, 0.233);
+    background-color: rgba(158, 156, 154, 0.5);
     color: black;
     border-radius: 50%;
     display: inline-flex;
@@ -99,7 +99,7 @@
   .html3 .circle2 {
     width: 75px;
     height: 75px;
-    background-color: rgba(223, 215, 204, 0.233);
+    background-color: rgba(158, 156, 154, 0.5);
     color: black;
     border-radius: 50%;
     display: inline-flex;
@@ -114,7 +114,7 @@
   .html1 .circle3 {
     width: 75px;
     height: 75px;
-    background-color: rgba(223, 215, 204, 0.233);
+    background-color: rgba(158, 156, 154, 0.5);
     color: black;
     border-radius: 50%;
     display: inline-flex;
@@ -129,7 +129,7 @@
   .html2 .circle3 {
     width: 75px;
     height: 75px;
-    background-color: rgba(223, 215, 204, 0.233);
+    background-color: rgba(158, 156, 154, 0.5);
     color: black;
     border-radius: 50%;
     display: inline-flex;

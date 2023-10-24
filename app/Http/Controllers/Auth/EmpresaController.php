@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use Illuminate\Validation\Rules\Password;
+
 
 class EmpresaController extends Controller
 {
@@ -34,9 +36,10 @@ class EmpresaController extends Controller
             'telefone' => ['required', 'string', 'max:20'],
             'data_fundacao' => ['required', 'date'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:' . Empresa::class],
-            // 'senha' => ['required', 'confirmed', Rules\Password::defaults()],
+            'senha' => ['required', 'string', 'min:8', 'confirmed', Password::defaults()],
         ]);
 
+        dd($request);
         // Cria uma nova instância da empresa e a salva no banco de dados
         
         $empresa = Empresa::create([
@@ -46,7 +49,7 @@ class EmpresaController extends Controller
             'telefone' => $request->telefone,
             'data_fundacao' => $request->data_fundacao,
             'email' => $request->email,
-            'password' => Hash::make($request->senha), // Aplica hash à senha para segurança
+            'senha' => Hash::make($request->senha), // Aplica hash à senha para segurança
         ]);
 
         // Dispara o evento de registro (útil para atividades adicionais, como envio de emails)
@@ -56,6 +59,6 @@ class EmpresaController extends Controller
         Auth::login($empresa);
 
         // Redireciona para a página inicial (ou outro destino desejado)
-        return redirect('/empresa');
+        return redirect('empresa');
     }
 }
