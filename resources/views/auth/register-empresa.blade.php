@@ -2,15 +2,15 @@
 
 @section('conteudo')
 
-<link rel="stylesheet" href="css/cadastro-emp.css">
-   <link rel="stylesheet" href="css/cadastro-emp-resp.css">
+    <link rel="stylesheet" href="css/cadastro-emp.css">
+    <link rel="stylesheet" href="css/cadastro-emp-resp.css">
 
 <div class="content">
     <div id="indicator">
         <ul>
-            <li><a href="index.html">Veste-me</a></li>
+            <li><a href="/">Veste-me</a></li>
             <div id="arrow"></div>
-            <li><a href="cadastro-emp.html">Cadastrar-se</a></li>
+            <li><a href="/cadastro-empresa">Cadastrar-se</a></li>
         </ul>
     </div>
 
@@ -24,48 +24,57 @@
 
             <!-- Nome da Empresa -->
             <label for="nome">Empresa: <input type="text" id="nome" name="nome" autofocus autocomplete="nome" required></label>
-            <x-input-error :messages="$errors->get('nome')" class="mt-2" />
+            @error('nome')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
             <br>
 
             <!-- Responsável -->
             <label for="resp">Responsável: <input type="text" id="resp" name="resp" autocomplete="resp" required></label>
-            <x-input-error :messages="$errors->get('resp')" class="mt-2" />
+            @error('resp')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
             <br>
 
             <!-- CNPJ -->
             <label for="cnpj">CNPJ:<input type="text" id="cnpj" name="cnpj" autocomplete="cnpj" required></label>
-            <x-input-error :messages="$errors->get('cnpj')" class="mt-2" />
+            @error('cnpj')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
             <br>
 
             <!-- Telefone -->
             <label for="telefone">Telefone: <input type="tel" id="telefone" name="telefone" autocomplete="telefone" required></label>
-            <x-input-error :messages="$errors->get('telefone')" class="mt-2" />
+            @error('telefone')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
             <br>
 
             <!-- Data de Fundação -->
             <label id="date">Data de Fundação: <input type="date" id="data_fundacao" name="data_fundacao" autocomplete="data_fundacao" required></label>
-            <x-input-error :messages="$errors->get('data_fundacao')" class="mt-2" />
+            @error('data_fundacao')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
             <br>
 
             <!-- E-mail da Empresa -->
             <label for="email">E-mail: <input type="email" id="email" name="email" autocomplete="email" required></label>
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            @error('email')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
             <br>
 
             <!-- Senha da Empresa -->
             <label for="senha">Senha: <input type="password" id="senha" name="password" autocomplete="new-password" required></label>
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            <br>
-
-            <!-- Confirmar Senha -->
-            <label for="confirmar">Confirmar Senha: <input type="password" id="confirmar" autocomplete="new-password" name="password_confirmation" required></label>
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            @error('password')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
             <br>
 
             <div class="button">
                 <ul>
                     <li><button type="submit">Cadastrar</button></li>
-                    <li><a class="login" href="login.html">Já sou cadastrado - Logar</a></li>
+                    <li><a class="login" href="login">Já sou cadastrado - Logar</a></li>
                 </ul>
             </div>
         </form>

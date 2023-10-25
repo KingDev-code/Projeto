@@ -21,15 +21,28 @@ use App\Http\Controllers\Auth\FavoritoController;
 */
 
 
-Route::middleware(['auth.empresa'])->group(function () {
-    // Rotas dentro deste grupo terão o middleware aplicado
-    Route::get('/restrito', function () {
-        // Rota restrita
-    });
+// Rotas de registro e login para empresas
+Route::get('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@create')
+    ->middleware('guest:empresa')
+    ->name('empresa.register');
 
-    Route::get('/restrito', function () {
-        // Rota restrita
-    });
+Route::post('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@store')
+    ->middleware('guest:empresa')
+    ->name('register-empresa');
+
+Route::get('/empresa/login', 'App\Http\Controllers\Auth\EmpresaController@login')
+    ->middleware('guest:empresa')
+    ->name('empresa.login');
+
+Route::post('/empresa/login', 'App\Http\Controllers\Auth\EmpresaController@authenticate')
+    ->middleware('guest:empresa');
+
+Route::post('/empresa/logout', 'App\Http\Controllers\Auth\EmpresaController@logout')
+    ->name('empresa.logout');
+
+// Rota protegida para empresas autenticadas
+Route::middleware(['auth:empresa'])->group(function () {
+    // Suas rotas protegidas para empresas vão aqui
 });
 
 

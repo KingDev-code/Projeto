@@ -3,45 +3,30 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use App\Models\Empresa; // Importa o modelo Empresa
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Empresa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-use Illuminate\Validation\Rules;
-use Illuminate\View\View;
-use Illuminate\Validation\Rules\Password;
-
 
 class EmpresaController extends Controller
 {
-    // Método para exibir o formulário de registro para empresas
-    public function create(): View
+    public function create()
     {
-        return view('auth.register-empresa'); // Renderiza a view para registro de empresa
+        return view('auth.register-empresa');
     }
 
-    // Método para processar o registro da empresa
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
-
-        
-        // Validação dos dados recebidos no formulário
         $request->validate([
-            'nome' => ['required', 'string', 'max:255'],
-            'resp' => ['required', 'string', 'max:255'],
-            'cnpj' => ['required', 'string', 'max:18', 'unique:' . Empresa::class],
-            'telefone' => ['required', 'string', 'max:20'],
-            'data_fundacao' => ['required', 'date'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . Empresa::class],
-            'senha' => ['required', 'string', 'min:8', 'confirmed', Password::defaults()],
+            'nome' => 'required|string|max:255',
+            'resp' => 'required|string|max:255',
+            'cnpj' => 'required|string|max:18|unique:empresas',
+            'telefone' => 'required|string|max:20',
+            'data_fundacao' => 'required|date',
+            'email' => 'required|string|email|max:255|unique:empresas',
+            'password' => 'required|string|min:8|confirmed',
         ]);
 
-        dd($request);
-        // Cria uma nova instância da empresa e a salva no banco de dados
-        
         $empresa = Empresa::create([
             'nome' => $request->nome,
             'resp' => $request->resp,
@@ -49,16 +34,27 @@ class EmpresaController extends Controller
             'telefone' => $request->telefone,
             'data_fundacao' => $request->data_fundacao,
             'email' => $request->email,
-            'senha' => Hash::make($request->senha), // Aplica hash à senha para segurança
+            'senha' => Hash::make($request->password),
         ]);
 
-        // Dispara o evento de registro (útil para atividades adicionais, como envio de emails)
-        event(new Registered($empresa));
-
-        // Autentica a empresa recém-registrada
         Auth::login($empresa);
 
-        // Redireciona para a página inicial (ou outro destino desejado)
-        return redirect('empresa');
+        return redirect('empresa.dashboard');
+    }
+
+    public function login()
+    {
+        return view('auth.login-empresa');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect('empresa.dashboard');
+        }
+
+        return back()->withErrors(['email' => 'Credenciais inválidas']);
     }
 }

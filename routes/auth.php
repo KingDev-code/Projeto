@@ -37,10 +37,7 @@ Route::middleware('guest')->group(function () {
 
     // Empresa
     // Rota para exibir o formulário de registro da empresa
-    Route::get('/cadastro-empresa', [EmpresaController::class, 'create'])->name('empresa-register');
-
-    // Rota para processar o registro da empresa
-    Route::post('/cadastrar-empresa', [EmpresaController::class, 'store'])->name('register-empresa');
+    
 
 });
 

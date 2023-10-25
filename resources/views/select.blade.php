@@ -37,7 +37,7 @@
                 <br>
                 Comum <!-- Texto do botão -->
             </a><br>
-            <a href="/cadastro-empresa" class="botao-link">
+            <a href="/empresa/register" class="botao-link">
                 <span id="icone_" class="material-icons-sharp">
                     store
                     </span> <!-- Ícone (substitua pelo seu ícone) -->
