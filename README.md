@@ -8,6 +8,10 @@ php artisan key:generate
 
 php artisan migrate
 
+composer dump-autoload
+
+composer require laravel/ui
+
 npm run dev
 
 php artisan serve
