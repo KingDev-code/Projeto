@@ -24,7 +24,7 @@
 <div class="logar">
 
     <div class="title-section">
-      <img class="logo-comb" src="img/Logo Veste-me - Círculo - Preta.svg" alt="Logo">
+      <img class="logo-comb" src="img/Logo Veste-me - Círculo - Preta.png" alt="Logo">
         <h2 class="section-title"><b>Login</b></h2>
       </div>
 
@@ -40,7 +40,15 @@
         <label for="senha">Senha: <input type="password" id="senha" name="password" autocomplete="current-password" required></label>
         <x-input-error :messages="$errors->get('password')" class="mt-2" />
         <br>
-
+    
+    <!-- Tipo de Usuário (Comum ou Empresa) -->
+                <label for="tipo">Tipo de Usuário:
+                    <select id="tipo" name="tipo">
+                        <option value="comum">Usuário Comum</option>
+                        <option value="empresa">Empresa</option>
+                    </select>
+                </label>
+                <br>
         <div class="button">
             <ul>
 

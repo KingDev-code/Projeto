@@ -22,28 +22,32 @@ use App\Http\Controllers\Auth\FavoritoController;
 
 
 // Rotas de registro e login para empresas
-Route::get('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@create')
-    ->middleware('guest:empresa')
-    ->name('empresa.register');
+Route::prefix('empresa')->middleware('guest:empresa')->group(function () {
+    // Rota de registro de empresa
+    Route::get('/register', 'App\Http\Controllers\Auth\EmpresaController@create')->name('register-empresa');
+    Route::post('/register', 'App\Http\Controllers\Auth\EmpresaController@store'); // Não é necessário nomear novamente
 
-Route::post('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@store')
-    ->middleware('guest:empresa')
-    ->name('register-empresa');
+    // Rota de login de empresa
+    Route::get('/login', 'App\Http\Controllers\Auth\EmpresaController@login')->name('empresa.login');
+    Route::post('/login', 'App\Http\Controllers/Auth\EmpresaController@authenticate');
 
-Route::get('/empresa/login', 'App\Http\Controllers\Auth\EmpresaController@login')
-    ->middleware('guest:empresa')
-    ->name('empresa.login');
+    // Rota de logout de empresa
+    Route::post('/logout', 'App\Http\Controllers\Auth\EmpresaController@logout')->name('empresa.logout');
 
-Route::post('/empresa/login', 'App\Http\Controllers\Auth\EmpresaController@authenticate')
-    ->middleware('guest:empresa');
+    // Rota protegida para empresas autenticadas
+    Route::middleware('auth:empresa')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('empresa.dashboard');
+        })->name('empresa.dashboard');
 
-Route::post('/empresa/logout', 'App\Http\Controllers\Auth\EmpresaController@logout')
-    ->name('empresa.logout');
-
-// Rota protegida para empresas autenticadas
-Route::middleware(['auth:empresa'])->group(function () {
-    // Suas rotas protegidas para empresas vão aqui
+        
+        // Outras rotas protegidas para empresas vão aqui
+    });
 });
+
+Route::get('/register/empresa', function () {
+    return view('empresa.register');
+})->name('empresa.register');
 
 
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.

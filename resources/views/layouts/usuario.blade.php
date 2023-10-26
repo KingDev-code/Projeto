@@ -10,7 +10,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- CSS -->
-
     <link rel="stylesheet" href="css/menu-resp.css">
     <link rel="stylesheet" href="css/footer-resp.css">
     
@@ -89,7 +88,7 @@
     </div>
 
     <div>
-      <a href="index.html">
+      <a href="/">
       <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>

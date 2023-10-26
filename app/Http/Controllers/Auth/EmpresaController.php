@@ -7,12 +7,18 @@ use App\Models\Empresa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Validation\Rules;
+use Illuminate\View\View;
 
 class EmpresaController extends Controller
 {
     public function create()
     {
-        return view('auth.register-empresa');
+        return view('empresa.register');
     }
 
     public function store(Request $request)
@@ -34,12 +40,12 @@ class EmpresaController extends Controller
             'telefone' => $request->telefone,
             'data_fundacao' => $request->data_fundacao,
             'email' => $request->email,
-            'senha' => Hash::make($request->password),
+            'password' => Hash::make($request->password),
         ]);
 
         Auth::login($empresa);
 
-        return redirect('empresa.dashboard');
+        return redirect('/empresa/dashboard');
     }
 
     public function login()

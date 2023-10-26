@@ -28,7 +28,7 @@
 
       
         <div class="buttons">
-            <a href="register" class="botao-link">
+            <a href="{{ route('register') }}" class="botao-link">
                 <span id="icone_" class="material-icons-sharp">
                     supervised_user_circle
                     </span> <!-- Ícone (substitua pelo seu ícone) -->
@@ -37,7 +37,7 @@
                 <br>
                 Comum <!-- Texto do botão -->
             </a><br>
-            <a href="/empresa/register" class="botao-link">
+            <a href="{{ route('register-empresa') }}" class="botao-link">
                 <span id="icone_" class="material-icons-sharp">
                     store
                     </span> <!-- Ícone (substitua pelo seu ícone) -->

@@ -2,7 +2,8 @@
 
 @section('conteudo')
 
-<link rel="stylesheet" href="css/login-empresa.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login-resp.css">
 
 <div class="content">
     <div class="title-section">
