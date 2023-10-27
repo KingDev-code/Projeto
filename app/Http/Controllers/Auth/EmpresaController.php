@@ -48,19 +48,21 @@ class EmpresaController extends Controller
         return redirect('/empresa/dashboard');
     }
 
-    public function login()
-    {
-        return view('auth.login-empresa');
-    }
-
-    public function authenticate(Request $request)
+    public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
         if (Auth::attempt($credentials)) {
-            return redirect('empresa.dashboard');
+            // Verificar se o usuário é uma empresa
+            if (Auth::user() instanceof Empresa) {
+                // Usuário é uma empresa
+                return redirect()->route('empresa.dashboard');
+            } else {
+                // Usuário é um usuário comum
+                return redirect()->route('dashboard');
+            }
         }
 
-        return back()->withErrors(['email' => 'Credenciais inválidas']);
+        // Lógica de tratamento de login falhado
     }
+
 }

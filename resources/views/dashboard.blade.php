@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="css/footer-resp.css">
 
     <!-- Seção 2 - Combinação e suas peças -->
-    <!-- Seção 2 - Look1 -->
+    <!-- Seção 2 - Look1 
     <div class="content">
 
     <h1><a href="{{ route('ocasioes.create') }}">Adicionar Ocasião</a></h1>
@@ -29,7 +29,7 @@
         <h1><a href="{{ route('combinacoes.create') }}">Adicionar Combinação</a></h1>
         <h1><a href="{{ route('pecas.create') }}">Adicionar Peça</a></h1>
         
-        <!-- Lista de Ocasiões -->
+        Lista de Ocasiões -->
         <h2>Ocasiões</h2>
         <table>
             @foreach($ocasioes as $ocasiao)

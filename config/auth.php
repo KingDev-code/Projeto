@@ -47,6 +47,11 @@ return [
             'hash' => false,
         ],
     
+        'custom' => [
+            'driver' => 'custom',
+            'provider' => 'custom',
+        ],
+
         'empresa' => [
             'driver' => 'session',
             'provider' => 'empresas',
@@ -81,6 +86,10 @@ return [
             'model' => App\Models\Empresa::class,
         ],
 
+        'custom' => [
+            'driver' => 'custom',
+            'model' => App\Models\User::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

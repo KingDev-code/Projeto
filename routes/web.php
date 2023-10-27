@@ -30,7 +30,7 @@ Route::prefix('empresa')->middleware('guest:empresa')->group(function () {
 
     // Rota de login de empresa
     Route::get('/login', 'App\Http\Controllers\Auth\EmpresaController@login')->name('empresa.login');
-    Route::post('/login', 'App\Http\Controllers/Auth\EmpresaController@authenticate');
+    Route::post('/login', 'App\Http\Controllers\Auth\EmpresaController@login');
 
     // Rota de logout de empresa
     Route::post('/logout', 'App\Http\Controllers\Auth\EmpresaController@logout')->name('empresa.logout');
@@ -46,27 +46,6 @@ Route::prefix('empresa')->middleware('guest:empresa')->group(function () {
     });
 });
 
-// Rota para exibir a escolha do tipo de usuário
-Route::get('/escolha-tipo-usuario', [LoginController::class, 'escolhaTipoUsuario'])->name('escolha-tipo-usuario');
-
-// Rota para processar a escolha do tipo de usuário
-Route::post('/processar-escolha-tipo-usuario', [LoginController::class, 'processarEscolhaTipoUsuario'])->name('processar-escolha-tipo-usuario');
-
-// Rota para exibir o formulário de login do usuário comum
-Route::get('/login/user', [LoginController::class, 'showUserLoginForm'])->name('login.user');
-
-// Rota para processar o login do usuário comum
-Route::post('/login/user', [LoginController::class, 'loginUser'])->name('login.user');
-
-// Rota para exibir o formulário de login da empresa
-Route::get('/login/empresa', [LoginController::class, 'showEmpresaLoginForm'])->name('login.empresa');
-
-// Rota para processar o login da empresa
-Route::post('/login/empresa', [LoginController::class, 'loginEmpresa'])->name('login.empresa');
-
-Route::get('/escolha-tipo-usuario', 'EscolhaTipoUsuarioController@index')->name('escolha-tipo-usuario');
-Route::get('/login/{tipo}', 'LoginController@showLoginForm')->name('login');
-
 
 
 Route::get('/register/empresa', function () {
@@ -81,7 +60,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware('auth:custom')->name('dashboard');
 
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');

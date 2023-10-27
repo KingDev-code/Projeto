@@ -28,7 +28,7 @@
         <h2 class="section-title"><b>Login</b></h2>
       </div>
 
-      <form class="form" method="POST" action="{{ route('login') }}">
+      <form class="form" method="POST" action="{{ route('empresa.login') }}">
         @csrf
 
     <!-- Email Address -->
@@ -40,15 +40,9 @@
         <label for="senha">Senha: <input type="password" id="senha" name="password" autocomplete="current-password" required></label>
         <x-input-error :messages="$errors->get('password')" class="mt-2" />
         <br>
-    
-    <!-- Tipo de Usuário (Comum ou Empresa) -->
-                <label for="tipo">Tipo de Usuário:
-                    <select id="tipo" name="tipo">
-                        <option value="comum">Usuário Comum</option>
-                        <option value="empresa">Empresa</option>
-                    </select>
-                </label>
-                <br>
+
+                
+                
         <div class="button">
             <ul>
 
