@@ -9,6 +9,7 @@ use App\Http\Controllers\PecasController;
 use App\Http\Controllers\EstiloController;
 use App\Http\Controllers\Auth\FavoritoController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\EmpresaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,35 +23,18 @@ use App\Http\Controllers\LoginController;
 */
 
 
-// Rotas de registro e login para empresas
-Route::prefix('empresa')->middleware('guest:empresa')->group(function () {
-    // Rota de registro de empresa
-    Route::get('/register', 'App\Http\Controllers\Auth\EmpresaController@create')->name('register-empresa');
-    Route::post('/register', 'App\Http\Controllers\Auth\EmpresaController@store'); // Não é necessário nomear novamente
+// Rota para exibir o formulário de registro da empresa
+Route::get('/empresa/register', [EmpresaController::class, 'create'])->name('empresa.register');
 
-    // Rota de login de empresa
-    Route::get('/login', 'App\Http\Controllers\Auth\EmpresaController@login')->name('empresa.login');
-    Route::post('/login', 'App\Http\Controllers\Auth\EmpresaController@login');
+// Rota para processar o registro da empresa
+Route::post('/empresa/register', [EmpresaController::class, 'store']);
 
-    // Rota de logout de empresa
-    Route::post('/logout', 'App\Http\Controllers\Auth\EmpresaController@logout')->name('empresa.logout');
+// Rota para processar o login da empresa
+Route::post('/empresa/login', [EmpresaController::class, 'login'])->name('empresa.login');
 
-    // Rota protegida para empresas autenticadas
-    Route::middleware('auth:empresa')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('empresa.dashboard');
-        })->name('empresa.dashboard');
+// Rota para o painel da empresa
+Route::get('/empresa/dashboard', [EmpresaController::class, 'login'])->middleware(['auth', 'empresa'])->name('empresa.dashboard');
 
-        
-        // Outras rotas protegidas para empresas vão aqui
-    });
-});
-
-
-
-Route::get('/register/empresa', function () {
-    return view('empresa.register');
-})->name('empresa.register');
 
 
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.

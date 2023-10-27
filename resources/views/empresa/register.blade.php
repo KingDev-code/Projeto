@@ -19,7 +19,7 @@
                 <h2 class="section-title"><b>Cadastrar-se</b></h2>
             </div>
 
-            <form class="form" action="{{ route('register-empresa') }}" method="POST">
+            <form class="form" action="{{ route('empresa.register') }}" method="POST">
                 @csrf
 
                 <!-- Nome da Empresa -->

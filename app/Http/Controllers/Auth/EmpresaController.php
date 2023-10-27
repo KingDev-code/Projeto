@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-use App\Models\Empresa;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Validation\Rules;
-use Illuminate\View\View;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Empresa;
 
 class EmpresaController extends Controller
 {
+    use RegistersUsers;
+
+    protected $redirectTo = RouteServiceProvider::HOME;
+
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function create()
     {
         return view('empresa.register');
@@ -23,46 +27,39 @@ class EmpresaController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|string|max:255',
-            'resp' => 'required|string|max:255',
-            'cnpj' => 'required|string|max:18|unique:empresas',
-            'telefone' => 'required|string|max:20',
-            'data_fundacao' => 'required|date',
-            'email' => 'required|string|email|max:255|unique:empresas',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
+        $this->validator($request->all())->validate();
 
-        $empresa = Empresa::create([
-            'nome' => $request->nome,
-            'resp' => $request->resp,
-            'cnpj' => $request->cnpj,
-            'telefone' => $request->telefone,
-            'data_fundacao' => $request->data_fundacao,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        $empresa = $this->registrarEmpresa($request->all());
 
-        Auth::login($empresa);
+        // Autenticar a empresa após o registro
+        $this->guard()->login($empresa);
 
-        return redirect('/empresa/dashboard');
+        return redirect($this->redirectTo);
     }
 
-    public function login(Request $request)
+    protected function validator(array $data)
     {
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            // Verificar se o usuário é uma empresa
-            if (Auth::user() instanceof Empresa) {
-                // Usuário é uma empresa
-                return redirect()->route('empresa.dashboard');
-            } else {
-                // Usuário é um usuário comum
-                return redirect()->route('dashboard');
-            }
-        }
-
-        // Lógica de tratamento de login falhado
+        return Validator::make($data, [
+            'nome' => ['required', 'string', 'max:255'],
+            'resp' => ['required', 'string', 'max:255'],
+            'cnpj' => ['required', 'string', 'max:18', 'unique:empresas'],
+            'telefone' => ['required', 'string', 'max:20'],
+            'data_fundacao' => ['required', 'date'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:empresas'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
     }
 
+    protected function registrarEmpresa(array $data)
+    {
+        return Empresa::create([
+            'nome' => $data['nome'],
+            'resp' => $data['resp'],
+            'cnpj' => $data['cnpj'],
+            'telefone' => $data['telefone'],
+            'data_fundacao' => $data['data_fundacao'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+    }
 }
