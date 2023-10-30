@@ -56,6 +56,11 @@ return [
             'driver' => 'session',
             'provider' => 'empresas',
         ],
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users', // Nome do provider para usuários comuns
+        ],
     ],
 
     /*
@@ -78,12 +83,12 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\User::class, // Modelo para usuários comuns
         ],
-
+    
         'empresas' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Empresa::class,
+            'model' => App\Models\Empresa::class, // Modelo para empresas
         ],
 
         'custom' => [

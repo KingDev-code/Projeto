@@ -1,0 +1,194 @@
+/* Estilos gerais */
+body, p, h1, ul, li, blockquote, span {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif, Georgia, serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+
+span {
+    border: none;
+    background: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Grid geral */
+.estrutura {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-areas:
+        "pre-header"
+        "header"
+        "content"
+        "footer"
+        "pos-footer";
+}
+
+/* Pre-header */
+.pre-header {
+    grid-area: pre-header;
+    background-color: rgba(0, 0, 0);
+    padding: 5px;
+    padding-right: 134.8px;
+    color: rgba(255, 255, 255);
+    text-align: center;
+    font-size: 1.000em;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    background: rgba(255, 255, 255);
+    padding: 20px 130px;
+    transition: 0.4s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 99;
+}
+
+/* Linha do menu */
+.linha-menu {
+    border-bottom: 2px solid rgba(230, 230, 230, 100);
+}
+
+/* Menu de itens */
+.menu-itens ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu-itens a {
+    display: block;
+    padding: 10px;
+    color: rgba(0, 0, 0);
+    font-size: 1.125em;
+    transition: 0.1s;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.menu-itens a:hover {
+    color: rgba(0, 0, 0);
+    font-weight: 600;
+    border-top-style: solid;
+}
+
+.header li {
+    margin-right: 30px;
+}
+
+/* Formulário */
+.form {
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+.form label {
+    font-size: 1.500em;
+    display: block;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.form input {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(158, 156, 154, 0.5);
+    font-size: 1em;
+    color: black;
+    font-weight: normal;
+}
+
+.form input::placeholder {
+    color: black;
+    font-size: 1em;
+}
+
+.form button[type="submit"] {
+    padding: 0.1em 0.9em;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    color: rgba(255, 255, 255);
+    background-color: rgba(0, 0, 0);
+    font-size: 2em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.form button[type="submit"]:hover {
+    background-color: rgba(158, 156, 154, 0.5);
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    padding: 45px;
+    background: rgba(30, 30, 30);
+}
+
+.container-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer h2 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 30px;
+}
+
+.footer a {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    outline: none;
+}
+
+.linha-footer {
+    padding: 20px;
+    border-bottom: 2px solid rgba(230, 230, 230, 100);
+}
+
+.footer img {
+    max-width: 250px;
+    justify-items: center;
+    padding: 20px;
+}
+
+/* Pós-footer */
+.pos-footer {
+    grid-area: pos-footer;
+    display: grid;
+    grid-row: 2fr;
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+
+.row1,
+.row2 {
+    padding: 10px;
+}

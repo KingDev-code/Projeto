@@ -8,7 +8,7 @@ use App\Http\Controllers\TipoCorporalController;
 use App\Http\Controllers\PecasController;
 use App\Http\Controllers\EstiloController;
 use App\Http\Controllers\Auth\FavoritoController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\Auth\EmpresaController;
 
 /*
@@ -22,6 +22,16 @@ use App\Http\Controllers\Auth\EmpresaController;
 |
 */
 
+// Rota de exibição do formulário de login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+
+// Rota de processamento do formulário de login
+Route::post('/login', [LoginController::class, 'Login']);
+
+// Rota de logout
+Route::post('/logout', [LoginController::class, 'Logout'])->name('logout');
+
+
 
 // Rota para exibir o formulário de registro da empresa
 Route::get('/empresa/register', [EmpresaController::class, 'create'])->name('empresa.register');
@@ -29,11 +39,8 @@ Route::get('/empresa/register', [EmpresaController::class, 'create'])->name('emp
 // Rota para processar o registro da empresa
 Route::post('/empresa/register', [EmpresaController::class, 'store']);
 
-// Rota para processar o login da empresa
-Route::post('/empresa/login', [EmpresaController::class, 'login'])->name('empresa.login');
-
 // Rota para o painel da empresa
-Route::get('/empresa/dashboard', [EmpresaController::class, 'login'])->middleware(['auth', 'empresa'])->name('empresa.dashboard');
+Route::get('/empresa/dashboard', [EmpresaController::class, 'login'])->name('empresa-dashboard');
 
 
 
@@ -42,13 +49,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/envios', function () {
+    return view('envios');
+})->name('envios');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware('auth:custom')->name('dashboard');
-
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('/login', 'Auth\LoginController@login');
-Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+})->name('dashboard');
 
 Route::get('/favoritos', function () {
     return view('favoritos');
@@ -99,8 +106,8 @@ Route::post('/favorito/adicionar/{combinacao}', 'FavoritoController@adicionar')-
 Route::delete('/favorito/remover/{combinacao}', 'FavoritoController@remover')->name('favorito.remover');
 
 
-Route::get('dashboard', [PecasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('dashboard', [CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('dashboard', [PecasController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('dashboard', [CombinacaoController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 /*Combinações
 Route::get('combinacoes', [CombinacaoController::class, 'create']);
@@ -120,14 +127,14 @@ Route::get('/estilos/create', [EstiloController::class, 'create'])->name('estilo
 Route::post('/estilos', [EstiloController::class, 'store'])->name('estilos.store');
 
 // Rotas para Ocasião
-//Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
-//Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
-//Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
-//Route::get('/ocasiao/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
-//Route::get('/ocasiao/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
-// Route::get('/ocasiao/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
-//Route::get('/ocasiao/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
-//Route::get('/ocasiao/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
+Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
+Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
+Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
+Route::get('/ocasiao/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
+Route::get('/ocasiao/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
+Route::get('/ocasiao/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
+Route::get('/ocasiao/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
+Route::get('/ocasiao/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
 
 // Rotas para Tipos Corporal
 Route::get('/tiposcorporal/create', [TipoCorporalController::class, 'create'])->name('tiposcorporal.create');

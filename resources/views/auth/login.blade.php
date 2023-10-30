@@ -28,24 +28,43 @@
         <h2 class="section-title"><b>Login</b></h2>
       </div>
 
-      <form class="form" method="POST" action="{{ route('empresa.login') }}">
-        @csrf
+        <form class="form" method="POST" action="{{ route('login') }}">
+            @csrf
 
-    <!-- Email Address -->
-        <label for="email">E-mail: <input type="email" id="email" name="email" autofocus autocomplete="email" required></label>
-        <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        <br>
+            <!-- E-mail -->
+            <label for="email">E-mail: <input type="email" id="email" name="email" autofocus autocomplete="email" required></label>
+            @error('email')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
+            <br>
 
-    <!-- Password -->
-        <label for="senha">Senha: <input type="password" id="senha" name="password" autocomplete="current-password" required></label>
-        <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        <br>
+            <!-- Senha -->
+            <label for="senha">Senha: <input type="password" id="senha" name="password" autocomplete="current-password" required></label>
+            @error('password')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
+            <br>
 
-                
-                
-        <div class="button">
-            <ul>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
+
+            
+
+            <div class="button">
+                <ul>
+                    <li><button type="submit">Entrar</button></li>
+                    <li><a class="cadastro" href="{{ route('register') }}">Ainda não tenho uma conta</a></li>
+                </ul>
+            </div>
+        </form>
                 <!-- Remember Me 
                 <li>
                 <label for="remember_me" class="container-checkbox">
@@ -53,7 +72,7 @@
                     <h2 class="manter">{{ __('Manter-me conectado') }}</h2>
                     <span class="checkmark"></span>
                 </label>
-                </li>-->
+                </li>
 
                 <li>
                 @if (Route::has('password.request'))
@@ -72,11 +91,7 @@
                     <a class="cad" href="{{ route('register') }}">
                         Ainda não sou cadastrado - Cadastrar-me
                     </a>
-                @endif
-                </li>
-            </ul>
-        </div>
-    </form>
+                @endif-->
   </div>
 </div>
 @endsection

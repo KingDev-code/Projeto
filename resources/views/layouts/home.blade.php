@@ -90,14 +90,13 @@
   </header>
 </section>
     @yield('conteudo')
-    <!-- Footer -->
 <!-- Footer -->
 <footer class="footer">
   <div class="linha-footer"></div>
 
   <div class="container-footer">
     <div>
-      <a href="index.html#sobrenos"><h2>Conheça nossa história</a></h2>
+      <a href="/#sobrenos"><h2>Conheça nossa história</a></h2>
     </div>
 
     <div>
@@ -105,7 +104,7 @@
     </div>
 
     <div>
-      <a href="index.html">
+      <a href="/">
       <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>

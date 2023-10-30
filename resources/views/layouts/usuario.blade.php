@@ -10,8 +10,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/menu-resp.css">
     <link rel="stylesheet" href="css/footer-resp.css">
+    <link rel="stylesheet" href="css/menu-resp.css">
+
     
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +75,7 @@
   </header>
 </section>
     @yield('conteudo')
-<!-- Footer -->
+    <!-- Footer -->
 <footer class="footer">
   <div class="linha-footer"></div>
 
@@ -88,7 +89,7 @@
     </div>
 
     <div>
-      <a href="/">
+      <a href="index.html">
       <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>
@@ -105,17 +106,18 @@
   <div class="linha-footer"></div>
 </footer>
 
-    <div class="pos-footer">
-        <div class="row1">
-            <p class="titulo-footer">Veste-me | São Paulo - SP</p>
-        </div>
-        <div class="row2">
-            <p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
-        </div>
-    </div>
+  <div class="pos-footer">
+  <div class="row1">
+  <p class="titulo-footer">Veste-me | São Paulo - SP</p>
+  </div>
+  <div class="row2">
+  <p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
+  </div>
 </div>
-      <!-- Java Script -->
-      <script src="js/menu.js"></script>
+</div>
+
+<!-- Java Script -->
+<script src="js/menu.js"></script>
 
 </body>
 </html>

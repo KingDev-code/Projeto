@@ -13,13 +13,13 @@ class PecasController extends Controller
     {
         $combinacoes = Combinacao::all();
         $pecas = Peca::all(); // Ou qualquer outra lógica para buscar as peças
-        return view('dashboard', compact('pecas', 'combinacoes'));
+        return view('envios', compact('pecas', 'combinacoes'));
     }
 
     public function create()
     {
         $combinacoes = Combinacao::all();
-        return view('combinacoes.peca', compact('combinacoes'));
+        return view('envios', compact('combinacoes'));
     }
 
     public function store(Request $request)

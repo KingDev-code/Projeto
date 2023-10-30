@@ -12,6 +12,8 @@ class Empresa extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+
     protected $table = 'empresas';
 
     protected $fillable = [
@@ -31,4 +33,6 @@ class Empresa extends Authenticatable
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    
 }

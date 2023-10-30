@@ -59,7 +59,7 @@
         <div class="button">
         <ul>
             <li><button type="submit">Cadastrar</button></li>
-            <li><a class="login" href="login">Já sou cadastrado - Logar</a></li>
+            <li><a class="login" href="/login">Já sou cadastrado - Logar</a></li>
         </ul>
        </div>
     </form>

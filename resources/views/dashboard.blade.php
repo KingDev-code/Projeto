@@ -2,104 +2,66 @@
 
 @section('conteudo')
 
-<!-- Settings Dropdown -->
-
-
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <a href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Sair') }}
-                            </a>
-                        </form>
-
-<link rel="stylesheet" href="css/menu-resp.css">
-<link rel="stylesheet" href="css/footer-resp.css">
-
-    <!-- Seção 2 - Combinação e suas peças -->
-    <!-- Seção 2 - Look1 
-    <div class="content">
-
-    <h1><a href="{{ route('ocasioes.create') }}">Adicionar Ocasião</a></h1>
-        <h1><a href="{{ route('estilos.create') }}">Adicionar Estilo</a></h1>
-        <h1><a href="{{ route('tiposcorporal.create') }}">Adicionar Tipo Corporal</a></h1>
-        <h1><a href="{{ route('combinacoes.create') }}">Adicionar Combinação</a></h1>
-        <h1><a href="{{ route('pecas.create') }}">Adicionar Peça</a></h1>
-        
-        Lista de Ocasiões -->
-        <h2>Ocasiões</h2>
-        <table>
-            @foreach($ocasioes as $ocasiao)
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Ocasião</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ $ocasiao->id }}</td>
-                    <td>{{ $ocasiao->ocasiao }}</td>
-                </tr>
-                <!-- Lista de Combinações da Ocasião -->
-                <tr>
-                    <td colspan="2">
-                        @foreach($ocasiao->combinacoes as $combinacao)
-                        <h3>Combinações</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Estilo</th>
-                                    <th>Tipo Corporal</th>
-                                    <th>Ocasião Específica</th>
-                                    <th>Imagem da Combinação</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ $combinacao->id }}</td>
-                                    <td>{{ $combinacao->estilo->estilo }}</td>
-                                    <td>{{ $combinacao->tipocorporal->tipocorporal }}</td> <!-- Mostrar o tipo corporal -->
-                                    <td>{{ $combinacao->oca_esp }}</td>
-                                    <td><img src="{{ asset('storage/' . $combinacao->img_comb) }}" alt="Imagem da combinação" width="300" height="300"></td>
-                                </tr>
-                                <!-- Lista de Peças da Combinação -->
-                                <tr>
-                                    <td colspan="5">
-                                        <h4>Peças da Combinação</h4>
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Descrição</th>
-                                                    <th>Preço</th>
-                                                    <th>Imagem da Peça</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach($combinacao->pecas as $peca)
-                                                <tr>
-                                                    <td>{{ $peca->id }}</td>
-                                                    <td>{{ $peca->desc_peca }}</td>
-                                                    <td>{{ $peca->preco_peca }}</td>
-                                                    <td><img src="{{ asset('storage/' . $peca->img_peca) }}" alt="Imagem da peça" width="300" height="300"></td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        @endforeach
-                    </td>
-                </tr>
-            </tbody>
-            @endforeach
-        </table>
+<div id="indicator">
+        <ul>
+            <li><a href="#Menu - versão 1">Veste-me</a></li>
+            <div id="arrow"></div>
+            <li><a href="#Tela de Favoritos">Dados Pessoais</a></li>
+            <div id="arrow"></div>
+            <li><a href="#Tela de Favoritos">Enviar combinação</a></li>
+        </ul>
     </div>
+
+    <br>
+    <br>
+    <div class="content">
+        <h1> Dados Pessoais </h1>
+        <br>
+        <br>
+        <br>
+
+        <div class="filtro">
+            <div class="circle" onclick="document.getElementById('file-input').click()">
+                <input id="file-input" type="file" style="display: none;">
+                <span class="material-icons-sharp">add_photo_alternate</span>
+            </div>
+
+            <div class="usu">
+                <p>NOVA FOTO DE PERFIL</p>
+                <h2>Gabriela</h2>
+            </div>
+            <div class="menu">
+                <a href="#info">Dados Pessoais</a>
+                <div class="top-line"></div>
+                <br> 
+                <br>
+                <a href="#info">Senha</a>
+                <div class="top-line"></div>
+                <br> 
+                <br>
+                <a href="#info">Desativar Conta</a>
+                <div class="top-line"></div>
+            </div>
+        </div>
+
+        <div class="container-comb">
+            <div class="forms">
+                @include('profile.partials.update-profile-information-form')
+                <br>
+                <br>
+                @include('profile.partials.update-password-form')
+                <br>
+                <br>
+                @include('profile.partials.delete-user-form')
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="btn2">
+                    <button>Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection

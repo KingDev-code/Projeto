@@ -1,4 +1,7 @@
-<x-app-layout>
+@extends('layouts.usuario')
+
+@section('conteudo')
+
     <div class="container">
         <h1>Adicionar Combinação</h1>
         <form method="POST" action="{{ route('combinacoes.store') }}" enctype="multipart/form-data">
@@ -51,4 +54,4 @@
             </div>
         </form>
     </div>
-</x-app-layout>
+@endsection
