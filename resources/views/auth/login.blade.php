@@ -61,7 +61,7 @@
             <div class="button">
                 <ul>
                     <li><button type="submit">Entrar</button></li>
-                    <li><a class="cadastro" href="{{ route('register') }}">Ainda não tenho uma conta</a></li>
+                    <li><a class="cadastro" href="/select">Ainda não tenho uma conta</a></li>
                 </ul>
             </div>
         </form>

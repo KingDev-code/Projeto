@@ -4,6 +4,8 @@
 
   <link rel="stylesheet" href="css/comemoracoes.css">
   <link rel="stylesheet" href="css/comemoracoes-resp.css">
+  <link rel="stylesheet" href="css/menu-resp.css">
+  <link rel="stylesheet" href="css/footer-resp.css">
 
 <section id="menu">
     <!-- Pre Header -->

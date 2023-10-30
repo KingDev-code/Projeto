@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('data_fundacao');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('img_empresa')->nullable();
             $table->timestamps();
         });
     }

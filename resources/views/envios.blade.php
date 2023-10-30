@@ -224,9 +224,7 @@
                         <div class="peca">
                         <label for="cod_comb">Selecione uma Combinação:</label>
                         <select name="cod_comb" id="cod_comb">
-                            @foreach ($combinacoes as $combinacao)
-                                <option value="{{ $combinacao->id }}">{{ $combinacao->id }}</option>
-                            @endforeach
+                            
                         </select>
                         <label for="desc_peca">Descrição da Peça:</label>
                         <input type="text" name="desc_peca" id="desc_peca" required>

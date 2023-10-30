@@ -7,6 +7,7 @@ use App\Http\Controllers\OcasiaoController;
 use App\Http\Controllers\TipoCorporalController;
 use App\Http\Controllers\PecasController;
 use App\Http\Controllers\EstiloController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\Auth\FavoritoController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\Auth\EmpresaController;
@@ -21,6 +22,9 @@ use App\Http\Controllers\Auth\EmpresaController;
 | serão atribuídas ao grupo de middleware "web". Crie algo incrível!
 |
 */
+
+Route::post('/upload-image', ['ImageController@upload'])->name('upload.image');
+
 
 // Rota de exibição do formulário de login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
