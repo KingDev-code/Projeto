@@ -23,7 +23,7 @@ use App\Http\Controllers\Auth\EmpresaController;
 |
 */
 
-Route::post('/upload-image', ['ImageController@upload'])->name('upload.image');
+Route::post('/upload-image', [ImageController::class, 'upload'])->name('upload.image');
 
 
 // Rota de exibição do formulário de login

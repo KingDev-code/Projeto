@@ -27,7 +27,7 @@
                 <!-- Exibir a imagem existente ou um ícone padrão -->
                 <img class="circle" id="image-preview" src="{{ asset('images/' . auth()->user()->img_cliente) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
                 @if (auth()->user()->img_cliente)
-                    <span class="material-icons-sharp" id="edit-icon">edit</span>
+                    <img class="circle" id="image" src="{{ asset('images/' . auth()->user()->img_cliente) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
                 @else
                     <span class="material-icons-sharp" id="add-icon">add_photo_alternate</span>
                 @endif
@@ -122,7 +122,7 @@
     </script>
 
     <script>
-    // Função para ocultar o ícone quando uma imagem é selecionada
+    // Função para ocultar elementos e mostrar a imagem de visualização
     function previewImage(input) {
         var imagePreview = document.getElementById('image-preview');
         var addIcon = document.getElementById('add-icon');
@@ -132,13 +132,21 @@
             var reader = new FileReader();
 
             reader.onload = function (e) {
+                // Mostrar apenas a imagem de visualização e ocultar os ícones
                 imagePreview.src = e.target.result;
                 imagePreview.style.display = 'block';
+                image.style.display = 'none';
                 addIcon.style.display = 'none';
                 editIcon.style.display = 'none';
             };
 
             reader.readAsDataURL(input.files[0]);
+        } else {
+            // Ocultar a imagem de visualização e mostrar os ícones
+            imagePreview.style.display = 'none';
+            image.style.display = 'none';
+            addIcon.style.display = 'block';
+            editIcon.style.display = 'block';
         }
     }
     </script>

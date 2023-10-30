@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'sobrenome',  // Adicione o campo 'sobrenome'
         'datanasc',   // Adicione o campo 'datanasc'
+        'img_cliente',
         'email',
         'password',
     ];
