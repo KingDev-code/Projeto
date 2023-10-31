@@ -182,5 +182,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth')->group(function () {
+    // Visualização e edição do perfil da empresa
+    Route::get('/empresa', [EmpresaController::class, 'edit'])->name('empresa.edit');
+    Route::patch('/empresa', [EmpresaController::class, 'update'])->name('empresa.update');
+
+    // Outras rotas relacionadas à empresa, se necessário
+});
+
+
 // Inclui rotas de autenticação a partir do arquivo 'auth.php'.
 require __DIR__.'/auth.php';

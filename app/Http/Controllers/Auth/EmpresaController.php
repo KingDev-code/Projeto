@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
+use App\Http\Requests\EmpresaUpdateRequest; // Supondo que você tem um arquivo EmpresaUpdateRequest
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 
 
 class EmpresaController extends Controller
@@ -17,9 +22,11 @@ class EmpresaController extends Controller
 
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public function login()
+    public function login(Request $request): View
     {
-        return view('empresa.dashboard');
+        return view('empresa.dashboard', [
+            'empresa' => $request->user(), // Supondo que você tem um modelo Empresa
+        ]);
     }
 
     public function __construct()
@@ -42,6 +49,7 @@ class EmpresaController extends Controller
         $this->guard()->login($empresa);
 
         return redirect($this->redirectTo);
+        
     }
 
     protected function validator(array $data)
@@ -68,5 +76,51 @@ class EmpresaController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function edit(Request $request): View
+    {
+        return view('empresa-dashboard', [
+            'empresa' => $request->user(), // Supondo que você tem um modelo Empresa
+        ]);
+    }
+
+    /**
+     * Atualizar as informações do perfil da empresa.
+     */
+    public function update(EmpresaUpdateRequest $request): RedirectResponse
+    {
+        $empresa = $request->user();
+
+        $empresa->fill($request->validated());
+
+        if ($empresa->isDirty('email')) {
+            $empresa->email_verified_at = null;
+        }
+
+        $empresa->save();
+
+        return Redirect::route('empresa-dashboard')->with('status', 'empresa-updated');
+    }
+
+    /**
+     * Deletar a conta da empresa.
+     */
+    public function destroy(Request $request): RedirectResponse
+    {
+        $request->validateWithBag('empresaDeletion', [
+            'password' => ['required', 'current_password'],
+        ]);
+
+        $empresa = $request->user();
+
+        Auth::logout();
+
+        $empresa->delete();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return Redirect::to('/');
     }
 }

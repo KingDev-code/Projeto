@@ -33,7 +33,7 @@ class LoginController extends Controller
         if ($user) {
             if (Auth::guard('web')->attempt($credentials)) { // Guard 'web' para usuários
                 // Redirecionar para a área de usuário
-                return redirect('dashboard');
+                return redirect('/profile');
             } elseif (Auth::guard('empresa')->attempt($credentials)) { // Guard 'empresa' para empresas
                 // Redirecionar para a área de empresa
                 return redirect('/empresa/dashboard');

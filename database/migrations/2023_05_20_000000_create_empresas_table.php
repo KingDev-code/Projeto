@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('telefone');
             $table->date('data_fundacao');
             $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('img_empresa')->nullable();
             $table->timestamps();

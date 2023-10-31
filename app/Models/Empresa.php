@@ -17,7 +17,7 @@ class Empresa extends Authenticatable
     protected $table = 'empresas';
 
     protected $fillable = [
-        'nome', 'resp', 'cnpj', 'telefone', 'data_fundacao', 'email', 'password',
+        'nome', 'resp', 'cnpj', 'telefone', 'data_fundacao', 'email', 'password', 'img_empresa'
     ];
 
     protected $hidden = [
@@ -32,6 +32,7 @@ class Empresa extends Authenticatable
      */
     protected $casts = [
         'password' => 'hashed',
+        'email_verified_at' => 'datetime',
     ];
 
     
