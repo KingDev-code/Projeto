@@ -19,7 +19,7 @@
     </ul>
 </div>
 
-<form action="{{ route('upload.image') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('upload.image.cliente') }}" method="POST" enctype="multipart/form-data">
     <div class="align-circle">
         @csrf
         <div class="circle">
@@ -29,7 +29,7 @@
                 @if (auth()->user()->img_cliente)
                     <img class="circle" id="image" src="{{ asset('images/' . auth()->user()->img_cliente) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
                 @else
-                    <span class="material-icons-sharp" id="add-icon">add_photo_alternate</span>
+                    <span class="material-icons-sharp" style="display: block;" id="add-icon">add_photo_alternate</span>
                 @endif
             </label>
             <input id="file-input" type="file" style="display: none;" name="image" accept="image/*" onchange="previewImage(this)">
@@ -43,7 +43,7 @@
 </form>
 
           <div class="menu">
-            <a href="javascript:void(0);" onclick="toggleForm('profile-form')">Dados Pessoais</a>
+            <a href="javascript:void(0);" onclick="toggleForm('profile-form-complete')">Dados Pessoais</a>
             <div class="top-line"></div>
             <br>
             <br>
@@ -124,7 +124,7 @@
     function previewImage(input) {
         var imagePreview = document.getElementById('image-preview');
         var addIcon = document.getElementById('add-icon');
-        var editIcon = document.getElementById('edit-icon');
+        var image = document.getElementById('image');
 
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -135,7 +135,6 @@
                 imagePreview.style.display = 'block';
                 image.style.display = 'none';
                 addIcon.style.display = 'none';
-                editIcon.style.display = 'none';
             };
 
             reader.readAsDataURL(input.files[0]);
@@ -144,7 +143,6 @@
             imagePreview.style.display = 'none';
             image.style.display = 'none';
             addIcon.style.display = 'block';
-            editIcon.style.display = 'block';
         }
     }
     </script>

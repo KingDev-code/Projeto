@@ -23,7 +23,8 @@ use App\Http\Controllers\Auth\EmpresaController;
 |
 */
 
-Route::post('/upload-image', [ImageController::class, 'upload'])->name('upload.image');
+Route::post('/upload-image', [ImageController::class, 'upload'])->name('upload.image.cliente');
+Route::post('/upload-image/empresa', [ImageController::class, 'uploadEmpresa'])->name('upload.image.empresa');
 
 
 // Rota de exibição do formulário de login
@@ -44,7 +45,7 @@ Route::get('/empresa/register', [EmpresaController::class, 'create'])->name('emp
 Route::post('/empresa/register', [EmpresaController::class, 'store']);
 
 // Rota para o painel da empresa
-Route::get('/empresa/dashboard', [EmpresaController::class, 'login'])->name('empresa-dashboard');
+Route::get('/dashboard', [EmpresaController::class, 'login'])->name('empresa-dashboard');
 
 
 
@@ -56,10 +57,6 @@ Route::get('/', function () {
 Route::get('/envios', function () {
     return view('envios');
 })->name('envios');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
 Route::get('/favoritos', function () {
     return view('favoritos');

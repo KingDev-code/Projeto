@@ -46,11 +46,6 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-    
-        'custom' => [
-            'driver' => 'custom',
-            'provider' => 'custom',
-        ],
 
         'empresa' => [
             'driver' => 'session',
@@ -91,10 +86,6 @@ return [
             'model' => App\Models\Empresa::class, // Modelo para empresas
         ],
 
-        'custom' => [
-            'driver' => 'custom',
-            'model' => App\Models\User::class,
-        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

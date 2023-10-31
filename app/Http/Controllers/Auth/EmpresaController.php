@@ -80,7 +80,7 @@ class EmpresaController extends Controller
 
     public function edit(Request $request): View
     {
-        return view('empresa-dashboard', [
+        return view('empresa.dashboard', [
             'empresa' => $request->user(), // Supondo que você tem um modelo Empresa
         ]);
     }
@@ -100,7 +100,7 @@ class EmpresaController extends Controller
 
         $empresa->save();
 
-        return Redirect::route('empresa-dashboard')->with('status', 'empresa-updated');
+        return Redirect::route('empresa.dashboard')->with('status', 'empresa-updated');
     }
 
     /**

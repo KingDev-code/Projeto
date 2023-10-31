@@ -2,10 +2,12 @@
 
 @section('conteudo')
     <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/footer-resp.css') }}">
+
     <link rel="stylesheet" href="css/footer-resp.css">
     <link rel="stylesheet" href="css/menu-resp.css">
     <link rel="stylesheet" href="css/dadospessoais.css">
-    <link rel="stylesheet" href="css/dadospessoais-resp.css">
+    <link rel="stylesheet" href=".css/dadospessoais-resp.css">
 
     <div class="content">
         <!-- Filtro -->
@@ -19,18 +21,19 @@
     </ul>
 </div>
 
-<form action="{{ route('upload.image') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('upload.image.empresa') }}" method="POST" enctype="multipart/form-data">
     <div class="align-circle">
         @csrf
         <div class="circle">
             <label for="file-input" style="cursor: pointer;">
                 <!-- Exibir a imagem existente ou um ícone padrão -->
-                <img class="circle" id="image-preview" src="{{ asset('images/' . $empresa->img_empresa) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
-                @if ($empresa->img_empresa)
-                    <img class="circle" id="image" src="{{ asset('images/' . $empresa->img_empresa) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
+                <img class="circle" id="image-preview" src="{{ asset('images/' . auth('empresa')->user()->img_empresa) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
+                @if ($empresa && $empresa->img_empresa)
+                    <img class="circle" id="image" src="{{ asset('images/' . auth('empresa')->user()->img_empresa) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
                 @else
                     <span class="material-icons-sharp" id="add-icon">add_photo_alternate</span>
                 @endif
+                
             </label>
             <input id="file-input" type="file" style="display: none;" name="image" accept="image/*" onchange="previewImage(this)">
         </div>
@@ -38,7 +41,7 @@
 
     <div class="usu">
         <button type="submit">NOVA FOTO DE PERFIL</button>
-        <h2>{{ $empresa->name }}</h2>
+        <h2>{{ auth('empresa')->user()->nome }}</h2>
     </div>
 </form>
 
@@ -72,9 +75,9 @@
         </div>
 
         <div class="forms">
-            <label for="name">NOME: <input type="text" value="{{ old('name', $empreas->name) }}" id="nome" name="name" autocomplete="name" required></label>
-            <label for="telefone">TELEFONE: <input type="text" value="{{ old('telefone', $empresa->telefone) }}" id="telefone" name="telefone" autocomplete="telefone" required></label>
-            <label for="email">EMAIL: <input type="text" value="{{ old('email', $empresa->email) }}" id="email" name="email" autocomplete="email" required></label>
+            <label for="name">NOME: <input type="text" value="{{ old('nome', auth('empresa')->user()->nome) }}" id="nome" name="nome" autocomplete="nome" required></label>
+            <label for="telefone">TELEFONE: <input type="text" value="{{ old('telefone', auth('empresa')->user()->telefone) }}" id="telefone" name="telefone" autocomplete="telefone" required></label>
+            <label for="email">EMAIL: <input type="text" value="{{ old('email', auth('empresa')->user()->email) }}" id="email" name="email" autocomplete="email" required></label>
 
             <button type="submit">Salvar Alterações</button>
         </div>
@@ -86,6 +89,7 @@
                 Informações da empresa atualizadas com sucesso.
             </div>
         @endif
+
 
         <form id="profile-form-complete" class="user-form" style="display: none">
             @include('empresa.profile.update-profile-information-form')

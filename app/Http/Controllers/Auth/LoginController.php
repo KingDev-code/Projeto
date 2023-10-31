@@ -36,7 +36,7 @@ class LoginController extends Controller
                 return redirect('/profile');
             } elseif (Auth::guard('empresa')->attempt($credentials)) { // Guard 'empresa' para empresas
                 // Redirecionar para a área de empresa
-                return redirect('/empresa/dashboard');
+                return redirect('/dashboard');
             } else {
                 return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
             }
