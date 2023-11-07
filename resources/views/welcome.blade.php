@@ -4,23 +4,23 @@
 
 <div class="slideshow">
       <div class="slide">
-          <img id="banner1" src="{{ asset('public/caminho_da_imagem/banner1.png') }}">
+          <img id="banner1" src="{{ asset('public/img/banner1.png') }}">
       </div>
 
       <div class="slide">
-          <img id="banner2" src="{{ asset('public/caminho_da_imagem/banner2.png') }}">
+          <img id="banner2" src="{{ asset('public/img/banner2.png') }}">
       </div>
 
       <div class="slide">
-          <img id="banner3" src="{{ asset('public/caminho_da_imagem/banner3.png') }}">
+          <img id="banner3" src="{{ asset('public/img/banner3.png') }}">
       </div>
 
       <div class="slide">
-          <img id="banner4" src="{{ asset('public/caminho_da_imagem/banner4.png') }}">
+          <img id="banner4" src="{{ asset('public/img/banner4.png') }}">
       </div>
 
       <div class="slide">
-          <img id="banner5" src="{{ asset('public/caminho_da_imagem/banner5.png') }}">
+          <img id="banner5" src="{{ asset('public/img/banner5.png') }}">
       </div>
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -212,43 +212,43 @@
   <div class="estilosuniv">
     
   <div class="estilo" id="estilo-1">
-    <img id="image1-e" class="img_e" src="{{asset('img/esportivo.png')}}" alt="Imagem 1">
+    <img id="image1-e" class="img_e" src="{{asset('public/img/esportivo.png')}}" alt="Imagem 1">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Esportivo</h2>
   </div>
 
   <div class="estilo" id="estilo-2">
-    <img id="image2-e" class="img_e" src="{{asset('img/romantico.png') }}" alt="Imagem 2">
+    <img id="image2-e" class="img_e" src="{{asset('public/img/romantico.png') }}" alt="Imagem 2">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Romântico</h2>
   </div>
 
   <div class="estilo" id="estilo-3">
-    <img id="image3-e" class="img_e" src="{{asset('img/classico.png') }}" alt="Imagem 3">
+    <img id="image3-e" class="img_e" src="{{asset('public/img/classico.png') }}" alt="Imagem 3">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Clássico</h2>
   </div>
 
   <div class="estilo" id="estilo-4">
-    <img id="image4-e" class="img_e" src="{{asset('img/elegante.png') }}" alt="Imagem 4">
+    <img id="image4-e" class="img_e" src="{{asset('public/img/elegante.png') }}" alt="Imagem 4">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Elegante</h2>
   </div>
 
   <div class="estilo" id="estilo-5">
-    <img id="image5-e" class="img_e" src="{{asset('img/criativo.png') }}" alt="Imagem 5">
+    <img id="image5-e" class="img_e" src="{{asset('public/img/criativo.png') }}" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Criativo</h2>
   </div>
 
   <div class="estilo" id="estilo-6">
-    <img id="image6-e" class="img_e" src="{{asset('img/dramatico.png') }}" alt="Imagem 5">
+    <img id="image6-e" class="img_e" src="{{asset('public/img/dramatico.png') }}" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Dramático</h2>
   </div>
 
   <div class="estilo" id="estilo-7">
-    <img id="image7-e" class="img_e" src="{{asset('img/sexy.png') }}" alt="Imagem 5">
+    <img id="image7-e" class="img_e" src="{{asset('public/img/sexy.png') }}" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Sexy</h2>
   </div>
