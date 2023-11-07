@@ -4,23 +4,23 @@
 
 <div class="slideshow">
       <div class="slide">
-        <img id="banner1" src="img/banner1.png">
+          <img id="banner1" src="{{ asset('public/caminho_da_imagem/banner1.png') }}">
       </div>
-    
+
       <div class="slide">
-        <img id="banner2" src="img/banner2.png">
+          <img id="banner2" src="{{ asset('public/caminho_da_imagem/banner2.png') }}">
       </div>
-    
+
       <div class="slide">
-        <img id="banner3" src="img/banner3.png">
+          <img id="banner3" src="{{ asset('public/caminho_da_imagem/banner3.png') }}">
       </div>
-    
+
       <div class="slide">
-        <img id="banner4" src="img/banner4.png">
+          <img id="banner4" src="{{ asset('public/caminho_da_imagem/banner4.png') }}">
       </div>
-    
+
       <div class="slide">
-        <img id="banner5" src="img/banner5.png">
+          <img id="banner5" src="{{ asset('public/caminho_da_imagem/banner5.png') }}">
       </div>
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -39,7 +39,7 @@
 <div class="combinacoes">
  
       <!-- Seção 2 - Combinação e suas peças -->
-      <img class="logo-comb" src="img/Logo Veste-me - Preta.png" alt="Veste-me">
+      <img class="logo-comb" src="{{asset('public/img/Logo Veste-me - Preta.png') }}" alt="Veste-me">
       <h2 class="title-comb"><b>Ocasião Executiva</b></h2>
 
 <div class="combinacoes-looks">
@@ -47,7 +47,7 @@
   <div class="secao-look1">
 
     <a id="link-look1" href="https://br.pinterest.com/pin/730357264592614830/" target="_blank">
-      <img id="look1"  class="look1" src="img/look1.png" alt="Imagem Look 1">
+      <img id="look1"  class="look1" src="{{asset('public/img/look1.png') }}" alt="Imagem Look 1">
     </a>
 
       <div id="iconoverlay1" class="icon-overlay1"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/triangle.png" alt="triangle"/> </div>
@@ -69,28 +69,28 @@
 
       <a id="link-peca1" href="https://www.cea.com.br/camiseta-de-algodao-mindset-preto-9394894-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwWCs_dk5ApQlnn-RbrPU6E8Bm2i1p9XfI2G3cLpZbg3jp_rxNsSAahoCKwMQAvD_BwE" target="_blank">
       <div class="slidec">
-          <img id="peca1" src="img/peca1.png" alt="Imagem 1">
+          <img id="peca1" src="{{asset('public/img/peca1.png') }}" alt="Imagem 1">
           <p id="desc_1-look1">Camiseta de Algodão mindset preto.                           </p>
       </div>
       </a>
     
       <a id="link-peca2"  href="https://www.cea.com.br/blazer-alongado-com-linho-manga-longa-preto-1041335-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwdJyXQfPRzyANVwNF9lkkpqeb9rsdJlVrQjFLxc6qBpGPyX7g7GbWhoCHl0QAvD_BwE" target="_blank">
       <div class="slidec">
-          <img id="peca2" src="img/peca2.png" alt="Imagem 2">
+          <img id="peca2" src="{{asset('public/img/peca2.png') }}" alt="Imagem 2">
           <p id="desc_2-look1">Blazer alongado com linho manga longa preto.                 </p>
       </div>
       </a>
 
       <a id="link-peca3"  href="https://www.cea.com.br/calca-wide-leg-de-viscose-cintura-alta-com-elastico-areia-1048270-areia/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwfjg0dNfmznM2Z3M_ftUqWuwHTm0iewuQdxv1LbWPiae5DmDh-QntRoCeFAQAvD_BwE" target="_blank">
       <div class="slidec">
-        <img id="peca3" src="img/peca3.png" alt="Imagem 3">
+        <img id="peca3" src="{{asset('public/img/peca3.png') }}" alt="Imagem 3">
         <p id="desc_3-look1">Calça wide leg de viscose cintura alta com elástico areia.   </p>
       </div>
       </a>
 
     <a id="link-peca4" href="https://www.anacapri.com.br/tenis-cami-branco/p/3034100020005U?gclid=CjwKCAjwyY6pBhA9EiwAMzmfweQJgJDTbhmgGvf2URxiNFusaTdQGX_H8rakFcfHn52GCH80rLELjhoC_vMQAvD_BwE" target="_blank">
     <div class="slidec">
-        <img id="peca4" src="img/peca4.png" alt="Imagem 4">
+        <img id="peca4" src="{{asset('public/img/peca4.png') }}" alt="Imagem 4">
         <p id="desc_4-look1">Tênis Cami Branco.                                           </p>
     </div>
     </a>
@@ -126,21 +126,21 @@
 
           <a id="link-peca1-look2"  href="https://www.hering.com.br/camisa-feminina-manga-bufante-oversized-hf43nmcen/p?idsku=58275&gclid=CjwKCAjwyY6pBhA9EiwAMzmfwQPcng4ABrD9F4YCvDvafWgRHcmtLbvKtiUwfnAaabGjra6mtvUxkRoCbB8QAvD_BwE" target="_blank">
           <div class="slidecm">
-            <img id="peca1-look2" src="img/peca1-look2.png" alt="Imagem 1">
+            <img id="peca1-look2" src="{{asset('public/img/peca1-look2.png') }}" alt="Imagem 1">
             <p id="desc_1-look2">Camisa Feminina Manga Bufante Oversized - Off White.         </p>
           </div>
           </a>
   
           <a id="link-peca2-look2" href="https://br.shein.com/Square-Buckle-Belt-p-11385068-cat-1875.html?utm_source=pinterest.com&utm_medium=cpc&utm_campaign=brpin_rmt_dpa_womenaccessory_sc2208251858405004&url_from=brpin_rmt_dpa_womenaccessory_sc2208251858405004&epik=dj0yJnU9Z051V094Ynl2UVVVeXJqTU04eHpwdXFXX3IwVURXeGMmcD0wJm49dFZnYWExTHE2ZTl6M2ZQc0NCUTBFUSZ0PUFBQUFBR1Vrcnlv" target="_blank">
           <div class="slidecm">
-            <img id="peca2-look2" src="img/peca2-look2.png" alt="Imagem 2">
+            <img id="peca2-look2" src="{{asset('public/img/peca2-look2.png') }}" alt="Imagem 2">
             <p id="desc_2-look2">Cintos Fivela quadrada.                                      </p>
           </div>
           </a>
           
           <a id="link-peca3-look2" href="https://br.shein.com/SHEIN-Frenchy-Solid-Wide-Leg-Pants-p-15495058-cat-1740.html?src_identifier=st%3D2%60sc%3Dcal%C3%A7a%20alfaiataria%20mostarda%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_other1697060047744&mallCode=1" target="_blank">
           <div class="slidecm">
-            <img id="peca3-look2" src="img/peca3-look2.png" alt="Imagem 3">
+            <img id="peca3-look2" src="{{asset('public/img/peca3-look2.png') }}" alt="Imagem 3">
             <p id="desc_3-look2">SHEIN Frenchy Calças pernas largas sólido.                   </p>
           </div>
           </a>
@@ -150,7 +150,7 @@
       <div class="secao-look2-p3">
 
         <a id="link-look2" href="https://br.pinterest.com/pin/Ac7Cs94y6vBbHOc2jnbHDHEx3OGhWRz5hBGENy38jGl7jfZy97Zt_og/" target="_blank">
-          <img id="look2" class="look2" src="img/look2.png" alt="Imagem Look 2" >
+          <img id="look2" class="look2" src="{{asset('public/img/look2.png') }}" alt="Imagem Look 2" >
         </a>
   
     <div id="iconoverlay2" class="icon-overlay2"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/rounded-square.png" alt="rounded-square"/> </div>
@@ -173,39 +173,36 @@
 
 <!-- Tipos Corporais -->
 <div class="tiposcorporais">
+    <h2 class="title-tc1">Valorize seu corpo</h2>
+    <h2 class="title-tc2">Qual é meu tipo corporal? <button onclick="exibirAlertas()" class="button-tc" id="button">Clique aqui e descubra!</button></h2>
 
-      <h2 class="title-tc1">Valorize seu corpo</h2>
-      <h2 class="title-tc2">Qual é meu tipo corporal? <button onclick="exibirAlertas()" class="button-tc" id="button">Clique aqui e descubra!</button></h2>
+    <div class="corpos">
+        <div class="tipo" id="tipo-tc1">
+            <h2 id="title1-tc" class="titulo-tc">Triângulo</h2>
+            <img id="image1-tc" class="img_tc" src="{{ asset('public/img/triangulo.png') }}" alt="Imagem 1">
+        </div>
 
-<div class="corpos">
+        <div class="tipo" id="tipo-tc2">
+            <h2 id="title2-tc" class="titulo-tc">Triângulo Invertido</h2>
+            <img id="image2-tc" class="img_tc" src="{{ asset('public/img/trianguloinvertido.png') }}" alt="Imagem 2">
+        </div>
 
-    <div class="tipo" id="tipo-tc1">
-      <h2 id="title1-tc" class="titulo-tc">Triângulo</h2>
-      <img id="image1-tc" class="img_tc" src="img/triangulo.png" alt="Imagem 1">
+        <div class="tipo" id="tipo-tc3">
+            <h2 id="title3-tc" class="titulo-tc">Retângulo</h2>
+            <img id="image3-tc" class="img_tc" src="{{ asset('public/img/retangulo.png') }}" alt="Imagem 3">
+        </div>
+
+        <div class="tipo" id="tipo-tc4">
+            <h2 id="title4-tc" class="titulo-tc">Ampulheta</h2>
+            <img id="image4-tc" class="img_tc" src="{{ asset('public/img/ampulheta.png') }}" alt="Imagem 4">
+        </div>
+
+        <div class="tipo" id="tipo-tc5">
+            <h2 id="title5-tc" class="titulo-tc">Oval</h2>
+            <img id="image5-tc" class="img_tc" src="{{ asset('public/img/oval.png') }}" alt="Imagem 5">
+        </div>
     </div>
-
-    <div class="tipo" id="tipo-tc2">
-      <h2 id="title2-tc" class="titulo-tc">Triângulo Invertido</h2>
-      <img id="image2-tc" class="img_tc" src="img/trianguloinvertido.png" alt="Imagem 2">
-    </div>
-
-    <div class="tipo" id="tipo-tc3">
-      <h2 id="title3-tc" class="titulo-tc">Retângulo</h2>
-      <img id="image3-tc" class="img_tc" src="img/retangulo.png" alt="Imagem 3">
-    </div>
-
-    <div class="tipo" id="tipo-tc4">
-      <h2 id="title4-tc" class="titulo-tc">Ampulheta</h2>
-      <img id="image4-tc" class="img_tc" src="img/ampulheta.png" alt="Imagem 4">
-    </div>
-
-    <div class="tipo" id="tipo-tc5">
-      <h2 id="title5-tc" class="titulo-tc">Oval</h2>
-      <img id="image5-tc" class="img_tc" src="img/oval.png" alt="Imagem 5">
-    </div>
-
-    </div>   
-  </div>
+</div>
 
 <!-- Estilos Universais -->
 <div class="estilos">
@@ -317,8 +314,8 @@
 </div>
 
 <!-- Java Script -->
-<script src="{{asset('js/menu.js') }}"></script>
-    <script src="{{asset('js/index.js') }}"></script>
+<script src="{{asset('public/js/menu.js') }}"></script>
+    <script src="{{asset('public/js/index.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery.js/dist/js/lightgallery.min.js"></script>
 
     <script>
