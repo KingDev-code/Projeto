@@ -15,9 +15,9 @@
 
         <div id="indicator">
             <ul>
-                <li><a href="index.html">Veste-me</a></li>
+                <li><a href="/">Veste-me</a></li>
                 <div id="arrow"></div>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="{{ route('login') }}">Login</a></li>
               </ul>
           </div>
 

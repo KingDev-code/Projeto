@@ -143,12 +143,12 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+    <a href="/empresa" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
             <a href="envios"><i class="material-icons-sharp">email</i></a>
             <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
-            <a href="dadospessoais"><i id="iconeUsuario" class="material-icons-sharp">person</i></a>
+            <a href="{{ route('empresa.dashboard') }}"><i id="iconeUsuario" class="material-icons-sharp">person</i></a>
         </button>
     </div>
 
@@ -187,7 +187,7 @@
 
   <div class="container-footer">
     <div>
-      <a href="index.html#sobrenos"><h2>Conheça nossa história</a></h2>
+      <a href="/empresa#sobrenos"><h2>Conheça nossa história</a></h2>
     </div>
 
     <div>
@@ -195,7 +195,7 @@
     </div>
 
     <div>
-      <a href="index.html">
+      <a href="/empresa">
       <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>
@@ -223,7 +223,7 @@
 </div>
 
 <!-- Java Script -->
-<script src="js/menu.js"></script>
+<script src="/js/menu.js"></script>
         <script>
           function atualizar() {
           Swal.fire({

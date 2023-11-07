@@ -41,20 +41,14 @@ return [
             'provider' => 'users',
         ],
     
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-            'hash' => false,
-        ],
-
         'empresa' => [
             'driver' => 'session',
             'provider' => 'empresas',
         ],
 
-        'user' => [
+        'admin' => [ // Novo guard 'admin' para administradores
             'driver' => 'session',
-            'provider' => 'users', // Nome do provider para usuários comuns
+            'provider' => 'admins', // Substitua 'admins' pelo nome do seu provider para administradores, se for diferente
         ],
     ],
 
@@ -78,12 +72,17 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class, // Modelo para usuários comuns
+            'model' => App\Models\Login::class,
         ],
     
         'empresas' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Empresa::class, // Modelo para empresas
+            'model' => App\Models\Login::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Login::class,
         ],
 
         // 'users' => [

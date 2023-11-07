@@ -13,16 +13,19 @@ return new class extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('login_id');
             $table->string('nome');
             $table->string('resp');
             $table->string('cnpj')->unique();
             $table->string('telefone');
             $table->date('data_fundacao');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->string('img_empresa')->nullable();
             $table->timestamps();
+            
+            // Adicione um índice à coluna 'login_id' para otimizar consultas de relacionamento
+            $table->index('login_id');
+            
+            $table->foreign('login_id')->references('id')->on('logins');
         });
     }
 

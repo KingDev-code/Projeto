@@ -11,6 +11,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\Auth\FavoritoController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\Auth\EmpresaController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,40 +24,14 @@ use App\Http\Controllers\Auth\EmpresaController;
 |
 */
 
-Route::post('/upload-image', [ImageController::class, 'upload'])->name('upload.image.cliente');
-Route::post('/upload-image/empresa', [ImageController::class, 'uploadEmpresa'])->name('upload.image.empresa');
-
-
-// Rota de exibição do formulário de login
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-
-// Rota de processamento do formulário de login
-Route::post('/login', [LoginController::class, 'Login']);
-
-// Rota de logout
-Route::post('/logout', [LoginController::class, 'Logout'])->name('logout');
-
-
-
-// Rota para exibir o formulário de registro da empresa
-Route::get('/empresa/register', [EmpresaController::class, 'create'])->name('empresa.register');
-
-// Rota para processar o registro da empresa
-Route::post('/empresa/register', [EmpresaController::class, 'store']);
-
-// Rota para o painel da empresa
-Route::get('/dashboard', [EmpresaController::class, 'login'])->name('empresa-dashboard');
 
 
 
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
-Route::get('/envios', function () {
-    return view('envios');
-})->name('envios');
 
 Route::get('/favoritos', function () {
     return view('favoritos');
@@ -85,13 +60,6 @@ Route::get('/modapraia', function () {
 
 
 
-Route::get('/dadospessoais', function () {
-    return view('dadospessoais');
-})->name('dadospessoais');
-
-Route::get('/empresa', function () {
-    return view('empresa');
-});
 
 
 // Rota para a página "/select". Retorna a view 'select'.
@@ -131,7 +99,7 @@ Route::post('/estilos', [EstiloController::class, 'store'])->name('estilos.store
 Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
 Route::get('/ocasioes/create', [OcasiaoController::class, 'create'])->name('ocasioes.create');
 Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
-Route::get('/ocasiao/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
+Route::get('/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
 Route::get('/ocasiao/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
 Route::get('/ocasiao/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
 Route::get('/ocasiao/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
@@ -179,14 +147,101 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth:empresa')->group(function () {
     // Visualização e edição do perfil da empresa
-    Route::get('/empresa', [EmpresaController::class, 'edit'])->name('empresa.edit');
-    Route::patch('/empresa', [EmpresaController::class, 'update'])->name('empresa.update');
+    Route::get('/dados', [EmpresaController::class, 'edit'])->name('empresa.edit');
+    Route::patch('/update', [EmpresaController::class, 'update'])->name('empresa.update');
+    Route::get('/empresa', function () {
+        return view('empresa');
+    })->name('empresa.home');
+
+    Route::get('/envios', function () {
+        return view('envios');
+    })->name('envios');   
+
+    Route::post('/upload-image', [ImageController::class, 'upload'])->name('upload.image.cliente');
+    Route::post('/upload-image/empresa', [ImageController::class, 'uploadEmpresa'])->name('upload.image.empresa');
+
+    // Rota para o painel da empresa
+    Route::get('/dashboard', [EmpresaController::class, 'edit'])->name('empresa.dashboard');
 
     // Outras rotas relacionadas à empresa, se necessário
+
+    
 });
 
 
+
+// Rota de exibição do formulário de login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+
+// Rota de processamento do formulário de login
+Route::post('/login', [LoginController::class, 'Login']);
+
+// Rota de logout
+Route::post('/logout', [LoginController::class, 'Logout'])->name('logout');
+
+
+
+// Rota para exibir o formulário de registro da empresa
+Route::get('/registrar', [EmpresaController::class, 'create'])->name('empresa.register');
+
+// Rota para processar o registro da empresa
+Route::post('/registrar', [EmpresaController::class, 'store']);
+
 // Inclui rotas de autenticação a partir do arquivo 'auth.php'.
 require __DIR__.'/auth.php';
+
+
+// Rotas para o registro de administradores
+Route::get('/cadastro', [AdminController::class, 'registerForm'])->name('admin.registerForm');
+Route::post('/admin/register', [AdminController::class, 'register'])->name('admin.register');
+
+
+
+Route::group(['middleware' => 'admin'], function () {
+    // Suas rotas protegidas para administradores aqui
+
+    // Rotas para o painel de controle do administrador (após o registro)
+    Route::get('/home', [AdminController::class, 'home'])->name('admin.home');
+
+    Route::get ('/main', function () {
+        return view ('admin.admin');
+    });
+
+    Route::get ('/admin', function () {
+        return view ('admin.home');
+    })->name('admin');
+
+    Route::get('/dadospessoais', function () {
+        return view('admin.partials.dadospessoais');
+    })->name('dadospessoais');
+    
+    Route::get('/tipos', function () {
+        return view('admin.partials.tipos');
+    })->name('tipos');
+    
+    Route::get('/cadastros', function () {
+        return view('admin.partials.cadastros');
+    })->name('cadastros');
+    
+    Route::get('/departamentos', function () {
+        return view('admin.partials.departamentos');
+    })->name('departamentos');
+    
+    Route::get('/estilos', function () {
+        return view('admin.partials.estilos');
+    })->name('estilos');
+    
+    Route::get('/info', function () {
+        return view('admin.partials.info');
+    })->name('info');
+    
+    Route::get('/solicitacoes', function () {
+        return view('admin.partials.solicitacoes');
+    })->name('solicitacoes');
+    
+    Route::get('/comb', function () {
+        return view('admin.partials.combinacoes');
+    })->name('comb');
+});

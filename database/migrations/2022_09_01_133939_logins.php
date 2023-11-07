@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('logins', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('sobrenome');
-            $table->date('datanasc');
-            $table->string('email')->unique();
+            $table->string('email', 256)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('img_cliente')->nullable();
-            $table->rememberToken();
+            $table->string('password', 168);
+            $table->enum('type', ['cliente', 'empresa', 'admin']); // Restrição para os tipos válidos
             $table->timestamps();
+
+            // Adicione um índice à coluna 'email' para melhorar o desempenho de consultas de autenticação
+            $table->index('email');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('logins');
     }
 };

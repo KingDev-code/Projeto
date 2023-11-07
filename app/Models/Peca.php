@@ -13,4 +13,10 @@ class Peca extends Model
     {
         return $this->belongsTo(Combinacao::class, 'cod_comb');
     }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'empresa_id');
+    }
+
 }

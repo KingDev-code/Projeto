@@ -1,0 +1,863 @@
+body {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter', sans-serif, Georgia, serif;
+}
+
+.estrutura {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas: 
+            "pre-header pre-header"
+            "header content"
+            "header content"
+            "header content"
+            "footer footer"
+            "pos-footer pos-footer"
+             ;
+}
+
+/*Linha Superior*/
+.pre-header{
+  grid-area: pre-header;
+  background-color: rgba(0, 0, 0);
+  padding: 5px;
+  width: 99%;
+}
+
+ /*Menu Lateral*/
+ header{
+  grid-area: header;
+  background:rgba(255, 255, 255);
+  padding: 0px 1px;
+  overflow-y: 100;
+  border-right: 3px solid rgba(230, 230, 230);
+}
+
+ /*Parte Superior (Logo etc)*/
+ .logo{
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  text-align: center; /* Centralizar texto */
+  width: 200px;
+}
+
+/*Texto "adm" na Logo etc*/
+.logo h1{
+  padding-top: -10px;
+  padding-left: 10px;
+  margin-bottom: 0; /* Remover margem inferior */
+  text-align: left;
+  font-size: 1em;
+}
+
+/*Logo imagem*/
+.logo img{
+  width: 120%;
+  height: auto;
+  display: block; /* Centralizar imagem */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topnav
+{
+  padding-top: 10px;
+  padding-right: 30px;
+  text-align: center; /* Centralizar texto */
+  align-items: center;
+  vertical-align: auto;
+}
+
+/*Botão e Input do Procurar*/
+.topnav .search-container button input{
+  background-color: rgba(223, 215, 204, 0.685);
+  font-size: 1.125em;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+}
+
+/*Botão do Procurar*/
+.topnav .search-container button {
+  border-radius: 6px;
+  background-color: rgba(223, 215, 204, 0);
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.125em;
+  cursor: pointer;
+  border-radius: 6px;
+  text-align: center;
+  align-items: center;
+  height: 40px;
+  padding-top: 14px;
+}
+
+/*Container forma ao redor do Procurar*/
+.search-container {
+    border-radius: 6px;
+    float: right;
+    background-color: rgba(223, 215, 204, 0.2);
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: flex; /* Usar flexbox para centralizar */
+    align-items: center; /* Alinhar verticalmente ao centro */
+    text-align: center;
+    height: 40px;
+}
+
+/*Texto do Procurar*/
+.topnav input[type=text] {
+  padding: 20px;
+  font-size: 1.125em;
+  border: none;
+  background: none;
+  width: 100px;
+  height: 40px;
+  outline: none; /* Remove a borda ao ser clicado */
+  margin-left: 0px;
+  align-items: center;
+}
+
+.forms input[type="text1"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(223, 215, 204, 0.486);
+  font-size: 0.8em;
+  width: auto;
+}
+
+/*Menu Lateral e Linha, Animação*/
+#navbar-bottom a:hover {
+  color: black;
+  font-weight: bold;
+  border-left-style: solid;
+
+}  
+
+/*ícone TIPO CORPORAL*/
+#navbar-bottom a img{
+  width: 28px;
+  vertical-align: middle; /* Centralizar verticalmente */
+  padding: 15px;
+  align-items: center;
+}  
+
+/*Menu Lateral*/
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 1.125em;
+  align-items: center;
+}
+
+/*USUÁRIO do Menu Lateral*/
+.usu{
+  display: block;
+  color: black;
+  padding-top: 70px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/*Icones do Menu Lateral*/
+.sidebar span {
+  padding: 15px;
+}
+
+/*Animação do Menu Lateral*/
+.sidebar a.active {
+    background-color: #FFFF;
+    color: black;
+}
+
+ /*Classe geral do botão SAIR*/
+ .btn {
+    text-align: center; /* Centralizar texto */
+    padding-top: 20px; /* Espaçamento superior */
+    align-items: center;
+    padding-bottom: 50px;
+    
+    /* Centralizar o botão */
+    display: flex;
+    justify-content: center;
+}
+
+/*botão SAIR*/
+.btn3 span{
+    border-radius: 6px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+}
+
+.btn3{
+    border-radius: 6px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.200em;
+    cursor: pointer;
+    width: 40%;
+    height: 40px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    display: flex; 
+    background-color: rgba(223, 215, 204, 0.2);
+}
+
+.tela{
+  display: none;
+}
+
+/*=============== 
+CONTENT
+==================*/
+.content{
+  grid-area: content;
+}
+
+/* Indicador */
+#indicator {
+  position: absolute;
+  text-align: left;
+  margin:3%;
+  background-color: transparent;
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+ }
+ 
+ #indicator ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+ }
+ 
+ #indicator li {
+  margin-right: 10px;
+ }
+ 
+ #indicator a {
+  color: #333;
+  text-decoration: none;
+  padding: 5px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+ }
+ 
+ #arrow {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid #333;
+  margin-left: -5px;
+ }
+
+#form {
+  width:100%;
+  margin:0;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#form form {
+  width: 90%;
+  max-width: 980px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-group label{
+  margin-left: 5px;
+}
+
+h4{
+  margin-top: 2%;
+  margin-left: 50%;
+}
+
+.content h1 {
+  text-align: left;
+  font-weight: 800;
+  font-size: 2.5em;
+  margin-top: 70px;
+}
+
+.content h2 {
+  margin-top: 5%;
+  text-align: left;
+  font-weight: 700;
+  font-size: 2.7em;
+  margin-bottom: 15px;
+}
+
+/* Upload da foto da Combinação */
+.content h3 {
+  position: absolute;
+  margin-top: -100px;
+  margin-left: 35%;
+}
+
+.content #botaolateral {
+  position: absolute;
+  margin-left: 45%;
+  margin-top: -105px;
+}  
+
+.content button {
+  text-align: right;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  margin-left: 5px;
+  width: 45px;
+  float: right;
+}
+
+.content button:hover {
+  background-color: rgb(78, 77, 77);
+}
+
+.forms {
+  text-transform: uppercase;
+  margin: 50px auto;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.forms input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(223, 215, 204, 0.5);
+  font-size: 1em;
+  color: black;
+  margin-right: 35px;
+}
+
+.forms input[type="text1"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(223, 215, 204, 0.486);
+  font-size: 1em;
+  width: auto;
+  margin-right: 35px;
+}
+
+.forms select{
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(223, 215, 204, 0.5);
+  width: 220px;
+  padding: 10px;
+  font-size: 17px;
+  color: black;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.forms input[type="text"] {
+  margin-left: 5px;
+}
+
+.forms input[type="text"]::placeholder {
+  color: black;
+}
+
+.forms h4 {
+  color: black;
+}
+
+.forms button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-weight: 790;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.btn2 {
+  width: auto;
+  margin-left:-22%;
+  margin-top: 80px;
+}
+
+.btn4{
+  margin-top: 50px;
+}
+
+.forms button:hover {
+  background-color: rgb(78, 77, 77);
+}
+
+.botaoregistrar {
+  position: absolute;
+  margin-top: 55px;
+}  
+
+/*=============== 
+FOOTER
+==================*/
+
+.pos-footer{
+  grid-area: pos-footer;
+}
+
+footer {
+  grid-area: footer;
+  margin-top: 1px;
+  background-color: #000000;
+  padding: 20px;
+}
+
+.linha-footer {
+  height: 1px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+
+.titulo-footer {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1em;
+}
+
+@media (min-width: 2000px) {
+  .estrutura {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-areas: 
+              "pre-header pre-header"
+              "header content"
+              "header content"
+              "header content"
+              "footer footer"
+              "pos-footer pos-footer"
+               ;
+  }
+
+ .logo h1{
+    font-size:1.5em;
+  }
+
+  .logo img{
+    width: 200%;
+  }
+
+  /*Botão e Input do Procurar*/
+.topnav .search-container button input{
+  font-size: 2.5em;
+  text-align: left;
+  align-items: left;
+}
+
+/*Botão do Procurar*/
+.topnav .search-container button {
+  font-size: 1.5em;
+  padding-top: 20px;
+}
+
+/*Container forma ao redor do Procurar*/
+.search-container {
+    float: center;
+    height: 55px;
+}
+
+/*Texto do Procurar*/
+.topnav input[type=text] {
+  font-size: 1.5em;
+  width: 200px;
+  height: 250px;
+}
+
+  /*Icones do Menu Lateral*/
+  .sidebar a {
+    font-size: 1.5em;
+  }
+  
+  .sidebar span {
+    font-size: 30px;
+  }
+  
+  .content{
+    grid-area: content;
+  }
+  
+  /* Indicador */
+  #indicator {
+    font-size: 1.5em;
+   }
+  
+  
+  .content h1 {
+    font-size: 4em;
+    margin-top: 150px;
+  }
+  
+  .content .circle{
+    margin-left: 200px;
+  }
+  
+  .circle {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(223, 215, 204, 0.486);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    cursor: pointer;
+  }
+  
+  .circle span {
+    font-size: 100px;
+  }
+  
+  /*Foto de Perfil*/
+  .content .usu{
+    display: block;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .content .usu p{
+    display: block;
+    color: black;
+    margin-top: -50px;
+    font-size: 2em;
+    margin-left: 207px;
+  }
+
+  #form span{
+    font-size: 50px;
+  }
+  
+  .content button {
+    padding: 15px;
+    margin-bottom: 10px;
+    width: auto;
+    font-size: 1.5em;
+  }
+
+  .forms label{
+    font-size: 2em;
+  }
+  
+  .forms input[type="text"] {
+    width: auto;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(223, 215, 204, 0.5);
+    font-size: 1.3em;
+  }
+
+  .forms input[type="text1"] {
+    width: auto;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(223, 215, 204, 0.5);
+    font-size: 1.3em;
+  }
+  
+  .forms input[type="text"] + input[type="text"] {
+    margin-left: 15px;
+  }
+  
+  .forms button {
+    padding: 20px;
+    width: auto;
+  }
+  
+  .btn2 button{
+    margin-top: 60px;
+    padding: 30px;
+    font-size: 1.8em;
+  }
+  
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1024px) {
+      
+    /* Upload da foto da Combinação */  
+    .content h3 {
+      position: absolute;
+      margin-top: -90px;
+      margin-left: 38%;
+    }   
+
+    .content #botaolateral {
+      position: absolute;
+      margin-left: 535px;
+      margin-top: -95px;
+    }  
+
+}
+
+@media (max-width: 780px) {
+
+  .header{
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn4 #icon1 {
+    margin-right: 100px;
+    margin-top: -2px;
+  }
+
+  .icon {
+    margin-top: -2px;
+  }
+
+  .form-group {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .content h2 {
+    margin-top: 15%;
+    margin-bottom: -5px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 35px;
+  }
+      
+  /* Upload da foto da Combinação */   
+  .content h3 {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 25%;
+  }
+
+  .content #botaolateral {
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 10px;
+  }  
+
+  .content 
+  .botaopeca1, 
+  .botaopeca2, 
+  .botaopeca3 {
+    margin-right: 155px; 
+  }
+
+  .botaoregistrar {
+    margin-top: 150px; 
+  }  
+
+  .content .botaoregistrar {
+    margin-top: 100px;
+  }  
+}
+
+    @media (max-width: 700px) {
+      .estrutura {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+                  "pre-header pre-header"
+                  "content header"
+                  "content content"
+                  "content content"
+                  "footer footer"
+                  "pos-footer pos-footer"
+                   ;
+    }
+
+    .tela{
+      display: flex;
+      flex-wrap: wrap;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      background-color: rgba(223, 215, 204, 0.486);
+    }
+
+    header{
+        grid-area: header;
+        background:rgba(255, 255, 255);
+        padding: 0px 1px;
+        overflow-y: 100;
+        border-right:none;
+      }
+  
+    #indicator a {
+      font-size: 0.8em;
+      padding: 5px;
+      }
+  
+      .sidebar{
+        display: none;
+      }
+
+      #form{
+        display: none;
+      }
+  
+      .btn3{
+        width: 50%;
+        background-color: rgba(223, 215, 204, 0.2);
+      }
+  
+      .content{
+        grid-area: content;
+        justify-content: center;
+        align-items: left;
+        text-align: left;
+        font-size: 1em;
+        border-right: none;
+      }
+  
+      .content h2{
+        padding: 15%;
+      }
+  
+      .content img{
+        padding: 15px;
+      }
+  
+      .header{
+        grid-area: header;
+        background:rgba(255, 255, 255);
+        padding: 0px 1px;
+        border-right: none;
+      }
+  
+      .menu-toggle {
+        width: 40px;
+        height: 30px;
+        margin-right: 20px;
+      }
+  
+    
+  
+      .footer{
+        margin-top: 200px;
+      }
+  
+    } 
+
+    @media (max-width: 630px) {
+
+      .content #form{
+          align-items: center;
+          justify-content: center;
+          justify-self: center;
+      }
+  
+      .form-group {
+          display: block;
+          margin-bottom: 30px;
+          align-items: center;
+      }
+  
+      .content h1 {
+          font-size: 2em;
+        }
+  
+      .content h2 {
+          margin-top: 10%;
+          margin-bottom: -90px;
+          text-align: left;
+          font-weight: 700;
+        }
+        
+        /* Upload da foto da Combinação */
+         .content h3 {
+          position: absolute;
+          margin-top: 10px;
+          margin-left: 18%;
+        }   
+  
+        .content #botaolateral {
+          position: absolute;
+          margin-left: 1%;
+          margin-top: 10px;
+        }  
+  
+        .content .botaopeca1{
+          margin-right: 55px; 
+          width: 200px;
+          align-items: center;
+          text-align: center;
+        }
+  
+        .content .botaopeca2{
+          margin-right: 55px; 
+          width: 200px;
+          align-items: center;
+          text-align: center;
+        }
+  
+        .content .botaopeca3{
+          margin-right: 80px; 
+          width: 200px;
+          align-items: center;
+          text-align: center;
+        }
+  
+        #form h4{
+          margin-top: 35px;
+          display: inline;
+        }
+
+        .btn2{
+          align-items: center;
+          float: center;
+          justify-content: center;
+        }
+  
+        .btn2 .botaoregistrar {
+          font-size: 1em;
+        }  
+  }

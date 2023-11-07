@@ -25,9 +25,9 @@
         <div class="circle">
             <label for="file-input" style="cursor: pointer;">
                 <!-- Exibir a imagem existente ou um ícone padrão -->
-                <img class="circle" id="image-preview" src="{{ asset('images/' . auth()->user()->img_cliente) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
-                @if (auth()->user()->img_cliente)
-                    <img class="circle" id="image" src="{{ asset('images/' . auth()->user()->img_cliente) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
+                <img class="circle" id="image-preview" src="{{ asset('images/' . $userData->img_cliente) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
+                @if ($userData->img_cliente)
+                    <img class="circle" id="image" src="{{ asset('images/' . $userData->img_cliente) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
                 @else
                     <span class="material-icons-sharp" style="display: block;" id="add-icon">add_photo_alternate</span>
                 @endif
@@ -38,12 +38,12 @@
 
     <div class="usu">
         <button type="submit">NOVA FOTO DE PERFIL</button>
-        <h2>{{ $user->name }}</h2>
+        <h2>{{ $userData->name }}</h2>
     </div>
 </form>
 
           <div class="menu">
-            <a href="javascript:void(0);" onclick="toggleForm('profile-form-complete')">Dados Pessoais</a>
+            <a href="javascript:void(0);" onclick="toggleForm('profile-form')">Dados Pessoais</a>
             <div class="top-line"></div>
             <br>
             <br>
@@ -72,9 +72,10 @@
         </div>
 
         <div class="forms">
-            <label for="name">NOME: <input type="text" value="{{ old('name', $user->name) }}" id="nome" name="name" autocomplete="name" required></label>
-            <label for="sobrenome">SOBRENOME: <input type="text" value="{{ old('sobrenome', $user->sobrenome) }}" id="sobrenome" name="sobrenome" autocomplete="sobrenome" required></label>
-            <label for="email">EMAIL: <input type="text" value="{{ old('email', $user->email) }}" id="email" name="email" autocomplete="email" required></label>
+            <label for="name">NOME: <input type="text" value="{{ old('name', $userData->name) }}" id="nome" name="name" autocomplete="name" required></label>
+            <label for="sobrenome">SOBRENOME: <input type="text" value="{{ old('sobrenome', $userData->sobrenome) }}" id="sobrenome" name="sobrenome" autocomplete="sobrenome" required></label>
+            <label for="sobrenome">DATA DE NASCIMENTO: <input type="date" value="{{ old('datanasc', $userData->datanasc) }}" id="datanasc" name="datanasc" autocomplete="datanasc" required></label>
+            <label for="email">EMAIL: <input type="text" value="{{ old('email', Auth::user()->email) }}" id="email" name="email" autocomplete="email" required></label>
 
             <button type="submit">Salvar Alterações</button>
         </div>
@@ -86,10 +87,6 @@
                 Perfil atualizado com sucesso.
             </div>
         @endif
-
-        <form id="profile-form-complete" class="user-form" style="display: none">
-            @include('profile.partials.update-profile-information-form')
-        </form>
 
         <form id="password-form" class="user-form" style="display: none">
             @include('profile.partials.update-password-form')

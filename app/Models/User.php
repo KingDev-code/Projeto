@@ -46,6 +46,13 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    protected $guarded = [];
+
+    public function login()
+    {
+        return $this->belongsTo(Login::class, 'login_id', 'id');
+    }
+
     public function favoritos()
     {
         return $this->hasMany(Favorito::class, 'user_id');

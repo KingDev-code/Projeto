@@ -1,11 +1,7 @@
-@extends('layouts.usuario')
+@extends('layouts.empresa')
 
 @section('conteudo')
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/footer-resp.css') }}">
-
-    <link rel="stylesheet" href="css/footer-resp.css">
-    <link rel="stylesheet" href="css/menu-resp.css">
     <link rel="stylesheet" href="css/dadospessoais.css">
     <link rel="stylesheet" href=".css/dadospessoais-resp.css">
 
@@ -27,9 +23,9 @@
         <div class="circle">
             <label for="file-input" style="cursor: pointer;">
                 <!-- Exibir a imagem existente ou um ícone padrão -->
-                <img class="circle" id="image-preview" src="{{ asset('images/' . auth('empresa')->user()->img_empresa) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
-                @if ($empresa && $empresa->img_empresa)
-                    <img class="circle" id="image" src="{{ asset('images/' . auth('empresa')->user()->img_empresa) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
+                <img class="circle" id="image-preview" src="{{ asset('images/' . $empresaData->img_empresa) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
+                @if (auth('empresa')->check() && $empresaData->img_empresa)
+                    <img class="circle" id="image" src="{{ asset('images/' . $empresaData->img_empresa) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
                 @else
                     <span class="material-icons-sharp" id="add-icon">add_photo_alternate</span>
                 @endif
@@ -41,7 +37,9 @@
 
     <div class="usu">
         <button type="submit">NOVA FOTO DE PERFIL</button>
-        <h2>{{ auth('empresa')->user()->nome }}</h2>
+        @if (auth('empresa')->check())
+            <h2>{{ $empresaData->nome }}</h2>
+        @endif
     </div>
 </form>
 
@@ -65,7 +63,11 @@
           </div>
 </nav>
 
-<form id="profile-form" method="POST" action="{{ route('empresa.update') }}">
+    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+        @csrf
+    </form>
+
+    <form id="profile-form" method="POST" action="{{ route('empresa.update') }}">
     @csrf
     @method('PATCH')
 
@@ -75,25 +77,26 @@
         </div>
 
         <div class="forms">
-            <label for="name">NOME: <input type="text" value="{{ old('nome', auth('empresa')->user()->nome) }}" id="nome" name="nome" autocomplete="nome" required></label>
-            <label for="telefone">TELEFONE: <input type="text" value="{{ old('telefone', auth('empresa')->user()->telefone) }}" id="telefone" name="telefone" autocomplete="telefone" required></label>
+            <label for="nome">NOME: <input type="text" value="{{ old('nome', $empresaData->nome) }}" id="nome" name="nome" autocomplete="nome" required></label>
+            <label for="resp">RESPONSÁVEL: <input type="text" value="{{ old('resp', $empresaData->resp) }}" id="resp" name="resp" autocomplete="resp" required></label>
+            <label for="cnpj">CNPJ: <input type="text" value="{{ old('cnpj', $empresaData->cnpj) }}" id="cnpj" name="cnpj" autocomplete="cnpj" required></label>
+            <label for="telefone">TELEFONE: <input type="text" value="{{ old('telefone', $empresaData->telefone) }}" id="telefone" name="telefone" autocomplete="telefone" required></label>
+            <label for="data_fundacao">DATA DE FUNDAÇÃO: <input type="date" value="{{ old('data_fundacao', $empresaData->data_fundacao) }}" id="data_fundacao" name="data_fundacao" autocomplete="data_fundacao" required></label>
             <label for="email">EMAIL: <input type="text" value="{{ old('email', auth('empresa')->user()->email) }}" id="email" name="email" autocomplete="email" required></label>
+
+            
 
             <button type="submit">Salvar Alterações</button>
         </div>
     </div>
 </form>
 
+
         @if (session('status') === 'empresa-updated')
             <div class="alert alert-success">
                 Informações da empresa atualizadas com sucesso.
             </div>
         @endif
-
-
-        <form id="profile-form-complete" class="user-form" style="display: none">
-            @include('empresa.profile.update-profile-information-form')
-        </form>
 
         <form id="password-form" class="user-form" style="display: none">
             @include('empresa.profile.update-password-form')

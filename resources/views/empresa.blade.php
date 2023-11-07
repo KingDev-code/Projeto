@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.home-empresa')
 
 @section('conteudo')
 

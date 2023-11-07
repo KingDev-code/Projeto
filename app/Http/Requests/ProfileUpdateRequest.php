@@ -17,8 +17,14 @@ class ProfileUpdateRequest extends FormRequest
     {
         return [
             'name' => ['string', 'max:255'],
-            'sobrenome' => ['string','max:255'],
-            'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
+            'sobrenome' => ['string', 'max:255'],
+            'datanasc' => ['date'], // Em vez de 'string', alterado para 'date'
+            'email' => [
+                'email',
+                'max:255',
+                Rule::unique('logins', 'email')->ignore($this->user()->login->id), // Usar 'logins' e ignorar o email atual do usuário
+            ],
         ];
     }
+
 }

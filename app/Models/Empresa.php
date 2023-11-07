@@ -12,28 +12,19 @@ class Empresa extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-
-
     protected $table = 'empresas';
 
-    protected $fillable = [
-        'nome', 'resp', 'cnpj', 'telefone', 'data_fundacao', 'email', 'password', 'img_empresa'
-    ];
+    protected $fillable = ['login_id', 'nome', 'resp', 'cnpj', 'telefone', 'data_fundacao', 'img_empresa'];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    public function login()
+    {
+        return $this->belongsTo(Login::class, 'login_id');
+    }
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'password' => 'hashed',
-        'email_verified_at' => 'datetime',
-    ];
+    public function pecas()
+    {
+        return $this->hasMany(Peca::class, 'empresa_id');
+    }
 
     
 }

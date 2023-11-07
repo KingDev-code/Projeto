@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Login;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -28,23 +29,30 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'sobrenome' => ['required', 'string', 'max:255'], // Adicione a validação para 'sobrenome'
-            'datanasc' => ['required', 'date'], // Adicione a validação para 'datanasc'
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'sobrenome' => ['required', 'string', 'max:255'],
+            'datanasc' => ['required', 'date'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:logins'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'sobrenome' => $request->sobrenome, // Salve o sobrenome
-            'datanasc' => $request->datanasc,   // Salve a data de nascimento
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        // Crie um novo registro na tabela 'logins'
+        $login = new Login();
+        $login->email = $request->email;
+        $login->password = Hash::make($request->password);
+        $login->type = 'cliente'; // Defina o tipo como 'cliente'
+        $login->save(); // Salve o login no banco de dados
+
+        // Crie um novo registro na tabela 'users' com 'login_id' associado
+        $user = new User();
+        $user->login_id = $login->id; // Associe o ID do login ao campo 'login_id' na tabela 'users'
+        $user->name = $request->name;
+        $user->sobrenome = $request->sobrenome;
+        $user->datanasc = $request->datanasc;
+        $user->save(); // Salve o usuário no banco de dados
 
         event(new Registered($user));
 
@@ -52,4 +60,5 @@ class RegisteredUserController extends Controller
 
         return redirect('/profile');
     }
+
 }
