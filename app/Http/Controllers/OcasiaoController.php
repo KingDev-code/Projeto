@@ -9,7 +9,7 @@ class OcasiaoController extends Controller
 {
     public function index()
     {
-        $ocasioes = Ocasiao::where('ativo', true)->get(); // Obtenha apenas as ocasiões ativas
+        $ocasioes = Ocasiao::where('ativo', true)->get();
         return view('departamentos', compact('ocasioes'));
     }
 
@@ -20,39 +20,69 @@ class OcasiaoController extends Controller
 
     public function store(Request $request)
     {
-        // Valide os dados de entrada
         $request->validate([
             'ocasiao' => 'required|max:80',
         ]);
-    
-        // Crie uma nova instância da model Ocasiao e preencha os campos
-        $ocasiao = new Ocasiao();
-        $ocasiao->ocasiao = $request->input('ocasiao');
-        $ocasiao->save();
-    
-        // Redirecione de volta com uma mensagem de sucesso ou realize qualquer ação apropriada
+
+        Ocasiao::create([
+            'ocasiao' => $request->input('ocasiao'),
+            'ativo' => true, // Certifique-se de configurar o campo "ativo" apropriadamente
+        ]);
+
         return redirect()->route('departamentos')->with('success', 'Ocasião cadastrada com sucesso.');
     }
 
     public function inativar(Request $request)
     {
-        $ocasioesIds = $request->input('selected_ocasioes');
+        $action = $request->input('action');
+        $selectedOcasioes = $request->input('selected_ocasioes', []);
 
-        // Validação: verifique se os IDs de ocasiões são válidos
-        $ocasioes = Ocasiao::whereIn('id', $ocasioesIds)->get();
-        
-        if ($ocasioes->isEmpty()) {
-            return redirect()->back()->with('error', 'Selecione pelo menos uma ocasião válida para inativar.');
+        if ($action === 'inativar') {
+            Ocasiao::whereIn('id', $selectedOcasioes)->update(['ativo' => false]);
+            return redirect()->back()->with('success', 'Ocasioes inativadas com sucesso!');
+        } elseif ($action === 'editar') {
+            // Verifique se alguma ocasião foi selecionada
+            if (count($selectedOcasioes) > 0) {
+                return redirect()->route('editar.ocasioes', ['ids' => $selectedOcasioes]);
+            } else {
+                return redirect()->back()->with('error', 'Nenhuma ocasião selecionada. Selecione pelo menos uma ocasião para editar.');
+            }
+        } elseif ($action === 'novo') {
+            return redirect()->route('ocasioes.create');
         }
 
-        // Agora você pode realizar a lógica de inativação para cada ocasião selecionada
-        foreach ($ocasioes as $ocasiao) {
-            // Atualize o estado da ocasião, por exemplo, definindo 'ativo' para 0
-            $ocasiao->update(['ativo' => 0]);
-        }
-
-        return redirect()->back()->with('success', 'Ocasiões inativadas com sucesso.');
+        return redirect()->back()->with('error', 'Ação inválida.');
     }
+
+    public function edit($id)
+    {
+        $ocasiao = Ocasiao::find($id);
+
+        if (!$ocasiao) {
+            return redirect()->route('departamentos')->with('error', 'Ocasião não encontrada.');
+        }
+
+        return view('combinacoes.ocasiao-edit', compact('ocasiao'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'ocasiao' => 'required|string|max:255',
+        ]);
+
+        $ocasiao = Ocasiao::find($id);
+
+        if (!$ocasiao) {
+            return redirect()->route('departamentos')->with('error', 'Ocasião não encontrada.');
+        }
+
+        $ocasiao->ocasiao = $request->input('ocasiao');
+        $ocasiao->save();
+
+        return redirect()->route('departamentos')->with('success', 'Ocasião atualizada com sucesso.');
+    }
+
 
     public function executivos()
     {

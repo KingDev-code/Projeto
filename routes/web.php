@@ -153,6 +153,10 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/ocasioes', [OcasiaoController::class, 'create'])->name('ocasioes.create');
     Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
+    Route::put('/ocasioes/update/{id}', [OcasiaoController::class, 'update'])->name('ocasioes.update');
+
+    Route::post('/inativar-ocasioes', [OcasiaoController::class, 'inativar'])->name('inativar.ocasioes');
+    Route::get('/editar-ocasioes{id}', [OcasiaoController::class, 'edit'])->name('editar.ocasioes');
     
 
     Route::get('/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
@@ -183,5 +187,3 @@ Route::middleware('admin')->group(function () {
     Route::put('/pecas/{peca}', [PecasController::class, 'update'])->name('pecas.update');
     Route::delete('/pecas/{peca}', [PecasController::class, 'destroy'])->name('pecas.destroy');
 });
-
-Route::post('/inativar-ocasioes', [OcasiaoController::class, 'inativar'])->name('inativar.ocasioes');

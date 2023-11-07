@@ -107,37 +107,36 @@
       <div class="conteudo">
       <h1> OCASIÕES </h1>
       <!--<button onclick="modal_01()"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>-->
-  <form method="POST" action="{{ route('inativar.ocasioes') }}">
-    @csrf
-    <div class="list-actions">
-      <button type="button" onclick="inativarOcasioes()"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>
-      <button onclick="editarOcasioes()"><span class="material-icons-sharp">mode_edit</span>EDITAR</button>
-      <a href="/ocasioes"><button><span class="material-icons-sharp">add</span>NOVO</button></a>
-    </div>
+      <form action="{{ route('inativar.ocasioes') }}" method="POST">
+          @csrf <!-- Adicione o token CSRF para proteção contra ataques CSRF -->
 
-    <table class="item list-table">
-        <thead>
-            <tr>
-                <th>Selecione</th>
-                <th>Código Ocasião</th>
-                <th>Ocasião</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($ocasioes as $ocasiao)
-            <tr>
-                <td>
-                    <input type="checkbox" name="selected_ocasioes[]" value="{{ $ocasiao->id }}">
-                </td>
-                <td>{{ $ocasiao->id }}</td>
-                <td>{{ $ocasiao->ocasiao }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+          <div class="list-actions">
+              <button type="submit" name="action" value="inativar"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>
+              <button type="submit" name="action" value="editar"><span class="material-icons-sharp">mode_edit</span>EDITAR</button>
+              <button type="submit" name="action" value="novo"><span class="material-icons-sharp">add</span>NOVO</button>
+          </div>
 
-    <button type="submit" style="display: none;"></button>
-</form>
+          <table class="item list-table">
+              <thead>
+                  <tr>
+                      <th>Selecione</th>
+                      <th>Código Ocasião</th>
+                      <th>Ocasião</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @foreach ($ocasioes as $ocasiao)
+                  @if ($ocasiao->ativo)
+                  <tr>
+                      <td><input type="checkbox" name="selected_ocasioes[]" value="{{ $ocasiao->id }}"></td>
+                      <td>{{ $ocasiao->id }}</td>
+                      <td>{{ $ocasiao->ocasiao }}</td>
+                  </tr>
+                  @endif
+                  @endforeach
+              </tbody>
+          </table>
+      </form>
     </div>
   </div>
   </div>
@@ -180,19 +179,5 @@
         });
       }
     </script>
-
-<script>
-    function inativarOcasioes() {
-        const selectedOcasioes = document.querySelectorAll('input[name="selected_ocasioes[] "]:checked');
-        
-        if (selectedOcasioes.length === 0) {
-            alert("Selecione pelo menos uma ocasião para inativar.");
-            return;
-        }
-
-        const form = document.querySelector('form');
-        form.submit();
-    }
-</script>
   </body>
 </html>
