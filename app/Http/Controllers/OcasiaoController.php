@@ -9,8 +9,8 @@ class OcasiaoController extends Controller
 {
     public function index()
     {
-        $ocasioes = Ocasiao::all();
-        return view('dashboard', compact('ocasioes'));
+        $ocasioes = Ocasiao::where('ativo', true)->get(); // Obtenha apenas as ocasiões ativas
+        return view('departamentos', compact('ocasioes'));
     }
 
     public function create()
@@ -20,16 +20,38 @@ class OcasiaoController extends Controller
 
     public function store(Request $request)
     {
+        // Valide os dados de entrada
         $request->validate([
-            'ocasiao' => 'required|string|max:255',
+            'ocasiao' => 'required|max:80',
         ]);
-
-        $ocasiao = new Ocasiao;
+    
+        // Crie uma nova instância da model Ocasiao e preencha os campos
+        $ocasiao = new Ocasiao();
         $ocasiao->ocasiao = $request->input('ocasiao');
-        
         $ocasiao->save();
+    
+        // Redirecione de volta com uma mensagem de sucesso ou realize qualquer ação apropriada
+        return redirect()->route('departamentos')->with('success', 'Ocasião cadastrada com sucesso.');
+    }
+
+    public function inativar(Request $request)
+    {
+        $ocasioesIds = $request->input('selected_ocasioes');
+
+        // Validação: verifique se os IDs de ocasiões são válidos
+        $ocasioes = Ocasiao::whereIn('id', $ocasioesIds)->get();
         
-        return redirect('dashboard')->with('success', 'Ocasião adicionada com sucesso!');
+        if ($ocasioes->isEmpty()) {
+            return redirect()->back()->with('error', 'Selecione pelo menos uma ocasião válida para inativar.');
+        }
+
+        // Agora você pode realizar a lógica de inativação para cada ocasião selecionada
+        foreach ($ocasioes as $ocasiao) {
+            // Atualize o estado da ocasião, por exemplo, definindo 'ativo' para 0
+            $ocasiao->update(['ativo' => 0]);
+        }
+
+        return redirect()->back()->with('success', 'Ocasiões inativadas com sucesso.');
     }
 
     public function executivos()

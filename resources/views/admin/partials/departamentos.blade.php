@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="associate/css/deplistar.css" /> 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token">
     <style> 
       body {
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
@@ -72,17 +73,17 @@
       
             <div id="navbar-bottom">
               <div class="usu">
-                <a href="DadosPessoais.html"><span class="material-icons-sharp">person</span>NOME PESSOAL</a> <!--<span class="material-icons-sharp">person_outline</span>-->
+                <a href="dadospessoais"><span class="material-icons-sharp">person</span>NOME PESSOAL</a> <!--<span class="material-icons-sharp">person_outline</span>-->
                 <br> 
               </div>
-                <a href="Info.html"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
-                <a href="Solicitações.html"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
-                <a href="CombListar.html"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
-                <a href="CadListar.html"><span class="material-icons-sharp">groups</span>CADASTROS</a>
-                <a href="DepListar.html"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
-                <a href="EstListar.html"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
-                <a href="TcListar.html"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
-              <br>
+                <a href="info"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
+                <a href="solicitacoes"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
+                <a href="comb"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
+                <a href="cadastros"><span class="material-icons-sharp">groups</span>CADASTROS</a>
+                <a href="departamentos"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
+                <a href="estilos"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
+                <a href="tipos"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
+                <br>
               <div class="btn">
                 <button class="btn3"><span class="material-icons-sharp">logout</span>SAIR</button>
               </div>
@@ -105,33 +106,38 @@
       </div>
       <div class="conteudo">
       <h1> OCASIÕES </h1>
+      <!--<button onclick="modal_01()"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>-->
+  <form method="POST" action="{{ route('inativar.ocasioes') }}">
+    @csrf
     <div class="list-actions">
-      <button onclick="modal_01()"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>
-      <a href="DepAlt.html"><button><span class="material-icons-sharp">mode_edit</span>EDITAR</button></a>
-      <a href="DepCad.html"><button><span class="material-icons-sharp">add</span>NOVO</button></a>
+      <button type="button" onclick="inativarOcasioes()"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>
+      <button onclick="editarOcasioes()"><span class="material-icons-sharp">mode_edit</span>EDITAR</button>
+      <a href="/ocasioes"><button><span class="material-icons-sharp">add</span>NOVO</button></a>
     </div>
 
-      <table class="item list-table">
+    <table class="item list-table">
         <thead>
-          <tr>
-            <th>Selecione</th>
-            <th>Código Ocasião</th>
-            <th>Ocasião</th>
-          </tr>
+            <tr>
+                <th>Selecione</th>
+                <th>Código Ocasião</th>
+                <th>Ocasião</th>
+            </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>01</td>
-            <td>Esportivos</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>02</td>
-            <td>Executivos</td>
-          </tr>
+            @foreach ($ocasioes as $ocasiao)
+            <tr>
+                <td>
+                    <input type="checkbox" name="selected_ocasioes[]" value="{{ $ocasiao->id }}">
+                </td>
+                <td>{{ $ocasiao->id }}</td>
+                <td>{{ $ocasiao->ocasiao }}</td>
+            </tr>
+            @endforeach
         </tbody>
-      </table>
+    </table>
+
+    <button type="submit" style="display: none;"></button>
+</form>
     </div>
   </div>
   </div>
@@ -147,6 +153,8 @@
     <p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
   </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
       function modal_01() {
         Swal.fire({
@@ -172,5 +180,19 @@
         });
       }
     </script>
+
+<script>
+    function inativarOcasioes() {
+        const selectedOcasioes = document.querySelectorAll('input[name="selected_ocasioes[] "]:checked');
+        
+        if (selectedOcasioes.length === 0) {
+            alert("Selecione pelo menos uma ocasião para inativar.");
+            return;
+        }
+
+        const form = document.querySelector('form');
+        form.submit();
+    }
+</script>
   </body>
 </html>

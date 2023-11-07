@@ -59,9 +59,9 @@
      <!--Indicadores-->
      <div id="indicator">
       <ul>
-        <li><a href="Home.html">VESTE-ME</a></li>
+        <li><a href="admin">VESTE-ME</a></li>
         <div id="arrow"></div>
-        <li><a href="Home.html">PÁGINA INICIAL</a></li>
+        <li><a href="admin">PÁGINA INICIAL</a></li>
       </ul>
     </div>
     <div class="tela">
@@ -69,7 +69,7 @@
     </div>
       <div class="conteudo">
       <h2>BEM-VINDO A ÁREA ADMINISTRATIVA DO VESTE-ME</h2>
-      <a href="Home.html"><img  src="associate/img/l1.png"></a>
+      <a href="admin"><img  src="associate/img/l1.png"></a>
     </div>
   </div>
 

@@ -23,12 +23,12 @@ class LoginController extends Controller
         $user = Login::where('email', $credentials['email'])->first();
         
         if ($user) {
-            if ($user->type === 'cliente' && Auth::guard('web')->attempt($credentials)) {
+            if ($user->type === 'cliente' && Auth::guard('login')->attempt($credentials)) {
                 return redirect('/profile');
-            } elseif ($user->type === 'empresa' && Auth::guard('empresa')->attempt($credentials)) {
+            } elseif ($user->type === 'empresa' && Auth::guard('login')->attempt($credentials)) {
                 return redirect('/dashboard');
-            } elseif ($user->type === 'admin' && Auth::guard('admin')->attempt($credentials)) {
-                return redirect('/home'); // Altere o redirecionamento para a área do administrador
+            } elseif ($user->type === 'admin' && Auth::guard('login')->attempt($credentials)) {
+                return redirect('/admin'); // Altere o redirecionamento para a área do administrador
             }
         }
     

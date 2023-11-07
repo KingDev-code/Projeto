@@ -59,7 +59,7 @@
             <div class="sidebar">
               <div class="logo">
               <h1>ADM</h1>
-              <a href="Home.html"><img  src="associate/img/l2.png"></a>
+              <a href="admin"><img  src="associate/img/l2.png"></a>
               </div>
       
             <div class="topnav">
@@ -73,17 +73,17 @@
       
             <div id="navbar-bottom">
               <div class="usu">
-                <a href="DadosPessoais.html"><span class="material-icons-sharp">person</span>NOME PESSOAL</a> <!--<span class="material-icons-sharp">person_outline</span>-->
+                <a href="dadospessoais"><span class="material-icons-sharp">person</span>NOME PESSOAL</a> <!--<span class="material-icons-sharp">person_outline</span>-->
                 <br> 
               </div>
-                <a href="Info.html"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
-                <a href="Solicitações.html"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
-                <a href="CombListar.html"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
-                <a href="CadListar.html"><span class="material-icons-sharp">groups</span>CADASTROS</a>
-                <a href="DepListar.html"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
-                <a href="EstListar.html"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
-                <a href="TcListar.html"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
-              <br>
+                <a href="info"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
+                <a href="solicitacoes"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
+                <a href="comb"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
+                <a href="cadastros"><span class="material-icons-sharp">groups</span>CADASTROS</a>
+                <a href="departamentos"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
+                <a href="estilos"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
+                <a href="tipos"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
+                <br>
               <div class="btn">
                 <button class="btn3"><span class="material-icons-sharp">logout</span>SAIR</button>
               </div>
@@ -113,19 +113,19 @@
       </div>
           <div class="forms">
             <a onclick="document.getElementById('file-input').click()"><img style="width:15%;" src="associate/img/dadospessoaisicon.png"></a>
-              <div class="form-group">
-                <h1>Nome Sobrenome</h1>
-                <p>CPF: 111.111.111-01</p>
-                <p>Telefone: (00) 9999-9999</p>
-                <p>Email: nome@example.com</p>
-                <p>Data de Nascimento: 11/11/1990</p>
-                <p>Data de Admissão: 11/11/2023</p>
+            <div class="form-group">
+                <h1>{{ $admin->nome_admin }} {{ $admin->sobrenome_admin }}</h1>
+                <p>CPF: {{ $admin->cpf_admin }}</p>
+                <p>Telefone: {{ $admin->telefone }}</p>
+                <p>Email: {{ $login->email }}</p>
+                <p>Data de Nascimento: {{ date('d/m/Y', strtotime($admin->dtanasc_admin)) }}</p>
+                <p>Data de Admissão: {{ date('d/m/Y', strtotime($admin->dtaadmissao_admin)) }}</p>
                 <div class="list-actions">
-                  <button onclick="inativar()" class="inactivate">Inativar</button>
-                  <a href="CadAdmAlt.html"><button class="edit">Editar</button></a>
-                  <a href="novasenha.html"><button class="new-password">Nova Senha</button></a>
+                    <button onclick="inativar()" class="inactivate">Inativar</button>
+                    <a href="CadAdmAlt.html"><button class="edit">Editar</button></a>
+                    <a href="novasenha.html"><button class="new-password">Nova Senha</button></a>
                 </div>
-              </div>
+            </div>
             </div>
         </div>        
 

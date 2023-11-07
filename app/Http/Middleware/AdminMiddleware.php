@@ -18,7 +18,7 @@ class AdminMiddleware
         if (auth()->check() && auth()->user()->type === 'admin') {
             return $next($request);
         }
-    
-        return redirect('/login'); // Redirecione para a página inicial ou outra página apropriada
+
+        return redirect('/login'); // Redirecionar para a página inicial ou outra página apropriada
     }
 }

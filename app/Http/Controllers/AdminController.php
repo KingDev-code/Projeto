@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Login;
+use App\Models\Ocasiao;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -47,11 +49,66 @@ class AdminController extends Controller
         $admin->dtaadmissao_admin = $request->input('dtaadmissao_admin');
         $admin->save();
 
-        return redirect()->route('admin.home'); // Redirecione para a página de dashboard do administrador ou outra ação apropriada
+        return redirect()->route('admin'); // Redirecione para a página de dashboard do administrador ou outra ação apropriada
     }
 
     public function home()
     {
         return view('admin.home');
     }
+
+    public function dadospessoais()
+    {
+        // Verifique se o usuário está autenticado como admin
+        if (!Auth::guard('login')->check()) {
+            return redirect()->route('login'); // Redirecione para a página de login do admin se não estiver autenticado.
+        }
+
+        $login = Auth::guard('login')->user();
+        $admin = Admin::where('login_id', $login->id)->first();
+
+        if ($admin) {
+            return view('admin.partials.dadospessoais', compact('admin', 'login'));
+        }
+
+        // Lidar com o caso em que os dados não foram encontrados
+        return redirect()->route('login'); // Redirecione para a página de login do admin ou ação apropriada
+    }
+
+    public function tipos()
+    {
+        return view('admin.partials.tipos');
+    }
+
+    public function cadastros()
+    {
+        return view('admin.partials.cadastros');
+    }
+
+    public function departamentos()
+    {
+        $ocasioes = Ocasiao::all();
+        return view('admin.partials.departamentos', compact('ocasioes'));
+    }
+
+    public function estilos()
+    {
+        return view('admin.partials.estilos');
+    }
+
+    public function info()
+    {
+        return view('admin.partials.info');
+    }
+
+    public function solicitacoes()
+    {
+        return view('admin.partials.solicitacoes');
+    }
+
+    public function combinacoes()
+    {
+        return view('admin.partials.combinacoes');
+    }
+
 }
