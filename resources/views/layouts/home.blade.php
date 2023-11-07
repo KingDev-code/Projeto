@@ -2,17 +2,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <title>Veste-me</title>
-    <link rel="icon" type="image/x-icon" href="{{asset('img/Logo Veste-me - Círculo - Preta.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{asset('public/img/Logo Veste-me - Círculo - Preta.png') }}">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{asset('css/index.css') }}">
-    <link rel="stylesheet" href="{{asset('css/index-resp.css') }}">
-    <link rel="stylesheet" href="{{asset('css/footer-resp.css') }}">
-    <link rel="stylesheet" href="{{asset('css/menu-resp.css') }}">
-    <link rel="stylesheet" href="{{asset('css/menu-respquiz.css') }}">
+    <link rel="stylesheet" href="{{asset('public/css/index.css') }}">
+    <link rel="stylesheet" href="{{asset('public/css/index-resp.css') }}">
+    <link rel="stylesheet" href="{{asset('public/css/footer-resp.css') }}">
+    <link rel="stylesheet" href="{{asset('public/css/menu-resp.css') }}">
+    <link rel="stylesheet" href="{{asset('public/css/menu-respquiz.css') }}">
 
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+    <a href="/" class="logo"><img id="logo" src="{{asset('public/img/Logo Veste-me - Preta.png') }}" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
           <i href="#default" id="icone"class="material-icons-outlined" onclick="AvalAlerta()">star_border</i>
@@ -67,7 +67,7 @@
 
     <div class="menu-itens">
       <ul>
-      <li><a href="index.html"  class="active">Início</a></li>
+      <li><a href="index"  class="active">Início</a></li>
       <li><a href="{{ route('executivos') }}">Executivos</a></li>
       <li><a href="{{ route('esportivos') }}">Esportivas</a></li>
       <li><a href="{{ route('comemoracoes') }}">Comemorações</a></li>
@@ -105,7 +105,7 @@
 
     <div>
       <a href="/">
-      <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
+      <img src="{{asset('public/img/Logo Veste-me - Branca.png') }}" alt="Veste-me - Branca">
       </a>
     </div>
 
