@@ -35,7 +35,7 @@
     RewriteRule ^ - [E=HTTP_AUTHORIZATION:%0]
 
     # Redirecionar para URI sem front controller para evitar conteúdo duplicado
-    # (com e sem `/index.php`). Faça esse redirecionamento apenas no início
+    # (com e sem /index.php). Faça esse redirecionamento apenas no início
     # reescrito pelo Apache e não nos ciclos subsequentes. Caso contrário, obteríamos um
     # loop de redirecionamento infinito (solicitação -> reescrever para controlador frontal ->
     # redirecionamento -> solicitação -> ...).
