@@ -326,7 +326,7 @@
           html: '<div class="html1"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
           '<h4>ENCONTRANDO MINHAS MEDIDAS</h4>'+
           '<p>Tenha em mãos um caderno, uma caneta e uma fita métrica. Posicione-se em frente a um espelho, com roupas que destacam o seu corpo (como um conjunto de academia ou um biquíni). Vamos medir e anotar as suas medidas:'+
-          '<br><br><img src="img/f-medidas.png" width=711px" height="284px"/><br><br><span>1° MEÇA A LARGURA DO SEUS OMBROS:</span> Posicione a fita métrica na lateral de um dos seus ombros e meça até encontrar a lateral inicial, unindo as extremidades da fita. Anote essa medida.'+
+          '<br><br><img src="{{asset(public/img/f-medidas.png) }}" width=711px" height="284px"/><br><br><span>1° MEÇA A LARGURA DO SEUS OMBROS:</span> Posicione a fita métrica na lateral de um dos seus ombros e meça até encontrar a lateral inicial, unindo as extremidades da fita. Anote essa medida.'+
           '<br><br><span>2° MEÇA A LARGURA DA CINTURA:</span> Utilize a fita métrica para medir, agora, o contorno da sua cintura (no ponto mais estreito, geralmente no término das costelas) e anote a medida.'+
           '<br><br><span>3° MEÇA A LARGURA DO SEU QUADRIL:</span> Por fim, meça o circunferência do seu quadril (cerca de 20cm abaixo da cintura) e anote a medida.</p></div>',
           showCancelButton: true,

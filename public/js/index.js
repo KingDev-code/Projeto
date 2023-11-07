@@ -659,18 +659,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkScreenWidth() {
       if (window.innerWidth <= 710) {
           // Se a largura da janela for menor ou igual a 710 pixels, troque a imagem
-          banner1.src = 'img/banner1-.png';
-          banner2.src = 'img/banner2-.png';
-          banner3.src = 'img/banner3-.png';
-          banner4.src = 'img/banner4-.png';
-          banner5.src = 'img/banner5-.png';
+          banner1.src = 'public/img/banner1-.png';
+          banner2.src = 'public/img/banner2-.png';
+          banner3.src = 'public/img/banner3-.png';
+          banner4.src = 'public/img/banner4-.png';
+          banner5.src = 'public/img/banner5-.png';
       } else {
           // Caso contrário, volte para a imagem original
-          banner1.src = 'img/banner1.png';
-          banner2.src = 'img/banner2.png';
-          banner3.src = 'img/banner3.png';
-          banner4.src = 'img/banner4.png';
-          banner5.src = 'img/banner5.png';
+          banner1.src = 'public/img/banner1.png';
+          banner2.src = 'public/img/banner2.png';
+          banner3.src = 'public/img/banner3.png';
+          banner4.src = 'public/img/banner4.png';
+          banner5.src = 'public/img/banner5.png';
       }
   }
 
