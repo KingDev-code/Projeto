@@ -292,19 +292,19 @@
 
       <div class="criad">
           <div class="criador">
-              <img src="{{asset('img/davi.jpeg') }}" alt="Davi">
+              <img src="{{asset('public/img/davi.jpeg') }}" alt="Davi">
               <h3>Davi Rodrigues Costa</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, concluindo o 3° ano. Amante da programação e interessado em projetos que envolvem diversas linguagens de programação. Desenvolvedor e colaborador do projeto Veste-me.</p>
               <p><a href="mailto:davirodrigues@gmail.com"><button>Contato</button></p></a>
           </div>
           <div class="criador">
-              <img src="{{asset('img/gabi.png') }}" alt="Gabi">
+              <img src="{{asset('public/img/gabi.png') }}" alt="Gabi">
               <h3>Gabriela Souza Correia</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, dedicada, 3 anos de aprendizagem. Admiradora da moda e da fotografia, criou o Veste-me com o objetivo de integrar a moda ao universo da programação. Em 2022, vencedora da competição Startup in School, em parceria com a Empresa Google.</p>
               <p><a href="mailto:gabrielagsc2005@gmail.com"><button>Contato</button></p></a>
           </div>
           <div class="criador">
-              <img src="{{asset('img/isa.jpg') }}" alt="Isa">
+              <img src="{{asset('public/img/isa.jpg') }}" alt="Isa">
               <h3>Isabela Souza Correia</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, terminando seu 3° ano. Apaixonada pelo mundo da moda, idealizadora e criadora do Veste-me motivada pela introdução da moda e vestuário á programação. Em 2022, vencedora da competição Startup in School, em parceria com a Empresa Google.</p>
               <p><a href="mailto:isabelaisc2005@gmail.com"><button>Contato</button></p></a>
