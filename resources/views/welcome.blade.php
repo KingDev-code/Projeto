@@ -215,43 +215,43 @@
   <div class="estilosuniv">
     
   <div class="estilo" id="estilo-1">
-    <img id="image1-e" class="img_e" src="img/esportivo.png" alt="Imagem 1">
+    <img id="image1-e" class="img_e" src="{{asset('img/esportivo.png')}}" alt="Imagem 1">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Esportivo</h2>
   </div>
 
   <div class="estilo" id="estilo-2">
-    <img id="image2-e" class="img_e" src="img/romantico.png" alt="Imagem 2">
+    <img id="image2-e" class="img_e" src="{{asset('img/romantico.png') }}" alt="Imagem 2">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Romântico</h2>
   </div>
 
   <div class="estilo" id="estilo-3">
-    <img id="image3-e" class="img_e" src="img/classico.png" alt="Imagem 3">
+    <img id="image3-e" class="img_e" src="{{asset('img/classico.png') }}" alt="Imagem 3">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Clássico</h2>
   </div>
 
   <div class="estilo" id="estilo-4">
-    <img id="image4-e" class="img_e" src="img/elegante.png" alt="Imagem 4">
+    <img id="image4-e" class="img_e" src="{{asset('img/elegante.png') }}" alt="Imagem 4">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Elegante</h2>
   </div>
 
   <div class="estilo" id="estilo-5">
-    <img id="image5-e" class="img_e" src="img/criativo.png" alt="Imagem 5">
+    <img id="image5-e" class="img_e" src="{{asset('img/criativo.png') }}" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Criativo</h2>
   </div>
 
   <div class="estilo" id="estilo-6">
-    <img id="image6-e" class="img_e" src="img/dramatico.png" alt="Imagem 5">
+    <img id="image6-e" class="img_e" src="{{asset('img/dramatico.png') }}" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Dramático</h2>
   </div>
 
   <div class="estilo" id="estilo-7">
-    <img id="image7-e" class="img_e" src="img/sexy.png" alt="Imagem 5">
+    <img id="image7-e" class="img_e" src="{{asset('img/sexy.png') }}" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Sexy</h2>
   </div>
@@ -262,7 +262,7 @@
 <!-- Sobre Nós -->
 <div class="sobrenos" id="sobrenos">
       <div class="center">
-          <img class="logo-slogan" src="img/Logo Veste-me - Preta com slogan.png" alt="Logo">
+          <img class="logo-slogan" src="{{asset('img/Logo Veste-me - Preta com slogan.png') }}" alt="Logo">
       </div>
     <div class="row">
       <div class="col light-grey">
@@ -295,19 +295,19 @@
 
       <div class="criad">
           <div class="criador">
-              <img src="img/davi.jpeg" alt="Davi">
+              <img src="{{asset('img/davi.jpeg') }}" alt="Davi">
               <h3>Davi Rodrigues Costa</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, concluindo o 3° ano. Amante da programação e interessado em projetos que envolvem diversas linguagens de programação. Desenvolvedor e colaborador do projeto Veste-me.</p>
               <p><a href="mailto:davirodrigues@gmail.com"><button>Contato</button></p></a>
           </div>
           <div class="criador">
-              <img src="img/gabi.png" alt="Gabi">
+              <img src="{{asset('img/gabi.png') }}" alt="Gabi">
               <h3>Gabriela Souza Correia</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, dedicada, 3 anos de aprendizagem. Admiradora da moda e da fotografia, criou o Veste-me com o objetivo de integrar a moda ao universo da programação. Em 2022, vencedora da competição Startup in School, em parceria com a Empresa Google.</p>
               <p><a href="mailto:gabrielagsc2005@gmail.com"><button>Contato</button></p></a>
           </div>
           <div class="criador">
-              <img src="img/isa.jpg" alt="Isa">
+              <img src="{{asset('img/isa.jpg') }}" alt="Isa">
               <h3>Isabela Souza Correia</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, terminando seu 3° ano. Apaixonada pelo mundo da moda, idealizadora e criadora do Veste-me motivada pela introdução da moda e vestuário á programação. Em 2022, vencedora da competição Startup in School, em parceria com a Empresa Google.</p>
               <p><a href="mailto:isabelaisc2005@gmail.com"><button>Contato</button></p></a>
