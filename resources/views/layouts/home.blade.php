@@ -2,17 +2,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <title>Veste-me</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.png">
+    <link rel="icon" type="image/x-icon" href="{{asset('img/Logo Veste-me - Círculo - Preta.png') }}">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/index-resp.css">
-    <link rel="stylesheet" href="css/footer-resp.css">
-    <link rel="stylesheet" href="css/menu-resp.css">
-    <link rel="stylesheet" href="css/menu-respquiz.css">
+    <link rel="stylesheet" href="{{asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{asset('css/index-resp.css') }}">
+    <link rel="stylesheet" href="{{asset('css/footer-resp.css') }}">
+    <link rel="stylesheet" href="{{asset('css/menu-resp.css') }}">
+    <link rel="stylesheet" href="{{asset('css/menu-respquiz.css') }}">
 
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -317,8 +317,8 @@
 </div>
 
 <!-- Java Script -->
-<script src="js/menu.js"></script>
-    <script src="js/index.js"></script>
+<script src="{{asset('js/menu.js') }}"></script>
+    <script src="{{asset('js/index.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery.js/dist/js/lightgallery.min.js"></script>
 
     <script>
