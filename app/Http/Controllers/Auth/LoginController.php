@@ -27,10 +27,8 @@ class LoginController extends Controller
                 return redirect('/profile');
             } elseif ($user->type === 'empresa' && Auth::guard('login')->attempt($credentials)) {
                 return redirect('/empresa/dashboard');
-            } elseif ($user->type === 'admin' && Auth::guard('login')->attempt($credentials)) {
-                return redirect('/admin'); // Altere o redirecionamento para a área do administrador
             }
-        }
+        }        
     
         return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
     }

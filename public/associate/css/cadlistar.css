@@ -73,7 +73,7 @@ body {
 
 /*Botão e Input do Procurar*/
 .topnav .search-container button input{
-  background-color: rgba(223, 215, 204, 0.685);
+  background-color: rgba(158, 156, 154, 0.2);
   font-size: 1.125em;
   border: none;
   cursor: pointer;
@@ -104,7 +104,7 @@ body {
 .search-container {
     border-radius: 6px;
     float: right;
-    background-color: rgba(223, 215, 204, 0.2);
+    background-color: rgba(158, 156, 154, 0.2);
     border: none;
     text-align: center;
     text-decoration: none;
@@ -291,7 +291,7 @@ CONTENT
     margin-bottom: 10px;
     border: none;
     border-radius: 5px;
-    background-color: rgba(223, 215, 204, 0.5);
+    background-color: rgba(158, 156, 154, 0.2);
     font-size: 17px;
     color: black;
   }
@@ -299,7 +299,7 @@ CONTENT
   .forms select{
     border: none;
     border-radius: 5px;
-    background-color: rgba(223, 215, 204, 0.5);
+    background-color: rgba(158, 156, 154, 0.2);
     width: 220px;
     padding: 10px;
     font-size: 17px;
@@ -316,7 +316,7 @@ CONTENT
     width:  50%;
     margin-left: 15px;
     border-collapse: collapse;
-    background-color: rgba(223, 215, 204, 0.5);
+    background-color: rgba(158, 156, 154, 0.2);
     border-radius: 10px;
     z-index: -20;
   }
@@ -642,7 +642,7 @@ footer {
         text-transform: uppercase;
         font-size: 0.3em;
         padding-left: 1.5em;
-        background-color: rgba(223, 215, 204, 0.486);
+        background-color: rgba(158, 156, 154, 0.2);
       }
 
       .sidebar{
@@ -655,7 +655,7 @@ footer {
 
       .btn3{
         width: 50%;
-        background-color: rgba(223, 215, 204, 0.2);
+        background-color: rgba(158, 156, 154, 0.2);
       }
   
       .content{

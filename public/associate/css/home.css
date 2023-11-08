@@ -72,7 +72,7 @@
 
   /*Botão e Input do Procurar*/
   .topnav .search-container button input{
-    background-color: rgba(223, 215, 204, 0.685);
+    background-color: rgba(158, 156, 154, 0.2);
     font-size: 1.125em;
     border: none;
     cursor: pointer;
@@ -103,7 +103,7 @@
   .search-container {
       border-radius: 6px;
       float: right;
-      background-color: rgba(223, 215, 204, 0.2);
+      background-color: rgba(158, 156, 154, 0.2);
       border: none;
       text-align: center;
       text-decoration: none;
@@ -210,7 +210,7 @@
       align-content: center;
       vertical-align: middle;
       display: flex; 
-      background-color: rgba(223, 215, 204, 0.2);
+      background-color: rgba(158, 156, 154, 0.2);
   }
 
   .tela{
@@ -340,7 +340,7 @@
 
   /*Botão e Input do Procurar*/
   .topnav .search-container button input{
-    background-color: rgba(223, 215, 204, 0.685);
+    background-color: rgba(158, 156, 154, 0.2);
     font-size: 2em;
     border: none;
     cursor: pointer;
@@ -419,7 +419,7 @@
     align-content: center;
     vertical-align: middle;
     display: flex; 
-    background-color: rgba(223, 215, 204, 0.2);
+    background-color: rgba(158, 156, 154, 0.2);
   }
 
   #indicator a {
@@ -474,7 +474,7 @@
       flex-wrap: wrap;
       text-transform: uppercase;
       font-size: 0.8em;
-      background-color: rgba(223, 215, 204, 0.486);
+      background-color: rgba(158, 156, 154, 0.2);
     }
 
     .tela h1{
@@ -491,7 +491,7 @@
 
     .btn3{
       width: 50%;
-      background-color: rgba(223, 215, 204, 0.2);
+      background-color: rgba(158, 156, 154, 0.2);
     }
 
     .content{

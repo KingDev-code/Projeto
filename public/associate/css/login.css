@@ -1,0 +1,104 @@
+  body {
+    font-family: 'Inter', sans-serif, Georgia, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 25px;
+  }
+
+  .login {
+    color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255);
+    width: 450px;
+    border-radius: 12px;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login .image {
+    height: 80px;
+    background: rgba(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    line-height: 80px;
+    border-radius: 10px 10px 0 0;
+}
+
+.login .image img {
+    width: 100px;
+}
+
+.login form {
+    padding: 20px;
+}
+
+.login .row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.login .row input {
+    font-size: 18px;
+    height: 40px;
+    width: calc(100% - 50px);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding-left: 50px;
+    border: solid 2px rgba(0, 0, 0);
+    background-color: rgba(158, 156, 154, 0.2);
+}
+
+.login .row input:focus {
+    border: solid 2px rgba(0, 0, 0);
+}
+
+.login .row input::placeholder {
+    font-size: 16px;
+}
+
+.login .row i {
+    position: absolute;
+    background-color: rgba(0, 0, 0);
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0 0 5px;
+}
+
+.login .row button {
+    font-size: 18px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(0, 0, 0);
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.login .row button:hover {
+    background-color: rgb(78, 77, 77);
+}
+
+.login .row a {
+    float: right;
+    color: rgb(32, 32, 32);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.login .row a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+    .login .row input {
+        width: calc(100% - 60px);
+    }
+}

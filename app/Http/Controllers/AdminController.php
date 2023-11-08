@@ -16,6 +16,21 @@ class AdminController extends Controller
         return view('admin.register');
     }
 
+    public function adminLogin(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Verifique se o usuário autenticado é um administrador (você deve ter um campo no banco de dados para marcar os administradores)
+            $user = Auth::user();
+            if ($user->is_admin) {
+                return redirect()->route('admin.home'); // Redireciona para o painel de administração
+            }
+        }
+
+        return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
+    }
+
     public function register(Request $request)
     {
         // Validação dos dados de entrada
