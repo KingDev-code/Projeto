@@ -62,15 +62,15 @@ Route::get('/select', function () {
 
 // Grupo de rotas protegidas pelo middleware de autenticação ('auth').
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
+    Route::patch('/profile', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
+    Route::delete('/profile', 'App\Http\Controllers\ProfileController@destroy')->name('profile.destroy');
 });
 
 Route::middleware('auth:empresa')->group(function () {
     // Visualização e edição do perfil da empresa
-    Route::get('/dados', [EmpresaController::class, 'edit'])->name('empresa.edit');
-    Route::patch('/update', [EmpresaController::class, 'update'])->name('empresa.update');
+    Route::get('/dados', 'App\Http\Controllers\Auth\EmpresaController@edit')->name('empresa.edit');
+    Route::patch('/update', 'App\Http\Controllers\Auth\EmpresaController@update')->name('empresa.update');
     Route::get('/empresa', function () {
         return view('empresa');
     })->name('empresa.home');
@@ -79,11 +79,11 @@ Route::middleware('auth:empresa')->group(function () {
         return view('envios');
     })->name('envios');
 
-    Route::post('/upload-image', [ImageController::class, 'upload'])->name('upload.image.cliente');
-    Route::post('/upload-image/empresa', [ImageController::class, 'uploadEmpresa'])->name('upload.image.empresa');
+    Route::post('/upload-image', 'App\Http\Controllers\ImageController@upload')->name('upload.image.cliente');
+    Route::post('/upload-image/empresa', 'App\Http\Controllers\ImageController@uploadEmpresa')->name('upload.image.empresa');
 
     // Rota para o painel da empresa
-    Route::get('/dashboard', [EmpresaController::class, 'edit'])->name('empresa.dashboard');
+    Route::get('/dashboard', 'App\Http\Controllers\Auth\EmpresaController@edit')->name('empresa.dashboard');
 
     // Outras rotas relacionadas à empresa, se necessário
 
@@ -92,69 +92,53 @@ Route::middleware('auth:empresa')->group(function () {
 
     Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
     Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');
-    Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
-    Route::get('/registrar', 'App\Http\Controllers\Auth\EmpresaController@create');
+    Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+    Route::get('/registrar', 'App\Http\Controllers\Auth\EmpresaController@create')->name('empresa.register');
     Route::post('/registrar', 'App\Http\Controllers\Auth\EmpresaController@store');
 
-    // Rota de exibição do formulário de login
-  //  Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-    // Rota de processamento do formulário de login
-   // Route::post('/login', [LoginController::class, 'Login']);
-    // Rota de logout
- //   Route::post('/logout', [LoginController::class, 'Logout'])->name('logout');
-    // Rota para exibir o formulário de registro da empresa
-  //  Route::get('/registrar', [EmpresaController::class, 'create'])->name('empresa.register');
-    // Rota para processar o registro da empresa
-  //  Route::post('/registrar', [EmpresaController::class, 'store']);
 
 
 // Inclui rotas de autenticação a partir do arquivo 'auth.php'.
 require __DIR__.'/auth.php';
 
-
-
     //colocar as rotas aqui
-    Route::get('/cadastro', 'App\Http\Controllers\AdminController@registerForm');
-    Route::post('/admin/register', 'App\Http\Controllers\AdminController@register');
-    Route::get('/admin', 'App\Http\Controllers\AdminController@home');
-    Route::get('/dadospessoais', 'App\Http\Controllers\AdminController@dadospessoais');
+    Route::get('/cadastro', 'App\Http\Controllers\AdminController@registerForm')->name('admin.registerForm');
+    Route::post('/admin/register', 'App\Http\Controllers\AdminController@register')->name('admin.register');
+    Route::get('/admin', 'App\Http\Controllers\AdminController@home')->name('admin');
+    Route::get('/dadospessoais', 'App\Http\Controllers\AdminController@dadospessoais')->name('dadospessoais');
 
-    // Rotas para o registro de administradores
-  //  Route::get('/cadastro', [AdminController::class, 'registerForm'])->name('admin.registerForm');
-  //  Route::post('/admin/register', [AdminController::class, 'register'])->name('admin.register');
+
     //Route::middleware('admin')->group(function () {
-    // Painel de controle do administrador
- //   Route::get('/admin', [AdminController::class, 'home'])->name('admin');
+
 
     // Outras rotas protegidas para administradores
-   // Route::get('/dadospessoais', [AdminController::class, 'dadospessoais'])->name('dadospessoais');
-    Route::get('/tipos', [AdminController::class, 'tipos'])->name('tipos');
-    Route::get('/cadastros', [AdminController::class, 'cadastros'])->name('cadastros');
-    Route::get('/departamentos', [AdminController::class, 'departamentos'])->name('departamentos');
-    Route::get('/estilos', [AdminController::class, 'estilos'])->name('estilos');
-    Route::get('/info', [AdminController::class, 'info'])->name('info');
-    Route::get('/solicitacoes', [AdminController::class, 'solicitacoes'])->name('solicitacoes');
-    Route::get('/comb', [AdminController::class, 'combinacoes'])->name('comb');
+    Route::get('/tipos', 'App\Http\Controllers\AdminController@tipos')->name('tipos');
+    Route::get('/cadastros', 'App\Http\Controllers\AdminController@cadastros')->name('cadastros');
+    Route::get('/departamentos', 'App\Http\Controllers\AdminController@departamentos')->name('departamentos');
+    Route::get('/estilos', 'App\Http\Controllers\AdminController@estilos')->name('estilos');
+    Route::get('/info', 'App\Http\Controllers\AdminController@info')->name('info');
+    Route::get('/solicitacoes', 'App\Http\Controllers\AdminController@solicitacoes')->name('solicitacoes');
+    Route::get('/comb', 'App\Http\Controllers\AdminController@combinacoes')->name('comb');
 
 
     // Rotas para Estilos
-    Route::get('/estilos', [EstiloController::class, 'index'])->name('estilos');
-    Route::get('/estilos-create', [EstiloController::class, 'create'])->name('estilos.create');
-    Route::post('/estilos', [EstiloController::class, 'store'])->name('estilos.store');
+    Route::get('/estilos', 'App\Http\Controllers\EstiloController@index')->name('estilos');
+    Route::get('/estilos-create', 'App\Http\Controllers\EstiloController@create')->name('estilos.create');
+    Route::post('/estilos', 'App\Http\Controllers\EstiloController@store')->name('estilos.store');
 
-    Route::post('/inativar-estilos', [EstiloController::class, 'inativar'])->name('inativar.estilos');
-    Route::get('/editar-estilos{id}', [EstiloController::class, 'edit'])->name('editar.estilos');
-    Route::put('/estilos/update/{id}', [OcasiaoController::class, 'update'])->name('estilos.update');
+    Route::post('/inativar-estilos', 'App\Http\Controllers\EstiloController@inativar')->name('inativar.estilos');
+    Route::get('/editar-estilos{id}', 'App\Http\Controllers\EstiloController@edit')->name('editar.estilos');
+    Route::put('/estilos/update/{id}', 'App\Http\Controllers\EstiloController@update')->name('estilos.update');
 
     // Rotas para Ocasião
     Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
 
-    Route::get('/ocasioes', [OcasiaoController::class, 'create'])->name('ocasioes.create');
-    Route::post('/ocasioes', [OcasiaoController::class, 'store'])->name('ocasioes.store');
-    Route::put('/ocasioes/update/{id}', [OcasiaoController::class, 'update'])->name('ocasioes.update');
+    Route::get('/ocasioes', 'App\Http\Controllers\OcasiaoController@create')->name('ocasioes.create');
+    Route::post('/ocasioes', 'App\Http\Controllers\OcasiaoController@store')->name('ocasioes.store');
+    Route::put('/ocasioes/update/{id}', 'App\Http\Controllers\OcasiaoController@update')->name('ocasioes.update');
 
-    Route::post('/inativar-ocasioes', [OcasiaoController::class, 'inativar'])->name('inativar.ocasioes');
-    Route::get('/editar-ocasioes{id}', [OcasiaoController::class, 'edit'])->name('editar.ocasioes');
+    Route::post('/inativar-ocasioes', 'App\Http\Controllers\OcasiaoController@inativar')->name('inativar.ocasioes');
+    Route::get('/editar-ocasioes{id}', 'App\Http\Controllers\OcasiaoController@edit')->name('editar.ocasioes');
 
 
     Route::get('/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
