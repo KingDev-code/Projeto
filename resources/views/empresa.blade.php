@@ -497,7 +497,7 @@
         html: '<div class="html3"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
               '<h4>RESULTADO</h4>'+
               `Provavelmente o seu tipo corporal é ...  ${corpo} `+
-              '<br><img src="img/f-result4.png" width="auto" height="auto"/>'+
+              '<br><img src="public/img/f-result4.png" width="auto" height="auto"/>'+
               '<p>Agora que você conhece o seu tipo de corpo, personalize suas escolhas no site e vista apenas o que realça a sua beleza!</p>'+
               '<p><span>"Lembre-se, não existe um tipo de corpo ideal! Priorize sentir-se bem e adequada ao seu estilo de vida e personalidade. Você é extraordinária!"<span></p>',
         customClass:{
@@ -519,7 +519,7 @@
         html: '<div class="html3"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
               '<h4>RESULTADO</h4>'+
               `Provavelmente o seu tipo corporal é ...  ${corpo} `+
-              '<br><img src="img/f-result5.png" width="auto" height="auto"/>'+
+              '<br><img src="public/img/f-result5.png" width="auto" height="auto"/>'+
               '<p>Agora que você conhece o seu tipo de corpo, personalize suas escolhas no site e vista apenas o que realça a sua beleza!</p>'+
               '<p><span>"Lembre-se, não existe um tipo de corpo ideal! Priorize sentir-se bem e adequada ao seu estilo de vida e personalidade. Você é extraordinária!"<span></p>',
         customClass:{
