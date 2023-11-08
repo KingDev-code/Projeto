@@ -24,9 +24,6 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-$environment = env('APP_ENV', 'local');
-
-
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.
 Route::get('/', function () {
     return view('welcome');
@@ -93,7 +90,7 @@ Route::middleware('auth:empresa')->group(function () {
 
 });
 
-    Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm');
+    Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
     Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');
     Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
     Route::get('/registrar', 'App\Http\Controllers\Auth\EmpresaController@create');
