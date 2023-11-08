@@ -577,16 +577,16 @@ function toggleIcon() {
 
 
   } else {
-    document.getElementById("look1").src = "public/img/look1.png";
-    document.getElementById("peca1").src = "public/img/peca1.png";
-    document.getElementById("peca2").src = "public/img/peca2.png";
-    document.getElementById("peca3").src = "public/img/peca3.png";
-    document.getElementById("peca4").src = "public/img/peca4.png";
+    document.getElementById("look1").src = "{{asset('public/img/look1.png') }}";
+    document.getElementById("peca1").src = "{{asset('public/img/peca1.png') }}";
+    document.getElementById("peca2").src = "{{asset('public/img/peca2.png') }}";
+    document.getElementById("peca3").src = "{{asset('public/img/peca3.png') }}";
+    document.getElementById("peca4").src = "{{asset('public/img/peca4.png') }}";
 
-    document.getElementById("look2").src = "public/img/look2.png";
-    document.getElementById("peca1-look2").src = "public/img/peca1-look2.png";
-    document.getElementById("peca2-look2").src = "public/img/peca2-look2.png";
-    document.getElementById("peca3-look2").src = "public/img/peca3-look2.png";
+    document.getElementById("look2").src = "{{asset('public/img/look2.png') }}";
+    document.getElementById("peca1-look2").src = "{{asset('public/img/peca1-look2.png') }}";
+    document.getElementById("peca2-look2").src = "{{asset('public/img/peca2-look2.png') }}";
+    document.getElementById("peca3-look2").src = "{{asset('public/img/peca3-look2.png') }}";
 
     document.getElementById("link-peca1").href = "https://www.cea.com.br/camiseta-de-algodao-mindset-preto-9394894-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwWCs_dk5ApQlnn-RbrPU6E8Bm2i1p9XfI2G3cLpZbg3jp_rxNsSAahoCKwMQAvD_BwE";
     document.getElementById("link-peca2").href = "https://www.cea.com.br/blazer-alongado-com-linho-manga-longa-preto-1041335-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwdJyXQfPRzyANVwNF9lkkpqeb9rsdJlVrQjFLxc6qBpGPyX7g7GbWhoCHl0QAvD_BwE";
@@ -657,20 +657,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const banner5 = document.getElementById('banner5');
 
   function checkScreenWidth() {
-      if (window.innerWidth <= 710) {
+        if (window.innerWidth <= 710) {
           // Se a largura da janela for menor ou igual a 710 pixels, troque a imagem
-          banner1.src = 'public/img/banner1-.png';
-          banner2.src = 'public/img/banner2-.png';
-          banner3.src = 'public/img/banner3-.png';
-          banner4.src = 'public/img/banner4-.png';
-          banner5.src = 'public/img/banner5-.png';
+          banner1.src = '{{ asset('public/banner1-.png') }}';
+          banner2.src = '{{ asset('public/banner2-.png') }}';
+          banner3.src = '{{ asset('public/banner3-.png') }}';
+          banner4.src = '{{ asset('public/banner4-.png') }}';
+          banner5.src = '{{ asset('public/banner5-.png') }}';
       } else {
           // Caso contrário, volte para a imagem original
-          banner1.src = 'public/img/banner1.png';
-          banner2.src = 'public/img/banner2.png';
-          banner3.src = 'public/img/banner3.png';
-          banner4.src = 'public/img/banner4.png';
-          banner5.src = 'public/img/banner5.png';
+          banner1.src = '{{ asset('public/banner1.png') }}';
+          banner2.src = '{{ asset('public/banner2.png') }}';
+          banner3.src = '{{ asset('public/banner3.png') }}';
+          banner4.src = '{{ asset('public/banner4.png') }}';
+          banner5.src = '{{ asset('public/banner5.png') }}';
       }
   }
 
