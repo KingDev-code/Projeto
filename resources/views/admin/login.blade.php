@@ -28,19 +28,19 @@
             <img src="public/associate/img/Logo Veste-me - Círculo - Preta.png" alt="">
         </div>
 
-        <form action="{{ route('admin.loginpost') }}" method="post">
+        <form action="/admin/login" method="post">
             <div class="row">
                 <i class="material-icons-sharp">person</i>
-                <input type="Email" placeholder="E-mail" required>
+                <input type="Email" name="email" placeholder="E-mail" required>
             </div>
 
             <div class="row">
                 <i class="material-icons-sharp">lock</i>
-                <input type="password" placeholder="Senha" required>
+                <input type="password" name="password" placeholder="Senha" required>
             </div>
 
             <div class="row">
-                <button>Entrar</button>
+                <button type="submit">Entrar</button>
                 <a href="#">Esqueceu sua senha?</a>
             </div>
         </form>
