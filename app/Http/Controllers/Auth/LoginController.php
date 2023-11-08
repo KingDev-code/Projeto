@@ -26,7 +26,7 @@ class LoginController extends Controller
             if ($user->type === 'cliente' && Auth::guard('login')->attempt($credentials)) {
                 return redirect('/profile');
             } elseif ($user->type === 'empresa' && Auth::guard('login')->attempt($credentials)) {
-                return redirect('/dashboard');
+                return redirect('/empresa/dashboard');
             } elseif ($user->type === 'admin' && Auth::guard('login')->attempt($credentials)) {
                 return redirect('/admin'); // Altere o redirecionamento para a área do administrador
             }
