@@ -1,8 +1,8 @@
 @extends('layouts.usuario')
 
 @section('conteudo')
-<link rel="stylesheet" href="css/cadastro-emp.css">
-<link rel="stylesheet" href="css/cadastro-emp-resp.css">
+<link rel="stylesheet" href="public/css/cadastro-emp.css">
+<link rel="stylesheet" href="public/css/cadastro-emp-resp.css">
 
 <div class="content">
     <div id="indicator">
