@@ -28,7 +28,7 @@
         <img src="public/associate/img/Logo Veste-me - Círculo - Preta.png" alt="">
     </div>
 
-    <form method="POST" action="{{ route('admin.login') }}">
+    <form method="POST" action="{{ route('admin.loginpost') }}">
         @csrf
 
         <div class="row">
