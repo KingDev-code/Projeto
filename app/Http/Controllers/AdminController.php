@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function registerForm()
     {
         return view('admin.register');
@@ -24,7 +28,7 @@ class AdminController extends Controller
     public function adminLogin(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
+    
         if (Auth::attempt($credentials)) {
             // Verifique se o usuário autenticado é um administrador (você deve ter um campo no banco de dados para marcar os administradores)
             $user = Auth::user();
@@ -32,7 +36,7 @@ class AdminController extends Controller
                 return redirect()->route('admin'); // Redireciona para o painel de administração
             }
         }
-
+    
         return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
     }
 
