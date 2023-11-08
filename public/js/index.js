@@ -232,16 +232,16 @@ function toggleIcon() {
   
   if (iconChanged) {
 
-    document.getElementById("look1").src = "img/look1-masc.png";
-    document.getElementById("peca1").src = "img/peca1-masc.png";
-    document.getElementById("peca2").src = "img/peca2-masc.png";
-    document.getElementById("peca3").src = "img/peca3-masc.png";
-    document.getElementById("peca4").src = "img/peca4-masc.png";
+    document.getElementById("look1").src = "public/img/look1-masc.png";
+    document.getElementById("peca1").src = "public/img/peca1-masc.png";
+    document.getElementById("peca2").src = "public/img/peca2-masc.png";
+    document.getElementById("peca3").src = "public/img/peca3-masc.png";
+    document.getElementById("peca4").src = "public/img/peca4-masc.png";
 
-    document.getElementById("look2").src = "img/look2-masc.png";
-    document.getElementById("peca1-look2").src = "img/peca1-look2-masc.png";
-    document.getElementById("peca2-look2").src = "img/peca2-look2-masc.png";
-    document.getElementById("peca3-look2").src = "img/peca3-look2-masc.png";
+    document.getElementById("look2").src = "public/img/look2-masc.png";
+    document.getElementById("peca1-look2").src = "public/img/peca1-look2-masc.png";
+    document.getElementById("peca2-look2").src = "public/img/peca2-look2-masc.png";
+    document.getElementById("peca3-look2").src = "public/img/peca3-look2-masc.png";
 
     document.getElementById("link-peca1").href = "https://br.shein.com/Fusion-Modas-Men-Shirts-p-13173514-cat-1979.html?mallCode=2";
     document.getElementById("link-peca2").href = "https://br.shein.com/Manfinity-Mode-Men-Single-Breasted-Blazer-Pants-Suit-Set-p-11706526-cat-2484.html?src_identifier=st%3D2%60sc%3DManfinity%20Mode%20Homens%20N%C3%A3o%20Trespassado%20Blazer%20E%20Cal%C3%A7a%20Terno%20Conjuntos%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_search1697055112071&mallCode=1";
@@ -267,19 +267,19 @@ function toggleIcon() {
       exibirAlertasMasc();
     });
 
-    document.getElementById("image1-tc").src = "img/triangulo-masc.png";
-    document.getElementById("image2-tc").src = "img/trianguloinvertido-masc.png";
-    document.getElementById("image3-tc").src = "img/retangulo-masc.png";
-    document.getElementById("image4-tc").src = "img/trapezio-masc.png";
-    document.getElementById("image5-tc").src = "img/oval-masc.png";
+    document.getElementById("image1-tc").src = "public/img/triangulo-masc.png";
+    document.getElementById("image2-tc").src = "public/img/trianguloinvertido-masc.png";
+    document.getElementById("image3-tc").src = "public/img/retangulo-masc.png";
+    document.getElementById("image4-tc").src = "public/img/trapezio-masc.png";
+    document.getElementById("image5-tc").src = "public/img/oval-masc.png";
 
-    document.getElementById("image1-e").src = "img/esportivo-masc.png";
-    document.getElementById("image2-e").src = "img/romantico-masc.png";
-    document.getElementById("image3-e").src = "img/classico-masc.png";
-    document.getElementById("image4-e").src = "img/elegante-masc.png";
-    document.getElementById("image5-e").src = "img/criativo-masc.png";
-    document.getElementById("image6-e").src = "img/dramatico-masc.png";
-    document.getElementById("image7-e").src = "img/sexy-masc.png";
+    document.getElementById("image1-e").src = "public/img/esportivo-masc.png";
+    document.getElementById("image2-e").src = "public/img/romantico-masc.png";
+    document.getElementById("image3-e").src = "public/img/classico-masc.png";
+    document.getElementById("image4-e").src = "public/img/elegante-masc.png";
+    document.getElementById("image5-e").src = "public/img/criativo-masc.png";
+    document.getElementById("image6-e").src = "public/img/dramatico-masc.png";
+    document.getElementById("image7-e").src = "public/img/sexy-masc.png";
 
     document.getElementById("desc_1-look1").innerText = "Fusion Modas Camisa Social Masculina Elastano Masculina.     ";
     document.getElementById("desc_2-look1").innerText = "Manfinity Mode Homens Não Trespassado Blazer e calça Terno.  ";
@@ -330,16 +330,16 @@ function toggleIcon() {
     document.getElementById("peca2-look2").style.maxWidth = "150px;";
     document.getElementById("peca3-look2").style.maxWidth = "150px;";
 
-    document.getElementById("look1").src = "img/look1.png";
-    document.getElementById("peca1").src = "img/peca1.png";
-    document.getElementById("peca2").src = "img/peca2.png";
-    document.getElementById("peca3").src = "img/peca3.png";
-    document.getElementById("peca4").src = "img/peca4.png";
+    document.getElementById("look1").src = "public/img/look1.png";
+    document.getElementById("peca1").src = "public/img/peca1.png";
+    document.getElementById("peca2").src = "public/img/peca2.png";
+    document.getElementById("peca3").src = "public/img/peca3.png";
+    document.getElementById("peca4").src = "public/img/peca4.png";
 
-    document.getElementById("look2").src = "img/look2.png";
-    document.getElementById("peca1-look2").src = "img/peca1-look2.png";
-    document.getElementById("peca2-look2").src = "img/peca2-look2.png";
-    document.getElementById("peca3-look2").src = "img/peca3-look2.png";
+    document.getElementById("look2").src = "public/img/look2.png";
+    document.getElementById("peca1-look2").src = "public/img/peca1-look2.png";
+    document.getElementById("peca2-look2").src = "public/img/peca2-look2.png";
+    document.getElementById("peca3-look2").src = "public/img/peca3-look2.png";
 
     document.getElementById("link-peca1").href = "https://www.cea.com.br/camiseta-de-algodao-mindset-preto-9394894-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwWCs_dk5ApQlnn-RbrPU6E8Bm2i1p9XfI2G3cLpZbg3jp_rxNsSAahoCKwMQAvD_BwE";
     document.getElementById("link-peca2").href = "https://www.cea.com.br/blazer-alongado-com-linho-manga-longa-preto-1041335-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwdJyXQfPRzyANVwNF9lkkpqeb9rsdJlVrQjFLxc6qBpGPyX7g7GbWhoCHl0QAvD_BwE";
@@ -353,19 +353,19 @@ function toggleIcon() {
     document.getElementById("link-look1").href ="https://br.pinterest.com/pin/730357264592614830/";
     document.getElementById("link-look2").href ="https://br.pinterest.com/pin/Ac7Cs94y6vBbHOc2jnbHDHEx3OGhWRz5hBGENy38jGl7jfZy97Zt_og/";
 
-    document.getElementById("image1-tc").src = "img/triangulo.png";
-    document.getElementById("image2-tc").src = "img/trianguloinvertido.png";
-    document.getElementById("image3-tc").src = "img/retangulo.png";
-    document.getElementById("image4-tc").src = "img/ampulheta.png";
-    document.getElementById("image5-tc").src = "img/oval.png";
+    document.getElementById("image1-tc").src = "public/img/triangulo.png";
+    document.getElementById("image2-tc").src = "public/img/trianguloinvertido.png";
+    document.getElementById("image3-tc").src = "public/img/retangulo.png";
+    document.getElementById("image4-tc").src = "public/img/ampulheta.png";
+    document.getElementById("image5-tc").src = "public/img/oval.png";
 
-    document.getElementById("image1-e").src = "img/esportivo.png";
-    document.getElementById("image2-e").src = "img/romantico.png";
-    document.getElementById("image3-e").src = "img/classico.png";
-    document.getElementById("image4-e").src = "img/elegante.png";
-    document.getElementById("image5-e").src = "img/criativo.png";
-    document.getElementById("image6-e").src = "img/dramatico.png";
-    document.getElementById("image7-e").src = "img/sexy.png";
+    document.getElementById("image1-e").src = "public/img/esportivo.png";
+    document.getElementById("image2-e").src = "public/public/img/romantico.png";
+    document.getElementById("image3-e").src = "public/img/classico.png";
+    document.getElementById("image4-e").src = "public/img/elegante.png";
+    document.getElementById("image5-e").src = "public/img/criativo.png";
+    document.getElementById("image6-e").src = "public/img/dramatico.png";
+    document.getElementById("image7-e").src = "public/img/sexy.png";
 
     document.getElementById("desc_1-look1").innerText = "Camiseta de Algodão mindset preto.                           ";
     document.getElementById("desc_2-look1").innerText = "Blazer alongado com linho manga longa preto.                 ";
@@ -494,16 +494,16 @@ function toggleIcon() {
   iconChanged = !iconChanged;
   
   if (iconChanged) {
-    document.getElementById("look1").src = "img/look1-masc.png";
-    document.getElementById("peca1").src = "img/peca1-masc.png";
-    document.getElementById("peca2").src = "img/peca2-masc.png";
-    document.getElementById("peca3").src = "img/peca3-masc.png";
-    document.getElementById("peca4").src = "img/peca4-masc.png";
+    document.getElementById("look1").src = "public/img/look1-masc.png";
+    document.getElementById("peca1").src = "public/img/peca1-masc.png";
+    document.getElementById("peca2").src = "public/img/peca2-masc.png";
+    document.getElementById("peca3").src = "public/img/peca3-masc.png";
+    document.getElementById("peca4").src = "public/img/peca4-masc.png";
 
-    document.getElementById("look2").src = "img/look2-masc.png";
-    document.getElementById("peca1-look2").src = "img/peca1-look2-masc.png";
-    document.getElementById("peca2-look2").src = "img/peca2-look2-masc.png";
-    document.getElementById("peca3-look2").src = "img/peca3-look2-masc.png";
+    document.getElementById("look2").src = "public/img/look2-masc.png";
+    document.getElementById("peca1-look2").src = "public/img/peca1-look2-masc.png";
+    document.getElementById("peca2-look2").src = "public/img/peca2-look2-masc.png";
+    document.getElementById("peca3-look2").src = "public/img/peca3-look2-masc.png";
 
     document.getElementById("link-peca1").href = "https://br.shein.com/Fusion-Modas-Men-Shirts-p-13173514-cat-1979.html?mallCode=2";
     document.getElementById("link-peca2").href = "https://br.shein.com/Manfinity-Mode-Men-Single-Breasted-Blazer-Pants-Suit-Set-p-11706526-cat-2484.html?src_identifier=st%3D2%60sc%3DManfinity%20Mode%20Homens%20N%C3%A3o%20Trespassado%20Blazer%20E%20Cal%C3%A7a%20Terno%20Conjuntos%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_search1697055112071&mallCode=1";
@@ -530,19 +530,19 @@ function toggleIcon() {
     look2Image.style.transition = "opacity 0.5s";
     look2Image.style.cursor = "pointer";
 
-    document.getElementById("image1-tc").src = "img/triangulo-masc.png";
-    document.getElementById("image2-tc").src = "img/trianguloinvertido-masc.png";
-    document.getElementById("image3-tc").src = "img/retangulo-masc.png";
-    document.getElementById("image4-tc").src = "img/trapezio-masc.png";
-    document.getElementById("image5-tc").src = "img/oval-masc.png";
+    document.getElementById("image1-tc").src = "public/img/triangulo-masc.png";
+    document.getElementById("image2-tc").src = "public/img/trianguloinvertido-masc.png";
+    document.getElementById("image3-tc").src = "public/img/retangulo-masc.png";
+    document.getElementById("image4-tc").src = "public/img/trapezio-masc.png";
+    document.getElementById("image5-tc").src = "public/img/oval-masc.png";
 
-    document.getElementById("image1-e").src = "img/esportivo-masc.png";
-    document.getElementById("image2-e").src = "img/romantico-masc.png";
-    document.getElementById("image3-e").src = "img/classico-masc.png";
-    document.getElementById("image4-e").src = "img/elegante-masc.png";
-    document.getElementById("image5-e").src = "img/criativo-masc.png";
-    document.getElementById("image6-e").src = "img/dramatico-masc.png";
-    document.getElementById("image7-e").src = "img/sexy-masc.png";
+    document.getElementById("image1-e").src = "public/img/esportivo-masc.png";
+    document.getElementById("image2-e").src = "public/img/romantico-masc.png";
+    document.getElementById("image3-e").src = "public/img/classico-masc.png";
+    document.getElementById("image4-e").src = "public/img/elegante-masc.png";
+    document.getElementById("image5-e").src = "public/img/criativo-masc.png";
+    document.getElementById("image6-e").src = "public/img/dramatico-masc.png";
+    document.getElementById("image7-e").src = "public/img/sexy-masc.png";
 
     document.getElementById("desc_1-look1").innerText = "Fusion Modas Camisa Social Masculina Elastano Masculina.     ";
     document.getElementById("desc_2-look1").innerText = "Manfinity Mode Homens Não Trespassado Blazer e calça Terno.  ";
@@ -577,16 +577,16 @@ function toggleIcon() {
 
 
   } else {
-    document.getElementById("look1").src = "img/look1.png";
-    document.getElementById("peca1").src = "img/peca1.png";
-    document.getElementById("peca2").src = "img/peca2.png";
-    document.getElementById("peca3").src = "img/peca3.png";
-    document.getElementById("peca4").src = "img/peca4.png";
+    document.getElementById("look1").src = "public/img/look1.png";
+    document.getElementById("peca1").src = "public/img/peca1.png";
+    document.getElementById("peca2").src = "public/img/peca2.png";
+    document.getElementById("peca3").src = "public/img/peca3.png";
+    document.getElementById("peca4").src = "public/img/peca4.png";
 
-    document.getElementById("look2").src = "img/look2.png";
-    document.getElementById("peca1-look2").src = "img/peca1-look2.png";
-    document.getElementById("peca2-look2").src = "img/peca2-look2.png";
-    document.getElementById("peca3-look2").src = "img/peca3-look2.png";
+    document.getElementById("look2").src = "public/img/look2.png";
+    document.getElementById("peca1-look2").src = "public/img/peca1-look2.png";
+    document.getElementById("peca2-look2").src = "public/img/peca2-look2.png";
+    document.getElementById("peca3-look2").src = "public/img/peca3-look2.png";
 
     document.getElementById("link-peca1").href = "https://www.cea.com.br/camiseta-de-algodao-mindset-preto-9394894-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwWCs_dk5ApQlnn-RbrPU6E8Bm2i1p9XfI2G3cLpZbg3jp_rxNsSAahoCKwMQAvD_BwE";
     document.getElementById("link-peca2").href = "https://www.cea.com.br/blazer-alongado-com-linho-manga-longa-preto-1041335-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwdJyXQfPRzyANVwNF9lkkpqeb9rsdJlVrQjFLxc6qBpGPyX7g7GbWhoCHl0QAvD_BwE";
@@ -600,19 +600,19 @@ function toggleIcon() {
     document.getElementById("link-look1").href ="https://br.pinterest.com/pin/730357264592614830/";
     document.getElementById("link-look2").href ="https://br.pinterest.com/pin/Ac7Cs94y6vBbHOc2jnbHDHEx3OGhWRz5hBGENy38jGl7jfZy97Zt_og/";
 
-    document.getElementById("image1-tc").src = "img/triangulo.png";
-    document.getElementById("image2-tc").src = "img/trianguloinvertido.png";
-    document.getElementById("image3-tc").src = "img/retangulo.png";
-    document.getElementById("image4-tc").src = "img/ampulheta.png";
-    document.getElementById("image5-tc").src = "img/oval.png";
+    document.getElementById("image1-tc").src = "public/img/triangulo.png";
+    document.getElementById("image2-tc").src = "public/img/trianguloinvertido.png";
+    document.getElementById("image3-tc").src = "public/img/retangulo.png";
+    document.getElementById("image4-tc").src = "public/img/ampulheta.png";
+    document.getElementById("image5-tc").src = "public/img/oval.png";
 
-    document.getElementById("image1-e").src = "img/esportivo.png";
-    document.getElementById("image2-e").src = "img/romantico.png";
-    document.getElementById("image3-e").src = "img/classico.png";
-    document.getElementById("image4-e").src = "img/elegante.png";
-    document.getElementById("image5-e").src = "img/criativo.png";
-    document.getElementById("image6-e").src = "img/dramatico.png";
-    document.getElementById("image7-e").src = "img/sexy.png";
+    document.getElementById("image1-e").src = "public/img/esportivo.png";
+    document.getElementById("image2-e").src = "public/img/romantico.png";
+    document.getElementById("image3-e").src = "public/img/classico.png";
+    document.getElementById("image4-e").src = "public/img/elegante.png";
+    document.getElementById("image5-e").src = "public/img/criativo.png";
+    document.getElementById("image6-e").src = "public/img/dramatico.png";
+    document.getElementById("image7-e").src = "public/img/sexy.png";
 
     document.getElementById("desc_1-look1").innerText = "Camiseta de Algodão mindset preto.                           ";
     document.getElementById("desc_2-look1").innerText = "Blazer alongado com linho manga longa preto.                 ";
@@ -834,7 +834,7 @@ Swal.fire({
   html: '<div class="html3"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
         '<h4>RESULTADO</h4>'+
         `Provavelmente o seu tipo corporal é ...  ${corpo} `+
-        '<br><img src="img/m-result3.png" width="auto" height="auto"/>'+
+        '<br><img src="public/img/m-result3.png" width="auto" height="auto"/>'+
         '<p>Agora que você conhece o seu tipo de corpo, personalize suas escolhas no site e vista apenas o que realça a sua beleza!</p>'+
         '<p><span>"Lembre-se, não existe um tipo de corpo ideal! Priorize sentir-se bem e adequada ao seu estilo de vida e personalidade. Você é extraordinária!"<span></p>',
   customClass:{
@@ -856,7 +856,7 @@ Swal.fire({
   html: '<div class="html3"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
         '<h4>RESULTADO</h4>'+
         `Provavelmente o seu tipo corporal é ...  ${corpo} `+
-        '<br><img src="img/m-result4.png" width="auto" height="auto"/>'+
+        '<br><img src="public/img/m-result4.png" width="auto" height="auto"/>'+
         '<p>Agora que você conhece o seu tipo de corpo, personalize suas escolhas no site e vista apenas o que realça a sua beleza!</p>'+
         '<p><span>"Lembre-se, não existe um tipo de corpo ideal! Priorize sentir-se bem e adequada ao seu estilo de vida e personalidade. Você é extraordinária!"<span></p>',
   customClass:{
@@ -878,7 +878,7 @@ Swal.fire({
   html: '<div class="html3"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
         '<h4>RESULTADO</h4>'+
         `Provavelmente o seu tipo corporal é ...  ${corpo} `+
-        '<br><img src="img/m-result5.png" width="auto" height="auto"/>'+
+        '<br><img src="public/img/m-result5.png" width="auto" height="auto"/>'+
         '<p>Agora que você conhece o seu tipo de corpo, personalize suas escolhas no site e vista apenas o que realça a sua beleza!</p>'+
         '<p><span>"Lembre-se, não existe um tipo de corpo ideal! Priorize sentir-se bem e adequado ao seu estilo de vida e personalidade. Você é extraordinário!"<span></p>',
   customClass:{
