@@ -45,7 +45,7 @@
           <a href="cadastros"><span class="material-icons-sharp">groups</span>CADASTROS</a>
           <a href="departamentos"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
           <a href="estilos"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
-          <a href="tipos"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
+          <a href="tipos"><img src="public/associate/img/tc.png" >TIPOS CORPORAIS</a>
         <br>
         <div class="btn">
           <button class="btn3"><span class="material-icons-sharp">logout</span>SAIR</button>

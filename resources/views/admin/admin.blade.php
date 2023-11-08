@@ -4,23 +4,23 @@
 
 <div class="slideshow">
       <div class="slide">
-        <img id="banner1" src="img/banner1.png">
+        <img id="banner1" src="public/img/banner1.png">
       </div>
     
       <div class="slide">
-        <img id="banner2" src="img/banner2.png">
+        <img id="banner2" src="public/img/banner2.png">
       </div>
     
       <div class="slide">
-        <img id="banner3" src="img/banner3.png">
+        <img id="banner3" src="public/img/banner3.png">
       </div>
     
       <div class="slide">
-        <img id="banner4" src="img/banner4.png">
+        <img id="banner4" src="public/img/banner4.png">
       </div>
     
       <div class="slide">
-        <img id="banner5" src="img/banner5.png">
+        <img id="banner5" src="public/img/banner5.png">
       </div>
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
