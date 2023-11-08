@@ -28,7 +28,7 @@
             <img src="public/associate/img/Logo Veste-me - Círculo - Preta.png" alt="">
         </div>
 
-        <form action="/admin/login">
+        <form action="{{ route('admin.loginpost') }}">
             <div class="row">
                 <i class="material-icons-sharp">person</i>
                 <input type="Email" placeholder="E-mail" required>
