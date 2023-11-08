@@ -20,7 +20,7 @@
       </div>
 
       <div class="slide">
-          <img id="banner5" src="{{asset('public/img/banner5.png') }}">
+          <img id="banner5" src="public/img/banner5.png') }}">
       </div>
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
