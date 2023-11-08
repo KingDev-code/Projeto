@@ -23,28 +23,40 @@
 </head>
 <body>
 
-    <div class="login">
-        <div class="image">
-            <img src="public/associate/img/Logo Veste-me - Círculo - Preta.png" alt="">
+<div class="login">
+    <div class="image">
+        <img src="public/associate/img/Logo Veste-me - Círculo - Preta.png" alt="">
+    </div>
+
+    <form method="POST" action="{{ route('admin.login') }}">
+        @csrf
+
+        <div class="row">
+            <i class="material-icons-sharp">person</i>
+            <input type="email" name="email" placeholder="E-mail" required>
         </div>
 
-        <form action="/adminpost" method="post">
-            <div class="row">
-                <i class="material-icons-sharp">person</i>
-                <input type="Email" name="email" placeholder="E-mail" required>
-            </div>
+        <div class="row">
+            <i class="material-icons-sharp">lock</i>
+            <input type="password" name="password" placeholder="Senha" required>
+        </div>
 
-            <div class="row">
-                <i class="material-icons-sharp">lock</i>
-                <input type="password" name="password" placeholder="Senha" required>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
+        @endif
 
-            <div class="row">
-                <button type="submit">Entrar</button>
-                <a href="#">Esqueceu sua senha?</a>
-            </div>
-        </form>
-    </div>
+        <div class="row">
+            <button type="submit">Entrar</button>
+            <a href="#">Esqueceu sua senha?</a>
+        </div>
+    </form>
+</div>
 
 </body>
 
