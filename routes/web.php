@@ -61,7 +61,8 @@ Route::get('/select', function () {
 
 Route::get('/cadastro', 'App\Http\Controllers\AdminController@registerForm')->name('admin.registerForm');
 Route::post('/admin/register', 'App\Http\Controllers\AdminController@register')->name('admin.register');
-Route::post('/admin/login', 'AdminController@adminLogin')->name('admin.login');
+Route::get('/admin/login', 'AdminController@loginForm')->name('admin.login');
+Route::post('/admin/login', 'AdminController@adminLogin')->name('admin.loginpost');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     // Rotas de admin

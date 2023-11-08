@@ -16,6 +16,11 @@ class AdminController extends Controller
         return view('admin.register');
     }
 
+    public function loginForm()
+    {
+        return view('admin.register');
+    }
+
     public function adminLogin(Request $request)
     {
         $credentials = $request->only('email', 'password');
