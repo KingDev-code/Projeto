@@ -9,8 +9,8 @@ class TipoCorporalController extends Controller
 {
     public function index()
     {
-        $tiposcorporal = TipoCorporal::all();
-        return view('dashboard', compact('tiposcorporal'));
+        $tipos = TipoCorporal::where('ativo', true)->get();
+        return view('departamentos', compact('tipos'));
     }
 
     public function create()

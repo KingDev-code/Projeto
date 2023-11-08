@@ -69,16 +69,19 @@ class EstiloController extends Controller
 
     public function update(Request $request, $id)
     {
+        // Validação dos dados de entrada
         $request->validate([
             'estilo' => 'required|string|max:80',
         ]);
 
+        // Encontra o registro de Estilo com o ID fornecido
         $estilo = Estilo::find($id);
 
         if (!$estilo) {
             return redirect()->route('estilos')->with('error', 'Estilo não encontrado.');
         }
 
+        // Atualiza o campo 'estilo'
         $estilo->estilo = $request->input('estilo');
         $estilo->save();
 

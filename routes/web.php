@@ -170,8 +170,14 @@ Route::post('/admin/register', [AdminController::class, 'register'])->name('admi
     Route::get('/ocasiao/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
 
     // Rotas para Tipos Corporal
-    Route::get('/tiposcorporal/create', [TipoCorporalController::class, 'create'])->name('tiposcorporal.create');
-    Route::post('/tiposcorporal', [TipoCorporalController::class, 'store'])->name('tiposcorporal.store');
+    Route::get('/tipos', [TipoCorporalController::class, 'create'])->name('tipos.create');
+    Route::post('/tipos', [TipoCorporalController::class, 'store'])->name('tipos.store');
+    
+    Route::get('/tipo', [TipoController::class, 'index'])->name('tipos');
+    Route::post('/inativar-tipos', [TipoController::class, 'inativar'])->name('inativar.tipos');
+    Route::get('/editar-tipos/{id}', [TipoController::class, 'edit'])->name('editar.tipos');
+    Route::put('/tipos/update/{id}', [TipoController::class, 'update'])->name('tipos.update');
+
 
     // Rotas para Combinações
     Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
