@@ -657,21 +657,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const banner5 = document.getElementById('banner5');
 
   function checkScreenWidth() {
-        if (window.innerWidth <= 710) {
-          // Se a largura da janela for menor ou igual a 710 pixels, troque a imagem
-          banner1.src = '{{ asset('public/banner1-.png') }}';
-          banner2.src = '{{ asset('public/banner2-.png') }}';
-          banner3.src = '{{ asset('public/banner3-.png') }}';
-          banner4.src = '{{ asset('public/banner4-.png') }}';
-          banner5.src = '{{ asset('public/banner5-.png') }}';
-      } else {
-          // Caso contrário, volte para a imagem original
-          banner1.src = '{{ asset('public/banner1.png') }}';
-          banner2.src = '{{ asset('public/banner2.png') }}';
-          banner3.src = '{{ asset('public/banner3.png') }}';
-          banner4.src = '{{ asset('public/banner4.png') }}';
-          banner5.src = '{{ asset('public/banner5.png') }}';
-      }
+    if (window.innerWidth <= 710) {
+        // Se a largura da janela for menor ou igual a 710 pixels, troque a imagem
+        banner1.src = '{{ asset('img/banner1-.png') }}';
+        banner2.src = '{{ asset('img/banner2-.png') }}';
+        banner3.src = '{{ asset('img/banner3-.png') }}';
+        banner4.src = '{{ asset('img/banner4-.png') }}';
+        banner5.src = '{{ asset('img/banner5-.png') }}';
+    } else {
+        // Caso contrário, volte para a imagem original
+        banner1.src = '{{ asset('img/banner1.png') }}';
+        banner2.src = '{{ asset('img/banner2.png') }}';
+        banner3.src = '{{ asset('img/banner3.png') }}';
+        banner4.src = '{{ asset('img/banner4.png') }}';
+        banner5.src = '{{ asset('img/banner5.png') }}';
+    }
   }
 
   // Chame a função inicialmente para configurar a imagem corretamente
