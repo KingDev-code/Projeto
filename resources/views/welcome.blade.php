@@ -259,7 +259,7 @@
 <!-- Sobre Nós -->
 <div class="sobrenos" id="sobrenos">
       <div class="center">
-          <img class="logo-slogan" src="{{asset('img/Logo Veste-me - Preta com slogan.png') }}" alt="Logo">
+          <img class="logo-slogan" src="{{asset('public/img/Logo Veste-me - Preta com slogan.png') }}" alt="Logo">
       </div>
     <div class="row">
       <div class="col light-grey">
