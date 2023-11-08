@@ -28,7 +28,7 @@
             <img src="public/associate/img/Logo Veste-me - Círculo - Preta.png" alt="">
         </div>
 
-        <form action="/admin/login" method="post">
+        <form action="/adminpost" method="post">
             <div class="row">
                 <i class="material-icons-sharp">person</i>
                 <input type="Email" name="email" placeholder="E-mail" required>
