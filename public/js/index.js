@@ -577,8 +577,8 @@ function toggleIcon() {
 
 
   } else {
-    document.getElementById("look1").src = "{{asset('public/img/look1.png') }}";
-    document.getElementById("peca1").src = "{{asset('public/img/peca1.png') }}";
+    document.getElementById("look1").src = "public/img/look1.png";
+    document.getElementById("peca1").src = "public/img/peca1.png";
     document.getElementById("peca2").src = "{{asset('public/img/peca2.png') }}";
     document.getElementById("peca3").src = "{{asset('public/img/peca3.png') }}";
     document.getElementById("peca4").src = "{{asset('public/img/peca4.png') }}";
@@ -666,7 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
           banner5.src = 'public/img/banner5-.png';
       } else {
           // Caso contrário, volte para a imagem original
-          banner1.src = 'public/img/banner1.png';
+          banner1.src = 'img/banner1.png';
           banner2.src = 'public/img/banner2.png';
           banner3.src = 'public/img/banner3.png';
           banner4.src = 'public/img/banner4.png';
