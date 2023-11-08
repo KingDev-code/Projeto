@@ -4,14 +4,14 @@ window.onscroll = function() {scrollFunction()};
       function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
 
-     img.src = "public/img/Logo Veste-me - Círculo - Preta.png"; 
+     img.src = "{{asset('public/img/Logo Veste-me - Círculo - Preta.png') }}"; 
      img.style.maxWidth = "120px"; // Altere para o novo valor de max-width desejado em pixels
      img.style.paddingBottom = "20px";
      img.style.transition = "opacity 0.5s";
      img.style.cursor = "pointer";
      img.style.display = "block";
     } else {
-     img.src = "public/img/Logo Veste-me - Preta.png";
+     img.src = "{{asset('public/img/Logo Veste-me - Preta.png') }}";
      img.style.maxWidth = "250px"; // Altere para o novo valor de max-width desejado em pixels
      img.style.transition = "opacity 0.5s";
      img.style.cursor = "pointer";
