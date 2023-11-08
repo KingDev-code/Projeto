@@ -18,7 +18,7 @@ class AdminController extends Controller
 
     public function loginForm()
     {
-        return view('admin');
+        return view('admin.login');
     }
 
     public function adminLogin(Request $request)
@@ -29,7 +29,7 @@ class AdminController extends Controller
             // Verifique se o usuário autenticado é um administrador (você deve ter um campo no banco de dados para marcar os administradores)
             $user = Auth::user();
             if ($user->is_admin) {
-                return redirect()->route('admin.home'); // Redireciona para o painel de administração
+                return redirect()->route('admin'); // Redireciona para o painel de administração
             }
         }
 
