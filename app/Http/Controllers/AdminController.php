@@ -18,7 +18,7 @@ class AdminController extends Controller
 
     public function loginForm()
     {
-        return view('admin.register');
+        return view('admin.login');
     }
 
     public function adminLogin(Request $request)
