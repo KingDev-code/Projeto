@@ -10,8 +10,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/footer-resp.css">
-    <link rel="stylesheet" href="css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
 
     
     <!-- Fonte -->
@@ -38,7 +38,7 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+    <a href="/" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
             <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
@@ -81,7 +81,7 @@
 
   <div class="container-footer">
     <div>
-      <a href="index.html#sobrenos"><h2>Conheça nossa história</a></h2>
+      <a href="index#sobrenos"><h2>Conheça nossa história</a></h2>
     </div>
 
     <div>
@@ -89,8 +89,8 @@
     </div>
 
     <div>
-      <a href="index.html">
-      <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
+      <a href="index">
+      <img src="public/img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>
 
@@ -117,7 +117,7 @@
 </div>
 
 <!-- Java Script -->
-<script src="js/menu.js"></script>
+<script src="public/js/menu.js"></script>
 
 </body>
 </html>

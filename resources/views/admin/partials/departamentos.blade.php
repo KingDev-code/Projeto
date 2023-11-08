@@ -5,7 +5,7 @@
     <!--icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="associate/css/deplistar.css" /> 
+    <link rel="stylesheet" href="public/associate/css/deplistar.css" /> 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token">
@@ -59,7 +59,7 @@
             <div class="sidebar">
               <div class="logo">
               <h1>ADM</h1>
-              <a href="admin"><img  src="associate/img/l2.png"></a>
+              <a href="admin"><img  src="public/associate/img/l2.png"></a>
               </div>
       
             <div class="topnav">
@@ -82,7 +82,7 @@
                 <a href="cadastros"><span class="material-icons-sharp">groups</span>CADASTROS</a>
                 <a href="departamentos"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
                 <a href="estilos"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
-                <a href="tipos"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
+                <a href="tipos"><img src="public/associate/img/tc.png" >TIPOS CORPORAIS</a>
                 <br>
               <div class="btn">
                 <button class="btn3"><span class="material-icons-sharp">logout</span>SAIR</button>

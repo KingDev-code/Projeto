@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
      <!-- Referência a pasta em que está o CSS -->
-     <link rel="stylesheet" href="associate/css/home.css"> 
+     <link rel="stylesheet" href="public/associate/css/home.css"> 
 </head>
 <body>
 
@@ -22,7 +22,7 @@
       <div class="sidebar">
         <div class="logo">
         <h1>ADM</h1>
-        <a href="/admin"><img  src="associate/img/l2.png"></a>
+        <a href="/admin"><img  src="public/associate/img/l2.png"></a>
         </div>
 
       <div class="topnav">
@@ -69,7 +69,7 @@
     </div>
       <div class="conteudo">
       <h2>BEM-VINDO A ÁREA ADMINISTRATIVA DO VESTE-ME</h2>
-      <a href="admin"><img  src="associate/img/l1.png"></a>
+      <a href="admin"><img  src="public/associate/img/l1.png"></a>
     </div>
   </div>
 
