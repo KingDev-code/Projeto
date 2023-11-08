@@ -67,7 +67,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', 'App\Http\Controllers\ProfileController@destroy')->name('profile.destroy');
 });
 
-Route::middleware('auth:empresa')->group(function () {
+//Route::middleware('auth:empresa')->group(function () {
     // Visualização e edição do perfil da empresa
     Route::get('/dados', 'App\Http\Controllers\Auth\EmpresaController@edit')->name('empresa.edit');
     Route::patch('/update', 'App\Http\Controllers\Auth\EmpresaController@update')->name('empresa.update');
@@ -88,7 +88,7 @@ Route::middleware('auth:empresa')->group(function () {
     // Outras rotas relacionadas à empresa, se necessário
 
 
-});
+//});
 
     Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
     Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');
