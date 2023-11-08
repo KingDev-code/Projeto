@@ -4,8 +4,8 @@
 
 
 
-<link rel="stylesheet" href="css/categoria.css">
-<link rel="stylesheet" href="css/categoria-resp.css">
+<link rel="stylesheet" href="public/css/categoria.css">
+<link rel="stylesheet" href="public/css/categoria-resp.css">
 
     <!-- Seção 2 - Combinação e suas peças -->
     <!-- Seção 2 - Look1 -->

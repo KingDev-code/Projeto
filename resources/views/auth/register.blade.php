@@ -2,8 +2,8 @@
 
 @section('conteudo')
 
-<link rel="stylesheet" href="css/cadastro-clie.css">
-<link rel="stylesheet" href="css/cadastro-clie-resp.css">
+<link rel="stylesheet" href="public/css/cadastro-clie.css">
+<link rel="stylesheet" href="public/css/cadastro-clie-resp.css">
 
 <!-- Seção 2 - Combinação e suas peças -->
     <!-- Seção 2 - Look1 -->
@@ -11,7 +11,7 @@
 
         <div id="indicator">
             <ul>
-              <li><a href="index.html">Veste-me</a></li>
+              <li><a href="index">Veste-me</a></li>
                 <div id="arrow"></div>
                 <li><a href="cadastro-clie.html">Cadastrar-se</a></li>
               </ul>

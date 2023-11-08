@@ -2,8 +2,8 @@
 
 @section('conteudo')
 
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/login-resp.css">
+    <link rel="stylesheet" href="public/css/login.css">
+    <link rel="stylesheet" href="public/css/login-resp.css">
     <!-- Session Status -->
     <x-auth-session-status :status="session('status')" />
 

@@ -3,15 +3,15 @@
 <head>
 
     <title>Veste-me</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.png">
+    <link rel="icon" type="image/x-icon" href="public/img/Logo Veste-me - Círculo - Preta.png">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/footer-resp.css">
-    <link rel="stylesheet" href="css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
 
     
     <!-- Fonte -->
@@ -143,7 +143,7 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="/empresa" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+    <a href="/empresa" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
             <a href="envios"><i class="material-icons-sharp">email</i></a>
@@ -196,7 +196,7 @@
 
     <div>
       <a href="/empresa">
-      <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
+      <img src="public/img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>
 
@@ -223,7 +223,7 @@
 </div>
 
 <!-- Java Script -->
-<script src="/js/menu.js"></script>
+<script src="public/js/menu.js"></script>
         <script>
           function atualizar() {
           Swal.fire({

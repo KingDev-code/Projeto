@@ -2,17 +2,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 <title>Veste-me</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.png">
+    <link rel="icon" type="image/x-icon" href="public/img/Logo Veste-me - Círculo - Preta.png">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/index-emp.css">
-    <link rel="stylesheet" href="css/index-emp-resp.css">
-    <link rel="stylesheet" href="css/footer-resp.css">
-    <link rel="stylesheet" href="css/menu-resp.css">
-    <link rel="stylesheet" href="css/menu-respquiz.css">
+    <link rel="stylesheet" href="public/css/index-emp.css">
+    <link rel="stylesheet" href="public/css/index-emp-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/menu-respquiz.css">
 
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="{{ route('empresa.home') }}" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+    <a href="{{ route('empresa.home') }}" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
             <a href="envios"><i class="material-icons-outlined">email</i></a>
@@ -60,7 +60,7 @@
 
     <div class="menu-itens">
       <ul>
-      <li><a href="index.html"  class="active">Início</a></li>
+      <li><a href="index"  class="active">Início</a></li>
       <li><a href="{{ route('executivos') }}">Executivos</a></li>
       <li><a href="{{ route('esportivos') }}">Esportivas</a></li>
       <li><a href="{{ route('comemoracoes') }}">Comemorações</a></li>
@@ -98,7 +98,7 @@
 
     <div>
       <a href="/">
-      <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
+      <img src="public/img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>
 

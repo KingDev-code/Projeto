@@ -4,23 +4,23 @@
 
 <div class="slideshow">
       <div class="slide">
-        <img id="banner1" src="img/banner1.png">
+        <img id="banner1" src="public/img/banner1.png">
       </div>
     
       <div class="slide">
-        <img id="banner2" src="img/banner2.png">
+        <img id="banner2" src="public/img/banner2.png">
       </div>
     
       <div class="slide">
-        <img id="banner3" src="img/banner3.png">
+        <img id="banner3" src="public/img/banner3.png">
       </div>
     
       <div class="slide">
-        <img id="banner4" src="img/banner4.png">
+        <img id="banner4" src="public/img/banner4.png">
       </div>
     
       <div class="slide">
-        <img id="banner5" src="img/banner5.png">
+        <img id="banner5" src="public/img/banner5.png">
       </div>
 
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
@@ -39,7 +39,7 @@
 <div class="combinacoes">
  
       <!-- Seção 2 - Combinação e suas peças -->
-      <img class="logo-comb" src="img/Logo Veste-me - Preta.png" alt="Veste-me">
+      <img class="logo-comb" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me">
       <h2 class="title-comb"><b>Ocasião Executiva</b></h2>
 
 <div class="combinacoes-looks">
@@ -47,7 +47,7 @@
   <div class="secao-look1">
 
     <a id="link-look1" href="https://br.pinterest.com/pin/730357264592614830/" target="_blank">
-      <img id="look1"  class="look1" src="img/look1.png" alt="Imagem Look 1">
+      <img id="look1"  class="look1" src="public/img/look1.png" alt="Imagem Look 1">
     </a>
 
       <div id="iconoverlay1" class="icon-overlay1"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/triangle.png" alt="triangle"/> </div>
@@ -69,28 +69,28 @@
 
       <a id="link-peca1" href="https://www.cea.com.br/camiseta-de-algodao-mindset-preto-9394894-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwWCs_dk5ApQlnn-RbrPU6E8Bm2i1p9XfI2G3cLpZbg3jp_rxNsSAahoCKwMQAvD_BwE" target="_blank">
       <div class="slidec">
-          <img id="peca1" src="img/peca1.png" alt="Imagem 1">
+          <img id="peca1" src="public/img/peca1.png" alt="Imagem 1">
           <p id="desc_1-look1">Camiseta de Algodão mindset preto.                           </p>
       </div>
       </a>
     
       <a id="link-peca2"  href="https://www.cea.com.br/blazer-alongado-com-linho-manga-longa-preto-1041335-preto/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwdJyXQfPRzyANVwNF9lkkpqeb9rsdJlVrQjFLxc6qBpGPyX7g7GbWhoCHl0QAvD_BwE" target="_blank">
       <div class="slidec">
-          <img id="peca2" src="img/peca2.png" alt="Imagem 2">
+          <img id="peca2" src="public/img/peca2.png" alt="Imagem 2">
           <p id="desc_2-look1">Blazer alongado com linho manga longa preto.                 </p>
       </div>
       </a>
 
       <a id="link-peca3"  href="https://www.cea.com.br/calca-wide-leg-de-viscose-cintura-alta-com-elastico-areia-1048270-areia/p?gclid=CjwKCAjwyY6pBhA9EiwAMzmfwfjg0dNfmznM2Z3M_ftUqWuwHTm0iewuQdxv1LbWPiae5DmDh-QntRoCeFAQAvD_BwE" target="_blank">
       <div class="slidec">
-        <img id="peca3" src="img/peca3.png" alt="Imagem 3">
+        <img id="peca3" src="public/img/peca3.png" alt="Imagem 3">
         <p id="desc_3-look1">Calça wide leg de viscose cintura alta com elástico areia.   </p>
       </div>
       </a>
 
     <a id="link-peca4" href="https://www.anacapri.com.br/tenis-cami-branco/p/3034100020005U?gclid=CjwKCAjwyY6pBhA9EiwAMzmfweQJgJDTbhmgGvf2URxiNFusaTdQGX_H8rakFcfHn52GCH80rLELjhoC_vMQAvD_BwE" target="_blank">
     <div class="slidec">
-        <img id="peca4" src="img/peca4.png" alt="Imagem 4">
+        <img id="peca4" src="public/img/peca4.png" alt="Imagem 4">
         <p id="desc_4-look1">Tênis Cami Branco.                                           </p>
     </div>
     </a>
@@ -126,21 +126,21 @@
 
           <a id="link-peca1-look2"  href="https://www.hering.com.br/camisa-feminina-manga-bufante-oversized-hf43nmcen/p?idsku=58275&gclid=CjwKCAjwyY6pBhA9EiwAMzmfwQPcng4ABrD9F4YCvDvafWgRHcmtLbvKtiUwfnAaabGjra6mtvUxkRoCbB8QAvD_BwE" target="_blank">
           <div class="slidecm">
-            <img id="peca1-look2" src="img/peca1-look2.png" alt="Imagem 1">
+            <img id="peca1-look2" src="public/img/peca1-look2.png" alt="Imagem 1">
             <p id="desc_1-look2">Camisa Feminina Manga Bufante Oversized - Off White.         </p>
           </div>
           </a>
   
           <a id="link-peca2-look2" href="https://br.shein.com/Square-Buckle-Belt-p-11385068-cat-1875.html?utm_source=pinterest.com&utm_medium=cpc&utm_campaign=brpin_rmt_dpa_womenaccessory_sc2208251858405004&url_from=brpin_rmt_dpa_womenaccessory_sc2208251858405004&epik=dj0yJnU9Z051V094Ynl2UVVVeXJqTU04eHpwdXFXX3IwVURXeGMmcD0wJm49dFZnYWExTHE2ZTl6M2ZQc0NCUTBFUSZ0PUFBQUFBR1Vrcnlv" target="_blank">
           <div class="slidecm">
-            <img id="peca2-look2" src="img/peca2-look2.png" alt="Imagem 2">
+            <img id="peca2-look2" src="public/img/peca2-look2.png" alt="Imagem 2">
             <p id="desc_2-look2">Cintos Fivela quadrada.                                      </p>
           </div>
           </a>
           
           <a id="link-peca3-look2" href="https://br.shein.com/SHEIN-Frenchy-Solid-Wide-Leg-Pants-p-15495058-cat-1740.html?src_identifier=st%3D2%60sc%3Dcal%C3%A7a%20alfaiataria%20mostarda%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_other1697060047744&mallCode=1" target="_blank">
           <div class="slidecm">
-            <img id="peca3-look2" src="img/peca3-look2.png" alt="Imagem 3">
+            <img id="peca3-look2" src="public/img/peca3-look2.png" alt="Imagem 3">
             <p id="desc_3-look2">SHEIN Frenchy Calças pernas largas sólido.                   </p>
           </div>
           </a>
@@ -150,7 +150,7 @@
       <div class="secao-look2-p3">
 
         <a id="link-look2" href="https://br.pinterest.com/pin/Ac7Cs94y6vBbHOc2jnbHDHEx3OGhWRz5hBGENy38jGl7jfZy97Zt_og/" target="_blank">
-          <img id="look2" class="look2" src="img/look2.png" alt="Imagem Look 2" >
+          <img id="look2" class="look2" src="public/img/look2.png" alt="Imagem Look 2" >
         </a>
   
     <div id="iconoverlay2" class="icon-overlay2"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/rounded-square.png" alt="rounded-square"/> </div>
@@ -181,27 +181,27 @@
 
     <div class="tipo" id="tipo-tc1">
       <h2 id="title1-tc" class="titulo-tc">Triângulo</h2>
-      <img id="image1-tc" class="img_tc" src="img/triangulo.png" alt="Imagem 1">
+      <img id="image1-tc" class="img_tc" src="public/img/triangulo.png" alt="Imagem 1">
     </div>
 
     <div class="tipo" id="tipo-tc2">
       <h2 id="title2-tc" class="titulo-tc">Triângulo Invertido</h2>
-      <img id="image2-tc" class="img_tc" src="img/trianguloinvertido.png" alt="Imagem 2">
+      <img id="image2-tc" class="img_tc" src="public/img/trianguloinvertido.png" alt="Imagem 2">
     </div>
 
     <div class="tipo" id="tipo-tc3">
       <h2 id="title3-tc" class="titulo-tc">Retângulo</h2>
-      <img id="image3-tc" class="img_tc" src="img/retangulo.png" alt="Imagem 3">
+      <img id="image3-tc" class="img_tc" src="public/img/retangulo.png" alt="Imagem 3">
     </div>
 
     <div class="tipo" id="tipo-tc4">
       <h2 id="title4-tc" class="titulo-tc">Ampulheta</h2>
-      <img id="image4-tc" class="img_tc" src="img/ampulheta.png" alt="Imagem 4">
+      <img id="image4-tc" class="img_tc" src="public/img/ampulheta.png" alt="Imagem 4">
     </div>
 
     <div class="tipo" id="tipo-tc5">
       <h2 id="title5-tc" class="titulo-tc">Oval</h2>
-      <img id="image5-tc" class="img_tc" src="img/oval.png" alt="Imagem 5">
+      <img id="image5-tc" class="img_tc" src="public/img/oval.png" alt="Imagem 5">
     </div>
 
     </div>   
@@ -215,43 +215,43 @@
   <div class="estilosuniv">
     
   <div class="estilo" id="estilo-1">
-    <img id="image1-e" class="img_e" src="img/esportivo.png" alt="Imagem 1">
+    <img id="image1-e" class="img_e" src="public/img/esportivo.png" alt="Imagem 1">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Esportivo</h2>
   </div>
 
   <div class="estilo" id="estilo-2">
-    <img id="image2-e" class="img_e" src="img/romantico.png" alt="Imagem 2">
+    <img id="image2-e" class="img_e" src="public/img/romantico.png" alt="Imagem 2">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Romântico</h2>
   </div>
 
   <div class="estilo" id="estilo-3">
-    <img id="image3-e" class="img_e" src="img/classico.png" alt="Imagem 3">
+    <img id="image3-e" class="img_e" src="public/img/classico.png" alt="Imagem 3">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Clássico</h2>
   </div>
 
   <div class="estilo" id="estilo-4">
-    <img id="image4-e" class="img_e" src="img/elegante.png" alt="Imagem 4">
+    <img id="image4-e" class="img_e" src="public/img/elegante.png" alt="Imagem 4">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Elegante</h2>
   </div>
 
   <div class="estilo" id="estilo-5">
-    <img id="image5-e" class="img_e" src="img/criativo.png" alt="Imagem 5">
+    <img id="image5-e" class="img_e" src="public/img/criativo.png" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Criativo</h2>
   </div>
 
   <div class="estilo" id="estilo-6">
-    <img id="image6-e" class="img_e" src="img/dramatico.png" alt="Imagem 5">
+    <img id="image6-e" class="img_e" src="public/img/dramatico.png" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Dramático</h2>
   </div>
 
   <div class="estilo" id="estilo-7">
-    <img id="image7-e" class="img_e" src="img/sexy.png" alt="Imagem 5">
+    <img id="image7-e" class="img_e" src="public/img/sexy.png" alt="Imagem 5">
     <h2 class="titulo-e" >Estilo</h2>
     <h2 class="titulo-e" >Sexy</h2>
   </div>
@@ -262,7 +262,7 @@
 <!-- Sobre Nós -->
 <div class="sobrenos" id="sobrenos">
       <div class="center">
-          <img class="logo-slogan" src="img/Logo Veste-me - Preta com slogan.png" alt="Logo">
+          <img class="logo-slogan" src="public/img/Logo Veste-me - Preta com slogan.png" alt="Logo">
       </div>
     <div class="row">
       <div class="col light-grey">
@@ -295,19 +295,19 @@
 
       <div class="criad">
           <div class="criador">
-              <img src="img/davi.jpeg" alt="Davi">
+              <img src="public/img/davi.jpeg" alt="Davi">
               <h3>Davi Rodrigues Costa</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, concluindo o 3° ano. Amante da programação e interessado em projetos que envolvem diversas linguagens de programação. Desenvolvedor e colaborador do projeto Veste-me.</p>
               <p><a href="mailto:davirodrigues@gmail.com"><button>Contato</button></p></a>
           </div>
           <div class="criador">
-              <img src="img/gabi.png" alt="Gabi">
+              <img src="public/img/gabi.png" alt="Gabi">
               <h3>Gabriela Souza Correia</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, dedicada, 3 anos de aprendizagem. Admiradora da moda e da fotografia, criou o Veste-me com o objetivo de integrar a moda ao universo da programação. Em 2022, vencedora da competição Startup in School, em parceria com a Empresa Google.</p>
               <p><a href="mailto:gabrielagsc2005@gmail.com"><button>Contato</button></p></a>
           </div>
           <div class="criador">
-              <img src="img/isa.jpg" alt="Isa">
+              <img src="public/img/isa.jpg" alt="Isa">
               <h3>Isabela Souza Correia</h3>
               <p class="desc">Estudante de Análise e Desenvolvimento de Sistemas, terminando seu 3° ano. Apaixonada pelo mundo da moda, idealizadora e criadora do Veste-me motivada pela introdução da moda e vestuário á programação. Em 2022, vencedora da competição Startup in School, em parceria com a Empresa Google.</p>
               <p><a href="mailto:isabelaisc2005@gmail.com"><button>Contato</button></p></a>
@@ -318,8 +318,8 @@
 
 
 <!-- Java Script -->
-<script src="js/menu.js"></script>
-    <script src="js/index.js"></script>
+<script src="public/js/menu.js"></script>
+    <script src="public/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery.js/dist/js/lightgallery.min.js"></script>
 
     <script>
@@ -330,7 +330,7 @@
           html: '<div class="html1"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
           '<h4>ENCONTRANDO MINHAS MEDIDAS</h4>'+
           '<p>Tenha em mãos um caderno, uma caneta e uma fita métrica. Posicione-se em frente a um espelho, com roupas que destacam o seu corpo (como um conjunto de academia ou um biquíni). Vamos medir e anotar as suas medidas:'+
-          '<br><br><img src="img/f-medidas.svg" width=711px" height="284px"/><br><br><span>1° MEÇA A LARGURA DO SEUS OMBROS:</span> Posicione a fita métrica na lateral de um dos seus ombros e meça até encontrar a lateral inicial, unindo as extremidades da fita. Anote essa medida.'+
+          '<br><br><img src="public/img/f-medidas.svg" width=711px" height="284px"/><br><br><span>1° MEÇA A LARGURA DO SEUS OMBROS:</span> Posicione a fita métrica na lateral de um dos seus ombros e meça até encontrar a lateral inicial, unindo as extremidades da fita. Anote essa medida.'+
           '<br><br><span>2° MEÇA A LARGURA DA CINTURA:</span> Utilize a fita métrica para medir, agora, o contorno da sua cintura (no ponto mais estreito, geralmente no término das costelas) e anote a medida.'+
           '<br><br><span>3° MEÇA A LARGURA DO SEU QUADRIL:</span> Por fim, meça o circunferência do seu quadril (cerca de 20cm abaixo da cintura) e anote a medida.</p></div>',
           showCancelButton: true,
@@ -381,11 +381,11 @@
   }).then(async () => {
       const inputOptions = new Promise((resolve) => {
         resolve({
-          'Triângulo': '<img src="img/f-triangulo.svg" width="150" height="300"/><br>Quadris mais largos que os Ombros e a Cintura.',
-          'Triângulo Invertido': '<img src="img/f-trianguloinvertido.svg" width="150" height="300"/><br>Ombros mais largos que os Quadris e a Cintura.',
-          'Retângulo': '<img src="img/f-retangulo.svg" width="150" height="300"/><br>Ombros, Cintura e Quadris com larguras semelhantes.',
-          'Ampulheta': '<img src="img/f-ampulheta.svg" width="150" height="300"/><br>Quadris e Ombros mais largos e Cintura fina.',
-          'Oval': '<img src="img/f-oval.svg" width="150" height="300"/><br>Cintura mais larga que Ombros e Quadris.',
+          'Triângulo': '<img src="public/img/f-triangulo.svg" width="150" height="300"/><br>Quadris mais largos que os Ombros e a Cintura.',
+          'Triângulo Invertido': '<img src="public/img/f-trianguloinvertido.svg" width="150" height="300"/><br>Ombros mais largos que os Quadris e a Cintura.',
+          'Retângulo': '<img src="public/img/f-retangulo.svg" width="150" height="300"/><br>Ombros, Cintura e Quadris com larguras semelhantes.',
+          'Ampulheta': '<img src="public/img/f-ampulheta.svg" width="150" height="300"/><br>Quadris e Ombros mais largos e Cintura fina.',
+          'Oval': '<img src="public/img/f-oval.svg" width="150" height="300"/><br>Cintura mais larga que Ombros e Quadris.',
         })
     })
 
@@ -431,7 +431,7 @@
         html: '<div class="html3"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
               '<h4>RESULTADO</h4>'+
               `Provavelmente o seu tipo corporal é ...  ${corpo} `+
-              '<br><img src="img/f-result1.png" width="auto" height="auto"/>'+
+              '<br><img src="public/img/f-result1.png" width="auto" height="auto"/>'+
               '<p>Agora que você conhece o seu tipo de corpo, personalize suas escolhas no site e vista apenas o que realça a sua beleza!</p>'+
               '<p><span>"Lembre-se, não existe um tipo de corpo ideal! Priorize sentir-se bem e adequada ao seu estilo de vida e personalidade. Você é extraordinária!"<span></p>',
         customClass:{
@@ -453,7 +453,7 @@
         html: '<div class="html3"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
               '<h4>RESULTADO</h4>'+
               `Provavelmente o seu tipo corporal é ...  ${corpo} `+
-              '<br><img src="img/f-result2.png" width="auto" height="auto"/>'+
+              '<br><img src="public/img/f-result2.png" width="auto" height="auto"/>'+
               '<p>Agora que você conhece o seu tipo de corpo, personalize suas escolhas no site e vista apenas o que realça a sua beleza!</p>'+
               '<p><span>"Lembre-se, não existe um tipo de corpo ideal! Priorize sentir-se bem e adequada ao seu estilo de vida e personalidade. Você é extraordinária!"<span></p>',
         customClass:{
@@ -475,7 +475,7 @@
         html: '<div class="html3"><br><div class="circle1"><h1>1</h1></div><div class="circle2"><h1>2</h1></div><div class="circle3"><h1>3</h1></div><br><br>'+
               '<h4>RESULTADO</h4>'+
               `Provavelmente o seu tipo corporal é ...  ${corpo} `+
-              '<br><img src="img/f-result3.png" width="auto" height="auto"/>'+
+              '<br><img src="public/img/f-result3.png" width="auto" height="auto"/>'+
               '<p>Agora que você conhece o seu tipo de corpo, personalize suas escolhas no site e vista apenas o que realça a sua beleza!</p>'+
               '<p><span>"Lembre-se, não existe um tipo de corpo ideal! Priorize sentir-se bem e adequada ao seu estilo de vida e personalidade. Você é extraordinária!"<span></p>',
         customClass:{

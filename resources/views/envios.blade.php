@@ -2,8 +2,8 @@
 
 @section('conteudo')
 
-    <link rel="stylesheet" href="css/envios.css">
-    <link rel="stylesheet" href="css/envios-resp.css">
+    <link rel="stylesheet" href="public/css/envios.css">
+    <link rel="stylesheet" href="public/css/envios-resp.css">
 
 <!-- Seção 2 - Combinação e suas peças -->
 <!-- Seção 2 - Look1 -->
