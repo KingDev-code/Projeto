@@ -600,19 +600,19 @@ function toggleIcon() {
     document.getElementById("link-look1").href ="https://br.pinterest.com/pin/730357264592614830/";
     document.getElementById("link-look2").href ="https://br.pinterest.com/pin/Ac7Cs94y6vBbHOc2jnbHDHEx3OGhWRz5hBGENy38jGl7jfZy97Zt_og/";
 
-    document.getElementById("image1-tc").src = "public/img/triangulo.png";
-    document.getElementById("image2-tc").src = "public/img/trianguloinvertido.png";
-    document.getElementById("image3-tc").src = "public/img/retangulo.png";
-    document.getElementById("image4-tc").src = "public/img/ampulheta.png";
-    document.getElementById("image5-tc").src = "public/img/oval.png";
+    document.getElementById("image1-tc").src = "{{asset('public/img/triangulo.png') }}";
+    document.getElementById("image2-tc").src = "{{asset('public/img/trianguloinvertido.png') }}";
+    document.getElementById("image3-tc").src = "{{asset('public/img/retangulo.png') }}";
+    document.getElementById("image4-tc").src = "{{asset('public/img/ampulheta.png') }}";
+    document.getElementById("image5-tc").src = "{{asset('public/img/oval.png') }}";
 
-    document.getElementById("image1-e").src = "public/img/esportivo.png";
-    document.getElementById("image2-e").src = "public/img/romantico.png";
-    document.getElementById("image3-e").src = "public/img/classico.png";
-    document.getElementById("image4-e").src = "public/img/elegante.png";
-    document.getElementById("image5-e").src = "public/img/criativo.png";
-    document.getElementById("image6-e").src = "public/img/dramatico.png";
-    document.getElementById("image7-e").src = "public/img/sexy.png";
+    document.getElementById("image1-e").src = "{{asset('public/img/esportivo.png') }}";
+    document.getElementById("image2-e").src = "{{asset('public/img/romantico.png') }}";
+    document.getElementById("image3-e").src = "{{asset('public/img/classico.png') }}";
+    document.getElementById("image4-e").src = "{{asset('public/img/elegante.png') }}";
+    document.getElementById("image5-e").src = "{{asset('public/img/criativo.png') }}";
+    document.getElementById("image6-e").src = "{{asset('public/img/dramatico.png') }}";
+    document.getElementById("image7-e").src = "{{asset('public/img/sexy.png') }}";
 
     document.getElementById("desc_1-look1").innerText = "Camiseta de Algodão mindset preto.                           ";
     document.getElementById("desc_2-look1").innerText = "Blazer alongado com linho manga longa preto.                 ";
