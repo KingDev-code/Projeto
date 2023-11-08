@@ -4,7 +4,7 @@
 
 <div class="slideshow">
       <div class="slide">
-          <img id="banner1" src="{{asset('public/img/banner1.png') }}">
+          <img id="banner1" src="public/img/banner1.png">
       </div>
 
       <div class="slide">

@@ -666,7 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
           banner5.src = 'public/img/banner5-.png';
       } else {
           // Caso contrário, volte para a imagem original
-          banner1.src = 'img/banner1.png';
+          banner1.src = 'public/img/banner1.png';
           banner2.src = 'public/img/banner2.png';
           banner3.src = 'public/img/banner3.png';
           banner4.src = 'public/img/banner4.png';
