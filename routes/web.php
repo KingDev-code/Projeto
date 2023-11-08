@@ -127,7 +127,7 @@ Route::post('/admin/register', [AdminController::class, 'register'])->name('admi
 
 
 
-Route::middleware('admin')->group(function () {
+//Route::middleware('admin')->group(function () {
     // Painel de controle do administrador
     Route::get('/admin', [AdminController::class, 'home'])->name('admin');
 
@@ -144,9 +144,13 @@ Route::middleware('admin')->group(function () {
 
 
     // Rotas para Estilos 
-    Route::get('/estilos', [EstiloController::class, 'index'])->name('estilos.index');
-    Route::get('/estilos/create', [EstiloController::class, 'create'])->name('estilos.create');
+    Route::get('/estilos', [EstiloController::class, 'index'])->name('estilos');
+    Route::get('/estilos-create', [EstiloController::class, 'create'])->name('estilos.create');
     Route::post('/estilos', [EstiloController::class, 'store'])->name('estilos.store');
+
+    Route::post('/inativar-estilos', [EstiloController::class, 'inativar'])->name('inativar.estilos');
+    Route::get('/editar-estilos{id}', [EstiloController::class, 'edit'])->name('editar.estilos');
+    Route::put('/estilos/update/{id}', [OcasiaoController::class, 'update'])->name('estilos.update');
 
     // Rotas para Ocasião
     Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
@@ -186,4 +190,4 @@ Route::middleware('admin')->group(function () {
     Route::get('/pecas/{peca}/edit', [PecasController::class, 'edit'])->name('pecas.edit');
     Route::put('/pecas/{peca}', [PecasController::class, 'update'])->name('pecas.update');
     Route::delete('/pecas/{peca}', [PecasController::class, 'destroy'])->name('pecas.destroy');
-});
+//});

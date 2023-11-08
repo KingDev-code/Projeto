@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <title>Veste-me</title>
     <link rel="icon" type="image/x-icon" href="associate/img/Logo Veste-me - Círculo - Preta.png">
 
@@ -11,7 +10,7 @@
     <!--icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="associate/css/estcad.css" />
+    <link rel="stylesheet" href="associate/css/estalt.css" />
   </head>
   <body>
 
@@ -21,11 +20,12 @@
 
      <!--Menu Lateral-->
     <header>
+        <div class="menu-section">
           <nav>
             <div class="sidebar">
               <div class="logo">
               <h1>ADM</h1>
-              <a href="Home.html"><img  src="associate/img/l2.png"></a>
+              <a href="admin"><img  src="associate/img/l2.png"></a>
               </div>
       
             <div class="topnav">
@@ -56,6 +56,7 @@
             </div>
             </div>
           </nav>
+        </div>
     </header>
 
     <div class="content">
@@ -64,27 +65,29 @@
         <ul>
           <li><a href="admin">VESTE-ME</a></li>
           <div id="arrow"></div>
-          <li><a href="/estilos">CADASTRAR ESTILO</a></li>
+          <li><a href="/editar-estilos{id}">ALTERAR ESTILO</a></li>
         </ul>
       </div>
       <div class="tela">
         <h1>Desfrute da melhor experiência em um dispositivo de tela maior.</h1>
       </div>
     <section id="form">
-    <form action="{{ route('estilos.store') }}" method="post">
-    @csrf
-        <div class="forms">
-            <h1>CADASTRAR <br> ESTILOS</h1>
-            <div class="form-group">
-                <label>Estilo
-                    <input type="text" name="estilo" placeholder="Ocasião/Departamento" required>
-                </label>
+    <form action="{{ route('estilos.update', ['id' => $estilo->id]) }}" method="post">
+          @csrf
+          @method('PUT') <!-- Método HTTP para atualização -->
+        <h1>ALTERAR <br>ESTILO</h1>
+                <div class="forms">
+                  <div class="form-group">
+                    <label for="estilo">Ocasião
+                <input type="text" name="estilo" id="estilo" value="{{ $estilo->estilo }}" required>
+                    </label>
                 <div class="btn2">
-                    <button class="botaoregistrar" type="submit">Registrar</button>
+                  <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                 </div>
+                  </div>
+              </div>
             </div>
-        </div>
-    </form>
+      </form>
     </section>
   </div>
 

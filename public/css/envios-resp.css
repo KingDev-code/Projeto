@@ -13,5 +13,44 @@
     text-transform: uppercase;
     padding: 20px 0px;
     }
-  
+    
+    .form {
+      text-transform: uppercase;
+      padding: 5px;
+      border-radius: 10px;
+    }
+    
+    .form label {
+        font-size: 1em;
+        display: block; /* Faz com que os labels ocupem toda a largura do container */
+        margin-bottom: 25px; /* Adiciona espaço entre os labels */
+        font-weight: 600;
+    }
+    
+    .form input[type="text"] {
+      width: 225px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: normal;
+    }
+    
+    .form input[type="text"]::placeholder{
+      color: black;
+      font-size: 1em;
+    }
+
+    .form input {
+      width: 225px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: normal;
+    }
+    
+    .form input ::placeholder{
+      color: black;
+      font-size: 1em;
+    }
+
 }

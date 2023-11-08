@@ -43,7 +43,7 @@ class OcasiaoController extends Controller
         } elseif ($action === 'editar') {
             // Verifique se alguma ocasião foi selecionada
             if (count($selectedOcasioes) > 0) {
-                return redirect()->route('editar.ocasioes', ['ids' => $selectedOcasioes]);
+                return redirect()->route('editar.ocasioes', ['id' => $selectedOcasioes[0]]);
             } else {
                 return redirect()->back()->with('error', 'Nenhuma ocasião selecionada. Selecione pelo menos uma ocasião para editar.');
             }

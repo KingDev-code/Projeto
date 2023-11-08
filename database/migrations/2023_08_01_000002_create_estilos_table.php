@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('estilos', function (Blueprint $table) {
             $table->id();
             $table->string('estilo', 80);
+            $table->boolean('ativo')->default(true); // Adicione um campo 'ativo' padrão como verdadeiro (ativo)
             $table->timestamps();
         });
     }

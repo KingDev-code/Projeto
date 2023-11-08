@@ -357,33 +357,13 @@ cursor: pointer;
 #peca {
   cursor: pointer;
   margin: 0 auto;
-  padding-top: 10px;
-  max-width: 80px;
-}
-
-#peca1 {
-  cursor: pointer;
-  margin: 0 auto;
-  padding-top: 10px;
-  max-width: 80px;
-}
-
-#peca2 {
-  cursor: pointer;
-  margin: 0 auto;
-  max-width: 80px;
-}
-
-#peca3 {
-  cursor: pointer;
-  margin: 0 auto;
-  padding-top: 40px;
+  display: block;
   max-width: 80px;
 }
 
 #desc {
 font-size: 0.900em; /* Tamanho desejado dos ícones */
-padding: 10px;
+padding: 10px 2px;
 max-width: 150px;
 }
 
@@ -396,6 +376,9 @@ cursor: pointer;
 width: 140px; 
 height: 160px;  
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .icon-overlay {

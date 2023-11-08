@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="associate/css/estlistar.css" /> 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token">
     <style> 
       body {
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
@@ -72,17 +73,17 @@
       
             <div id="navbar-bottom">
               <div class="usu">
-                <a href="DadosPessoais.html"><span class="material-icons-sharp">person</span>NOME PESSOAL</a> <!--<span class="material-icons-sharp">person_outline</span>-->
+                <a href="dadospessoais"><span class="material-icons-sharp">person</span>NOME PESSOAL</a> <!--<span class="material-icons-sharp">person_outline</span>-->
                 <br> 
               </div>
-                <a href="Info.html"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
-                <a href="Solicitações.html"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
-                <a href="CombListar.html"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
-                <a href="CadListar.html"><span class="material-icons-sharp">groups</span>CADASTROS</a>
-                <a href="DepListar.html"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
-                <a href="EstListar.html"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
-                <a href="TcListar.html"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
-              <br>
+                <a href="info"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
+                <a href="solicitacoes"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
+                <a href="comb"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
+                <a href="cadastros"><span class="material-icons-sharp">groups</span>CADASTROS</a>
+                <a href="departamentos"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
+                <a href="estilos"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
+                <a href="tipos"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
+                <br>
               <div class="btn">
                 <button class="btn3"><span class="material-icons-sharp">logout</span>SAIR</button>
               </div>
@@ -105,33 +106,37 @@
       </div>
       <div class="conteudo">
       <h1> ESTILOS </h1>
-    <div class="list-actions">
-      <button onclick="modal_01()"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>
-      <a href="EstAlt.html"><button><span class="material-icons-sharp">mode_edit</span>EDITAR</button></a>
-      <a href="EstCad.html"><button><span class="material-icons-sharp">add</span>NOVO</button></a>
-    </div>
+      <!--<button onclick="modal_01()"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>-->
+      <form action="{{ route('inativar.estilos') }}" method="POST">
+          @csrf <!-- Adicione o token CSRF para proteção contra ataques CSRF -->
 
-      <table class="item list-table">
-        <thead>
-          <tr>
-            <th>Selecione</th>
-            <th>Código Estilo</th>
-            <th>Estilo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>01</td>
-            <td>Casual</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>02</td>
-            <td>Clássico</td>
-          </tr>
-        </tbody>
-      </table>
+          <div class="list-actions">
+              <button type="submit" name="action" value="inativar"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>
+              <button type="submit" name="action" value="editar"><span class="material-icons-sharp">mode_edit</span>EDITAR</button>
+              <button type="submit" name="action" value="novo"><span class="material-icons-sharp">add</span>NOVO</button>
+          </div>
+
+          <table class="item list-table">
+              <thead>
+                  <tr>
+                      <th>Selecione</th>
+                      <th>Código Ocasião</th>
+                      <th>Ocasião</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @foreach ($estilos as $estilo)
+                  @if ($estilo->ativo)
+                  <tr>
+                      <td><input type="checkbox" name="selected_estilos[]" value="{{ $estilo->id }}"></td>
+                      <td>{{ $estilo->id }}</td>
+                      <td>{{ $estilo->estilo }}</td>
+                  </tr>
+                  @endif
+                  @endforeach
+              </tbody>
+          </table>
+      </form>
     </div>
   </div>
   </div>

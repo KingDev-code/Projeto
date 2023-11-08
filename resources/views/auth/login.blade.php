@@ -24,7 +24,7 @@
 <div class="logar">
 
     <div class="title-section">
-      <img class="logo-comb" src="img/Logo Veste-me - Círculo - Preta.png" alt="Logo">
+      <img class="logo-comb" src="public/img/Logo Veste-me - Círculo - Preta.png" alt="Logo">
         <h2 class="section-title"><b>Login</b></h2>
       </div>
 
