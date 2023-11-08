@@ -18,20 +18,19 @@ use App\Http\Controllers\AdminController;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Aqui é onde você pode registrar rotas web para sua aplicação. 
-| Estas rotas são carregadas pelo RouteServiceProvider e todas elas 
+| Aqui é onde você pode registrar rotas web para sua aplicação.
+| Estas rotas são carregadas pelo RouteServiceProvider e todas elas
 | serão atribuídas ao grupo de middleware "web". Crie algo incrível!
 |
 */
 
-
+$environment = env('APP_ENV', 'local');
 
 
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.
 Route::get('/', function () {
     return view('welcome');
 })->name('index');
-
 
 Route::get('/favoritos', function () {
     return view('favoritos');
@@ -58,10 +57,6 @@ Route::get('/modapraia', function () {
 })->name('modapraia');
 
 
-
-
-
-
 // Rota para a página "/select". Retorna a view 'select'.
 Route::get('/select', function () {
     return view('select');
@@ -85,7 +80,7 @@ Route::middleware('auth:empresa')->group(function () {
 
     Route::get('/envios', function () {
         return view('envios');
-    })->name('envios');   
+    })->name('envios');
 
     Route::post('/upload-image', [ImageController::class, 'upload'])->name('upload.image.cliente');
     Route::post('/upload-image/empresa', [ImageController::class, 'uploadEmpresa'])->name('upload.image.empresa');
@@ -95,44 +90,47 @@ Route::middleware('auth:empresa')->group(function () {
 
     // Outras rotas relacionadas à empresa, se necessário
 
-    
+
 });
 
+    Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm');
+    Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');
+    Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
+    Route::get('/registrar', 'App\Http\Controllers\Auth\EmpresaController@create');
+    Route::post('/registrar', 'App\Http\Controllers\Auth\EmpresaController@store');
 
+    // Rota de exibição do formulário de login
+  //  Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    // Rota de processamento do formulário de login
+   // Route::post('/login', [LoginController::class, 'Login']);
+    // Rota de logout
+ //   Route::post('/logout', [LoginController::class, 'Logout'])->name('logout');
+    // Rota para exibir o formulário de registro da empresa
+  //  Route::get('/registrar', [EmpresaController::class, 'create'])->name('empresa.register');
+    // Rota para processar o registro da empresa
+  //  Route::post('/registrar', [EmpresaController::class, 'store']);
 
-// Rota de exibição do formulário de login
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-
-// Rota de processamento do formulário de login
-Route::post('/login', [LoginController::class, 'Login']);
-
-// Rota de logout
-Route::post('/logout', [LoginController::class, 'Logout'])->name('logout');
-
-
-
-// Rota para exibir o formulário de registro da empresa
-Route::get('/registrar', [EmpresaController::class, 'create'])->name('empresa.register');
-
-// Rota para processar o registro da empresa
-Route::post('/registrar', [EmpresaController::class, 'store']);
 
 // Inclui rotas de autenticação a partir do arquivo 'auth.php'.
 require __DIR__.'/auth.php';
 
 
-// Rotas para o registro de administradores
-Route::get('/cadastro', [AdminController::class, 'registerForm'])->name('admin.registerForm');
-Route::post('/admin/register', [AdminController::class, 'register'])->name('admin.register');
 
+    //colocar as rotas aqui
+    Route::get('/cadastro', 'App\Http\Controllers\AdminController@registerForm');
+    Route::post('/admin/register', 'App\Http\Controllers\AdminController@register');
+    Route::get('/admin', 'App\Http\Controllers\AdminController@home');
+    Route::get('/dadospessoais', 'App\Http\Controllers\AdminController@dadospessoais');
 
-
-//Route::middleware('admin')->group(function () {
+    // Rotas para o registro de administradores
+  //  Route::get('/cadastro', [AdminController::class, 'registerForm'])->name('admin.registerForm');
+  //  Route::post('/admin/register', [AdminController::class, 'register'])->name('admin.register');
+    //Route::middleware('admin')->group(function () {
     // Painel de controle do administrador
-    Route::get('/admin', [AdminController::class, 'home'])->name('admin');
+ //   Route::get('/admin', [AdminController::class, 'home'])->name('admin');
 
     // Outras rotas protegidas para administradores
-    Route::get('/dadospessoais', [AdminController::class, 'dadospessoais'])->name('dadospessoais');
+   // Route::get('/dadospessoais', [AdminController::class, 'dadospessoais'])->name('dadospessoais');
     Route::get('/tipos', [AdminController::class, 'tipos'])->name('tipos');
     Route::get('/cadastros', [AdminController::class, 'cadastros'])->name('cadastros');
     Route::get('/departamentos', [AdminController::class, 'departamentos'])->name('departamentos');
@@ -142,8 +140,7 @@ Route::post('/admin/register', [AdminController::class, 'register'])->name('admi
     Route::get('/comb', [AdminController::class, 'combinacoes'])->name('comb');
 
 
-
-    // Rotas para Estilos 
+    // Rotas para Estilos
     Route::get('/estilos', [EstiloController::class, 'index'])->name('estilos');
     Route::get('/estilos-create', [EstiloController::class, 'create'])->name('estilos.create');
     Route::post('/estilos', [EstiloController::class, 'store'])->name('estilos.store');
@@ -161,7 +158,7 @@ Route::post('/admin/register', [AdminController::class, 'register'])->name('admi
 
     Route::post('/inativar-ocasioes', [OcasiaoController::class, 'inativar'])->name('inativar.ocasioes');
     Route::get('/editar-ocasioes{id}', [OcasiaoController::class, 'edit'])->name('editar.ocasioes');
-    
+
 
     Route::get('/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
     Route::get('/ocasiao/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
@@ -172,11 +169,11 @@ Route::post('/admin/register', [AdminController::class, 'register'])->name('admi
     // Rotas para Tipos Corporal
     Route::get('/tipos', [TipoCorporalController::class, 'create'])->name('tipos.create');
     Route::post('/tipos', [TipoCorporalController::class, 'store'])->name('tipos.store');
-    
-    Route::get('/tipo', [TipoController::class, 'index'])->name('tipos');
+
+    /*Route::get('/tipo', [TipoController::class, 'index'])->name('tipos');
     Route::post('/inativar-tipos', [TipoController::class, 'inativar'])->name('inativar.tipos');
     Route::get('/editar-tipos/{id}', [TipoController::class, 'edit'])->name('editar.tipos');
-    Route::put('/tipos/update/{id}', [TipoController::class, 'update'])->name('tipos.update');
+    Route::put('/tipos/update/{id}', [TipoController::class, 'update'])->name('tipos.update');*/
 
 
     // Rotas para Combinações
