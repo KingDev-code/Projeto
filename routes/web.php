@@ -94,8 +94,8 @@ Route::post('/admin-login', 'App\Http\Controllers\AdminController@adminLogin')->
     Route::get('/editar-ocasioes{id}', 'App\Http\Controllers\OcasiaoController@edit')->name('editar.ocasioes');
     
     // Rotas para Tipos Corporal
-    Route::get('/tipos', 'App\Http\Controllers\TipoCorporalController@create')->name('tipos.create');
-    Route::post('/tipos', 'App\Http\Controllers\TipoCorporalController@store')->name('tipos.store');
+    Route::get('/tipos-create', 'App\Http\Controllers\TipoCorporalController@create')->name('tipos.create');
+    Route::post('/tipos-create', 'App\Http\Controllers\TipoCorporalController@store')->name('tipos.store');
     Route::post('/inativar-tipos', 'App\Http\Controllers\TipoCorporalController@inativar')->name('inativar.tipos');
     Route::get('/editar-tipos{id}', 'App\Http\Controllers\TipoCorporalController@edit')->name('editar.tipos');
     Route::put('/tipos/update{id}', 'App\Http\Controllers\TipoCorporalController@update')->name('tipos.update');

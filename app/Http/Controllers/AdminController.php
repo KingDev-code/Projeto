@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Login;
 use App\Models\Ocasiao;
-use Illuminate\Support\Facades\Auth;
+use App\Models\TipoCorporal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -97,7 +98,8 @@ class AdminController extends Controller
 
     public function tipos()
     {
-        return view('admin.partials.tipos');
+        $tipos = TipoCorporal::all();
+        return view('admin.partials.tipos', compact('tipos'));
     }
 
     public function cadastros()
