@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Models\Login;
 use App\Models\Ocasiao;
+use App\Models\Combinacao;
 use App\Models\TipoCorporal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -146,7 +147,10 @@ class AdminController extends Controller
 
     public function combinacoes()
     {
-        return view('admin.partials.combinacoes');
+        // Supondo que $combinacoes seja uma coleção de dados recuperados do banco de dados
+        $combinacoes = Combinacao::all(); // Substitua Combinacao pelo nome correto do seu modelo
+    
+        return view('admin.partials.combinacoes', ['combinacoes' => $combinacoes]);
     }
 
 }
