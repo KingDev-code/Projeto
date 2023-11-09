@@ -114,9 +114,6 @@
               <button type="submit" name="action" value="editar"><span class="material-icons-sharp">mode_edit</span>EDITAR</button>
               <button type="submit" name="action" value="novo"><span class="material-icons-sharp">add</span>NOVO</button>
           </div>
-
-          <img src="{{ $combinacoes->link_comb }}" alt="Foto da Combinacao"></td>
-
           <table class="item list-table" style="width:80%; display: block; overflow-x:auto;">
               <thead>
                   <tr>
