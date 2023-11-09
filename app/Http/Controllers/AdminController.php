@@ -29,11 +29,11 @@ class AdminController extends Controller
     {
         $credentials = $request->only('email', 'password');
     
-        if (Auth::attempt($credentials)) {
-            // Verifique se o usuário autenticado é um administrador (você deve ter um campo no banco de dados para marcar os administradores)
-            $user = Auth::user();
-            if ($user->is_admin) {
-                return redirect()->route('admin'); // Redireciona para o painel de administração
+        $user = Login::where('email', $credentials['email'])->first();
+    
+        if ($user) {
+            if ($user->type === 'admin' && Auth::guard('login')->attempt($credentials)) {
+                return redirect('/admin'); // Redireciona para o painel de administração
             }
         }
     
