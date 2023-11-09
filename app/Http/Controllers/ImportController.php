@@ -18,8 +18,15 @@ class ImportController extends Controller
             $data = array_map('str_getcsv', file($path));
 
             foreach ($data as $row) {
-                DB::table('ocasiao')->insert([
-                    'ocasiao' => $row[1],
+                DB::table('combinacao')->insert([
+                    'cod_estilo' => $row[1],
+                    'cod_tipocorporal' => $row[2],
+                    'cod_ocasiao' => $row[3],
+                    'cod_Login' => $row[4],
+                    'cod_genero' => $row[4],
+                    'img_comb' => $row[4],
+                    'link_comb' => $row[4],
+                    'ocasiaoespecif_comb' => $row[4],
                 ]);
             }
 
