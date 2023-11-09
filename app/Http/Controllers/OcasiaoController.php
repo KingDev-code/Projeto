@@ -100,8 +100,8 @@ class OcasiaoController extends Controller
     public function comemoracoes()
     {
         $ocasiao = Ocasiao::where('ocasiao', 'COMEMORAÇÕES')->first();
-        $combinacao = Combinacao::all();
-        return view('ocasioes.comemoracoes', compact('ocasiao', 'combinacao')); // Crie uma view chamada "executivos.blade.php" em resources/views/ocasioes
+        $combinacoes = Combinacao::all();
+        return view('ocasioes.comemoracoes', compact('ocasiao', 'combinacoes')); // Crie uma view chamada "executivos.blade.php" em resources/views/ocasioes
     }
 
     public function diaadia()
