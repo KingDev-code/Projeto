@@ -24,7 +24,7 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::post('/import-data', 'ImportController@importData')->name('import-data');
+Route::post('/import-data', 'App\Http\Controllers\ImportController@importData')->name('import-data');
 
 Route::get('/banco', function () {
     return view('admin.banco');
