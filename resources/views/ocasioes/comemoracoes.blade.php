@@ -328,7 +328,7 @@
           </div>
 
 
-          <!-- Sua view para listar as combinações -->
+<!-- Sua view para listar as combinações -->
 <div class="comb">
     <table>
         <thead>
@@ -371,10 +371,10 @@
         <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
     
         <div class="card ocasiao-card">
-            <p>{{ $combinacoes->ocasiao->first()->ocasiao }}</p>
+            <p>{{ $combinacoes->first()->ocasiao->ocasiao }}</p>
         </div>
         <div class="card estilo-card">
-            <p>{{ $combinacoes->estilo->estilo }}</p>
+            <p>{{ $combinacoes->first()->estilo->estilo }}</p>
         </div>
     </div>
 
