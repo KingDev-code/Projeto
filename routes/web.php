@@ -82,7 +82,7 @@ Route::post('/admin-login', 'App\Http\Controllers\AdminController@adminLogin')->
     Route::get('/estilos', 'App\Http\Controllers\AdminController@estilos')->name('estilos');
     Route::get('/info', 'App\Http\Controllers\AdminController@info')->name('info');
     Route::get('/solicitacoes', 'App\Http\Controllers\AdminController@solicitacoes')->name('solicitacoes');
-    Route::get('/combinacoes', 'App\Http\Controllers\AdminController@combinacoes')->name('comb');
+    Route::get('/combinacoes', 'App\Http\Controllers\AdminController@combinacoes')->name('combinacao');
 
     // Rotas para Estilos
     Route::get('/estilos', 'App\Http\Controllers\EstiloController@index')->name('estilos');
