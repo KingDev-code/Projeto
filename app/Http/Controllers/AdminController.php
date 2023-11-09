@@ -60,7 +60,7 @@ class AdminController extends Controller
 
         // Crie o registro de administrador associado ao login
         $admin = new Admin();
-        $admin->login_id = $login->id;
+        $admin->cod_login = $login->id;
         $admin->img_admin = $request->input('img_admin');
         $admin->nome_admin = $request->input('nome_admin');
         $admin->sobrenome_admin = $request->input('sobrenome_admin');
