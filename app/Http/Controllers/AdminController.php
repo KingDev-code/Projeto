@@ -41,11 +41,11 @@ class AdminController extends Controller
     {
         // Validação dos dados de entrada
         $request->validate([
-            'email' => 'required|string|email|unique:logins',
+            'email' => 'required|string|email|unique:login',
             'password' => 'required|string|min:8',
             'nome_admin' => 'required|string|max:50',
             'sobrenome_admin' => 'required|string|max:80',
-            'cpf_admin' => 'required|string|max:20|unique:administradores',
+            'cpf_admin' => 'required|string|max:20|unique:administrador',
             'telefone' => 'required|string|max:15',
             'dtanasc_admin' => 'required|date',
             'dtaadmissao_admin' => 'required|date',
