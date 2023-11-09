@@ -118,15 +118,15 @@
               <thead>
                   <tr>
                       <th>Selecione</th>
-                      <th>Cód Combinação</th>
-                      <th>Cód Estilo</th>
-                      <th>Cód Tipo Corporal</th>
-                      <th>Cód Ocasião</th>
-                      <th>Cód Gênero</th>
+                      <th>Código Combinação</th>
+                      <th>Código Estilo</th>
+                      <th>Código Tipo Corporal</th>
+                      <th>Código Ocasião</th>
+                      <th>Código Gênero</th>
                       <th>Foto Combinação</th>
                       <th>Link Combinação</th>
                       <th>Ocasião Específica</th>
-                      <th>Cód Cadastro</th>
+                      <th>Código Cadastro</th>
                   </tr>
               </thead>
               <tbody>

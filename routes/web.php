@@ -31,6 +31,8 @@ Route::post('/import-ocasiao', 'App\Http\Controllers\ImportController@importOcas
 Route::post('/import-combinacao', 'App\Http\Controllers\ImportController@importCombination')->name('import.combinacao');
 Route::post('/import-peca', 'App\Http\Controllers\ImportController@importPeca')->name('import.pecas');
 
+Route::get('/salvar-combinacoes', 'App\Http\Controllers\ImportController@salvarCombinacoes');
+
 Route::get('/banco', function () {
     return view('admin.banco');
 })->name('banco');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ocasiao;
+use App\Models\Combinacao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -97,5 +98,29 @@ class ImportController extends Controller
         }
 
         return redirect()->back()->with('error', 'Erro na importação de dados de Peca.');
+    }
+
+    public function salvarCombinacoes()
+    {
+        $combinacoes = [];
+
+        // Supondo que as imagens estejam em public/imagens_combinacoes/
+        $caminhoImagens = public_path('imagens_combinacoes');
+
+        for ($i = 1; $i <= 395; $i++) {
+            $caminhoImagem = "{$caminhoImagens}/comb-{$i}.png";
+
+            if (file_exists($caminhoImagem)) {
+                $combinacoes[] = [
+                    // Outros campos que você precisa incluir
+                    'img_comb' => "imagens_combinacoes/comb-{$i}.png",
+                    // Outros campos...
+                ];
+            }
+        }
+
+        Combinacao::insert($combinacoes);
+
+        return "Combinacoes salvas com sucesso!";
     }
 }
