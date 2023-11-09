@@ -24,6 +24,12 @@ use App\Http\Controllers\AdminController;
 |
 */
 
+Route::post('/import-data', 'ImportController@importData');
+
+Route::get('/banco', function () {
+    return view('admin.banco');
+})->name('banco');
+
 // Rota para a página inicial ("/"). Retorna a view 'welcome'.
 Route::get('/', function () {
     return view('welcome');
