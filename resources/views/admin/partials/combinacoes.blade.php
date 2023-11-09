@@ -5,7 +5,7 @@
     <!--icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="associate/css/comblistar.css" /> 
+    <link rel="stylesheet" href="public/associate/css/comblistar.css" /> 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -59,7 +59,7 @@
             <div class="sidebar">
               <div class="logo">
               <h1>ADM</h1>
-              <a href="admin"><img  src="associate/img/l2.png"></a>
+              <a href="admin"><img  src="public/associate/img/l2.png"></a>
               </div>
       
             <div class="topnav">
@@ -73,17 +73,17 @@
       
             <div id="navbar-bottom">
               <div class="usu">
-                <a href="DadosPessoais.html"><span class="material-icons-sharp">person</span>NOME PESSOAL</a> <!--<span class="material-icons-sharp">person_outline</span>-->
+                <a href="dadospessoais"><span class="material-icons-sharp">person</span>NOME PESSOAL</a> <!--<span class="material-icons-sharp">person_outline</span>-->
                 <br> 
               </div>
-                <a href="Info.html"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
-                <a href="Solicitações.html"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
-                <a href="CombListar.html"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
-                <a href="CadListar.html"><span class="material-icons-sharp">groups</span>CADASTROS</a>
-                <a href="DepListar.html"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
-                <a href="EstListar.html"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
-                <a href="TcListar.html"><img src="associate/img/tc.png" >TIPOS CORPORAIS</a>
-              <br>
+                <a href="info"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
+                <a href="solicitacoes"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
+                <a href="comb"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
+                <a href="cadastros"><span class="material-icons-sharp">groups</span>CADASTROS</a>
+                <a href="departamentos"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
+                <a href="estilos"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
+                <a href="tipos"><img src="public/associate/img/tc.png" >TIPOS CORPORAIS</a>
+                <br>
               <div class="btn">
                 <button class="btn3"><span class="material-icons-sharp">logout</span>SAIR</button>
               </div>
@@ -96,9 +96,9 @@
      <!--Indicadores-->
      <div id="indicator">
         <ul>
-          <li><a href="Home.html">VESTE-ME</a></li>
+          <li><a href="admin">VESTE-ME</a></li>
           <div id="arrow"></div>
-          <li><a href="CombListar.html">COMBINAÇÕES</a></li>
+          <li><a href="combinacoes">COMBINAÇÕES</a></li>
         </ul>
       </div>
       <div class="tela">
@@ -106,55 +106,48 @@
       </div>
       <div class="conteudo">
       <h1> COMBINAÇÕES </h1>
-    <div class="list-actions">
-      <button onclick="modal_01()"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>
-      <a href="CombAlt.html"><button><span class="material-icons-sharp">mode_edit</span>EDITAR</button></a>
-      <a href="CombCad.html"><button><span class="material-icons-sharp">add</span>NOVO</button></a>
-    </div>
+      <form action="{{ route('inativar.combinacoes') }}" method="POST">
+          @csrf <!-- Adicione o token CSRF para proteção contra ataques CSRF -->
 
-      <table class="item list-table" style="width:80%; display: block; overflow-x:auto;">
-        <thead>
-          <tr>
-            <th>Selecione</th>
-            <th>Cód Combinação</th>
-            <th>Cód Estilo</th>
-            <th>Cód Tipo Corporal</th>
-            <th>Cód Ocasião</th>
-            <th>Cód Gênero</th>
-            <th>Foto Combinação</th>
-            <th>Link Combinação</th>
-            <th>Ocasião Específica</th>
-            <th>Cód Cadastro</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-    <!-- Antes <div class="list-screen"> -->
-            <td><input type="checkbox"></td>
-            <td>01</td>
-            <td>01</td>
-            <td>03</td>
-            <td>01</td>
-            <td>01</td>
-            <td></td>
-            <td></td>
-            <td>Festa de Aniversário</td>
-            <td>05</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>02</td>
-            <td>01</td>
-            <td>05</td>
-            <td>03</td>
-            <td>02</td>
-            <td></td>
-            <td></td>
-            <td>Casamento</td>
-            <td>05</td>
-          </tr>
-        </tbody>
-      </table>
+          <div class="list-actions">
+              <button type="submit" name="action" value="inativar"><span class="material-icons-sharp">power_settings_new</span>INATIVAR</button>
+              <button type="submit" name="action" value="editar"><span class="material-icons-sharp">mode_edit</span>EDITAR</button>
+              <button type="submit" name="action" value="novo"><span class="material-icons-sharp">add</span>NOVO</button>
+          </div>
+
+          <table class="item list-table" style="width:80%; display: block; overflow-x:auto;">
+              <thead>
+                  <tr>
+                      <th>Selecione</th>
+                      <th>Cód Combinação</th>
+                      <th>Cód Estilo</th>
+                      <th>Cód Tipo Corporal</th>
+                      <th>Cód Ocasião</th>
+                      <th>Cód Gênero</th>
+                      <th>Foto Combinação</th>
+                      <th>Link Combinação</th>
+                      <th>Ocasião Específica</th>
+                      <th>Cód Cadastro</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @foreach ($combinacoes as $combinacao)
+                      <tr>
+                          <td><input type="checkbox" name="selected_combinacoes[]" value="{{ $combinacao->id }}"></td>
+                          <td>{{ $combinacao->codigo_combinacao }}</td>
+                          <td>{{ $combinacao->codigo_estilo }}</td>
+                          <td>{{ $combinacao->codigo_tipo_corporal }}</td>
+                          <td>{{ $combinacao->codigo_ocasiao }}</td>
+                          <td>{{ $combinacao->codigo_genero }}</td>
+                          <td><img src="{{ $combinacao->foto_combinacao_url }}" alt="Foto da Combinacao"></td>
+                          <td>{{ $combinacao->link_combinacao }}</td>
+                          <td>{{ $combinacao->ocasiao_especifica }}</td>
+                          <td>{{ $combinacao->codigo_cadastro }}</td>
+                      </tr>
+                  @endforeach
+              </tbody>
+          </table>
+      </form>
     </div>
   </div>
   </div>

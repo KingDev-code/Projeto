@@ -11,21 +11,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('empresas', function (Blueprint $table) {
+        Schema::create('empresa', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('login_id');
-            $table->string('nome');
-            $table->string('resp');
-            $table->string('cnpj')->unique();
-            $table->string('telefone');
-            $table->date('data_fundacao');
-            $table->string('img_empresa')->nullable();
+            $table->unsignedBigInteger('cod_login');
+            $table->binary('img_empresa')->nullable();
+            $table->string('nome_empresa', 15);
+            $table->string('nome_respons', 50);
+            $table->string('sobrenome_respons', 80);
+            $table->string('cnpj', 20);
+            $table->string('telefone', 15);
             $table->timestamps();
-            
-            // Adicione um índice à coluna 'login_id' para otimizar consultas de relacionamento
-            $table->index('login_id');
-            
-            $table->foreign('login_id')->references('id')->on('logins');
+
+            $table->foreign('cod_login')->references('id')->on('login');
         });
     }
 
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('empresa');
     }
 };

@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tiposcorporal', function (Blueprint $table) {
+        Schema::create('tipocorporal', function (Blueprint $table) {
             $table->id();
             $table->string('tipocorporal', 80);
-            $table->string('icone', 100)->nullable();
-            $table->boolean('ativo')->default(true); // Adicione um campo 'ativo' padrão como verdadeiro (ativo)
+            $table->string('icone')->nullable();
+            $table->boolean('ativo')->default(true)->nullable(); // Adicione um campo 'ativo' padrão como verdadeiro (ativo)
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tiposcorporal');
+        Schema::dropIfExists('tipocorporal');
     }
 };

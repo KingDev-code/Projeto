@@ -9,6 +9,8 @@ class Estilo extends Model
 {
     use HasFactory;
 
+    protected $table = 'estilo';
+
     protected $fillable = [
         'estilo'
     ];

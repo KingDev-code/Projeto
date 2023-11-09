@@ -22,40 +22,53 @@ class CombinacaoController extends Controller
 
     public function create()
     {
-        $estilos = Estilo::all();
-        $ocasioes = Ocasiao::all();
-        $tiposcorporal = TipoCorporal::all();
-        return view('combinacoes.combinacoes', compact('ocasioes', 'tiposcorporal', 'estilos'));
+        // Lógica para exibir o formulário de criação de Combinações
+        return view('combinacoes.create'); // Substitua 'combinacoes.create' pelo nome da sua view.
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'cod_estilo' => 'required',
-            'cod_tipocorporal' => 'required',
-            'cod_ocasiao' => 'required',
-            'img_comb' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'link_comb' => 'required',
-            'oca_esp' => 'required',
-        ]);
-
+        // Lógica para processar o formulário de criação de Combinações
         $combinacao = new Combinacao;
-
-        $combinacao->cod_estilo = $request->input('cod_estilo');
-        $combinacao->cod_tipocorporal = $request->input('cod_tipocorporal');
-        $combinacao->cod_ocasiao = $request->input('cod_ocasiao');
-        $combinacao->link_comb = $request->input('link_comb');
-        $combinacao->oca_esp = $request->input('oca_esp');
-
-        if ($request->hasFile('img_comb')) {
-            $imagem = $request->file('img_comb');
-            $nomeImagem = Str::uuid() . '.' . $imagem->getClientOriginalExtension();
-            $caminho = $imagem->storeAs('imagem', $nomeImagem, 'public');
-            $combinacao->img_comb = $caminho;
-        }
-
+        // Preencha os campos do modelo com os dados do formulário
+        $combinacao->codigo_combinacao = $request->input('codigo_combinacao');
+        $combinacao->codigo_estilo = $request->input('codigo_estilo');
+        $combinacao->codigo_tipo_corporal = $request->input('codigo_tipo_corporal');
+        // ...
         $combinacao->save();
-
-        return redirect('dashboard')->with('success', 'Combinação adicionada com sucesso!');
+        // Redirecione para a página apropriada após a criação
+        return redirect()->route('combinacoes.create');
     }
+
+    public function inativar(Request $request)
+    {
+        // Lógica para inativar Combinações
+        $selected_combinacoes = $request->input('selected_combinacoes');
+        // Realize a lógica para inativar as Combinações selecionadas
+        // Redirecione para a página apropriada após a inativação
+        return redirect()->route('combinacoes.create');
+    }
+
+    public function edit($id)
+    {
+        // Lógica para exibir o formulário de edição de Combinações
+        $combinacao = Combinacao::find($id);
+        // Passe os dados da Combinação para a view de edição
+        return view('combinacoes.edit', compact('combinacao'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        // Lógica para processar o formulário de edição de Combinações
+        $combinacao = Combinacao::find($id);
+        // Atualize os campos da Combinação com os dados do formulário
+        $combinacao->codigo_combinacao = $request->input('codigo_combinacao');
+        $combinacao->codigo_estilo = $request->input('codigo_estilo');
+        $combinacao->codigo_tipo_corporal = $request->input('codigo_tipo_corporal');
+        // ...
+        $combinacao->save();
+        // Redirecione para a página apropriada após a edição
+        return redirect()->route('combinacoes.create');
+    }
+
 }

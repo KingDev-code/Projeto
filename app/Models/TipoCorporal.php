@@ -13,7 +13,7 @@ class TipoCorporal extends Model
         'tipocorporal', 'icone'
     ];
 
-    protected $table = 'tiposcorporal';
+    protected $table = 'tipocorporal';
 
     public function combinacao()
     {

@@ -99,6 +99,14 @@ Route::post('/admin-login', 'App\Http\Controllers\AdminController@adminLogin')->
     Route::post('/inativar-tipos', 'App\Http\Controllers\TipoCorporalController@inativar')->name('inativar.tipos');
     Route::get('/editar-tipos{id}', 'App\Http\Controllers\TipoCorporalController@edit')->name('editar.tipos');
     Route::put('/tipos/update{id}', 'App\Http\Controllers\TipoCorporalController@update')->name('tipos.update');
+
+    // Rotas para Combinações
+    Route::get('/combinacoes-create', 'App\Http\Controllers\CombinacaoController@create')->name('combinacoes.create');
+    Route::post('/combinacoes-create', 'App\Http\Controllers\CombinacaoController@store')->name('combinacoes.store');
+    Route::post('/inativar-combinacoes', 'App\Http\Controllers\CombinacaoController@inativar')->name('inativar.combinacoes');
+    Route::get('/editar-combinacoes{id}', 'App\Http\Controllers\CombinacaoController@edit')->name('editar.combinacoes');
+    Route::put('/combinacoes/update{id}', 'App\Http\Controllers\CombinacaoController@update')->name('combinacoes.update');
+
     
     // ... outras rotas protegidas por autenticação
 //});
@@ -155,15 +163,6 @@ Route::post('/empresa/register', 'App\Http\Controllers\EmpresaController@registe
     Route::get('/ocasiao/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
     Route::get('/ocasiao/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
     Route::get('/ocasiao/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
-
-    // Rotas para Combinações
-    Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
-    Route::get('/combinacoes/create', [CombinacaoController::class, 'create'])->name('combinacoes.create');
-    Route::post('/combinacoes', [CombinacaoController::class, 'store'])->name('combinacoes.store');
-    Route::get('/combinacoes/{combinacao}', [CombinacaoController::class, 'show'])->name('combinacoes.show');
-    Route::get('/combinacoes/{combinacao}/edit', [CombinacaoController::class, 'edit'])->name('combinacoes.edit');
-    Route::put('/combinacoes/{combinacao}', [CombinacaoController::class, 'update'])->name('combinacoes.update');
-    Route::delete('/combinacoes/{combinacao}', [CombinacaoController::class, 'destroy'])->name('combinacoes.destroy');
 
     // Rotas para Peças
     Route::get('/pecas', [PecasController::class, 'index'])->name('pecas.index');

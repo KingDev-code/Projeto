@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+
     <title>Veste-me</title>
     <link rel="icon" type="image/x-icon" href="public/associate/img/Logo Veste-me - Círculo - Preta.png">
 
@@ -11,7 +11,7 @@
     <!--icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="public/associate/css/tccad.css" />
+    <link rel="stylesheet" href="public/associate/css/tcalt.css" />
   </head>
   <body>
 
@@ -21,6 +21,7 @@
 
      <!--Menu Lateral-->
     <header>
+        <div class="menu-section">
           <nav>
             <div class="sidebar">
               <div class="logo">
@@ -56,6 +57,7 @@
             </div>
             </div>
           </nav>
+        </div>
     </header>
 
     <div class="content">
@@ -64,27 +66,29 @@
         <ul>
           <li><a href="admin">VESTE-ME</a></li>
           <div id="arrow"></div>
-          <li><a href="tipos">CADASTRAR TIPO CORPORAL</a></li>
+          <li><a href="{{ route('editar.tipos') }}">ALTERAR TIPO CORPORAL</a></li>
         </ul>
       </div>
       <div class="tela">
         <h1>Desfrute da melhor experiência em um dispositivo de tela maior.</h1>
       </div>
     <section id="form">
-    <form action="{{ route('tipos.store') }}" method="post">
-    @csrf
-        <div class="forms">
-            <h1>CADASTRAR <br> TIPO CORPORAL</h1>
-            <div class="form-group">
-                <label>Tipo Corporal
-                    <input type="text" name="tipocorporal" placeholder="Tipo Corporal" required>
-                </label>
+    <form action="{{ route('tipos.update', ['id' => $tipo->id]) }}" method="post">
+          @csrf
+          @method('PUT') <!-- Método HTTP para atualização -->
+        <h1>ALTERAR <br>ESTILO</h1>
+                <div class="forms">
+                  <div class="form-group">
+                    <label for="tipo">Tipo Corporal
+                <input type="text" name="tipocorporal" id="estilo" value="{{ $tipo->tipo }}" required>
+                    </label>
                 <div class="btn2">
-                    <button class="botaoregistrar" type="submit">Registrar</button>
+                  <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                 </div>
+                  </div>
+              </div>
             </div>
-        </div>
-    </form>
+      </form>
     </section>
   </div>
 

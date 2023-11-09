@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Combinacao extends Model
 {
+    protected $table = 'combinacao';
     protected $fillable = [
         'cod_estilo', 'cod_tipocorporal', 'cod_ocasiao', 'img_comb', 'link_comb', 'oca_esp',
     ];

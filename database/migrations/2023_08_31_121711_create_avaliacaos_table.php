@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('avaliacaos', function (Blueprint $table) {
+        Schema::create('avaliacao', function (Blueprint $table) {
             $table->id();
-            $table->integer('cod_login');
+            $table->unsignedBigInteger('cod_login');
             $table->integer('num_estrelas');
-            $table->text('desc_avaliacao');
-            $table->datetime('dta_publicacao');
-            $table->timestamp('dta_edicao');
+            $table->text('desc_avaliacao')->nullable();
+            $table->date('dta_publicacao');
+            $table->date('dta_edicao')->nullable();
+            $table->timestamps();
+
+            $table->foreign('cod_login')->references('id')->on('login');
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('avaliacaos');
+        Schema::dropIfExists('avaliacao');
     }
 };

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Peca extends Model
 {
+    protected $table = 'peca';
     protected $fillable = ['cod_comb', 'desc_peca', 'preco_peca', 'img_peca', 'link_peca'];
 
     public function combinacao()

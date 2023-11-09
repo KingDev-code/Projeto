@@ -11,20 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('cliente', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('login_id');
-            $table->string('name');
-            $table->string('sobrenome');
-            $table->date('datanasc');
-            $table->string('img_cliente')->nullable();
-            $table->rememberToken();
+            $table->unsignedBigInteger('cod_login');
+            $table->binary('img_cliente')->nullable();
+            $table->string('nome_cliente', 50);
+            $table->string('sobrenome_cliente', 80);
+            $table->date('dtanasc_cliente');
             $table->timestamps();
 
-            // Adicione um índice à coluna 'login_id' para otimizar consultas de relacionamento
-            $table->index('login_id');
-
-            $table->foreign('login_id')->references('id')->on('logins');
+            $table->foreign('cod_login')->references('id')->on('login');
         });
     }
 
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('cliente');
     }
 };

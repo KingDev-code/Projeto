@@ -13,7 +13,7 @@ class Ocasiao extends Model
         'ocasiao'
     ];
 
-    protected $table = 'ocasioes'; // Defina o nome da tabela se não seguir a convenção do Laravel
+    protected $table = 'ocasiao'; // Defina o nome da tabela se não seguir a convenção do Laravel
 
     // Se você deseja definir relacionamentos, pode fazê-lo aqui
     public function combinacoes()

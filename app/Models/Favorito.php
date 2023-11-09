@@ -9,6 +9,8 @@ class Favorito extends Model
 {
     use HasFactory;
 
+    protected $table = 'favorito';
+
     protected $fillable = ['user_id', 'combinacao_id'];
 
     public function combinacao()

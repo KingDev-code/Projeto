@@ -11,26 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('administradores', function (Blueprint $table) {
+        Schema::create('administrador', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('login_id');
-            $table->string('img_admin', 100)->nullable();
+            $table->unsignedBigInteger('cod_login');
+            $table->binary('img_admin')->nullable();
             $table->string('nome_admin', 50);
             $table->string('sobrenome_admin', 80);
             $table->string('cpf_admin', 20);
-            $table->string('telefone', 15);
+            $table->string('telefone_admin', 15);
             $table->date('dtanasc_admin');
             $table->date('dtaadmissao_admin');
             $table->timestamps();
 
-            // Adicione um índice único na coluna 'login_id' para otimizar consultas por login_id
-            $table->unique('login_id');
-
-            // Adicione um índice único na coluna 'cpf_admin' se você consulta administradores por CPF
-            $table->unique('cpf_admin');
-
-            // Adicione um relacionamento com a tabela 'logins'
-            $table->foreign('login_id')->references('id')->on('logins');
+            $table->foreign('cod_login')->references('id')->on('login');
         });
     }
 
@@ -39,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('administrador');
     }
 };

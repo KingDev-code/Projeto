@@ -11,20 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('combinacaos', function (Blueprint $table) {
+        Schema::create('combinacao', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cod_estilo');
             $table->unsignedBigInteger('cod_tipocorporal');
             $table->unsignedBigInteger('cod_ocasiao');
-            $table->string('img_comb');
-            $table->string('link_comb');
-            $table->string('oca_esp');
+            $table->unsignedBigInteger('cod_login');
+            $table->unsignedBigInteger('cod_genero');
+            $table->binary('img_comb');
+            $table->string('link_comb', 2083)->nullable();
+            $table->string('ocasiaoespecif_comb', 100)->nullable();
             $table->timestamps();
 
-            // Chaves estrangeiras
-            $table->foreign('cod_estilo')->references('id')->on('estilos');
-            $table->foreign('cod_tipocorporal')->references('id')->on('tiposcorporal');
-            $table->foreign('cod_ocasiao')->references('id')->on('ocasioes');
+            $table->foreign('cod_estilo')->references('id')->on('estilo');
+            $table->foreign('cod_tipocorporal')->references('id')->on('tipocorporal');
+            $table->foreign('cod_ocasiao')->references('id')->on('ocasiao');
+            $table->foreign('cod_login')->references('id')->on('login');
+            $table->foreign('cod_genero')->references('id')->on('genero');
         });
     }
 
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('combinacaos');
+        Schema::dropIfExists('combinacao');
     }
 };

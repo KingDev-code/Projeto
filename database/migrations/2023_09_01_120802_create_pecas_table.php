@@ -11,23 +11,16 @@ return new class extends Migration
      */
     public function up(): void
 {
-    Schema::create('pecas', function (Blueprint $table) {
+    Schema::create('peca', function (Blueprint $table) {
         $table->id();
-        $table->unsignedBigInteger('empresa_id'); // Adiciona coluna para o ID da empresa
         $table->unsignedBigInteger('cod_comb');
         $table->string('desc_peca', 100);
         $table->string('preco_peca', 10);
-        $table->string('img_peca');
-        $table->string('link_peca');
+        $table->binary('img_peca');
+        $table->string('link', 2083);
         $table->timestamps();
 
-        $table->foreign('empresa_id')
-            ->references('id')
-            ->on('empresas'); // Suponha que a tabela das empresas seja chamada 'empresas'
-
-        $table->foreign('cod_comb')
-            ->references('id')
-            ->on('combinacaos');
+        $table->foreign('cod_comb')->references('id')->on('combinacao');
     });
 }
 
@@ -36,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pecas');
+        Schema::dropIfExists('peca');
     }
 };

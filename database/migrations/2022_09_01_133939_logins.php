@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('logins', function (Blueprint $table) {
+        Schema::create('login', function (Blueprint $table) {
             $table->id();
             $table->string('email', 256)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password', 168);
+            $table->string('senha', 168);
             $table->enum('type', ['cliente', 'empresa', 'admin']); // Restrição para os tipos válidos
             $table->timestamps();
 
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('logins');
+        Schema::dropIfExists('login');
     }
 };

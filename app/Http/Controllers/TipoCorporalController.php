@@ -30,7 +30,7 @@ class TipoCorporalController extends Controller
             'icone' => $request->input('icone'),
         ]);
 
-        return redirect('dashboard')->with('success', 'Tipo Corporal adicionado com sucesso!');
+        return redirect('tipos')->with('success', 'Tipo Corporal adicionado com sucesso!');
     }
 
     public function inativar(Request $request)
@@ -62,7 +62,7 @@ class TipoCorporalController extends Controller
         $tipoCorporal = TipoCorporal::find($id);
 
         if (!$tipoCorporal) {
-            return redirect()->route('departamentos')->with('error', 'Tipo corporal não encontrado.');
+            return redirect()->route('tipos')->with('error', 'Tipo corporal não encontrado.');
         }
 
         return view('combinacoes.tipocorporal-edit', compact('tipoCorporal'));
@@ -78,13 +78,13 @@ class TipoCorporalController extends Controller
         $tipoCorporal = TipoCorporal::find($id);
 
         if (!$tipoCorporal) {
-            return redirect()->route('departamentos')->with('error', 'Tipo corporal não encontrado.');
+            return redirect()->route('tipos')->with('error', 'Tipo corporal não encontrado.');
         }
 
         $tipoCorporal->tipocorporal = $request->input('tipocorporal');
         $tipoCorporal->icone = $request->input('icone');
         $tipoCorporal->save();
 
-        return redirect()->route('departamentos')->with('success', 'Tipo corporal atualizado com sucesso.');
+        return redirect()->route('tipos')->with('success', 'Tipo corporal atualizado com sucesso.');
     }
 }

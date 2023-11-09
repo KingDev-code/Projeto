@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ocasioes', function (Blueprint $table) {
+        Schema::create('ocasiao', function (Blueprint $table) {
             $table->id();
             $table->string('ocasiao', 80);
-            $table->boolean('ativo')->default(true); // Adicione um campo 'ativo' padrão como verdadeiro (ativo)
+            $table->boolean('ativo')->default(true)->nullable(); // Adicione um campo 'ativo' padrão como verdadeiro (ativo)
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ocasioes');
+        Schema::dropIfExists('ocasiao');
     }
 };

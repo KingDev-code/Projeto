@@ -12,7 +12,7 @@ class Empresa extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table = 'empresas';
+    protected $table = 'empresa';
 
     protected $fillable = ['login_id', 'nome', 'resp', 'cnpj', 'telefone', 'data_fundacao', 'img_empresa'];
 

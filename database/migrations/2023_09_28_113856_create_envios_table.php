@@ -11,13 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('envios', function (Blueprint $table) {
+        Schema::create('envio', function (Blueprint $table) {
             $table->id();
-            $table->integer('cod_empresa');
-            $table->integer('cod_combinacao');
-            $table->integer('cod_estado');
-            $table->datetime('dt_envio');
+            $table->unsignedBigInteger('cod_empresa');
+            $table->unsignedBigInteger('cod_combinacao');
+            $table->unsignedBigInteger('cod_estado');
+            $table->date('dt_envio');
+            $table->date('dt_edicao')->nullable();
             $table->timestamps();
+
+            $table->foreign('cod_empresa')->references('id')->on('empresa');
+            $table->foreign('cod_combinacao')->references('id')->on('combinacao');
+            $table->foreign('cod_estado')->references('id')->on('estado');
+
         });
     }
 
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('envios');
+        Schema::dropIfExists('envio');
     }
 };

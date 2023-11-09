@@ -11,21 +11,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('favoritos', function (Blueprint $table) {
+        Schema::create('favorito', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('combinacao_id');
+            $table->unsignedBigInteger('cod_login');
+            $table->unsignedBigInteger('cod_combinacao');
             $table->timestamps();
 
-            $table->unique(['user_id', 'combinacao_id']);
-
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('combinacao_id')->references('id')->on('combinacaos');
+            $table->foreign('cod_login')->references('id')->on('login');
+            $table->foreign('cod_combinacao')->references('id')->on('combinacao');
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('favoritos');
+        Schema::dropIfExists('favorito');
     }
 };
