@@ -100,27 +100,21 @@ class ImportController extends Controller
         return redirect()->back()->with('error', 'Erro na importação de dados de Peca.');
     }
 
-    public function salvarCombinacoes()
+    public function adicionarImagens()
     {
-        $combinacoes = [];
-
         // Supondo que as imagens estejam em public/imagens_combinacoes/
-        $caminhoImagens = public_path('imagens_combinacoes');
-
+        $caminhoImagens = 'imagens_combinacoes'; // Caminho relativo a public
+    
         for ($i = 1; $i <= 395; $i++) {
             $caminhoImagem = "{$caminhoImagens}/comb-{$i}.png";
-
-            if (file_exists($caminhoImagem)) {
-                $combinacoes[] = [
-                    // Outros campos que você precisa incluir
-                    'img_comb' => "imagens_combinacoes/comb-{$i}.png",
-                    // Outros campos...
-                ];
+    
+            if (file_exists(public_path($caminhoImagem))) {
+                // Atualizar a coluna img_comb
+                Combinacao::where('img_comb', "public/{$caminhoImagem}")
+                    ->update(['img_comb' => "public/{$caminhoImagem}"]);
             }
         }
-
-        Combinacao::insert($combinacoes);
-
-        return "Combinacoes salvas com sucesso!";
+    
+        return "Imagens adicionadas com sucesso!";
     }
 }
