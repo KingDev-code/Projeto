@@ -119,8 +119,8 @@
               <thead>
                   <tr>
                       <th>Selecione</th>
-                      <th>Código Ocasião</th>
-                      <th>Ocasião</th>
+                      <th>Código Tipo Corporal</th>
+                      <th>Tipo Corporal</th>
                   </tr>
               </thead>
               <tbody>
@@ -128,8 +128,8 @@
                   @if ($tipo->ativo)
                   <tr>
                       <td><input type="checkbox" name="selected_tipos[]" value="{{ $tipo->id }}"></td>
-                      <td>{{ $tipo->id }}</td>
-                      <td>{{ $tipo->tipo }}</td>
+                      <td>{{ $tipo->cod_tipocorporal }}</td>
+                      <td>{{ $tipo->tipocorporal }}</td>
                   </tr>
                   @endif
                   @endforeach
