@@ -330,36 +330,6 @@
 
 <!-- Sua view para listar as combinações -->
 <div class="comb">
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Estilo</th>
-                <th>Tipo Corporal</th>
-                <th>Ocasião</th>
-                <th>Login</th>
-                <th>Gênero</th>
-                <th>Imagem</th>
-                <th>Link</th>
-                <th>Ocasião Específica</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($combinacoes as $combinacao)
-                <tr>
-                    <td>{{ $combinacao->id }}</td>
-                    <td>{{ $combinacao->estilo->estilo }}</td>
-                    <td>{{ $combinacao->tipoCorporal->tipocorporal }}</td>
-                    <td>{{ $combinacao->ocasiao->ocasiao }}</td>
-                    <td>{{ $combinacao->login->email }}</td>
-                    <td>{{ $combinacao->genero->genero }}</td>
-                    <td><img src="data:image/jpeg;base64,{{ base64_encode($combinacao->img_comb) }}" alt="Imagem" width="100"></td>
-                    <td>{{ $combinacao->link_comb }}</td>
-                    <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
 
 <!-- Seção-look -->
 <div class="secao-look">
