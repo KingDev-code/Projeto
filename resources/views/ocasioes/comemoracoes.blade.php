@@ -19,7 +19,7 @@
         <header class="header">
   
           <div class="menu-norte">
-          <a href="index.html#pre-header" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+          <a href="indexl#pre-header" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
           <nav>
               <button type="button" class="button-icone">
                 <a href="favoritos.html"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
@@ -33,12 +33,12 @@
     
           <div class="menu-itens">
             <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="executivos.html">Executivas</a></li>
-            <li><a href="esportivos.html">Esportivas</a></li>
-            <li><a href="comemoracoes.html" class="active">Comemorações</a></li>
-            <li><a href="diaadia.html">Dia a dia</a></li>
-            <li><a href="modapraia.html">Moda praia</a></li>
+            <li><a href="index">Início</a></li>
+            <li><a href="executivos">Executivas</a></li>
+            <li><a href="esportivos">Esportivas</a></li>
+            <li><a href="comemoracoes" class="active">Comemorações</a></li>
+            <li><a href="diaadia">Dia a dia</a></li>
+            <li><a href="modapraia">Moda praia</a></li>
             </ul>
           </nav>
         </div>
