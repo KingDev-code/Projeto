@@ -107,7 +107,7 @@
     </div>
 
     <div>
-      <h2><a href="https://www.instagram.com/">@veste-me</a></h2>
+      <h2><a href="https://instagram.com/use.veste_me?igshid=MTFoYTlsMnhhbHFvbg==">@veste-me</a></h2>
     </div>
 
   </div>

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ImportController extends Controller
 {
+
     public function importData(Request $request)
 {
     if ($request->hasFile('csv_file')) {

@@ -3,7 +3,7 @@
 <head>
 
     <title>Veste-me</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.png">
+    <link rel="icon" type="image/x-icon" href="public/img/Logo Veste-me - Círculo - Preta.png">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -99,7 +99,7 @@
     </div>
 
     <div>
-      <h2><a href="https://www.instagram.com/">@veste-me</a></h2>
+      <h2><a href="https://instagram.com/use.veste_me?igshid=MTFoYTlsMnhhbHFvbg==">@veste-me</a></h2>
     </div>
 
   </div>

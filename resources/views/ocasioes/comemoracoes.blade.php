@@ -22,7 +22,7 @@
           <a href="indexl#pre-header" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
           <nav>
               <button type="button" class="button-icone">
-                <a href="favoritos.html"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
+                <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
                 <a href="#default"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
               </button>
         </div>
