@@ -24,7 +24,12 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::post('/import-data', 'App\Http\Controllers\ImportController@importData')->name('import-data');
+Route::post('/import-genero', 'App\Http\Controllers\ImportController@importGenero')->name('import.genero');
+Route::post('/import-estilo', 'App\Http\Controllers\ImportController@importEstilo')->name('import.estilo');
+Route::post('/import-tipo-corporal', 'App\Http\Controllers\ImportController@importTipoCorporal')->name('import.tipocorporal');
+Route::post('/import-ocasiao', 'App\Http\Controllers\ImportController@importOcasiao')->name('import.ocasiao');
+Route::post('/import-combinacao', 'App\Http\Controllers\ImportController@importCombination')->name('import.combinacao');
+Route::post('/import-peca', 'App\Http\Controllers\ImportController@importPeca')->name('import.peca');
 
 Route::get('/banco', function () {
     return view('admin.banco');
