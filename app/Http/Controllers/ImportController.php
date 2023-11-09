@@ -18,15 +18,16 @@ class ImportController extends Controller
             $data = array_map('str_getcsv', file($path));
 
             foreach ($data as $row) {
-                DB::table('estado')->insert([
-                    'estado' => $row[1],
+                DB::table('tipocorporal')->insert([
+                    'tipocorporal' => $row[1],
+                    'icone' => $row[2], // NULL ou caminho para o ícone se estiver disponível no CSV
                 ]);
             }
 
-            return redirect()->back()->with('success', 'Dados de estado importados com sucesso.');
+            return redirect()->back()->with('success', 'Dados de tipo corporal importados com sucesso.');
         }
     }
 
-    return redirect()->back()->with('error', 'Erro na importação de dados de estado.');
+    return redirect()->back()->with('error', 'Erro na importação de dados de tipo corporal.');
 }
 }
