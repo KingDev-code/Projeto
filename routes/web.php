@@ -29,7 +29,7 @@ Route::post('/import-estilo', 'App\Http\Controllers\ImportController@importEstil
 Route::post('/import-tipo-corporal', 'App\Http\Controllers\ImportController@importTipoCorporal')->name('import.tipocorporal');
 Route::post('/import-ocasiao', 'App\Http\Controllers\ImportController@importOcasiao')->name('import.ocasiao');
 Route::post('/import-combinacao', 'App\Http\Controllers\ImportController@importCombination')->name('import.combinacao');
-Route::post('/import-peca', 'App\Http\Controllers\ImportController@importPeca')->name('import.peca');
+Route::post('/import-peca', 'App\Http\Controllers\ImportController@importPeca')->name('import.pecas');
 
 Route::get('/banco', function () {
     return view('admin.banco');
