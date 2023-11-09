@@ -71,7 +71,7 @@
             <br>
 
             <!-- Senha do Administrador -->
-            <label for="senha">Senha: <input type="password" id="senha" name="password" autocomplete="new-password" required></label>
+            <label for="senha">Senha: <input type="password" id="senha" name="senha" autocomplete="new-password" required></label>
             @error('password')
                 <div class="error-message">{{ $message }}</div>
             @enderror

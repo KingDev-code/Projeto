@@ -14,12 +14,12 @@ class Login extends Model implements Authenticatable
     protected $table = 'login'; // Usar o nome correto da tabela 'login'
     protected $fillable = [
         'email',
-        'password',
+        'senha',
         'type',
     ];
 
     protected $hidden = [
-        'password',
+        'senha',
         'remember_token',
     ];
 

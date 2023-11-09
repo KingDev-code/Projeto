@@ -42,7 +42,7 @@ class AdminController extends Controller
         // Validação dos dados de entrada
         $request->validate([
             'email' => 'required|string|email|unique:login',
-            'password' => 'required|string|min:8',
+            'senha' => 'required|string|min:8',
             'nome_admin' => 'required|string|max:50',
             'sobrenome_admin' => 'required|string|max:80',
             'cpf_admin' => 'required|string|max:20|unique:administrador',
@@ -54,7 +54,7 @@ class AdminController extends Controller
         // Crie o registro de login
         $login = new Login();
         $login->email = $request->input('email');
-        $login->password = Hash::make($request->input('password'));
+        $login->password = Hash::make($request->input('senha'));
         $login->type = 'admin';
         $login->save();
 
