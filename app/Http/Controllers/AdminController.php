@@ -16,11 +16,6 @@ class AdminController extends Controller
         return view('admin.register');
     }
 
-    public function __construct()
-    {
-        $this->middleware('admin');
-    }
-
     public function loginForm()
     {
         return view('admin.login');
