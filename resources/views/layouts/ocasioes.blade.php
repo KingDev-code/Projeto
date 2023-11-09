@@ -3,7 +3,7 @@
 <head>
 
     <title>Veste-me</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo Veste-me - Círculo - Preta.png">
+    <link rel="icon" type="image/x-icon" href="public/img/Logo Veste-me - Círculo - Preta.png">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,8 +11,8 @@
 
     <!-- CSS -->
 
-    <link rel="stylesheet" href="css/menu-resp.css">
-    <link rel="stylesheet" href="css/footer-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
     
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
 
   <div class="container-footer">
     <div>
-      <a href="index.html#sobrenos"><h2>Conheça nossa história</a></h2>
+      <a href="index#sobrenos"><h2>Conheça nossa história</a></h2>
     </div>
 
     <div>
@@ -44,8 +44,8 @@
     </div>
 
     <div>
-      <a href="index.html">
-      <img src="img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
+      <a href="index">
+      <img src="public/img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>
 
@@ -71,7 +71,7 @@
     </div>
 </div>
       <!-- Java Script -->
-      <script src="js/menu.js"></script>
+      <script src="public/js/menu.js"></script>
 
 </body>
 </html>
