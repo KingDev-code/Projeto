@@ -39,7 +39,9 @@ class AdminController extends Controller
     
         // Verifica se o usuário existe com base no e-mail
         $user = Login::where('email', $credentials['email'])->first();
-    
+
+        dd($user);
+
         if ($user && $user->type === 'admin') {
             // Se o usuário existe e é um administrador, tenta autenticá-lo
             if (Auth::guard('login')->attempt($credentials)) {
