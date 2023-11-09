@@ -70,6 +70,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     
     // Outras rotas protegidas pelo admin
     Route::get('/dadospessoais', 'App\Http\Controllers\AdminController@dadospessoais')->name('dadospessoais');
+    Route::get('/tipos', 'App\Http\Controllers\AdminController@tipos')->name('tipos');
+    Route::get('/cadastros', 'App\Http\Controllers\AdminController@cadastros')->name('cadastros');
+    Route::get('/departamentos', 'App\Http\Controllers\AdminController@departamentos')->name('departamentos');
+    Route::get('/estilos', 'App\Http\Controllers\AdminController@estilos')->name('estilos');
+    Route::get('/info', 'App\Http\Controllers\AdminController@info')->name('info');
+    Route::get('/solicitacoes', 'App\Http\Controllers\AdminController@solicitacoes')->name('solicitacoes');
+    Route::get('/combinacoes', 'App\Http\Controllers\AdminController@combinacoes')->name('combinacoes');
 
     // Rotas para Estilos
     Route::get('/estilos', 'App\Http\Controllers\EstiloController@index')->name('estilos');
