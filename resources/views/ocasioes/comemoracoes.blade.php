@@ -329,7 +329,7 @@
 
 
 <!-- Sua view para listar as combinações -->
-<div class="comb">
+<div class="comb_">
 
 <!-- Seção-look -->
 <div class="secao-look">
