@@ -19,6 +19,6 @@ class AdminMiddleware
             return $next($request);
         }
 
-        return redirect('/login'); // Redirecionar para a página inicial ou outra página apropriada
+        return redirect('/admin-login'); // Redirecionar para a página inicial ou outra página apropriada
     }
 }
