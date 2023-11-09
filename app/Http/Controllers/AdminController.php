@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        // Adicione o middleware de autenticação apenas para métodos específicos
+        $this->middleware('admin')->only(['logout']);
+    }
     public function registerForm()
     {
         return view('admin.register');
