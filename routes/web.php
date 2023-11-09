@@ -136,7 +136,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/favoritos', 'App\Http\Controllers\FavoritoController@index')->name('favoritos');
     Route::post('/favoritos/store', 'App\Http\Controllers\FavoritoController@store')->name('favoritos.store');
     Route::delete('/favoritos/{id}', 'App\Http\Controllers\FavoritoController@destroy')->name('favoritos.destroy');
-//});
+});
 
 
 Route::get('/empresa/register', 'App\Http\Controllers\EmpresaController@registerForm')->name('empresa.registerForm');
