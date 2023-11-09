@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cod_estilo');
             $table->unsignedBigInteger('cod_tipocorporal');
             $table->unsignedBigInteger('cod_ocasiao');
-            $table->unsignedBigInteger('cod_login');
+            $table->unsignedBigInteger('cod_login')->nullable();
             $table->unsignedBigInteger('cod_genero');
             $table->binary('img_comb');
             $table->string('link_comb', 2083)->nullable();

@@ -120,8 +120,8 @@
               <thead>
                   <tr>
                       <th>Selecione</th>
-                      <th>Código Ocasião</th>
-                      <th>Ocasião</th>
+                      <th>Código Estilo</th>
+                      <th>Estilo</th>
                   </tr>
               </thead>
               <tbody>
@@ -129,7 +129,7 @@
                   @if ($estilo->ativo)
                   <tr>
                       <td><input type="checkbox" name="selected_estilos[]" value="{{ $estilo->id }}"></td>
-                      <td>{{ $estilo->id }}</td>
+                      <td>{{ $estilo->cod_estilo }}</td>
                       <td>{{ $estilo->estilo }}</td>
                   </tr>
                   @endif

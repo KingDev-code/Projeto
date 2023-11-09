@@ -133,16 +133,16 @@
               <tbody>
                   @foreach ($combinacoes as $combinacao)
                       <tr>
-                          <td><input type="checkbox" name="selected_combinacoes[]" value="{{ $combinacao->id }}"></td>
-                          <td>{{ $combinacao->codigo_combinacao }}</td>
-                          <td>{{ $combinacao->codigo_estilo }}</td>
-                          <td>{{ $combinacao->codigo_tipo_corporal }}</td>
-                          <td>{{ $combinacao->codigo_ocasiao }}</td>
-                          <td>{{ $combinacao->codigo_genero }}</td>
-                          <td><img src="{{ $combinacao->foto_combinacao_url }}" alt="Foto da Combinacao"></td>
+                          <td><input type="checkbox" name="selected_combinacoes[]" value="{{ $combinacao->cod_combinacao }}"></td>
+                          <td>{{ $combinacao->cod_combinacao }}</td>
+                          <td>{{ $combinacao->cod_estilo }}</td>
+                          <td>{{ $combinacao->cod_tipocorporal }}</td>
+                          <td>{{ $combinacao->cod_ocasiao }}</td>
+                          <td>{{ $combinacao->cod_genero }}</td>
+                          <td><img src="data:image/jpeg;base64,{{ base64_encode($combinacao->img_comb) }}" alt="Foto da Combinacao"></td>
                           <td>{{ $combinacao->link_combinacao }}</td>
-                          <td>{{ $combinacao->ocasiao_especifica }}</td>
-                          <td>{{ $combinacao->codigo_cadastro }}</td>
+                          <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
+                          <td>{{ $combinacao->cod_login }}</td>
                       </tr>
                   @endforeach
               </tbody>
