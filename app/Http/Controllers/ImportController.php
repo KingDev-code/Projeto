@@ -18,15 +18,9 @@ class ImportController extends Controller
             $data = array_map('str_getcsv', file($path));
 
             foreach ($data as $row) {
-                DB::table('combinacao')->insert([
-                    'cod_estilo' => (int)$row[1], // Certifique-se de que seja um inteiro
-                    'cod_tipocorporal' => (int)$row[2], // Certifique-se de que seja um inteiro
-                    'cod_ocasiao' => (int)$row[3], // Certifique-se de que seja um inteiro
-                    'cod_login' => (int)$row[4], // Certifique-se de que seja um inteiro
-                    'cod_genero' => (int)$row[5], // Certifique-se de que seja um inteiro
-                    'img_comb' => $row[6], // Imagem (verifique o formato)
-                    'link_comb' => $row[7],
-                    'ocasiaoespecif_comb' => $row[8],
+                DB::table('estilo')->insert([
+                    'cod_estilo' => $row[0],
+                    'estilo' => $row[1],
                 ]);
             }
 
