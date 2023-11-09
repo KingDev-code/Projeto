@@ -139,7 +139,7 @@
                           <td>{{ $combinacao->cod_tipocorporal }}</td>
                           <td>{{ $combinacao->cod_ocasiao }}</td>
                           <td>{{ $combinacao->cod_genero }}</td>
-                          <td><img src="data:image/jpeg;base64,{{ base64_encode($combinacao->img_comb) }}" alt="Foto da Combinacao"></td>
+                          <td><img src="{{ $combinacao->img_comb }}" alt="Foto da Combinacao"></td>
                           <td>{{ $combinacao->link_combinacao }}</td>
                           <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
                           <td>{{ $combinacao->cod_login }}</td>
