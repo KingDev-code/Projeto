@@ -139,7 +139,7 @@
                           <td>{{ $combinacao->cod_ocasiao }}</td>
                           <td>{{ $combinacao->cod_genero }}</td>
                           <td>{{ $combinacao->img_comb }}</td>
-                          <td><img src="{{ $combinacao->link_comb }}" alt="Foto da Combinacao"></td>
+                          <td><img src="https://br.pinterest.com/pin/452822937534446006/" alt="Foto da Combinacao"></td>
                           <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
                           <td>{{ $combinacao->cod_login }}</td>
                       </tr>
