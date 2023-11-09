@@ -165,10 +165,10 @@ Route::middleware(['auth:empresa'])->group(function () {
 
 
     Route::get('/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
-    Route::get('/ocasiao/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
-    Route::get('/ocasiao/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
-    Route::get('/ocasiao/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
-    Route::get('/ocasiao/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
+    Route::get('/esportivos', [OcasiaoController::class, 'esportivos'])->name('esportivos');
+    Route::get('/comemoracoes', [OcasiaoController::class, 'comemoracoes'])->name('comemoracoes');
+    Route::get('/diaadia', [OcasiaoController::class, 'diaadia'])->name('diaadia');
+    Route::get('/modapraia', [OcasiaoController::class, 'modapraia'])->name('modapraia');
 
     // Rotas para Peças
     Route::get('/pecas', [PecasController::class, 'index'])->name('pecas.index');
