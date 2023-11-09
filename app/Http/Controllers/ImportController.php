@@ -113,7 +113,7 @@ class ImportController extends Controller
             if (file_exists($caminhoImagem)) {
                 $combinacoes[] = [
                     // Outros campos que você precisa incluir
-                    'img_comb' => "public/imagens_combinacoes/comb-{$i}.png",
+                    'img_comb' => "imagens_combinacoes/comb-{$i}.png",
                     // Outros campos...
                 ];
             }
