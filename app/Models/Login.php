@@ -11,7 +11,7 @@ class Login extends Model implements Authenticatable
 {
     use AuthenticableTrait, HasFactory;
 
-    protected $table = 'login';
+    protected $table = 'login'; // Usar o nome correto da tabela 'login'
     protected $fillable = [
         'email',
         'password',
