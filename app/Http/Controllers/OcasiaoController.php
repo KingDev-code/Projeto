@@ -99,9 +99,10 @@ class OcasiaoController extends Controller
 
     public function comemoracoes()
     {
-        $ocasiao = Ocasiao::all();
-        $combinacoes = Combinacao::all();
-        return view('ocasioes.comemoracoes', compact('ocasiao', 'combinacoes')); // Crie uma view chamada "executivos.blade.php" em resources/views/ocasioes
+        // Carregue as combinações com as relações necessárias
+        $combinacoes = Combinacao::with('estilo', 'tipoCorporal', 'ocasiao', 'login', 'genero')->get();
+    
+        return view('ocasioes.comemoracoes', compact('combinacoes'));
     }
 
     public function diaadia()

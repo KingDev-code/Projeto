@@ -109,6 +109,19 @@
       color: black;
       font-size: 1em;
     }
+
+    .forms input {
+      width: 225px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: normal;
+    }
+    
+    .forms input ::placeholder{
+      color: black;
+      font-size: 1em;
+    }
     
     .forms label .fone {
         width: 190px;
