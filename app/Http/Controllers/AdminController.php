@@ -32,10 +32,10 @@ class AdminController extends Controller
         // Validação dos campos de entrada
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required',
+            'senha' => 'required',
         ]);
     
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('email', 'senha');
     
         // Verifica se o usuário existe com base no e-mail
         $user = Login::where('email', $credentials['email'])->first();

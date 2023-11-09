@@ -70,7 +70,7 @@ Route::post('/admin/register', 'App\Http\Controllers\AdminController@register')-
 Route::get('/admin-login', 'App\Http\Controllers\AdminController@loginForm')->name('admin.login');
 Route::post('/admin-login', 'App\Http\Controllers\AdminController@adminLogin')->name('admin.loginpost');
 
-Route::middleware(['auth', 'admin'])->group(function () {
+//Route::middleware(['auth', 'admin'])->group(function () {
     // Rotas de admin
     Route::get('/admin', 'App\Http\Controllers\AdminController@home')->name('admin');
     
@@ -115,7 +115,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     
     // ... outras rotas protegidas por autenticação
-});
+//});
 
 // Rota de login
 Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
