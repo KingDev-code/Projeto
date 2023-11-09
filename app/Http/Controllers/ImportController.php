@@ -23,10 +23,10 @@ class ImportController extends Controller
                     'cod_tipocorporal' => $row[2],
                     'cod_ocasiao' => $row[3],
                     'cod_Login' => $row[4],
-                    'cod_genero' => $row[4],
-                    'img_comb' => $row[4],
-                    'link_comb' => $row[4],
-                    'ocasiaoespecif_comb' => $row[4],
+                    'cod_genero' => $row[5],
+                    'img_comb' => $row[6],
+                    'link_comb' => $row[7],
+                    'ocasiaoespecif_comb' => $row[8],
                 ]);
             }
 
