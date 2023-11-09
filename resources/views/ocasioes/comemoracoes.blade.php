@@ -371,7 +371,7 @@
         <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
     
         <div class="card ocasiao-card">
-            <p>{{ $combinacao->ocasiao->first()->ocasiao }}</p>
+            <p>{{ $combinacoes->ocasiao->first()->ocasiao }}</p>
         </div>
         <div class="card estilo-card">
             <p>{{ $combinacoes->estilo->estilo }}</p>
