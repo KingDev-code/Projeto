@@ -38,7 +38,7 @@
 
         <div class="row">
             <i class="material-icons-sharp">lock</i>
-            <input type="password" name="password" placeholder="Senha" required>
+            <input type="password" name="senha" placeholder="Senha" required>
         </div>
 
         @if ($errors->any())
