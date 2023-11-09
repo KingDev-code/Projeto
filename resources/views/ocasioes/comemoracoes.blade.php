@@ -257,37 +257,6 @@
         <div class="comb">
           <!-- Seção 2 - Look1 -->
 
-          <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Estilo</th>
-                <th>Tipo Corporal</th>
-                <th>Ocasião</th>
-                <th>Login</th>
-                <th>Gênero</th>
-                <th>Imagem</th>
-                <th>Link</th>
-                <th>Ocasião Específica</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($combinacoes as $combinacao)
-                <tr>
-                    <td>{{ $combinacao->id }}</td>
-                    <td>{{ $combinacao->estilo->nome }}</td>
-                    <td>{{ $combinacao->tipoCorporal->nome }}</td>
-                    <td>{{ $combinacao->ocasiao->ocasiao }}</td>
-                    <td>{{ $combinacao->login->email }}</td>
-                    <td>{{ $combinacao->genero->genero }}</td>
-                    <td><img src="data:image/jpeg;base64,{{ base64_encode($combinacao->img_comb) }}" alt="Imagem" width="100"></td>
-                    <td>{{ $combinacao->link_comb }}</td>
-                    <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-
           <div class="secao-look">
               <img class="look" src="public/img/look1.png" alt="Imagem 4">
         
@@ -359,143 +328,81 @@
           </div>
 
 
-          <div class="comb_">
-            <!-- Seção 2 - Look1 -->
-            <div class="secao-look">
-                <img class="look" src="public/img/look1.png" alt="Imagem 4">
-          
-                <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
-              
-                    <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
-                    <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
-          
-          
-                <div class="card ocasiao-card">
-                  <p>EXECUTIVA</p>
-                </div>
-                <div class="card estilo-card">
-                  <p>ELEGANTE</p>
-                </div>
-          
-              </div>
-        
-              <div class="pecas">
-              <div class="secao-pecas">
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
-                  </div>
-                    <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
-                </div>
-              
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
-                  </div>
-                    <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
-                </div>
-          
-              <div class="slidec">
-                <div class="card">
-                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
-                </div>
-                    <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
-              </div>
-            </div>
-  
-            <div class="secao-pecas">
-              <div class="slidec">
-                <div class="card">
-                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 1">
-                </div>
-                  <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
-              </div>
-            
-              <div class="slidec">
-                <div class="card">
-                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 2">
-                </div>
-                  <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
-              </div>
-        
-              <div class="slidec">
-                <div class="card">
-                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
-                </div>
-                  <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
-              </div>
-            </div>
-            
-              </div>
-            </div>
+          <!-- Sua view para listar as combinações -->
+<div class="comb">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Estilo</th>
+                <th>Tipo Corporal</th>
+                <th>Ocasião</th>
+                <th>Login</th>
+                <th>Gênero</th>
+                <th>Imagem</th>
+                <th>Link</th>
+                <th>Ocasião Específica</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($combinacoes as $combinacao)
+                <tr>
+                    <td>{{ $combinacao->id }}</td>
+                    <td>{{ $combinacao->estilo->estilo }}</td>
+                    <td>{{ $combinacao->tipoCorporal->tipocorporal }}</td>
+                    <td>{{ $combinacao->ocasiao->ocasiao }}</td>
+                    <td>{{ $combinacao->login->email }}</td>
+                    <td>{{ $combinacao->genero->genero }}</td>
+                    <td><img src="data:image/jpeg;base64,{{ base64_encode($combinacao->img_comb) }}" alt="Imagem" width="100"></td>
+                    <td>{{ $combinacao->link_comb }}</td>
+                    <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
-            <div class="comb_">
-              <!-- Seção 2 - Look1 -->
-              <div class="secao-look">
-                  <img class="look" src="public/img/look1.png" alt="Imagem 4">
-            
-                  <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
-                
-                      <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
-                      <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
-            
-            
-                  <div class="card ocasiao-card">
-                    <p>EXECUTIVA</p>
-                  </div>
-                  <div class="card estilo-card">
-                    <p>ELEGANTE</p>
-                  </div>
-            
-                </div>
-          
-                <div class="pecas">
-                <div class="secao-pecas">
-                  <div class="slidec">
-                    <div class="card">
-                      <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
-                    </div>
-                      <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
-                  </div>
-                
-                  <div class="slidec">
-                    <div class="card">
-                      <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
-                    </div>
-                      <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
-                  </div>
-            
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
-                  </div>
-                      <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
-                </div>
-              </div>
+    <!-- Adapte o código CSS conforme necessário -->
+    <div class="secao-look">
+        <img class="look" src="public/img/look1.png" alt="Imagem 4">
     
-              <div class="secao-pecas">
+        <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
+    
+        <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
+        <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
+    
+        <div class="card ocasiao-card">
+            <p>{{ $combinacao->ocasiao->ocasiao }}</p>
+        </div>
+        <div class="card estilo-card">
+            <p>{{ $combinacao->estilo->estilo }}</p>
+        </div>
+    </div>
+
+    <div class="pecas">
+        <div class="secao-pecas">
+            @foreach($combinacoes as $combinacao)
                 <div class="slidec">
-                  <div class="card">
-                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 1">
-                  </div>
-                    <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
+                    <div class="card">
+                        <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
+                    </div>
+                    <p id="desc">{{ $combinacao->ocasiaoespecif_comb }}</p>
                 </div>
-              
+            @endforeach
+        </div>
+
+        <div class="secao-pecas">
+            @foreach($combinacoes as $combinacao)
                 <div class="slidec">
-                  <div class="card">
-                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 2">
-                  </div>
-                    <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
+                    <div class="card">
+                        <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
+                    </div>
+                    <p id="desc">{{ $combinacao->ocasiaoespecif_comb }}</p>
                 </div>
-          
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
-                  </div>
-                    <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
-                </div>
-              </div>
-              
+            @endforeach
+        </div>
+    </div>
+</div>
+           
                 </div>
               </div>
 
