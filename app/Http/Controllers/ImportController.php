@@ -19,14 +19,15 @@ class ImportController extends Controller
 
             foreach ($data as $row) {
                 DB::table('combinacao')->insert([
-                    'cod_estilo' => $row[0],
-                    'cod_tipocorporal' => $row[1],
-                    'cod_ocasiao' => $row[2],
-                    'cod_login' => $row[3],
-                    'cod_genero' => $row[4],
-                    'img_comb' => $row[5],
-                    'link_comb' => $row[6],
-                    'ocasiaoespecif_comb' => $row[7],
+                    'cod_combinacao' => $row[0],
+                    'cod_estilo' => $row[1],
+                    'cod_tipocorporal' => $row[2],
+                    'cod_ocasiao' => $row[3],
+                    'cod_login' => $row[4],
+                    'cod_genero' => $row[5],
+                    'img_comb' => $row[6],
+                    'link_comb' => $row[7],
+                    'ocasiaoespecif_comb' => $row[8],
                 ]);
             }
 
