@@ -129,7 +129,7 @@
                   @if ($ocasiao->ativo)
                   <tr>
                       <td><input type="checkbox" name="selected_ocasioes[]" value="{{ $ocasiao->id }}"></td>
-                      <td>{{ $ocasiao->id }}</td>
+                      <td>{{ $ocasiao->cod_ocasiao }}</td>
                       <td>{{ $ocasiao->ocasiao }}</td>
                   </tr>
                   @endif
