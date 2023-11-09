@@ -45,12 +45,12 @@
               </div>
                 <a href="info"><span class="material-icons-sharp">insights</span>   INFORMAÇÕES</a>
                 <a href="solicitacoes"><span class="material-icons-sharp">notifications</span>SOLICITAÇÕES</a>  <!--<span class="material-icons-sharp">notifications_none</span>--> <!--<span class="material-icons-sharp">notification_important</span>-->
-                <a href="comb"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
+                <a href="/combinacoes"><span class="material-icons-sharp">checkroom</span>COMBINAÇÕES</a>
                 <a href="cadastros"><span class="material-icons-sharp">groups</span>CADASTROS</a>
                 <a href="departamentos"><span class="material-icons-sharp">add_business</span>DEPARTAMENTOS</a>
                 <a href="estilos"><span class="material-symbols-outlined">eyeglasses</span>ESTILOS</a>
                 <a href="tipos"><img src="public/associate/img/tc.png" >TIPOS CORPORAIS</a>
-                <br>
+              <br>
               <div class="btn">
                 <button class="btn3"><span class="material-icons-sharp">logout</span>SAIR</button>
               </div>

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ocasiao', function (Blueprint $table) {
-            $table->id();
+            $table->id('cod_ocasiao');
             $table->string('ocasiao', 80);
             $table->boolean('ativo')->default(true)->nullable(); // Adicione um campo 'ativo' padrão como verdadeiro (ativo)
             $table->timestamps();

@@ -10,7 +10,24 @@ class ImportController extends Controller
 {
     public function importGenero(Request $request)
     {
-        return $this->importTable($request, 'genero', ['genero']);
+        if ($request->hasFile('csv_file_genero')) {
+            $file = $request->file('csv_file_genero');
+    
+            if ($file->isValid()) {
+                $path = $file->getRealPath();
+                $data = array_map('str_getcsv', file($path));
+    
+                foreach ($data as $row) {
+                    DB::table('genero')->insert([
+                        'genero' => $row[1],
+                    ]);
+                }
+    
+                return redirect()->back()->with('success', 'Dados de Gênero importados com sucesso.');
+            }
+        }
+    
+        return redirect()->back()->with('error', 'Erro na importação de dados de Gênero.');
     }
 
     public function importEstilo(Request $request)
@@ -30,44 +47,55 @@ class ImportController extends Controller
 
     public function importCombination(Request $request)
     {
-        // Add the necessary columns based on your combination table structure
-        return $this->importTable($request, 'combinacao', [
-            'cod_estilo', 'cod_tipocorporal', 'cod_ocasiao',
-            'cod_login', 'cod_genero', 'img_comb', 'link_comb',
-            'ocasiaoespecif_comb'
-        ]);
+        if ($request->hasFile('csv_file_combination')) {
+            $file = $request->file('csv_file_combination');
+    
+            if ($file->isValid()) {
+                $path = $file->getRealPath();
+                $data = array_map('str_getcsv', file($path));
+    
+                foreach ($data as $row) {
+                    DB::table('combinacao')->insert([
+                        'cod_estilo' => $row[1],
+                        'cod_tipocorporal' => $row[2],
+                        'cod_ocasiao' => $row[3],
+                        'cod_login' => $row[4],
+                        'cod_genero' => $row[5],
+                        'img_comb' => $row[6],
+                        'link_comb' => $row[7],
+                        'ocasiaoespecif_comb' => $row[8],
+                    ]);
+                }
+    
+                return redirect()->back()->with('success', 'Dados de Combinação importados com sucesso.');
+            }
+        }
+    
+        return redirect()->back()->with('error', 'Erro na importação de dados de Combinação.');
     }
 
     public function importPeca(Request $request)
     {
-        // Adicione as colunas necessárias com base na estrutura da sua tabela 'Peca'
-        return $this->importTable($request, 'peca', [
-            'cod_comb', 'desc_peca', 'preco_peca', 'img_peca', 'link'
-        ]);
-    }
-
-    private function importTable(Request $request, $tableName, $columns)
-    {
-        if ($request->hasFile('csv_file')) {
-            $file = $request->file('csv_file');
+        if ($request->hasFile('csv_file_peca')) {
+            $file = $request->file('csv_file_peca');
 
             if ($file->isValid()) {
                 $path = $file->getRealPath();
                 $data = array_map('str_getcsv', file($path));
 
                 foreach ($data as $row) {
-                    $insertData = [];
-                    foreach ($columns as $key => $column) {
-                        $insertData[$column] = $row[$key];
-                    }
-
-                    DB::table($tableName)->insert($insertData);
+                    DB::table('peca')->insert([
+                        'desc_peca' => $row[1],
+                        'preco_peca' => $row[2],
+                        'img_peca' => $row[3],
+                        'link' => $row[4],
+                    ]);
                 }
 
-                return redirect()->back()->with('success', "Dados de $tableName importados com sucesso.");
+                return redirect()->back()->with('success', 'Dados de Peca importados com sucesso.');
             }
         }
 
-        return redirect()->back()->with('error', "Erro na importação de dados de $tableName.");
+        return redirect()->back()->with('error', 'Erro na importação de dados de Peca.');
     }
 }
