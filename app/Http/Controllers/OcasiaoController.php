@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Combinacao;
 use Illuminate\Http\Request;
 use App\Models\Ocasiao;
 
@@ -99,7 +100,8 @@ class OcasiaoController extends Controller
     public function comemoracoes()
     {
         $ocasiao = Ocasiao::where('ocasiao', 'COMEMORAÇÕES')->first();
-        return view('ocasioes.comemoracoes', compact('ocasiao')); // Crie uma view chamada "executivos.blade.php" em resources/views/ocasioes
+        $combinacao = Combinacao::all();
+        return view('ocasioes.comemoracoes', compact('ocasiao', 'combinacao')); // Crie uma view chamada "executivos.blade.php" em resources/views/ocasioes
     }
 
     public function diaadia()
