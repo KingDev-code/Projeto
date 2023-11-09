@@ -54,7 +54,7 @@ class AdminController extends Controller
         // Crie o registro de login
         $login = new Login();
         $login->email = $request->input('email');
-        $login->password = Hash::make($request->input('senha'));
+        $login->senha = Hash::make($request->input('senha'));
         $login->type = 'admin';
         $login->save();
 
