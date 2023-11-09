@@ -361,22 +361,35 @@
         </tbody>
     </table>
 
-    <!-- Adapte o código CSS conforme necessário -->
-    <div class="secao-look">
-        <img class="look" src="public/img/look1.png" alt="Imagem 4">
-    
-        <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
-    
-        <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
-        <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
-    
-        <div class="card ocasiao-card">
-            <p>{{ $combinacoes->first()->ocasiao->ocasiao }}</p>
-        </div>
-        <div class="card estilo-card">
-            <p>{{ $combinacoes->first()->estilo->estilo }}</p>
-        </div>
+<!-- Seção-look -->
+<div class="secao-look">
+    <img class="look" src="public/img/look1.png" alt="Imagem 4">
+
+    <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
+
+    <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
+    <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
+
+    <div class="card ocasiao-card">
+        <p>
+            @if($combinacoes->first() && $combinacoes->first()->ocasiao)
+                {{ $combinacoes->first()->ocasiao->ocasiao }}
+            @else
+                Sem ocasião definida
+            @endif
+        </p>
     </div>
+    <div class="card estilo-card">
+        <p>
+            @if($combinacoes->first() && $combinacoes->first()->estilo)
+                {{ $combinacoes->first()->estilo->estilo }}
+            @else
+                Sem estilo definido
+            @endif
+        </p>
+    </div>
+</div>
+
 
     <div class="pecas">
         <div class="secao-pecas">
