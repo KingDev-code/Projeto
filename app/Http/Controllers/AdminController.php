@@ -65,7 +65,7 @@ class AdminController extends Controller
         $admin->nome_admin = $request->input('nome_admin');
         $admin->sobrenome_admin = $request->input('sobrenome_admin');
         $admin->cpf_admin = $request->input('cpf_admin');
-        $admin->telefone = $request->input('telefone');
+        $admin->telefone_admin = $request->input('telefone');
         $admin->dtanasc_admin = $request->input('dtanasc_admin');
         $admin->dtaadmissao_admin = $request->input('dtaadmissao_admin');
         $admin->save();
