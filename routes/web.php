@@ -160,8 +160,6 @@ Route::middleware(['auth:empresa'])->group(function () {
 
     
 
-    // Rotas para Ocasião
-    Route::get('/combinacoes', [CombinacaoController::class, 'index'])->name('combinacoes.index');
 
 
     Route::get('/executivos', [OcasiaoController::class, 'executivos'])->name('executivos');
