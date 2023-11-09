@@ -2,10 +2,10 @@
 
 @section('conteudo')
 
-  <link rel="stylesheet" href="css/comemoracoes.css">
-  <link rel="stylesheet" href="css/comemoracoes-resp.css">
-  <link rel="stylesheet" href="css/menu-resp.css">
-  <link rel="stylesheet" href="css/footer-resp.css">
+  <link rel="stylesheet" href="public/css/comemoracoes.css">
+  <link rel="stylesheet" href="public/css/comemoracoes-resp.css">
+  <link rel="stylesheet" href="public/css/menu-resp.css">
+  <link rel="stylesheet" href="public/css/footer-resp.css">
 
 <section id="menu">
     <!-- Pre Header -->
@@ -17,7 +17,7 @@
   <header class="header">
 
     <div class="menu-norte">
-    <a href="/" class="logo"><img id="logo" src="img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+    <a href="/" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
     <nav>
         <button type="button" class="button-icone">
             <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
@@ -65,9 +65,9 @@
 
       <div id="indicator">
         <ul>
-          <li><a href="index.html">Veste-me</a></li>
+          <li><a href="index">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="combinacoes.html">Comemorações</a></li>
+          <li><a href="combinacoes">Comemorações</a></li>
         </ul>
       </div>
 
@@ -256,8 +256,40 @@
 
         <div class="comb">
           <!-- Seção 2 - Look1 -->
+
+          <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Estilo</th>
+                <th>Tipo Corporal</th>
+                <th>Ocasião</th>
+                <th>Login</th>
+                <th>Gênero</th>
+                <th>Imagem</th>
+                <th>Link</th>
+                <th>Ocasião Específica</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($combinacoes as $combinacao)
+                <tr>
+                    <td>{{ $combinacao->id }}</td>
+                    <td>{{ $combinacao->estilo->nome }}</td>
+                    <td>{{ $combinacao->tipoCorporal->nome }}</td>
+                    <td>{{ $combinacao->ocasiao->ocasiao }}</td>
+                    <td>{{ $combinacao->login->email }}</td>
+                    <td>{{ $combinacao->genero->genero }}</td>
+                    <td><img src="data:image/jpeg;base64,{{ base64_encode($combinacao->img_comb) }}" alt="Imagem" width="100"></td>
+                    <td>{{ $combinacao->link_comb }}</td>
+                    <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
           <div class="secao-look">
-              <img class="look" src="img/look1.png" alt="Imagem 4">
+              <img class="look" src="public/img/look1.png" alt="Imagem 4">
         
               <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
             
@@ -279,21 +311,21 @@
 
               <div class="slidec">
                 <div class="card">
-                  <img id="peca1" src="img/peca1-recortada.png" alt="Imagem 1">
+                  <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
                 </div>
                   <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
               </div>
             
               <div class="slidec">
                 <div class="card">
-                  <img id="peca2" src="img/peca2-recortada.png" alt="Imagem 2">
+                  <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
                 </div>
                   <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
               </div>
         
             <div class="slidec">
               <div class="card">
-                <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 3">
+                <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
               </div>
                   <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
             </div>
@@ -302,21 +334,21 @@
           <div class="secao-pecas">
             <div class="slidec">
               <div class="card">
-                <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 1">
+                <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 1">
               </div>
                 <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
             </div>
           
             <div class="slidec">
               <div class="card">
-                <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 2">
+                <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 2">
               </div>
                 <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
             </div>
       
             <div class="slidec">
               <div class="card">
-                <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 3">
+                <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
               </div>
                 <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
             </div>
@@ -330,7 +362,7 @@
           <div class="comb_">
             <!-- Seção 2 - Look1 -->
             <div class="secao-look">
-                <img class="look" src="img/look1.png" alt="Imagem 4">
+                <img class="look" src="public/img/look1.png" alt="Imagem 4">
           
                 <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
               
@@ -351,21 +383,21 @@
               <div class="secao-pecas">
                 <div class="slidec">
                   <div class="card">
-                    <img id="peca1" src="img/peca1-recortada.png" alt="Imagem 1">
+                    <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
                   </div>
                     <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
                 </div>
               
                 <div class="slidec">
                   <div class="card">
-                    <img id="peca2" src="img/peca2-recortada.png" alt="Imagem 2">
+                    <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
                   </div>
                     <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
                 </div>
           
               <div class="slidec">
                 <div class="card">
-                  <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 3">
+                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
                 </div>
                     <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
               </div>
@@ -374,21 +406,21 @@
             <div class="secao-pecas">
               <div class="slidec">
                 <div class="card">
-                  <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 1">
+                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 1">
                 </div>
                   <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
               </div>
             
               <div class="slidec">
                 <div class="card">
-                  <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 2">
+                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 2">
                 </div>
                   <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
               </div>
         
               <div class="slidec">
                 <div class="card">
-                  <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 3">
+                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
                 </div>
                   <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
               </div>
@@ -400,7 +432,7 @@
             <div class="comb_">
               <!-- Seção 2 - Look1 -->
               <div class="secao-look">
-                  <img class="look" src="img/look1.png" alt="Imagem 4">
+                  <img class="look" src="public/img/look1.png" alt="Imagem 4">
             
                   <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
                 
@@ -421,21 +453,21 @@
                 <div class="secao-pecas">
                   <div class="slidec">
                     <div class="card">
-                      <img id="peca1" src="img/peca1-recortada.png" alt="Imagem 1">
+                      <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
                     </div>
                       <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
                   </div>
                 
                   <div class="slidec">
                     <div class="card">
-                      <img id="peca2" src="img/peca2-recortada.png" alt="Imagem 2">
+                      <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
                     </div>
                       <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
                   </div>
             
                 <div class="slidec">
                   <div class="card">
-                    <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 3">
+                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
                   </div>
                       <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
                 </div>
@@ -444,21 +476,21 @@
               <div class="secao-pecas">
                 <div class="slidec">
                   <div class="card">
-                    <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 1">
+                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 1">
                   </div>
                     <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
                 </div>
               
                 <div class="slidec">
                   <div class="card">
-                    <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 2">
+                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 2">
                   </div>
                     <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
                 </div>
           
                 <div class="slidec">
                   <div class="card">
-                    <img id="peca3" src="img/peca3-recortada.png" alt="Imagem 3">
+                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
                   </div>
                     <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
                 </div>
