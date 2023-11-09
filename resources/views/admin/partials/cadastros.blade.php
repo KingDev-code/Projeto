@@ -136,7 +136,7 @@
         <ul>
           <li><a href="admin">VESTE-ME</a></li>
           <div id="arrow"></div>
-          <li><a href="CadListar.html">CADASTROS</a></li>
+          <li><a href="cadastros">CADASTROS</a></li>
         </ul>
       </div>
       <div class="tela">
