@@ -19,8 +19,7 @@ class ImportController extends Controller
 
             foreach ($data as $row) {
                 DB::table('estado')->insert([
-                    'id' => $row[0],
-                    'estado' => $row[1],
+                    'estado' => $row[0],
                 ]);
             }
 
