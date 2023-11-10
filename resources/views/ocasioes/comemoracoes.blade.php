@@ -43,7 +43,7 @@
         <ul>
           <li><a href="index">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="combinacoes">Comemorações</a></li>
+          <li><a href="/combinacoes">Comemorações</a></li>
         </ul>
       </div>
 

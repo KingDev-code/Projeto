@@ -43,7 +43,7 @@
         <ul>
           <li><a href="index">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="combinacoes">Executivos</a></li>
+          <li><a href="executivos">Executivos</a></li>
         </ul>
       </div>
 

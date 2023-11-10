@@ -39,9 +39,9 @@
 
       <div id="indicator">
         <ul>
-          <li><a href="index">Veste-me</a></li>
+          <li><a href="/">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="combinacoes">Dia a dia</a></li>
+          <li><a href="diaadia">Dia a dia</a></li>
         </ul>
       </div>
 
@@ -225,7 +225,7 @@
 
           
         <div class="title-section">
-          <h2 class="section-title"><b>Ocasião Comemorações</b></h2>
+          <h2 class="section-title"><b>Ocasião Dia a Dia</b></h2>
         </div>
 
         <div class="comb">

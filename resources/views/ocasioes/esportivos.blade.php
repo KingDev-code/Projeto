@@ -43,7 +43,7 @@
         <ul>
           <li><a href="index">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="combinacoes">Esportivos</a></li>
+          <li><a href="esportivos">Esportivos</a></li>
         </ul>
       </div>
 
@@ -227,7 +227,7 @@
 
           
         <div class="title-section">
-          <h2 class="section-title"><b>Ocasião Comemorações</b></h2>
+          <h2 class="section-title"><b>Ocasião Esportivos</b></h2>
         </div>
 
         <div class="comb">
