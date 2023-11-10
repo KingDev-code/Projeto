@@ -41,7 +41,7 @@
       <nav>
           <button type="button" class="button-icone">
             <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
-            <a href="#default"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
+            <a href="login"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
           </button>
     </div>
 
