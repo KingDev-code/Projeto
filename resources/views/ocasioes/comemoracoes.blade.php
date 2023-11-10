@@ -290,10 +290,10 @@
           
           
                 <div class="card ocasiao-card">
-                    <p>{{ strtoupper$combinacao->ocasiao->ocasiao }}</p>
+                    <p style="text-transform: uppercase;">{{ $combinacao->ocasiao->ocasiao }}</p>
                 </div>
                 <div class="card estilo-card">
-                    <p>{{ strtoupper$combinacao->estilo->estilo }}</p>
+                    <p style="text-transform: uppercase;">{{ $combinacao->estilo->estilo }}</p>
                 </div>
           
               </div>
