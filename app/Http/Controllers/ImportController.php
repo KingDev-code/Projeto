@@ -124,16 +124,16 @@ class ImportController extends Controller
     public function substituirImagensPecas()
     {
         // Recupere as combinações existentes
-        $combinacoes = Peca::select('cod_combinacao')->distinct()->get();
+        $combinacoes = Peca::select('cod_comb')->distinct()->get();
 
         foreach ($combinacoes as $combinacao) {
             $numeroPecas = 5; // Ajuste conforme necessário
 
             for ($j = 1; $j <= $numeroPecas; $j++) {
-                $nomePeca = "comb{$combinacao->cod_combinacao}-peca{$j}.png";
+                $nomePeca = "comb{$combinacao->cod_comb}-peca{$j}.png";
 
                 // Substituir o campo img_peca
-                Peca::where('cod_combinacao', $combinacao->cod_combinacao)
+                Peca::where('cod_comb', $combinacao->cod_comb)
                     ->where('numero_peca', $j)
                     ->update(['img_peca' => $nomePeca]);
             }
