@@ -138,7 +138,9 @@
                           <td>{{ $combinacao->cod_tipocorporal }}</td>
                           <td>{{ $combinacao->cod_ocasiao }}</td>
                           <td>{{ $combinacao->cod_genero }}</td>
-                          <td>{{ $combinacao->img_comb }}</td>
+                          <td>
+                              <img src="{{ asset('imagens_combinacoes/' . $combinacao->img_comb) }}" alt="Imagem da Combinação">
+                          </td>
                           <td>{{ $combinacao->link_comb }}"</td>
                           <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
                           <td>{{ $combinacao->cod_login }}</td>
