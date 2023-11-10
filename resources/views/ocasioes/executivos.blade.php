@@ -322,17 +322,18 @@
 
         <div class="pecas">
             <div class="secao-pecas">
-                @foreach ($executivo->pecas as $index => $peca)
+                @foreach ($executivo->pecas as $peca)
                     <div class="slidec">
                         <div class="card">
-                            <img id="peca{{ $index + 1 }}" src="{{ asset('public/imagens_pecas/' . $peca->img_peca) }}" alt="Imagem {{ $index + 1 }}">
+                            <img id="peca{{ $loop->iteration }}" src="{{ asset('public/imagens_pecas/' . $peca->img_peca) }}" alt="Imagem {{ $loop->iteration }}">
                         </div>
-                        <p id="desc">Descrição {{ $index + 1 }}: {{ $peca->desc_peca }}</p>
+                        <p id="desc">Descrição {{ $loop->iteration }}: {{ $peca->desc_peca }}</p>
                     </div>
                 @endforeach
             </div>
         </div>
     </div>
 @endforeach
+
 
 @endsection
