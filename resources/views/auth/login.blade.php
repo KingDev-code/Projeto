@@ -63,6 +63,44 @@
                 </ul>
             </div>
         </form>
+
+          <!-- Seção 2 - Combinação e suas peças -->
+    <!-- Seção 2 - Look1 -->
+    <div class="content">
+
+<div id="indicator">
+    <ul>
+        <li><a href="index.html">Veste-me</a></li>
+        <div id="arrow"></div>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+  </div>
+
+<div class="logar">
+
+<div class="title-section">
+<img class="logo-comb" src="img/Logo Veste-me - Círculo - Preta.png" alt="Logo">
+<h2 class="section-title"><b>Login</b></h2>
+</div>
+
+<form class="form" action="/processar_formulario" method="post">
+<label for="email">E-mail: <input type="email" id="email" name="email" autocomplete="email" required></label><br>
+
+<label for="senha">Senha: <input type="password" id="senha" name="senha" autocomplete="new-password" required></label><br>
+
+<div class="button">
+<ul>
+    <li><a class="senha" href="#default">Esqueci minha senha</a></li>
+    <li><button type="submit">Entrar</button></li>
+    <li><a class="cad" href="categoria.html">Não sou cadastrado - Cadastrar-se</a></li>
+</ul>
+</div>
+
+
+</form>
+
+</div>
+</div>
                 <!-- Remember Me
                 <li>
                 <label for="remember_me" class="container-checkbox">
