@@ -110,11 +110,11 @@ class OcasiaoController extends Controller
     public function diaadia()
     {
         // Carregue as combinações apenas com o nome "comemoracoes"
-        $diaadia = Combinacao::whereHas('ocasiao', function ($query) {
+        $diaadias = Combinacao::whereHas('ocasiao', function ($query) {
             $query->where('ocasiao.ocasiao', 'Dia a dia');
         })->get();
 
-        return view('ocasioes.diaadia', compact('diaadia')); // Crie uma view chamada "esportivos.blade.php" em resources/views/ocasioes
+        return view('ocasioes.diaadia', compact('diaadias')); // Crie uma view chamada "esportivos.blade.php" em resources/views/ocasioes
     }
 
     public function modapraia()

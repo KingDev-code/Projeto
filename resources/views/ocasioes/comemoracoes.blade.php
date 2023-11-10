@@ -277,11 +277,11 @@
           </div>
           </div>
 
-          @foreach ($combinacoes as $combinacao)
+          @foreach ($diaadias as $diaadia)
           <div class="comb_">
             <!-- Seção 2 - Look1 -->
             <div class="secao-look">
-                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $combinacao->img_comb) }}" alt="Imagem da Combinação">
+                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $diaadia->img_comb) }}" alt="Imagem da Combinação">
 
                 <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
               
@@ -290,10 +290,10 @@
           
           
                 <div class="card ocasiao-card">
-                    <p style="text-transform: uppercase;">{{ $combinacao->ocasiao->ocasiao }}</p>
+                    <p style="text-transform: uppercase;">{{ $diaadia->ocasiao->ocasiao }}</p>
                 </div>
                 <div class="card estilo-card">
-                    <p style="text-transform: uppercase;">{{ $combinacao->estilo->estilo }}</p>
+                    <p style="text-transform: uppercase;">{{ $diaadia->estilo->estilo }}</p>
                 </div>
           
               </div>
