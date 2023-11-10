@@ -99,8 +99,11 @@ class OcasiaoController extends Controller
 
     public function comemoracoes()
     {
-        // Carregue as combinações com as relações necessárias
-        $combinacoes = Combinacao::all();
+        // Carregue as combinações apenas com o nome "comemoracoes"
+        $combinacoes = Combinacao::whereHas('ocasiao', function ($query) {
+            $query->where('nome', 'comemoracoes');
+        })->get();
+
         return view('ocasioes.comemoracoes', compact('combinacoes'));
     }
 
