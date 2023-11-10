@@ -27,6 +27,11 @@ class Combinacao extends Model
         return $this->belongsTo(Ocasiao::class, 'cod_ocasiao', 'cod_ocasiao');
     }
 
+    public function genero()
+    {
+        return $this->belongsTo(Genero::class, 'cod_genero', 'cod_genero');
+    }
+
     public function tipocorporal()
     {
         return $this->belongsTo(TipoCorporal::class, 'cod_tipocorporal', 'cod_tipocorporal');
