@@ -6,6 +6,31 @@
   <link rel="stylesheet" href="public/css/comemoracoes-resp.css">
   <link rel="stylesheet" href="public/css/menu-resp.css">
   <link rel="stylesheet" href="public/css/footer-resp.css">
+
+  <div class="menu-itens">
+        <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="executivos">Executivas</a></li>
+        <li><a href="esportivos">Esportivas</a></li>
+        <li><a href="comemoracoes" class="active">Comemorações</a></li>
+        <li><a href="diaadia">Dia a dia</a></li>
+        <li><a href="modapraia">Moda praia</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+       <div class="pesquisar">
+        <form action="/action_page.php">
+          <input class="search-input"  type="text" placeholder="Procurar" name="search"></input>
+          <button class="search-button" type="submit">
+            <span class="material-icons-outlined">search</span>
+          </button>
+        </form>
+      </div>
+  </div>
+      
+    </header>
+  </section>
   
   <!-- Seção 2 - Combinação e suas peças -->
     <!-- Seção 2 - Look1 -->
