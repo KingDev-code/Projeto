@@ -127,4 +127,9 @@ class ImportController extends Controller
 
     return "Imagens adicionadas com sucesso!";
     }
+
+    public function exibirFormularioAdicionarImagens()
+    {
+        return view('adicionar-imagens');
+    }
 }
