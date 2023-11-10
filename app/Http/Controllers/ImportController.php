@@ -134,7 +134,6 @@ class ImportController extends Controller
 
                 // Substituir o campo img_peca
                 Peca::where('cod_comb', $combinacao->cod_comb)
-                    ->where('numero_peca', $j)
                     ->update(['img_peca' => $nomePeca]);
             }
         }
