@@ -133,6 +133,9 @@ class ImportController extends Controller
             $ultimoNumeroPeca = Peca::where('cod_comb', $combinacao->cod_comb)
                 ->max('img_peca');
 
+            // Se não houver registros, $ultimoNumeroPeca será nulo, então, defina para 0
+            $ultimoNumeroPeca = $ultimoNumeroPeca ?? 0;
+
             for ($j = $ultimoNumeroPeca + 1; $j <= $ultimoNumeroPeca + $numeroPecas; $j++) {
                 $nomePeca = "comb{$combinacao->cod_comb}-peca{$j}.png";
 
