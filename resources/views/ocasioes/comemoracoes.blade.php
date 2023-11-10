@@ -283,7 +283,7 @@
             <div class="secao-look">
                 <img class="look" src="{{ asset('public/imagens_combinacoes/' . $combinacao->img_comb) }}" alt="Imagem da Combinação">
 
-                <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
+                <div class="icon-overlay"><img width="30" height="30" src="{{ $combinacao->img_comb }}" alt="empty-hourglass"/> </div>
               
                     <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
                     <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
