@@ -290,10 +290,10 @@
           
           
                 <div class="card ocasiao-card">
-                    <p>{{ $combinacao->ocasiao->ocasiao }}</p>
+                    <p>{{ strtoupper$combinacao->ocasiao->ocasiao }}</p>
                 </div>
                 <div class="card estilo-card">
-                    <p>{{ $combinacao->estilo->estilo }}</p>
+                    <p>{{ strtoupper$combinacao->estilo->estilo }}</p>
                 </div>
           
               </div>
