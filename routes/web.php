@@ -153,18 +153,18 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('/empresa/register', 'App\Http\Controllers\EmpresaController@registerForm')->name('empresa.registerForm');
-Route::post('/empresa/register', 'App\Http\Controllers\EmpresaController@register')->name('empresa.register');
+Route::get('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@registerForm')->name('empresa.registerForm');
+Route::post('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@register')->name('empresa.register');
 
 //Route::middleware(['auth:empresa'])->group(function () {
     // Rotas protegidas por middleware 'auth:empresa' (para empresa)
 
     // Rotas para Empresa
-    Route::get('/empresa/edit', 'App\Http\Controllers\EmpresaController@edit')->name('empresa.edit');
-    Route::patch('/empresa/update', 'App\Http\Controllers\EmpresaController@update')->name('empresa.update');
-    Route::get('/empresa/dashboard', 'App\Http\Controllers\EmpresaController@dashboard')->name('empresa.dashboard');
-    Route::get('/empresa/envios', 'App\Http\Controllers\EmpresaController@envios')->name('empresa.envios');
-    Route::post('/empresa/upload-image', 'App\Http\Controllers\ImageController@uploadEmpresa')->name('upload.image.empresa');
+    Route::get('/empresa/edit', 'App\Http\Controllers\Auth\EmpresaController@edit')->name('empresa.edit');
+    Route::patch('/empresa/update', 'App\Http\Controllers\Auth\EmpresaController@update')->name('empresa.update');
+    Route::get('/empresa/dashboard', 'App\Http\Controllers\Auth\EmpresaController@dashboard')->name('empresa.dashboard');
+    Route::get('/empresa/envios', 'App\Http\Controllers\Auth\EmpresaController@envios')->name('empresa.envios');
+    Route::post('/empresa/upload-image', 'App\Http\Controllers\Auth\ImageController@uploadEmpresa')->name('upload.image.empresa');
 
 
     // Rota para registro de empresa (se aplicável)
