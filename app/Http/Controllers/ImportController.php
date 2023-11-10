@@ -123,31 +123,33 @@ class ImportController extends Controller
 
     public function substituirImagensPecas()
     {
-    // Recupere as combinações existentes ordenadas pelo cod_comb
-    $combinacoes = Peca::select('cod_comb')->distinct()->orderBy('cod_comb')->get();
+// Recupere as combinações existentes ordenadas pelo cod_comb
+$combinacoes = Peca::select('cod_comb')->distinct()->orderBy('cod_comb')->get();
 
-    foreach ($combinacoes as $combinacao) {
-        $numeroPeca = 1; // Reinicia o número de peça para 1
+foreach ($combinacoes as $combinacao) {
+    $numeroPeca = 1; // Reinicia o número de peça para 1
 
-        $numeroPecas = 5; // Ajuste conforme necessário
+    $numeroPecas = 5; // Ajuste conforme necessário
 
-        for ($j = 1; $j <= $numeroPecas; $j++) {
-            $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
+    for ($j = 1; $j <= $numeroPecas; $j++) {
+        $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
 
-            // Inserir um novo registro
-            Peca::create([
-                'cod_comb' => $combinacao->cod_comb,
-                'img_peca' => $nomePeca,
-            ]);
+        // Substituir o campo img_peca
+        Peca::where([
+            'cod_comb' => $combinacao->cod_comb,
+            'img_peca' => "comb{$combinacao->cod_comb}-peca{$j}.png",
+        ])->update([
+            'img_peca' => $nomePeca,
+        ]);
 
-            $numeroPeca++;
+        $numeroPeca++;
 
-            // Se o número de peça atingir 6, reinicie para 1
-            if ($numeroPeca > $numeroPecas) {
-                $numeroPeca = 1;
-            }
+        // Se o número de peça atingir 6, reinicie para 1
+        if ($numeroPeca > $numeroPecas) {
+            $numeroPeca = 1;
         }
     }
+}
 
         return "Nomes de imagens de peças substituídos com sucesso!";
     }
