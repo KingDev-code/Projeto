@@ -1,9 +1,9 @@
 <section>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/footer-resp.css">
-    <link rel="stylesheet" href="css/menu-resp.css">
-    <link rel="stylesheet" href="css/dadospessoais.css">
-    <link rel="stylesheet" href="css/dadospessoais-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/dadospessoais.css">
+    <link rel="stylesheet" href="public/css/dadospessoais-resp.css">
 
 
         <form method="POST" action="{{ route('profile.destroy') }}">

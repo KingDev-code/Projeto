@@ -2,10 +2,10 @@
 
 @section('conteudo')
     <!-- CSS -->
-    <link rel="stylesheet" href="css/footer-resp.css">
-    <link rel="stylesheet" href="css/menu-resp.css">
-    <link rel="stylesheet" href="css/dadospessoais.css">
-    <link rel="stylesheet" href="css/dadospessoais-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/dadospessoais.css">
+    <link rel="stylesheet" href="public/css/dadospessoais-resp.css">
 
     <div class="content">
         <!-- Filtro -->
@@ -25,9 +25,9 @@
         <div class="circle">
             <label for="file-input" style="cursor: pointer;">
                 <!-- Exibir a imagem existente ou um ícone padrão -->
-                <img class="circle" id="image-preview" src="{{ asset('images/' . $userData->img_cliente) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
+                <img class="circle" id="image-preview" src="{{ asset('public/images/' . $userData->img_cliente) }}" alt="Imagem do Usuário" style="display: none; max-width: 150px; max-height: 150px;">
                 @if ($userData->img_cliente)
-                    <img class="circle" id="image" src="{{ asset('images/' . $userData->img_cliente) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
+                    <img class="circle" id="image" src="{{ asset('public/images/' . $userData->img_cliente) }}" alt="Imagem do Usuário" style="display: block; max-width: 150px; max-height: 150px;">
                 @else
                     <span class="material-icons-sharp" style="display: block;" id="add-icon">add_photo_alternate</span>
                 @endif
