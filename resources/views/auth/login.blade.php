@@ -98,9 +98,6 @@
 
 
 </form>
-
-</div>
-</div>
                 <!-- Remember Me
                 <li>
                 <label for="remember_me" class="container-checkbox">
