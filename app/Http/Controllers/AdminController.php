@@ -30,7 +30,7 @@ class AdminController extends Controller
 
     public function adminLogin(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('email', 'senha');
 
         if (Auth::guard('login')->attempt($credentials)) {
             // Autenticação bem-sucedida
