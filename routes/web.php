@@ -83,7 +83,7 @@ Route::get('/admin-login', 'App\Http\Controllers\AdminController@loginForm')->na
 Route::post('/admin-login', 'App\Http\Controllers\AdminController@adminLogin')->name('admin.loginpost');
 Route::post('/logout', 'App\Http\Controllers\AdminController@logout')->name('admin.logout');
 
-Route::middleware(['admin'])->group(function () {
+//Route::middleware(['admin'])->group(function () {
     // Rotas de admin
     Route::get('/admin', 'App\Http\Controllers\AdminController@home')->name('admin');
     
@@ -128,7 +128,7 @@ Route::middleware(['admin'])->group(function () {
 
     
     // ... outras rotas protegidas por autenticação
-});
+//});
 
 // Rota de login
 Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
@@ -137,7 +137,7 @@ Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name
 
 
 // Grupo de rotas protegidas pelo middleware de autenticação ('auth').
-Route::middleware(['auth'])->group(function () {
+//Route::middleware(['auth'])->group(function () {
     // Rotas protegidas por middleware 'auth'
 
     // Rotas para Profile
@@ -149,13 +149,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/favoritos', 'App\Http\Controllers\FavoritoController@index')->name('favoritos');
     Route::post('/favoritos/store', 'App\Http\Controllers\FavoritoController@store')->name('favoritos.store');
     Route::delete('/favoritos/{id}', 'App\Http\Controllers\FavoritoController@destroy')->name('favoritos.destroy');
-});
+//});
 
 
 Route::get('/empresa/register', 'App\Http\Controllers\EmpresaController@registerForm')->name('empresa.registerForm');
 Route::post('/empresa/register', 'App\Http\Controllers\EmpresaController@register')->name('empresa.register');
 
-Route::middleware(['auth:empresa'])->group(function () {
+//Route::middleware(['auth:empresa'])->group(function () {
     // Rotas protegidas por middleware 'auth:empresa' (para empresa)
 
     // Rotas para Empresa
@@ -168,7 +168,7 @@ Route::middleware(['auth:empresa'])->group(function () {
     // Rota para registro de empresa (se aplicável)
 
     // Outras rotas da empresa, se necessário
-});
+//});
 
 
     
