@@ -139,7 +139,7 @@
                           <td>{{ $combinacao->cod_ocasiao }}</td>
                           <td>{{ $combinacao->cod_genero }}</td>
                           <td>
-                              <img src="public/imagens_combinacoes/' . $combinacao->img_comb" alt="Imagem da Combinação">
+                              <img src="{{ asset('public/imagens_combinacoes/' . $combinacao->img_comb) }}" alt="Imagem da Combinação">
                           </td>
                           <td>{{ $combinacao->link_comb }}"</td>
                           <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
