@@ -301,7 +301,7 @@
             </div>
           </div>
           </div>
-
+          
           @foreach ($executivos as $executivo)
     <div class="comb_">
         <!-- Seção 2 - Look1 -->
