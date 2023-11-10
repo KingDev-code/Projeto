@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Auth\Authenticatable as AuthenticableTrait;
-use Illuminate\Contracts\Auth\Authenticatable;
 
 class Login extends Model implements Authenticatable
 {
-    use AuthenticableTrait, HasFactory;
+    use AuthenticableTrait, HasFactory, Authenticatable, Notifiable;
 
     protected $table = 'login'; // Usar o nome correto da tabela 'login'
     protected $fillable = [
