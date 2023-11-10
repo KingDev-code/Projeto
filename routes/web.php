@@ -83,7 +83,7 @@ Route::get('/admin-login', 'App\Http\Controllers\AdminController@loginForm')->na
 Route::post('/admin-login', 'App\Http\Controllers\AdminController@adminLogin')->name('admin.loginpost');
 Route::post('/logout', 'App\Http\Controllers\AdminController@logout')->name('admin.logout');
 
-Route::middleware(['admin'])->group(function () {
+//Route::middleware(['admin'])->group(function () {
     // Rotas de admin
     Route::get('/admin', 'App\Http\Controllers\AdminController@home')->name('admin');
     
@@ -128,7 +128,7 @@ Route::middleware(['admin'])->group(function () {
 
     
     // ... outras rotas protegidas por autenticação
-});
+//});
 
 // Rota de login
 Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
