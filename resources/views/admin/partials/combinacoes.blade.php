@@ -130,22 +130,22 @@
                   </tr>
               </thead>
               <tbody>
-                  @foreach ($combinacoes as $combinacao)
-                      <tr>
-                          <td><input type="checkbox" name="selected_combinacoes[]" value="{{ $combinacao->cod_combinacao }}"></td>
-                          <td>{{ $combinacao->cod_combinacao }}</td>
-                          <td>{{ $combinacao->cod_estilo }}</td>
-                          <td>{{ $combinacao->cod_tipocorporal }}</td>
-                          <td>{{ $combinacao->cod_ocasiao }}</td>
-                          <td>{{ $combinacao->cod_genero }}</td>
-                          <td>
-                              <img src="{{ asset('public/imagens_combinacoes/' . $combinacao->img_comb) }}" alt="Imagem da Combinação">
-                          </td>
-                          <td>{{ $combinacao->link_comb }}"</td>
-                          <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
-                          <td>{{ $combinacao->cod_login }}</td>
-                      </tr>
-                  @endforeach
+              @foreach ($combinacoes as $combinacao)
+                  <tr>
+                      <td><input type="checkbox" name="selected_combinacoes[]" value="{{ $combinacao->cod_combinacao }}"></td>
+                      <td>{{ $combinacao->cod_combinacao }}</td>
+                      <td>{{ $combinacao->estilo->estilo }}</td>
+                      <td>{{ $combinacao->tipocorporal->tipocorporal }}</td>
+                      <td>{{ $combinacao->ocasiao->ocasiao }}</td>
+                      <td>{{ $combinacao->genero->genero }}</td>
+                      <td>
+                          <img src="{{ asset('public/imagens_combinacoes/' . $combinacao->img_comb) }}" alt="Imagem da Combinação">
+                      </td>
+                      <td>{{ $combinacao->link_comb }}"</td>
+                      <td>{{ $combinacao->ocasiaoespecif_comb }}</td>
+                      <td>{{ $combinacao->cod_login }}</td>
+                  </tr>
+              @endforeach
               </tbody>
           </table>
       </form>
