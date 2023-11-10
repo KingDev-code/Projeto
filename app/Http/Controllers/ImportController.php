@@ -131,7 +131,7 @@ class ImportController extends Controller
 
         $numeroPecas = 5; // Ajuste conforme necessário
 
-        for ($j = 1; $j <= $numeroPecas; $j++) {
+        for ($j = 1; $j <= $numeroPeca; $j++) {
             $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
 
             // Substituir o campo img_peca
@@ -142,7 +142,7 @@ class ImportController extends Controller
             $numeroPeca++;
 
             // Se o número de peça atingir 6, reinicie para 1
-            if ($numeroPeca > $numeroPecas) {
+            if ($numeroPeca > 5) {
                 $numeroPeca = 1;
             }
         }
