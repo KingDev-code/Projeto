@@ -23,10 +23,56 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
 
-
 </head>
 <body>
 <div class="estrutura">
+
+<section id="menu">
+  <!-- Pre Header -->
+  <div class="pre-header" id="pre-header">
+          <span>Encontre seu look ideal!</span>
+  </div>
+
+    <!-- Menu Superior -->
+    <header class="header">
+
+      <div class="menu-norte">
+      <a href="index#pre-header" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+      <nav>
+          <button type="button" class="button-icone">
+            <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
+            <a href="#default"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
+          </button>
+    </div>
+
+    <div class="linha-menu"></div>
+
+    <div class="menu-sul">
+
+      <div class="menu-itens">
+        <ul>
+        <li><a href="index">Início</a></li>
+        <li><a href="executivos">Executivas</a></li>
+        <li><a href="esportivos">Esportivas</a></li>
+        <li><a href="comemoracoes" class="active">Comemorações</a></li>
+        <li><a href="diaadia">Dia a dia</a></li>
+        <li><a href="modapraia">Moda praia</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+       <div class="pesquisar">
+        <form action="/action_page.php">
+          <input class="search-input"  type="text" placeholder="Procurar" name="search"></input>
+          <button class="search-button" type="submit">
+            <span class="material-icons-outlined">search</span>
+          </button>
+        </form>
+      </div>
+  </div>
+      
+    </header>
+  </section>
 
 
     @yield('conteudo')
@@ -61,17 +107,18 @@
   <div class="linha-footer"></div>
 </footer>
 
-    <div class="pos-footer">
-        <div class="row1">
-            <p class="titulo-footer">Veste-me | São Paulo - SP</p>
-        </div>
-        <div class="row2">
-            <p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
-        </div>
-    </div>
+<div class="pos-footer">
+<div class="row1">
+<p class="titulo-footer">Veste-me | São Paulo - SP</p>
 </div>
-      <!-- Java Script -->
-      <script src="public/js/menu.js"></script>
+<div class="row2">
+<p class="titulo-footer">Davi Rodrigues Costa Souza | Gabriela Souza Correia | Isabela Souza Correia</p>
+</div>
+</div>
 
+</div>
+
+        <!-- Java Script -->
+        <script src="public/js/menu.js"></script>
 </body>
 </html>
