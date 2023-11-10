@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
         // Crie um novo registro na tabela 'logins'
         $login = new Login();
         $login->email = $request->email;
-        $login->password = Hash::make($request->password);
+        $login->senha = Hash::make($request->password);
         $login->type = 'cliente'; // Defina o tipo como 'cliente'
         $login->save(); // Salve o login no banco de dados
 
