@@ -130,17 +130,11 @@ class ImportController extends Controller
         $numeroPecas = 5; // Ajuste conforme necessário
 
         for ($j = 1; $j <= $numeroPecas; $j++) {
-            // Obtenha o último número de peça para o cod_comb atual
-            $ultimoNumeroPeca = Peca::where('cod_comb', $combinacao->cod_comb)
-                ->max('numero_peca');
-
-            $novoNumeroPeca = $ultimoNumeroPeca + 1;
-
-            $nomePeca = "comb{$combinacao->cod_comb}-peca{$novoNumeroPeca}.png";
+            $nomePeca = "comb{$combinacao->cod_comb}-peca{$j}.png";
 
             // Substituir o campo img_peca
             Peca::updateOrCreate(
-                ['cod_comb' => $combinacao->cod_comb, 'numero_peca' => $novoNumeroPeca],
+                ['cod_comb' => $combinacao->cod_comb, 'img_peca' => $nomePeca],
                 ['img_peca' => $nomePeca]
             );
         }
