@@ -127,7 +127,11 @@ class OcasiaoController extends Controller
 
     public function modapraia()
     {
-        $ocasiao = Ocasiao::where('ocasiao', 'MODA PRAIA')->first();
-        return view('ocasioes.modapraia', compact('ocasiao')); // Crie uma view chamada "executivos.blade.php" em resources/views/ocasioes
+         // Carregue as combinações apenas com o nome "comemoracoes"
+         $modapraias = Combinacao::whereHas('ocasiao', function ($query) {
+            $query->where('ocasiao.ocasiao', 'Moda Praia');
+        })->get();
+
+        return view('ocasioes.modapraia', compact('modapraias')); // Crie uma view chamada "executivos.blade.php" em resources/views/ocasioes
     }
 }
