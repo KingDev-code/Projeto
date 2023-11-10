@@ -104,20 +104,15 @@ class ImportController extends Controller
 
     public function adicionarImagens()
     {
-    // Supondo que as imagens estejam em public/imagens_combinacoes/
-    $caminhoImagens = public_path('imagens_combinacoes');
-
-    for ($i = 1; $i <= 395; $i++) {
-        $caminhoImagem = "{$caminhoImagens}/comb-{$i}.png";
-
-        if (file_exists($caminhoImagem)) {
+        for ($i = 1; $i <= 395; $i++) {
+            $nomeImagem = "comb-{$i}.png";
+    
             // Substituir a coluna img_comb
-            Combinacao::where('cod_combinacao', '>', 0) // Condição para todos os registros
-                ->update(['img_comb' => "public/{$caminhoImagem}"]);
+            Combinacao::where('id', '>', 0)
+                ->update(['img_comb' => $nomeImagem]);
         }
-    }
-
-    return "Imagens substituídas com sucesso!";
+    
+        return "Nomes de imagens substituídos com sucesso!";
     }
 
     public function exibirFormularioAdicionarImagens()
