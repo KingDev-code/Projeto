@@ -37,7 +37,7 @@ class AdminController extends Controller
 
         $credentials = $request->only('email', 'senha');
 
-        if (Auth::guard('login')->attempt($credentials)) {
+        if (Auth::guard('logins')->attempt($credentials)) {
             // Autenticação bem-sucedida, redirecione para o painel de administração
             return redirect('/admin');
         }

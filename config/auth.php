@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'senha' => 'users',
     ],
 
     /*
@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'passwords' => [
+    'senha' => [
         'users' => [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
