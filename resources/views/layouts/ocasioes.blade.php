@@ -37,7 +37,7 @@
     <header class="header">
 
       <div class="menu-norte">
-      <a href="index" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
+      <a href="/" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
       <nav>
           <button type="button" class="button-icone">
             <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
