@@ -6,6 +6,8 @@ use App\Models\Ocasiao;
 use App\Models\Combinacao;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 
 class ImportController extends Controller
 {
@@ -102,19 +104,27 @@ class ImportController extends Controller
 
     public function adicionarImagens()
     {
-        // Supondo que as imagens estejam em public/imagens_combinacoes/
-        $caminhoImagens = 'imagens_combinacoes'; // Caminho relativo a public
-    
-        for ($i = 1; $i <= 395; $i++) {
-            $caminhoImagem = "{$caminhoImagens}/comb-{$i}.png";
-    
-            if (file_exists(public_path($caminhoImagem))) {
-                // Atualizar a coluna img_comb
-                Combinacao::where('img_comb', "public/{$caminhoImagem}")
-                    ->update(['img_comb' => "public/{$caminhoImagem}"]);
+    // Supondo que as imagens estejam em public/imagens_combinacoes/
+    $caminhoImagens = public_path('imagens_combinacoes');
+
+    for ($i = 1; $i <= 395; $i++) {
+        $caminhoImagem = "{$caminhoImagens}/comb-{$i}.png";
+
+        if (file_exists($caminhoImagem)) {
+            // Atualizar a coluna img_comb
+            $atualizacao = Combinacao::where('img_comb', "public/{$caminhoImagem}")
+                ->update(['img_comb' => "public/{$caminhoImagem}"]);
+
+            if ($atualizacao) {
+                Log::info("Imagem encontrada e atualizada: public/{$caminhoImagem}");
+            } else {
+                Log::error("Falha ao atualizar imagem: public/{$caminhoImagem}");
             }
+        } else {
+            Log::warning("Imagem não encontrada: public/{$caminhoImagem}");
         }
-    
-        return "Imagens adicionadas com sucesso!";
+    }
+
+    return "Imagens adicionadas com sucesso!";
     }
 }
