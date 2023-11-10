@@ -90,6 +90,7 @@
                         Ainda não sou cadastrado - Cadastrar-me
                     </a>
                 @endif-->
+</div>
   </div>
 </div>
 @endsection
