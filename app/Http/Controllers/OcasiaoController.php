@@ -101,9 +101,9 @@ class OcasiaoController extends Controller
     {
         // Carregue as combinações apenas com o nome "comemoracoes"
         $combinacoes = Combinacao::whereHas('ocasiao', function ($query) {
-            $query->where('nome', 'comemoracoes');
+            $query->where('ocasiao.ocasiao', 'Comemorações');
         })->get();
-
+    
         return view('ocasioes.comemoracoes', compact('combinacoes'));
     }
 
