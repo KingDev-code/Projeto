@@ -304,7 +304,7 @@
           <div class="comb_">
             <!-- Seção 2 - Look1 -->
             <div class="secao-look">
-                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $modapraias->img_comb) }}" alt="Imagem da Combinação">
+                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $modapraia->img_comb) }}" alt="Imagem da Combinação">
 
                 <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
               
@@ -313,10 +313,10 @@
           
           
                 <div class="card ocasiao-card">
-                    <p style="text-transform: uppercase;">{{ $modapraias->ocasiao->ocasiao }}</p>
+                    <p style="text-transform: uppercase;">{{ $modapraia->ocasiao->ocasiao }}</p>
                 </div>
                 <div class="card estilo-card">
-                    <p style="text-transform: uppercase;">{{ $modapraias->estilo->estilo }}</p>
+                    <p style="text-transform: uppercase;">{{ $modapraia->estilo->estilo }}</p>
                 </div>
           
               </div>
