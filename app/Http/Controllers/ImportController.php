@@ -111,21 +111,13 @@ class ImportController extends Controller
         $caminhoImagem = "{$caminhoImagens}/comb-{$i}.png";
 
         if (file_exists($caminhoImagem)) {
-            // Atualizar a coluna img_comb
-            $atualizacao = Combinacao::where('img_comb', "public/{$caminhoImagem}")
+            // Substituir a coluna img_comb
+            Combinacao::where('id', '>', 0) // Condição para todos os registros
                 ->update(['img_comb' => "public/{$caminhoImagem}"]);
-
-            if ($atualizacao) {
-                Log::info("Imagem encontrada e atualizada: public/{$caminhoImagem}");
-            } else {
-                Log::error("Falha ao atualizar imagem: public/{$caminhoImagem}");
-            }
-        } else {
-            Log::warning("Imagem não encontrada: public/{$caminhoImagem}");
         }
     }
 
-    return "Imagens adicionadas com sucesso!";
+    return "Imagens substituídas com sucesso!";
     }
 
     public function exibirFormularioAdicionarImagens()
