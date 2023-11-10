@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'sobrenome' => ['required', 'string', 'max:255'],
             'datanasc' => ['required', 'date'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:logins'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:login'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
