@@ -93,8 +93,12 @@ class OcasiaoController extends Controller
 
     public function esportivos()
     {
-        $ocasiao = Ocasiao::where('ocasiao', 'ESPORTIVOS')->first();
-        return view('ocasioes.esportivos', compact('ocasiao'));
+        // Carregue as combinações apenas com o nome "comemoracoes"
+        $esportivos = Combinacao::whereHas('ocasiao', function ($query) {
+            $query->where('ocasiao.ocasiao', 'Esportivas');
+        })->get();
+
+        return view('ocasioes.esportivos', compact('esportivos'));
     }
 
     public function comemoracoes()
