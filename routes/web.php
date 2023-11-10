@@ -153,8 +153,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@registerForm')->name('empresa.register');
-Route::post('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@register')->name('register.empresa');
+Route::get('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@create')->name('empresa.register');
+Route::post('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@store')->name('register.empresa');
 
 //Route::middleware(['auth:empresa'])->group(function () {
     // Rotas protegidas por middleware 'auth:empresa' (para empresa)

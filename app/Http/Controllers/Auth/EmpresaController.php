@@ -46,10 +46,10 @@ class EmpresaController extends Controller
         $validator = Validator::make($request->all(), [
             'nome' => 'required|string|max:255',
             'resp' => 'required|string|max:255',
-            'cnpj' => 'required|string|max:18|unique:empresas',
+            'cnpj' => 'required|string|max:18|unique:empresa',
             'telefone' => 'required|string|max:20',
             'data_fundacao' => 'required|date',
-            'email' => 'required|string|email|max:255|unique:logins',
+            'email' => 'required|string|email|max:255|unique:login',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
@@ -63,7 +63,7 @@ class EmpresaController extends Controller
         // Crie o registro de Login
         $login = new Login();
         $login->email = $request->input('email');
-        $login->password = Hash::make($request->input('password'));
+        $login->senha = Hash::make($request->input('password'));
         $login->type = 'empresa';
         $login->save();
 
