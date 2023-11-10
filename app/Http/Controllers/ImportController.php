@@ -131,7 +131,7 @@ class ImportController extends Controller
 
         $numeroPecas = 5; // Ajuste conforme necessário
 
-        for ($j = 1; $j <= $numeroPecas; $j++) {
+        for ($j = 1; $j <= $numeroPeca; $j++) {
             $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
 
             // Substituir o campo img_peca
