@@ -100,8 +100,7 @@ class OcasiaoController extends Controller
     public function comemoracoes()
     {
         // Carregue as combinações com as relações necessárias
-        $combinacoes = Combinacao::with('estilo', 'tipoCorporal', 'ocasiao', 'login', 'genero')->get();
-    
+        $combinacoes = Combinacao::all();
         return view('ocasioes.comemoracoes', compact('combinacoes'));
     }
 
