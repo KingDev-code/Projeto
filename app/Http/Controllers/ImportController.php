@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Peca;
 use App\Models\Ocasiao;
 use App\Models\Combinacao;
 use Illuminate\Http\Request;
@@ -118,5 +119,31 @@ class ImportController extends Controller
     public function exibirFormularioAdicionarImagens()
     {
         return view('adicionar-imagens');
+    }
+
+    public function substituirImagensPecas()
+    {
+        // Recupere as combinações existentes
+        $combinacoes = Peca::select('cod_combinacao')->distinct()->get();
+
+        foreach ($combinacoes as $combinacao) {
+            $numeroPecas = 5; // Ajuste conforme necessário
+
+            for ($j = 1; $j <= $numeroPecas; $j++) {
+                $nomePeca = "comb{$combinacao->cod_combinacao}-peca{$j}.png";
+
+                // Substituir o campo img_peca
+                Peca::where('cod_combinacao', $combinacao->cod_combinacao)
+                    ->where('numero_peca', $j)
+                    ->update(['img_peca' => $nomePeca]);
+            }
+        }
+
+        return "Nomes de imagens de peças substituídos com sucesso!";
+    }
+
+    public function exibirFormularioSubstituirImagensPecas()
+    {
+        return view('imagens-pecas');
     }
 }

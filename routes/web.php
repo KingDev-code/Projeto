@@ -34,6 +34,9 @@ Route::post('/import-peca', 'App\Http\Controllers\ImportController@importPeca')-
 Route::get('/salvar-combinacoes', 'App\Http\Controllers\ImportController@exibirFormularioAdicionarImagens');
 Route::post('/salvar-combinacoes', 'App\Http\Controllers\ImportController@adicionarImagens');
 
+Route::get('/substituir-imagens-pecas', 'App\Http\Controllers\ImportController@exibirFormularioSubstituirImagensPecas');
+Route::post('/substituir-imagens-pecas', 'App\Http\Controllers\ImportController@substituirImagensPecas');
+
 
 Route::get('/banco', function () {
     return view('admin.banco');

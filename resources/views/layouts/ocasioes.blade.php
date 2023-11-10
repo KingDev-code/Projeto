@@ -59,7 +59,7 @@
 
   <div class="container-footer">
     <div>
-      <a href="index#sobrenos"><h2>Conheça nossa história</a></h2>
+      <a href="/"><h2>Conheça nossa história</a></h2>
     </div>
 
     <div>
