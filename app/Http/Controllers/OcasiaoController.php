@@ -109,7 +109,11 @@ class OcasiaoController extends Controller
 
     public function diaadia()
     {
-        $ocasiao = Ocasiao::where('ocasiao', 'DIA A DIA')->first();
+        // Carregue as combinações apenas com o nome "comemoracoes"
+        $combinacoes = Combinacao::whereHas('ocasiao', function ($query) {
+            $query->where('ocasiao.ocasiao', 'Dia a dia');
+        })->get();
+
         return view('ocasioes.diaadia', compact('ocasiao')); // Crie uma view chamada "esportivos.blade.php" em resources/views/ocasioes
     }
 
