@@ -4,8 +4,8 @@
 
     <link rel="stylesheet" href="public/css/login.css">
     <link rel="stylesheet" href="public/css/login-resp.css">
-    <link rel="stylesheet" href="css/menu-resp.css">
-    <link rel="stylesheet" href="css/footer-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
 
 <!-- Seção 2 - Combinação e suas peças -->
 <!-- Seção 2 - Look1 -->
