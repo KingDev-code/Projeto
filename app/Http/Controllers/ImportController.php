@@ -134,10 +134,11 @@ class ImportController extends Controller
         for ($j = 1; $j <= $numeroPecas; $j++) {
             $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
 
-            // Substituir o campo img_peca
-            Peca::updateOrCreate(
-                ['img_peca' => $nomePeca]
-            );
+            // Inserir um novo registro
+            Peca::create([
+                'cod_comb' => $combinacao->cod_comb,
+                'img_peca' => $nomePeca,
+            ]);
 
             $numeroPeca++;
 
