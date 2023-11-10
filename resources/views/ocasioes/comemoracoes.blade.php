@@ -277,12 +277,12 @@
           </div>
           </div>
 
-
+          @foreach ($combinacoes as $combinacao)
           <div class="comb_">
             <!-- Seção 2 - Look1 -->
             <div class="secao-look">
-                <img class="look" src="public/img/look1.png" alt="Imagem 4">
-          
+                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $combinacao->img_comb) }}" alt="Imagem da Combinação">
+
                 <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
               
                     <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
@@ -290,10 +290,10 @@
           
           
                 <div class="card ocasiao-card">
-                  <p>EXECUTIVA</p>
+                    <p>{{ $combinacao->ocasiao->nome }}</p>
                 </div>
                 <div class="card estilo-card">
-                  <p>ELEGANTE</p>
+                    <p>{{ $combinacao->estilo->nome }}</p>
                 </div>
           
               </div>
@@ -347,76 +347,7 @@
             
               </div>
             </div>
-
-            <div class="comb_">
-              <!-- Seção 2 - Look1 -->
-              <div class="secao-look">
-                  <img class="look" src="public/img/look1.png" alt="Imagem 4">
-            
-                  <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
-                
-                      <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
-                      <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
-            
-            
-                  <div class="card ocasiao-card">
-                    <p>EXECUTIVA</p>
-                  </div>
-                  <div class="card estilo-card">
-                    <p>ELEGANTE</p>
-                  </div>
-            
-                </div>
-          
-                <div class="pecas">
-                <div class="secao-pecas">
-                  <div class="slidec">
-                    <div class="card">
-                      <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
-                    </div>
-                      <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
-                  </div>
-                
-                  <div class="slidec">
-                    <div class="card">
-                      <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
-                    </div>
-                      <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
-                  </div>
-            
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
-                  </div>
-                      <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
-                </div>
-              </div>
-    
-              <div class="secao-pecas">
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 1">
-                  </div>
-                    <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
-                </div>
-              
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 2">
-                  </div>
-                    <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
-                </div>
-          
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
-                  </div>
-                    <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
-                </div>
-              </div>
-              
-                </div>
-              </div>
+          @endforeach
 
         </div>
 @endsection

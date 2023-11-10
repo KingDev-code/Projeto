@@ -51,7 +51,7 @@
 
       <div class="menu-itens">
         <ul>
-        <li><a href="index">Início</a></li>
+        <li><a href="/">Início</a></li>
         <li><a href="executivos">Executivas</a></li>
         <li><a href="esportivos">Esportivas</a></li>
         <li><a href="comemoracoes" class="active">Comemorações</a></li>
@@ -90,7 +90,7 @@
     </div>
 
     <div>
-      <a href="index">
+      <a href="/">
       <img src="public/img/Logo Veste-me - Branca.png" alt="Veste-me - Branca">
       </a>
     </div>
