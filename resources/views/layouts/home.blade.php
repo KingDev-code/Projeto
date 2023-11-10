@@ -67,7 +67,7 @@
 
     <div class="menu-itens">
       <ul>
-      <li><a href="index"  class="active">Início</a></li>
+      <li><a href="/" class="active">Início</a></li>
       <li><a href="{{ route('executivos') }}">Executivos</a></li>
       <li><a href="{{ route('esportivos') }}">Esportivas</a></li>
       <li><a href="{{ route('comemoracoes') }}">Comemorações</a></li>

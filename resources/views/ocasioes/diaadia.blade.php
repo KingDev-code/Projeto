@@ -41,7 +41,7 @@
         <ul>
           <li><a href="index">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="combinacoes">Comemorações</a></li>
+          <li><a href="combinacoes">Dia a dia</a></li>
         </ul>
       </div>
 
