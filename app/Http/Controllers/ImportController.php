@@ -108,7 +108,7 @@ class ImportController extends Controller
             $nomeImagem = "comb-{$i}.png";
     
             // Substituir a coluna img_comb
-            Combinacao::where('cod_combinacao', '>', 0)
+            Combinacao::where('cod_combinacao', $i) // Assumindo que 'id' é uma chave primária sequencial
                 ->update(['img_comb' => $nomeImagem]);
         }
     
