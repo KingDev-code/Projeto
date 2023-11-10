@@ -4,6 +4,8 @@
 
     <link rel="stylesheet" href="public/css/esportivos.css">
     <link rel="stylesheet" href="public/css/esportivos-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
 
     <div class="menu-itens">
         <ul>
