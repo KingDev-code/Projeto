@@ -123,29 +123,31 @@ class ImportController extends Controller
 
     public function substituirImagensPecas()
     {
-        // Recupere as combinações existentes
-        $combinacoes = Peca::select('cod_comb')->distinct()->get();
+    // Recupere as combinações existentes ordenadas pelo cod_comb
+    $combinacoes = Peca::select('cod_comb')->distinct()->orderBy('cod_comb')->get();
 
-        foreach ($combinacoes as $combinacao) {
-            $numeroPecas = 5; // Ajuste conforme necessário
+    foreach ($combinacoes as $combinacao) {
+        $numeroPeca = 1; // Reinicia o número de peça para 1
 
-            // Obtenha o último número de peça para a combinação atual
-            $ultimoNumeroPeca = Peca::where('cod_comb', $combinacao->cod_comb)
-                ->max('img_peca');
+        $numeroPecas = 5; // Ajuste conforme necessário
 
-            // Se não houver registros, $ultimoNumeroPeca será nulo, então, defina para 0
-            $ultimoNumeroPeca = $ultimoNumeroPeca ?? 0;
+        for ($j = 1; $j <= $numeroPecas; $j++) {
+            $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
 
-            for ($j = $ultimoNumeroPeca + 1; $j <= $ultimoNumeroPeca + $numeroPecas; $j++) {
-                $nomePeca = "comb{$combinacao->cod_comb}-peca{$j}.png";
+            // Substituir o campo img_peca
+            Peca::updateOrCreate(
+                ['cod_comb' => $combinacao->cod_comb, 'img_peca' => $nomePeca],
+                ['img_peca' => $nomePeca]
+            );
 
-                // Substituir o campo img_peca
-                Peca::updateOrCreate(
-                    ['cod_comb' => $combinacao->cod_comb, 'img_peca' => $nomePeca],
-                    ['img_peca' => $nomePeca]
-                );
+            $numeroPeca++;
+
+            // Se o número de peça atingir 6, reinicie para 1
+            if ($numeroPeca > $numeroPecas) {
+                $numeroPeca = 1;
             }
         }
+    }
 
         return "Nomes de imagens de peças substituídos com sucesso!";
     }
