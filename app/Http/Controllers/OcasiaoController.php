@@ -87,8 +87,12 @@ class OcasiaoController extends Controller
 
     public function executivos()
     {
-        $ocasiao = Ocasiao::where('ocasiao', 'EXECUTIVOS')->first();
-        return view('ocasioes.executivos', compact('ocasiao'));
+        // Carregue as combinações apenas com o nome "comemoracoes"
+        $executivos = Combinacao::whereHas('ocasiao', function ($query) {
+            $query->where('ocasiao.ocasiao', 'Executivas');
+        })->get();
+
+        return view('ocasioes.executivos', compact('executivos'));
     }
 
     public function esportivos()

@@ -5,54 +5,32 @@
     <link rel="stylesheet" href="public/css/executivos.css">
     <link rel="stylesheet" href="public/css/executivos-resp.css">
 
-    <section id="menu">
-    <!-- Pre Header -->
-    <div class="pre-header" id="pre-header">
-            <span>Encontre seu look ideal!</span>
-    </div>
-
-  <!-- Menu Superior -->
-  <header class="header">
-
-    <div class="menu-norte">
-    <a href="/" class="logo"><img id="logo" src="public/img/Logo Veste-me - Preta.png" alt="Veste-me"></a>
-    <nav>
-        <button type="button" class="button-icone">
-            <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
-            <a href="dadospessoais"><i id="iconeUsuario" class="material-icons-sharp">person</i></a>
-        </button>
-    </div>
-
-  <div class="linha-menu"></div>
-
-  <div class="menu-sul">
-
     <div class="menu-itens">
-      <ul>
-      <li><a href="/">Início</a></li>
-      <li><a href="{{ route('executivos') }}" class="active">Executivos</a></li>
-      <li><a href="{{ route('esportivos') }}">Esportivas</a></li>
-      <li><a href="{{ route('comemoracoes') }}">Comemorações</a></li>
-      <li><a href="{{ route('diaadia') }}">Dia a dia</a></li>
-      <li><a href="{{ route('modapraia') }}">Moda praia</a></li>
-      </ul>
-    </nav>
-  </div>
-  
-     <div class="pesquisar">
-      <form action="/action_page.php">
-        <input class="search-input"  type="text" placeholder="Procurar" name="search"></input>
-        <button class="search-button" type="submit">
-          <span class="material-icons-outlined">search</span>
-        </button>
-      </form>
+        <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="executivos" class="active">Executivas</a></li>
+        <li><a href="esportivos">Esportivas</a></li>
+        <li><a href="comemoracoes">Comemorações</a></li>
+        <li><a href="diaadia">Dia a dia</a></li>
+        <li><a href="modapraia">Moda praia</a></li>
+        </ul>
+      </nav>
     </div>
-</div>
     
-  </header>
-</section>
+       <div class="pesquisar">
+        <form action="/action_page.php">
+          <input class="search-input"  type="text" placeholder="Procurar" name="search"></input>
+          <button class="search-button" type="submit">
+            <span class="material-icons-outlined">search</span>
+          </button>
+        </form>
+      </div>
+  </div>
+      
+    </header>
+  </section>
 
-    <!-- Seção 2 - Combinação e suas peças -->
+<!-- Seção 2 - Combinação e suas peças -->
     <!-- Seção 2 - Look1 -->
     <div class="content">
 
@@ -63,7 +41,7 @@
         <ul>
           <li><a href="index">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="executivos">Executivos</a></li>
+          <li><a href="combinacoes">Comemorações</a></li>
         </ul>
       </div>
 
@@ -247,7 +225,7 @@
 
           
         <div class="title-section">
-          <h2 class="section-title"><b>Ocasião Executivas</b></h2>
+          <h2 class="section-title"><b>Ocasião Comemorações</b></h2>
         </div>
 
         <div class="comb">
@@ -322,12 +300,77 @@
           </div>
           </div>
 
+          @foreach ($executivos as $executivo)
+          <div class="comb_">
+            <!-- Seção 2 - Look1 -->
+            <div class="secao-look">
+                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $executivo->img_comb) }}" alt="Imagem da Combinação">
 
-        
+                <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
               
+                    <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
+                    <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
+          
+          
+                <div class="card ocasiao-card">
+                    <p style="text-transform: uppercase;">{{ $executivo->ocasiao->ocasiao }}</p>
                 </div>
+                <div class="card estilo-card">
+                    <p style="text-transform: uppercase;">{{ $executivo->estilo->estilo }}</p>
+                </div>
+          
               </div>
-
+        
+              <div class="pecas">
+              <div class="secao-pecas">
+                <div class="slidec">
+                  <div class="card">
+                    <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
+                  </div>
+                    <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
+                </div>
+              
+                <div class="slidec">
+                  <div class="card">
+                    <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
+                  </div>
+                    <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
+                </div>
+          
+              <div class="slidec">
+                <div class="card">
+                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
+                </div>
+                    <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
+              </div>
+            </div>
+  
+            <div class="secao-pecas">
+              <div class="slidec">
+                <div class="card">
+                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 1">
+                </div>
+                  <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
+              </div>
+            
+              <div class="slidec">
+                <div class="card">
+                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 2">
+                </div>
+                  <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
+              </div>
+        
+              <div class="slidec">
+                <div class="card">
+                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
+                </div>
+                  <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
+              </div>
+            </div>
+            
+              </div>
+            </div>
+          @endforeach
         </div>
 
 @endsection
