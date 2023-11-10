@@ -12,7 +12,7 @@ class Peca extends Model
 
     public function combinacao()
     {
-        return $this->belongsTo(Combinacao::class, 'cod_comb');
+        return $this->belongsTo(Combinacao::class, 'cod_comb', 'cod_comb');
     }
 
     public function empresa()
