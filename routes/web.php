@@ -137,11 +137,11 @@ Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name
 
 
 // Grupo de rotas protegidas pelo middleware de autenticação ('auth').
-//Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     // Rotas protegidas por middleware 'auth'
 
     // Rotas para Profile
-    Route::get('/profile/edit', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
+    Route::get('/profile', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
     Route::patch('/profile/update', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
     Route::delete('/profile/destroy', 'App\Http\Controllers\ProfileController@destroy')->name('profile.destroy');
 
@@ -149,7 +149,7 @@ Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name
     Route::get('/favoritos', 'App\Http\Controllers\FavoritoController@index')->name('favoritos');
     Route::post('/favoritos/store', 'App\Http\Controllers\FavoritoController@store')->name('favoritos.store');
     Route::delete('/favoritos/{id}', 'App\Http\Controllers\FavoritoController@destroy')->name('favoritos.destroy');
-//});
+});
 
 
 Route::get('/empresa/register', 'App\Http\Controllers\EmpresaController@registerForm')->name('empresa.registerForm');
