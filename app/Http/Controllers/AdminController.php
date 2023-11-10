@@ -30,27 +30,21 @@ class AdminController extends Controller
 
     public function adminLogin(Request $request)
     {
-    // Validação dos campos de entrada
-    $request->validate([
-        'email' => 'required|email',
-        'senha' => 'required',
-    ]);
+        $request->validate([
+            'email' => 'required|email',
+            'senha' => 'required',
+        ]);
 
-    $credentials = $request->only('email', 'senha');
+        $credentials = $request->only('email', 'senha');
 
-    // Verifica se o usuário existe com base no e-mail
-    $user = Login::where('email', $credentials['email'])->first();
-
-    if ($user && $user->type === 'admin') {
-        // Se o usuário existe e é um administrador, tenta autenticá-lo
-        if (Auth::guard('login')->attempt($credentials)) {
+        if (Auth::guard('logins')->attempt($credentials)) {
             // Autenticação bem-sucedida, redirecione para o painel de administração
-            return redirect()->route('admin');
+            return redirect('/admin');
         }
-    }
 
-    // Se a autenticação falhar, retorne com uma mensagem de erro
-    return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
+        // Se a autenticação falhar, retorne com uma mensagem de erro
+        return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
+
     }
     
 
