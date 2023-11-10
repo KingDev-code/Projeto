@@ -45,7 +45,7 @@ class AdminController extends Controller
         // Se o usuário existe e é um administrador, verificar a senha
         if (Hash::check($credentials['senha'], $user->senha)) {
             // Autenticação bem-sucedida
-            auth('login')->login($user);
+            auth::guard('login')->login($user);
             return redirect('/admin');
         }
     }
