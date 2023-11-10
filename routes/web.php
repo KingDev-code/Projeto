@@ -144,6 +144,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
     Route::patch('/profile/update', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
     Route::delete('/profile/destroy', 'App\Http\Controllers\ProfileController@destroy')->name('profile.destroy');
+    Route::post('/cliente/upload-image', 'App\Http\Controllers\ImageController@uploadEmpresa')->name('upload.image.cliente');
 
     // Rotas para Favoritos
     Route::get('/favoritos', 'App\Http\Controllers\FavoritoController@index')->name('favoritos');
@@ -164,6 +165,7 @@ Route::post('/empresa/register', 'App\Http\Controllers\EmpresaController@registe
     Route::get('/empresa/dashboard', 'App\Http\Controllers\EmpresaController@dashboard')->name('empresa.dashboard');
     Route::get('/empresa/envios', 'App\Http\Controllers\EmpresaController@envios')->name('empresa.envios');
     Route::post('/empresa/upload-image', 'App\Http\Controllers\ImageController@uploadEmpresa')->name('upload.image.empresa');
+
 
     // Rota para registro de empresa (se aplicável)
 
