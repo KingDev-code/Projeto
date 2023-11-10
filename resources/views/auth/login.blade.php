@@ -4,13 +4,11 @@
 
     <link rel="stylesheet" href="public/css/login.css">
     <link rel="stylesheet" href="public/css/login-resp.css">
-    <!-- Session Status -->
-    <x-auth-session-status :status="session('status')" />
+    <link rel="stylesheet" href="css/menu-resp.css">
+    <link rel="stylesheet" href="css/footer-resp.css">
 
-    
-
-    <!-- Seção 2 - Combinação e suas peças -->
-    <!-- Seção 2 - Look1 -->
+<!-- Seção 2 - Combinação e suas peças -->
+<!-- Seção 2 - Look1 -->
 <div class="content">
 
         <div id="indicator">
@@ -65,7 +63,7 @@
                 </ul>
             </div>
         </form>
-                <!-- Remember Me 
+                <!-- Remember Me
                 <li>
                 <label for="remember_me" class="container-checkbox">
                     <input id="remember_me" type="checkbox" name="remember">
