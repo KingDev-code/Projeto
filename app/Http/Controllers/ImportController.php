@@ -133,13 +133,13 @@ class ImportController extends Controller
 
         for ($j = 1; $j <= $numeroPeca; $j++) {
             $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
-
+            $numeroPeca++;
             // Substituir o campo img_peca
             Peca::where('cod_comb', $combinacao->cod_comb)
                 ->where('img_peca', "comb{$combinacao->cod_comb}-peca{$j}.png")
                 ->update(['img_peca' => $nomePeca]);
 
-            $numeroPeca++;
+            
 
             // Se o número de peça atingir 6, reinicie para 1
             if ($numeroPeca > 5) {
