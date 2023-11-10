@@ -17,9 +17,10 @@ class Combinacao extends Model
         return $this->hasMany(Favorito::class, 'combinacao_id');
     }
 
+// No modelo Combinacao
     public function pecas()
     {
-        return $this->hasMany(Peca::class, 'cod_comb');
+        return $this->hasMany(Peca::class, 'cod_comb', 'cod_comb');
     }
 
     public function ocasiao()
