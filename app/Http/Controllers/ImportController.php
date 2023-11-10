@@ -136,7 +136,7 @@ class ImportController extends Controller
 
             // Substituir o campo img_peca
             Peca::updateOrCreate(
-                ['cod_comb' => $combinacao->cod_comb, 'img_peca' => $nomePeca],
+                ['cod_comb' => $combinacao->cod_comb],
                 ['img_peca' => $nomePeca]
             );
 
