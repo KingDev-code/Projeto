@@ -48,10 +48,10 @@ class RegisteredUserController extends Controller
 
         // Crie um novo registro na tabela 'users' com 'login_id' associado
         $user = new User();
-        $user->login_id = $login->id; // Associe o ID do login ao campo 'login_id' na tabela 'users'
-        $user->name = $request->name;
-        $user->sobrenome = $request->sobrenome;
-        $user->datanasc = $request->datanasc;
+        $user->cod_login = $login->id; // Associe o ID do login ao campo 'login_id' na tabela 'users'
+        $user->nome_cliente = $request->name;
+        $user->sobrenome_cliente = $request->sobrenome;
+        $user->dtanasc_cliente = $request->datanasc;
         $user->save(); // Salve o usuário no banco de dados
 
         event(new Registered($user));

@@ -20,12 +20,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'sobrenome',  // Adicione o campo 'sobrenome'
-        'datanasc',   // Adicione o campo 'datanasc'
+        'cod_login',
+        'nome_cliente',
+        'sobrenome_cliente',  // Adicione o campo 'sobrenome'
+        'dtanasc_cliente',   // Adicione o campo 'datanasc'
         'img_cliente',
-        'email',
-        'password',
     ];
 
     /**
@@ -34,7 +33,6 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ];
 
@@ -45,7 +43,6 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
 
     protected $guarded = [];
