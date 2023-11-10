@@ -303,76 +303,36 @@
           </div>
 
           @foreach ($executivos as $executivo)
-          <div class="comb_">
-            <!-- Seção 2 - Look1 -->
-            <div class="secao-look">
-                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $executivo->img_comb) }}" alt="Imagem da Combinação">
-
-                <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
-              
-                    <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
-                    <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
-          
-          
-                <div class="card ocasiao-card">
-                    <p style="text-transform: uppercase;">{{ $executivo->ocasiao->ocasiao }}</p>
-                </div>
-                <div class="card estilo-card">
-                    <p style="text-transform: uppercase;">{{ $executivo->estilo->estilo }}</p>
-                </div>
-          
-              </div>
-        
-              <div class="pecas">
-              <div class="secao-pecas">
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca1" src="public/img/peca1-recortada.png" alt="Imagem 1">
-                  </div>
-                    <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
-                </div>
-              
-                <div class="slidec">
-                  <div class="card">
-                    <img id="peca2" src="public/img/peca2-recortada.png" alt="Imagem 2">
-                  </div>
-                    <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
-                </div>
-          
-              <div class="slidec">
-                <div class="card">
-                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
-                </div>
-                    <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
-              </div>
+    <div class="comb_">
+        <!-- Seção 2 - Look1 -->
+        <div class="secao-look">
+            <img class="look" src="{{ asset('public/imagens_combinacoes/' . $executivo->img_comb) }}" alt="Imagem da Combinação">
+            <div class="icon-overlay">
+                <img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/>
             </div>
-  
-            <div class="secao-pecas">
-              <div class="slidec">
-                <div class="card">
-                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 1">
-                </div>
-                  <p id="desc">Descrição 1: Bela paisagem natural com montanhas majestosas e um lago sereno.</p>
-              </div>
-            
-              <div class="slidec">
-                <div class="card">
-                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 2">
-                </div>
-                  <p id="desc">Descrição 2: Uma deliciosa refeição gourmet preparada com ingredientes frescos e coloridos.</p>
-              </div>
-        
-              <div class="slidec">
-                <div class="card">
-                  <img id="peca3" src="public/img/peca3-recortada.png" alt="Imagem 3">
-                </div>
-                  <p id="desc">Descrição 3: Um grupo diversificado de pessoas sorrindo e interagindo em um ambiente de trabalho colaborativo.</p>
-              </div>
+            <i class="icone_ fa fa-regular fa-heart" onclick="toggleLike(this)"></i>
+            <i class="icone_ fa fa-solid fa-share-nodes" onclick="shareImage()"></i>
+            <div class="card ocasiao-card">
+                <p style="text-transform: uppercase;">{{ $executivo->ocasiao->ocasiao }}</p>
             </div>
-            
-              </div>
+            <div class="card estilo-card">
+                <p style="text-transform: uppercase;">{{ $executivo->estilo->estilo }}</p>
             </div>
-          @endforeach
         </div>
+
+        <div class="pecas">
+            <div class="secao-pecas">
+                @foreach ($executivo->pecas as $index => $peca)
+                    <div class="slidec">
+                        <div class="card">
+                            <img id="peca{{ $index + 1 }}" src="{{ asset('public/imagens_pecas/' . $peca->img_peca) }}" alt="Imagem {{ $index + 1 }}">
+                        </div>
+                        <p id="desc">Descrição {{ $index + 1 }}: {{ $peca->desc_peca }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+@endforeach
 
 @endsection

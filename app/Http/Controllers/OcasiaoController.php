@@ -87,9 +87,9 @@ class OcasiaoController extends Controller
 
     public function executivos()
     {
-        // Carregue as combinações apenas com o nome "comemoracoes"
+        // Carregue as combinações apenas com o nome "Executivas"
         $executivos = Combinacao::whereHas('ocasiao', function ($query) {
-            $query->where('ocasiao.ocasiao', 'Executivas');
+            $query->where('ocasiao', 'Executivas');
         })->get();
 
         return view('ocasioes.executivos', compact('executivos'));
