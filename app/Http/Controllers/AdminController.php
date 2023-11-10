@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     if ($user && $user->type === 'admin') {
         // Se o usuário existe e é um administrador, tenta autenticá-lo
-        if (Auth::guard('login')->attempt($credentials)) {
+        if (Auth::guard('admin')->attempt($credentials)) {
             // Autenticação bem-sucedida, redirecione para o painel de administração
             return redirect()->route('admin.dashboard');
         }
