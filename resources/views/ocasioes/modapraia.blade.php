@@ -8,11 +8,11 @@
     <div class="menu-itens">
         <ul>
         <li><a href="/">Início</a></li>
-        <li><a href="executivos" >Executivas</a></li>
-        <li><a href="esportivos">Esportivas</a></li>
+        <li><a href="executivos">Executivas</a></li>
+        <li><a href="esportivos" class="active">Esportivas</a></li>
         <li><a href="comemoracoes">Comemorações</a></li>
         <li><a href="diaadia">Dia a dia</a></li>
-        <li><a href="modapraia" class="active">Moda praia</a></li>
+        <li><a href="modapraia">Moda praia</a></li>
         </ul>
       </nav>
     </div>
@@ -41,7 +41,7 @@
         <ul>
           <li><a href="index">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="modapraia">Moda Praia</a></li>
+          <li><a href="esportivos">Esportivos</a></li>
         </ul>
       </div>
 
@@ -225,7 +225,7 @@
 
           
         <div class="title-section">
-          <h2 class="section-title"><b>Ocasião Moda Praia</b></h2>
+          <h2 class="section-title"><b>Ocasião Esportivos</b></h2>
         </div>
 
         <div class="comb">
@@ -304,7 +304,7 @@
           <div class="comb_">
             <!-- Seção 2 - Look1 -->
             <div class="secao-look">
-                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $modapraia->img_comb) }}" alt="Imagem da Combinação">
+                <img class="look" src="{{ asset('public/imagens_combinacoes/' . $modapraias->img_comb) }}" alt="Imagem da Combinação">
 
                 <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
               
@@ -313,10 +313,10 @@
           
           
                 <div class="card ocasiao-card">
-                    <p style="text-transform: uppercase;">{{ $modapraia->ocasiao->ocasiao }}</p>
+                    <p style="text-transform: uppercase;">{{ $modapraias->ocasiao->ocasiao }}</p>
                 </div>
                 <div class="card estilo-card">
-                    <p style="text-transform: uppercase;">{{ $modapraia->estilo->estilo }}</p>
+                    <p style="text-transform: uppercase;">{{ $modapraias->estilo->estilo }}</p>
                 </div>
           
               </div>
