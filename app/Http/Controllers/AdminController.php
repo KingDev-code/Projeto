@@ -90,6 +90,15 @@ class AdminController extends Controller
         return redirect()->route('admin'); // Redirecione para a página de dashboard do administrador ou outra ação apropriada
     }
 
+    public function logout(Request $request)
+    {
+        Auth::logout(); // Logout do usuário autenticado
+        $request->session()->invalidate(); // Invalida a sessão
+        $request->session()->regenerateToken(); // Regenera o token de sessão
+
+        return redirect('/'); // Redireciona para a página inicial ou outra ação apropriada
+    }
+
     public function home()
     {
         return view('admin.home');

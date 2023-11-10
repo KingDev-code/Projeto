@@ -81,8 +81,9 @@ Route::get('/cadastro', 'App\Http\Controllers\AdminController@registerForm')->na
 Route::post('/admin/register', 'App\Http\Controllers\AdminController@register')->name('admin.register');
 Route::get('/admin-login', 'App\Http\Controllers\AdminController@loginForm')->name('admin.login');
 Route::post('/admin-login', 'App\Http\Controllers\AdminController@adminLogin')->name('admin.loginpost');
+Route::post('/logout', 'App\Http\Controllers\AdminController@logout')->name('admin.logout');
 
-//Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     // Rotas de admin
     Route::get('/admin', 'App\Http\Controllers\AdminController@home')->name('admin');
     
@@ -127,7 +128,7 @@ Route::post('/admin-login', 'App\Http\Controllers\AdminController@adminLogin')->
 
     
     // ... outras rotas protegidas por autenticação
-//});
+});
 
 // Rota de login
 Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');

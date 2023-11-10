@@ -48,7 +48,10 @@
           <a href="tipos"><img src="public/associate/img/tc.png" >TIPOS CORPORAIS</a>
         <br>
         <div class="btn">
-          <button class="btn3"><span class="material-icons-sharp">logout</span>SAIR</button>
+        <form method="post" action="{{ route('logout') }}">
+            @csrf <!-- Adicione o token CSRF para proteger o formulário -->
+            <button class="btn3" type="submit"><span class="material-icons-sharp"></span>SAIR</button>
+        </form>
         </div>
       </div>
       </div>
