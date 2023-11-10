@@ -129,12 +129,16 @@ class ImportController extends Controller
         foreach ($combinacoes as $combinacao) {
             $numeroPecas = 5; // Ajuste conforme necessário
 
-            for ($j = 1; $j <= $numeroPecas; $j++) {
+            // Obtenha o último número de peça para a combinação atual
+            $ultimoNumeroPeca = Peca::where('cod_comb', $combinacao->cod_comb)
+                ->max('img_peca');
+
+            for ($j = $ultimoNumeroPeca + 1; $j <= $ultimoNumeroPeca + $numeroPecas; $j++) {
                 $nomePeca = "comb{$combinacao->cod_comb}-peca{$j}.png";
 
                 // Substituir o campo img_peca
                 Peca::updateOrCreate(
-                    ['cod_comb' => $combinacao->cod_comb],
+                    ['cod_comb' => $combinacao->cod_comb, 'img_peca' => $nomePeca],
                     ['img_peca' => $nomePeca]
                 );
             }
