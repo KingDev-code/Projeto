@@ -4,15 +4,17 @@
 
     <link rel="stylesheet" href="public/css/modapraia.css">
     <link rel="stylesheet" href="public/css/modapraia-resp.css">
+    <link rel="stylesheet" href="public/css/menu-resp.css">
+    <link rel="stylesheet" href="public/css/footer-resp.css">
 
     <div class="menu-itens">
         <ul>
         <li><a href="/">Início</a></li>
         <li><a href="executivos">Executivas</a></li>
-        <li><a href="esportivos" class="active">Esportivas</a></li>
+        <li><a href="esportivos">Esportivas</a></li>
         <li><a href="comemoracoes">Comemorações</a></li>
         <li><a href="diaadia">Dia a dia</a></li>
-        <li><a href="modapraia">Moda praia</a></li>
+        <li><a href="modapraia" class="active">Moda praia</a></li>
         </ul>
       </nav>
     </div>
