@@ -34,6 +34,6 @@ class Combinacao extends Model
 
     public function estilo()
     {
-        return $this->belongsTo(Estilo::class, 'cod_estilo');
+        return $this->belongsTo(Estilo::class, 'cod_estilo', 'id');
     }
 }
