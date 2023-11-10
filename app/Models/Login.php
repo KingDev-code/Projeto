@@ -11,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 
-class Login extends Model
+class Login extends Authenticatable
 {
     use AuthenticableTrait, HasFactory, HasApiTokens, Notifiable;
 
