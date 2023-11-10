@@ -153,7 +153,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@create')->name('empresa.register');
+Route::get('/register', 'App\Http\Controllers\Auth\EmpresaController@create')->name('empresa.register');
 Route::post('/empresa/register', 'App\Http\Controllers\Auth\EmpresaController@store')->name('register.empresa');
 
 //Route::middleware(['auth:empresa'])->group(function () {
