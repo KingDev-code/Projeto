@@ -24,12 +24,12 @@ class Combinacao extends Model
 
     public function ocasiao()
     {
-        return $this->belongsTo(Ocasiao::class, 'cod_ocasiao');
+        return $this->belongsTo(Ocasiao::class, 'cod_ocasiao', 'cod_ocasiao');
     }
 
     public function tipocorporal()
     {
-        return $this->belongsTo(TipoCorporal::class, 'cod_tipocorporal');
+        return $this->belongsTo(TipoCorporal::class, 'cod_tipocorporal', 'cod_tipocorporal');
     }
 
     public function estilo()
