@@ -131,16 +131,13 @@ class ImportController extends Controller
 
         $numeroPecas = 5; // Ajuste conforme necessário
 
-        for ($j = 1; $j <= $numeroPeca; $j++) {
+        for ($j = 1; $j <= $numeroPecas; $j++) {
             $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
 
             // Substituir o campo img_peca
-            Peca::where([
-                'cod_comb' => $combinacao->cod_comb,
-                'img_peca' => "comb{$combinacao->cod_comb}-peca{$j}.png",
-            ])->update([
-                'img_peca' => $nomePeca,
-            ]);
+            Peca::where('cod_comb', $combinacao->cod_comb)
+                ->where('img_peca', "comb{$combinacao->cod_comb}-peca{$j}.png")
+                ->update(['img_peca' => $nomePeca]);
 
             $numeroPeca++;
 
