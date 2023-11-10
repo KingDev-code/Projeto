@@ -112,7 +112,7 @@ class ImportController extends Controller
 
         if (file_exists($caminhoImagem)) {
             // Substituir a coluna img_comb
-            Combinacao::where('id', '>', 0) // Condição para todos os registros
+            Combinacao::where('cod_combinacao', '>', 0) // Condição para todos os registros
                 ->update(['img_comb' => "public/{$caminhoImagem}"]);
         }
     }
