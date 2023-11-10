@@ -9,9 +9,9 @@
         <ul>
         <li><a href="/">Início</a></li>
         <li><a href="executivos">Executivas</a></li>
-        <li><a href="esportivos">Esportivas</a></li>
+        <li><a href="esportivos" class="active">Esportivas</a></li>
         <li><a href="comemoracoes">Comemorações</a></li>
-        <li><a href="diaadia" class="active">Dia a dia</a></li>
+        <li><a href="diaadia">Dia a dia</a></li>
         <li><a href="modapraia">Moda praia</a></li>
         </ul>
       </nav>
