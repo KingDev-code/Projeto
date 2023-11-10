@@ -225,7 +225,7 @@
 
           
         <div class="title-section">
-          <h2 class="section-title"><b>Ocasião Esportivos</b></h2>
+          <h2 class="section-title"><b>Ocasião Moda Praia</b></h2>
         </div>
 
         <div class="comb">
