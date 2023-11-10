@@ -127,26 +127,20 @@ class ImportController extends Controller
     $combinacoes = Peca::select('cod_comb')->distinct()->orderBy('cod_comb')->get();
 
     foreach ($combinacoes as $combinacao) {
-        $numeroPeca = 1; // Reinicia o número de peça para 1
-
         $numeroPecas = 5; // Ajuste conforme necessário
 
-        for ($j = 1; $j <= $numeroPeca; $j++) {
+        for ($j = 1; $j <= $numeroPecas; $j++) {
+            $numeroPeca = $j; // Inicializa o número da peça
+
             $nomePeca = "comb{$combinacao->cod_comb}-peca{$numeroPeca}.png";
-            $numeroPeca++;
+
             // Substituir o campo img_peca
             Peca::where('cod_comb', $combinacao->cod_comb)
                 ->where('img_peca', "comb{$combinacao->cod_comb}-peca{$j}.png")
                 ->update(['img_peca' => $nomePeca]);
-
-            
-
-            // Se o número de peça atingir 6, reinicie para 1
-            if ($numeroPeca > 5) {
-                $numeroPeca = 1;
-            }
         }
     }
+
 
         return "Nomes de imagens de peças substituídos com sucesso!";
     }
