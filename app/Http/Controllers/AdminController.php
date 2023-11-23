@@ -46,9 +46,11 @@ class AdminController extends Controller
             if (Hash::check($credentials['senha'], $user->senha)) {
                 // Autenticação bem-sucedida
                 if ($user->type === 'cliente') {
+                    echo'Deu certo';
                     auth()->guard('login')->login($user);
                     return redirect('/profile');
                 } elseif ($user->type === 'empresa') {
+                    echo'Deu certo empresa';
                     auth()->guard('login')->login($user);
                     return redirect('/dashboard');
                 }
