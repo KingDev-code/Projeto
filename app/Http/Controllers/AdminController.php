@@ -40,6 +40,8 @@ class AdminController extends Controller
     
         // Verificar se o usuário existe com base no e-mail
         $user = Login::where('email', $credentials['email'])->first();
+
+        dd($user);
     
         if ($user) {
             // Se o usuário existe, verificar a senha
@@ -57,10 +59,8 @@ class AdminController extends Controller
             }
         }
     
-        dd('Deu errado', $credentials, $user);  // Mostrar mensagem e detalhes das credenciais e do usuário
     
-        // Se a autenticação falhar, retorne com uma mensagem de erro
-        return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
+
     }    
 
     public function register(Request $request)
