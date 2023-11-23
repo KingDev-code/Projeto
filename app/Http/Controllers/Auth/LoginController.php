@@ -8,6 +8,7 @@ use App\Models\Empresa;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -18,18 +19,32 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
-        
-        $user = Login::where('email', $credentials['email'])->first();
-        
-        if ($user) {
-            if ($user->type === 'cliente' && Auth::guard('login')->attempt($credentials)) {
-                return redirect('/profile');
-            } elseif ($user->type === 'empresa' && Auth::guard('login')->attempt($credentials)) {
-                return redirect('/empresa/dashboard');
-            }
-        }        
+        // Validação dos campos de entrada
+        $request->validate([
+            'email' => 'required|email',
+            'senha' => 'required',
+        ]);
     
+        $credentials = $request->only('email', 'senha');
+    
+        // Verificar se o usuário existe com base no e-mail
+        $user = Login::where('email', $credentials['email'])->first();
+    
+        if ($user) {
+            // Se o usuário existe, verificar a senha
+            if (Hash::check($credentials['senha'], $user->senha)) {
+                // Autenticação bem-sucedida
+                if ($user->type === 'cliente') {
+                    Auth::guard('login')->login($user);
+                    return redirect('/profile');
+                } elseif ($user->type === 'empresa') {
+                    Auth::guard('login')->login($user);
+                    return redirect('/edashboard');
+                }
+            }
+        }
+    
+        // Se a autenticação falhar, retorne com uma mensagem de erro
         return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
     }
     

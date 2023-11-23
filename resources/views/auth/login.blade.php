@@ -37,8 +37,8 @@
             <br>
 
             <!-- Senha -->
-            <label for="senha">Senha: <input type="password" id="senha" name="password" autocomplete="current-password" required></label>
-            @error('password')
+            <label for="senha">Senha: <input type="password" id="senha" name="senha" autocomplete="current-password" required></label>
+            @error('senha')
                 <div class="error-message">{{ $message }}</div>
             @enderror
             <br>
