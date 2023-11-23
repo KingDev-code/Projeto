@@ -46,25 +46,22 @@ class AdminController extends Controller
             if (Hash::check($credentials['senha'], $user->senha)) {
                 // Autenticação bem-sucedida
                 if ($user->type === 'cliente') {
-                    echo 'Deu certo';
-                    dd($user);  // Adicione esta linha para verificar os detalhes do usuário
+                    info('Deu certo - Cliente', ['user' => $user]);  // Mensagem para o log
                     auth()->guard('login')->login($user);
                     return redirect('/profile');
                 } elseif ($user->type === 'empresa') {
-                    echo 'Deu certo empresa';
-                    dd($user);  // Adicione esta linha para verificar os detalhes do usuário
+                    info('Deu certo - Empresa', ['user' => $user]);  // Mensagem para o log
                     auth()->guard('login')->login($user);
                     return redirect('/dashboard');
                 }
             }
         }
     
-        echo 'Deu errado';
-        dd($credentials, $user);  // Adicione esta linha para verificar os detalhes das credenciais e do usuário
+        info('Deu errado', ['credentials' => $credentials, 'user' => $user]);  // Mensagem para o log
     
         // Se a autenticação falhar, retorne com uma mensagem de erro
         return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
-    }
+    }    
 
     public function register(Request $request)
     {
