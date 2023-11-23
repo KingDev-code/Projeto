@@ -50,10 +50,12 @@ class AdminController extends Controller
                     return redirect('/profile');
                 } elseif ($user->type === 'empresa') {
                     auth()->guard('login')->login($user);
-                    return redirect('/empresa/dashboard');
+                    return redirect('/dashboard');
                 }
             }
         }
+
+        echo'Deu errado';
     
         // Se a autenticação falhar, retorne com uma mensagem de erro
         return back()->withErrors(['login' => 'E-mail ou senha incorretos']);
