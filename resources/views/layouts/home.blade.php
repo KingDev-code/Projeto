@@ -50,7 +50,7 @@
         <button type="button" class="button-icone">
           <i href="#default" id="icone"class="material-icons-outlined" onclick="AvalAlerta()">star_border</i>
           <i href="#default" id="icon" class="material-icons-outlined"  aria-hidden="true" onclick="toggleIcon()">face_6</i>
-          <a href="favoritos.html"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
+          <a href="favoritos"><i id="iconeCoracao" class="material-icons-outlined">favorite_border</i></a>
             @if (Route::has('login'))
                 @auth
                     <a href="{{ url('/profile') }}"><i id="iconeUsuario" class="material-icons-outlined">person_outline</i></a>
