@@ -2,7 +2,7 @@
 
 @section('conteudo')
 
-<link rel="stylesheet" href="css/favoritos.css">
+<link rel="stylesheet" href="public/css/favoritos.css">
 
 <!-- Seção 2 - Combinação e suas peças -->
     <!-- Seção 2 - Look1 -->
@@ -11,9 +11,9 @@
           <!-- Indicador -->
       <div id="indicator">
         <ul>
-          <li><a href="index.html">Veste-me</a></li>
+          <li><a href="/">Veste-me</a></li>
           <div id="arrow"></div>
-          <li><a href="favoritos.html">Favoritos</a></li>
+          <li><a href="/favoritos">Favoritos</a></li>
         </ul>
       </div>
 
@@ -26,7 +26,7 @@
         
             <div class="secao-pecas">
                 <div class="card">
-                    <img src="img/favorito1.png">
+                    <img src="public/img/favorito1.png">
                 </div>
                 <h2 class="ocasiao">Comemorações</h2>
                 <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
@@ -39,7 +39,7 @@
 
           <div class="secao-pecas">
               <div class="card">
-                  <img src="img/favorito2.png">
+                  <img src="public/img/favorito2.png">
               </div>
               <h2 class="ocasiao">Esportivos</h2>
               <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
@@ -52,7 +52,7 @@
 
         <div class="secao-pecas">
               <div class="card">
-                  <img src="img/favorito3.png">
+                  <img src="public/img/favorito3.png">
               </div>
               <h2 class="ocasiao">Comemorações</h2>
               <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
@@ -65,7 +65,7 @@
 
         <div class="secao-pecas">
               <div class="card">
-                  <img src="img/favorito4.png">
+                  <img src="public/img/favorito4.png">
               </div>
               <h2 class="ocasiao">Comemorações</h2>
               <div class="icon-overlay"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/30/empty-hourglass.png" alt="empty-hourglass"/> </div>
