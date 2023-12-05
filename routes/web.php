@@ -137,7 +137,7 @@ Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name
 
 
 // Grupo de rotas protegidas pelo middleware de autenticação ('auth').
-Route::middleware(['auth'])->group(function () {
+//Route::middleware(['auth'])->group(function () {
     // Rotas protegidas por middleware 'auth'
 
     // Rotas para Profile
@@ -147,10 +147,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/cliente/upload-image', 'App\Http\Controllers\ImageController@uploadEmpresa')->name('upload.image.cliente');
 
     // Rotas para Favoritos
-    Route::get('/favoritos', 'App\Http\Controllers\FavoritoController@index')->name('favoritos');
-    Route::post('/favoritos/store', 'App\Http\Controllers\FavoritoController@store')->name('favoritos.store');
-    Route::delete('/favoritos/{id}', 'App\Http\Controllers\FavoritoController@destroy')->name('favoritos.destroy');
-});
+    //Route::get('/favoritos', 'App\Http\Controllers\FavoritoController@index')->name('favoritos');
+    //Route::post('/favoritos/store', 'App\Http\Controllers\FavoritoController@store')->name('favoritos.store');
+    //Route::delete('/favoritos/{id}', 'App\Http\Controllers\FavoritoController@destroy')->name('favoritos.destroy');
+//});
 
 
 Route::get('/register-empresa', 'App\Http\Controllers\Auth\EmpresaController@create')->name('empresa.register');
